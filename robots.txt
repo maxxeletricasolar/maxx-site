@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maxxeletricasolar.github.io/maxx-site/sitemap.xml

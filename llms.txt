@@ -1,0 +1,53 @@
+# MAXX Elétrica Solar
+
+> Loja e distribuidora de material elétrico de baixa, média e alta tensão em Teresina-PI, revendedora autorizada Ritz (ferramentas e equipamentos para linha viva). Razão social MAXX ELETRICA SOLAR LTDA, CNPJ 61.855.316/0001-50, aberta em 22/07/2025.
+
+- Endereço: Rua Antônio Neves de Melo, 4636 B, Parque Ideal, Teresina-PI, CEP 64077-820
+- WhatsApp de vendas: (86) 99454-0900 · E-mail: vendasmaxxstel2019@gmail.com
+- Atendimento: orçamento pelo site ou WhatsApp, retirada na loja ou entrega combinada
+
+## Páginas principais
+- [Início](https://maxxeletricasolar.github.io/maxx-site/): visão geral, linhas de produto e pedido de orçamento
+- [Catálogo de produtos](https://maxxeletricasolar.github.io/maxx-site/produtos.html): 324 produtos em 26 categorias, com tabelas técnicas e referências
+- [Blog técnico](https://maxxeletricasolar.github.io/maxx-site/guias.html): 10 artigos sobre linha viva, aterramento e EPIs
+- [Quem somos](https://maxxeletricasolar.github.io/maxx-site/quem-somos.html): missão, visão e valores
+
+## Linhas de produto
+- [Aterramento Temporário](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-a): Conjuntos para BT, MT, AT e subestações, grampos, cabos, terminais e trapézios.
+- [Bastões Manuais, Varas de Manobra e Ferramentas Universais](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-b): Varas seccionáveis e telescópicas, bastões universais, tesourões e alicates.
+- [Coberturas Protetoras e Isolantes de Borracha](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-c): Coberturas para poste, cruzeta e condutor, mantas, lençóis, luvas e mangas.
+- [Componentes de Restauração e Acondicionamento](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-d): Restauradores, lubrificantes e acondicionamento para bastões RITZGLAS®.
+- [Escadas, Plataformas e Andaime Isolante](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-e): Escadas RITZGLAS®, escada de linha viva, plataformas e andaime modular.
+- [Ferramentas para Içamento de Cargas e Acessórios](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-f): Talhas manuais, moitões, carretilhas, cordas, estropos e esticadores.
+- [Ferramentas de Tracionamento, Locomoção e Suporte](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-g): Bastão-garra, selas, colares, tensionadores e bastões de suspensão.
+- [Equipamentos para Trabalho ao Potencial](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-h): Vestimenta condutiva, cadeira de acesso e carro para inspeção de condutores.
+- [Instrumentos de Teste e Detecção](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-i): Testador de fase, detectores de tensão e medidor de corrente de fuga.
+- [Jumpers Temporários](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-j): Conjuntos de jumper, by-pass, chave fusível temporária e big jumper.
+- [Sinalização e Construção](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-k): Esferas de sinalização, dispositivo antipouso, cruzetas e postes de fibra.
+- [Sistemas de Medição](https://maxxeletricasolar.github.io/maxx-site/produtos.html#grupo-l): Bloco terminal de 6 ou 12 pontos para quadros e subestações.
+- [Perfilados](https://maxxeletricasolar.github.io/maxx-site/produtos.html#perfilados): Sistemas perfilados para fixação e suporte de instalações elétricas.
+- [Eletrocalhas](https://maxxeletricasolar.github.io/maxx-site/produtos.html#eletrocalhas): Eletrocalhas e acessórios para condução e organização de cabos.
+- [Postes](https://maxxeletricasolar.github.io/maxx-site/produtos.html#postes): Postes e estruturas para redes de distribuição e iluminação.
+- [Combate a Incêndio](https://maxxeletricasolar.github.io/maxx-site/produtos.html#combate-a-incendio): Materiais e equipamentos para sistemas de combate a incêndio.
+- [Material de Lógica](https://maxxeletricasolar.github.io/maxx-site/produtos.html#material-de-logica): Cabeamento estruturado, redes e infraestrutura de lógica.
+- [Hidráulica](https://maxxeletricasolar.github.io/maxx-site/produtos.html#hidraulica): Materiais hidráulicos para instalações prediais e industriais.
+- [EPIs](https://maxxeletricasolar.github.io/maxx-site/produtos.html#epis): Equipamentos de proteção individual para o trabalho seguro.
+- [Fardamentos Profissionais](https://maxxeletricasolar.github.io/maxx-site/produtos.html#fardamentos): Fardamentos e uniformes profissionais para a sua equipe.
+- [Para-raios e Captação](https://maxxeletricasolar.github.io/maxx-site/produtos.html#para-raios-e-captacao): Captores Franklin, terminais aéreos, isoladores, mastros, suportes e barras de alumínio para SPDA.
+- [Conectores e Fixação para SPDA](https://maxxeletricasolar.github.io/maxx-site/produtos.html#conectores-e-fixacao-spda): Conectores, terminais, presilhas, estais, grampos e componentes de fixação para para-raios.
+- [Aterramento e Equalização](https://maxxeletricasolar.github.io/maxx-site/produtos.html#aterramento-e-equalizacao): Hastes, caixas de inspeção, solda exotérmica, cabo de cobre nu e caixas de equalização.
+- [Sinalizadores e Balizadores](https://maxxeletricasolar.github.io/maxx-site/produtos.html#sinalizadores-e-balizadores): Sinalizadores de obstáculo, balizadores e sinalizadores de garagem.
+- [Cabos e Fios de Alumínio](https://maxxeletricasolar.github.io/maxx-site/produtos.html#cabos-e-fios-de-aluminio): Cabos nus CA, CAA e liga 6201, multiplex de baixa tensão, cabos isolados 0,6/1 kV, protegidos 15 kV e fios de alumínio.
+- [Conduletes e Eletrodutos de PVC](https://maxxeletricasolar.github.io/maxx-site/produtos.html#conduletes-e-eletrodutos-pvc): Instalação elétrica aparente em PVC: eletrodutos, caixas condulete, conexões e tampas nas cores cinza, branca, preta e vermelha, linha roscável para ramal de entrada e caixas Deep Box.
+
+## Artigos
+- [Como especificar um conjunto de aterramento temporário](https://maxxeletricasolar.github.io/maxx-site/guias/como-especificar-aterramento-temporario.html): Os seis dados que definem o conjunto certo e a sequência correta de instalação.
+- [Luvas isolantes: qual classe usar e como inspecionar](https://maxxeletricasolar.github.io/maxx-site/guias/luvas-isolantes-qual-classe-usar.html): As cinco classes da IEC 60903, como identificar pela cor e a inspeção antes de cada uso.
+- [Detector de tensão: por contato ou por aproximação?](https://maxxeletricasolar.github.io/maxx-site/guias/detector-de-tensao-contato-ou-aproximacao.html): Como constatar a ausência de tensão exigida pela NR-10 e qual instrumento escolher.
+- [Coberturas protetoras de linha viva: regras de uso e conservação](https://maxxeletricasolar.github.io/maxx-site/guias/coberturas-protetoras-regras-de-uso.html): Para que servem, quem pode instalar e as regras de inspeção e limpeza antes de cada serviço.
+- [Vara de manobra: telescópica, seccionável ou bastão de manobra?](https://maxxeletricasolar.github.io/maxx-site/guias/vara-de-manobra-qual-escolher.html): As diferenças entre os três tipos, para que serve cada um e o que observar na compra.
+- [Como conservar bastões e varas de fibra de vidro](https://maxxeletricasolar.github.io/maxx-site/guias/como-conservar-bastoes-isolantes.html): Por que o desgaste da superfície reduz o isolamento e os produtos que recuperam o bastão.
+- [Cordas e talhas em linha viva: o que é e o que não é isolante](https://maxxeletricasolar.github.io/maxx-site/guias/cordas-e-talhas-o-que-e-isolante.html): Um erro comum: achar que corda nova ou talha de náilon isolam. Veja como trabalhar com segurança.
+- [Escadas de linha viva: tipos e posições de trabalho](https://maxxeletricasolar.github.io/maxx-site/guias/escadas-de-linha-viva-tipos.html): Escada simples, seccionável e monolongarina: quando usar cada uma e o que diz a IEC 61478.
+- [Trabalho ao potencial: como funciona a vestimenta condutiva](https://maxxeletricasolar.github.io/maxx-site/guias/trabalho-ao-potencial-vestimenta-condutiva.html): O princípio da gaiola de Faraday aplicado à manutenção de linhas de transmissão energizadas.
+- [Jumper temporário: derivação de energia sem desligar a rede](https://maxxeletricasolar.github.io/maxx-site/guias/jumper-temporario-derivacao.html): O que é o by-pass temporário, os métodos de instalação e como escolher pela tensão.

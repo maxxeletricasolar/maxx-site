@@ -18,14 +18,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="MAXX Elétrica Solar">
 <meta property="og:title" content="Quem somos | MAXX Elétrica Solar, distribuidora em Teresina-PI">
 <meta property="og:description" content="Conheça a MAXX Elétrica Solar, distribuidora de material elétrico de baixa, média e alta tensão em Teresina-PI e revendedora autorizada Ritz.">
-<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://maxxeletricasolar.github.io/maxx-site/quem-somos.html">
+<meta property="og:url" content="https://maxxeletricasolar.github.io/maxx-site/quem-somos.html">
+<meta property="og:image" content="https://maxxeletricasolar.github.io/maxx-site/img/og-maxx.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="geo.region" content="BR-PI">
 <meta name="geo.placename" content="Teresina">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"MAXX Elétrica Solar","legalName":"MAXX DIST BAIXA, MEDIA E ALTA TENSAO LTDA","taxID":"52.116.031/0001-06","email":"vendasmaxxstel2019@gmail.com","telephone":"+55-86-99454-0900","address":{"@type":"PostalAddress","streetAddress":"Rua Antônio Neves de Melo, 4636 B, Parque Ideal","addressLocality":"Teresina","addressRegion":"PI","postalCode":"64022-114","addressCountry":"BR"},"description":"Distribuidora de material elétrico de baixa, média e alta tensão em Teresina-PI e revendedora autorizada Ritz.","hasMap":"https://share.google/8Zr9PJPt1hZOWpXQ8","areaServed":[{"@type":"City","name":"Teresina"},{"@type":"State","name":"Piauí"}],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+55-86-99454-0900","email":"vendasmaxxstel2019@gmail.com","areaServed":"BR","availableLanguage":"pt-BR"},"brand":{"@type":"Brand","name":"Ritz"},"knowsAbout":["Material elétrico de baixa tensão","Material elétrico de média tensão","Material elétrico de alta tensão","Ferramentas de linha viva","Aterramento temporário","Para-raios e SPDA","EPI para eletricistas"]}
+{"@context":"https://schema.org","@type":"Store","name":"MAXX Elétrica Solar","legalName":"MAXX ELETRICA SOLAR LTDA","taxID":"61.855.316/0001-50","email":"vendasmaxxstel2019@gmail.com","telephone":"+55-86-99454-0900","address":{"@type":"PostalAddress","streetAddress":"Rua Antônio Neves de Melo, 4636 B, Parque Ideal","addressLocality":"Teresina","addressRegion":"PI","postalCode":"64077-820","addressCountry":"BR"},"description":"Distribuidora de material elétrico de baixa, média e alta tensão em Teresina-PI e revendedora autorizada Ritz.","hasMap":"https://share.google/8Zr9PJPt1hZOWpXQ8","areaServed":[{"@type":"City","name":"Teresina"},{"@type":"State","name":"Piauí"}],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+55-86-99454-0900","email":"vendasmaxxstel2019@gmail.com","areaServed":"BR","availableLanguage":"pt-BR"},"brand":{"@type":"Brand","name":"Ritz"},"knowsAbout":["Material elétrico de baixa tensão","Material elétrico de média tensão","Material elétrico de alta tensão","Ferramentas de linha viva","Aterramento temporário","Para-raios e SPDA","EPI para eletricistas"],"url":"https://maxxeletricasolar.github.io/maxx-site/","image":"https://maxxeletricasolar.github.io/maxx-site/img/fachada.jpg","logo":"https://maxxeletricasolar.github.io/maxx-site/img/logo.jpg","foundingDate":"2025-07-22","@id":"https://maxxeletricasolar.github.io/maxx-site/#loja"}
 </script>
 <style>
 :root{
@@ -1256,6 +1263,51 @@ nav.main a{padding-block:10px}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .pay li.pay-pix svg{color:#1f8f84}}
 @media (max-width:560px){.pay{flex-direction:column;align-items:flex-start}.pay ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.pay li{min-width:0}}
 .theme-row{margin-top:20px}
+
+/* ===== cabeçalho no computador: nome da marca sempre inteiro ===== */
+@media (min-width:1141px){
+  header.site .brand{flex:none}
+  header.site .brand span{overflow:visible;text-overflow:clip}
+  header.site .brand img{width:56px;height:56px}
+  header.site .wrap{gap:14px}
+  nav.main{gap:20px}
+  .cart-btn{padding:0 12px}
+  .cart-btn .lbl{display:none}
+}
+@media (min-width:1141px) and (max-width:1260px){
+  nav.main{gap:14px;font-size:.875rem}
+  header.site .btn{padding:0 16px}
+}
+/* ===== interruptor de luz (tema claro/escuro) ===== */
+:root{--lamp:0}
+:root[data-theme="light"]{--lamp:1}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--lamp:1}}
+.theme-tg.lamp{display:inline-flex;align-items:center;gap:5px;width:auto!important;min-width:44px;height:44px;padding:0 7px;border-radius:12px;background:transparent}
+.theme-tg.lamp:hover{background:var(--surface-2)}
+.lamp-bulb{width:22px!important;height:22px!important;overflow:visible;transform:none!important;opacity:1!important}
+.lamp-bulb .glow{fill:#ffd45c;opacity:calc(var(--lamp) * .35);filter:blur(3px);transition:opacity .35s}
+.lamp-bulb .rays{stroke:#e0a91c;stroke-width:1.6;stroke-linecap:round;fill:none;opacity:var(--lamp);transition:opacity .3s}
+.lamp-bulb .glass{stroke:var(--muted);stroke-width:1.6;fill:#ffd45c;fill-opacity:calc(var(--lamp) * .95);stroke-linejoin:round;transition:fill-opacity .3s,stroke .3s}
+:root[data-theme="light"] .lamp-bulb .glass{stroke:#a87a12}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .lamp-bulb .glass{stroke:#a87a12}}
+.lamp-bulb .fil{stroke:var(--muted);stroke-width:1.3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+:root[data-theme="light"] .lamp-bulb .fil{stroke:#b45309}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .lamp-bulb .fil{stroke:#b45309}}
+.lamp-bulb .base{stroke:var(--muted);stroke-width:1.6;stroke-linecap:round}
+.lamp-sw{position:relative;width:17px;height:26px;border-radius:5px;border:1.5px solid var(--line);background:var(--surface);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.lamp-rk{position:absolute;left:2.5px;right:2.5px;top:2.5px;height:10.5px;border-radius:3px;background:linear-gradient(180deg,var(--muted),color-mix(in srgb,var(--muted) 70%,#000));box-shadow:0 1px 1px rgba(0,0,0,.35);transform:translateY(calc((1 - var(--lamp)) * 10px));transition:transform .22s cubic-bezier(.3,1.6,.5,1),background .3s}
+:root[data-theme="light"] .lamp-rk{background:linear-gradient(180deg,#f1d27a,#c9962a)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .lamp-rk{background:linear-gradient(180deg,#f1d27a,#c9962a)}}
+.lamp.flick .lamp-bulb{animation:lamp-flick .7s steps(1,end)}
+@keyframes lamp-flick{0%{opacity:.25}12%{opacity:1}22%{opacity:.35}34%{opacity:1}46%{opacity:.6}58%,100%{opacity:1}}
+/* efeito na tela inteira ao acender/apagar */
+.lamp-fx{position:fixed;inset:0;z-index:200;pointer-events:none;background:#05080c;opacity:0}
+.lamp-fx.on{animation:fx-on .75s steps(1,end) forwards}
+.lamp-fx.off{animation:fx-off .55s ease-out forwards}
+@keyframes fx-on{0%{opacity:.85}14%{opacity:.15}24%{opacity:.7}36%{opacity:.05}48%{opacity:.4}62%,100%{opacity:0}}
+@keyframes fx-off{0%{opacity:0}25%{opacity:.9}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.lamp-fx{display:none}.lamp.flick .lamp-bulb{animation:none}.lamp-rk{transition:none}}
+
 </style>
 </head>
 <body id="pg-quem">
@@ -1306,6 +1358,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <symbol id="l-hidro" viewBox="0 0 32 32"><path d="M3 12h12v8H3M15 12h6a6 6 0 0 1 6 6v9m-6 0h6M9 8v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="l-epi" viewBox="0 0 32 32"><path d="M5 22a11 11 0 0 1 22 0M4 22h24v3H4zM16 11V7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="l-farda" viewBox="0 0 32 32"><path d="M11 4l5 4 5-4 7 5-3 5-3-2v16H10V12l-3 2-3-5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="l-cabo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="22.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10.4" cy="12.8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="21.6" cy="12.8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10.4" cy="19.2" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="21.6" cy="19.2" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="l-condulete" viewBox="0 0 32 32"><rect x="9" y="8" width="14" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 16h7M23 16h7M16 2v6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><rect x="13" y="12" width="6" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <!-- linhas SPDA -->
   <symbol id="l-raio" viewBox="0 0 32 32"><path d="M16 3v20M11 9l5-6 5 6M12 29h8M14 23h4v6h-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M24 6l-3 5h3l-3 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="l-conect" viewBox="0 0 32 32"><rect x="8" y="10" width="16" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 16h5M24 16h5M13 10V6m6 4V6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -1333,8 +1387,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="guias.html">Blog técnico</a>
       <a href="./#contato">Contato</a>
     </nav>
-    <button type="button" class="theme-tg" id="theme-tg" aria-label="Mudar para o tema claro" title="Mudar para o tema claro"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
-    <button type="button" class="cart-btn" id="cart-open" aria-label="Abrir meu orçamento"><svg><use href="#i-cart"/></svg><span class="lbl">Meu orçamento</span><span class="cart-count js-cart-count" id="cart-count">0</span></button>
+    <button type="button" class="theme-tg lamp" id="theme-tg" aria-label="Acender a luz (tema claro)" title="Acender a luz (tema claro)">
+      <svg class="lamp-bulb" viewBox="0 0 24 24" aria-hidden="true">
+        <circle class="glow" cx="12" cy="10.5" r="9"/>
+        <g class="rays"><path d="M12 .8v1.8M4.3 3.6l1.3 1.3M19.7 3.6l-1.3 1.3M1.4 10.5h1.8M20.8 10.5h1.8"/></g>
+        <path class="glass" d="M12 4.2a6 6 0 0 0-3.7 10.7c.6.5.9 1.1.9 1.9v1.4h5.6v-1.4c0-.8.3-1.4.9-1.9A6 6 0 0 0 12 4.2Z"/>
+        <path class="fil" d="M10.2 13.6 11.1 11l.9 2 .9-2 .9 2.6M12 13.6v4.4"/>
+        <path class="base" d="M9.4 20h5.2M10.1 22h3.8"/>
+      </svg>
+      <span class="lamp-sw" aria-hidden="true"><span class="lamp-rk"></span></span>
+    </button>
+    <button type="button" class="cart-btn" id="cart-open" aria-label="Abrir meu orçamento" title="Meu orçamento"><svg><use href="#i-cart"/></svg><span class="lbl">Meu orçamento</span><span class="cart-count js-cart-count" id="cart-count">0</span></button>
     <button type="button" class="menu-btn" id="menu-open" aria-label="Abrir menu" aria-controls="dlg-menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
     <a class="btn btn-gold" href="#orcamento">Pedir orçamento</a>
   </div>
@@ -1357,16 +1420,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 style="margin-top:14px">MAXX Elétrica Solar</h2>
           <p class="about-lead">O máximo em material elétrico, com <em>quem entende de rede</em> do outro lado do balcão.</p>
           <div class="facts">
-            <div><b>Teresina</b><span>loja no Parque Ideal · desde 2023</span></div>
+            <div><b>Teresina</b><span>loja no Parque Ideal · desde 2025</span></div>
             <div><b>BT · MT · AT</b><span>classes de tensão atendidas</span></div>
-            <div><b><span data-count="12">12</span> + <span data-count="12">12</span></b><span>grupos e linhas de produtos</span></div>
+            <div><b><span data-count="12">12</span> + <span data-count="14">14</span></b><span>grupos e linhas de produtos</span></div>
             <div><b>Ritz</b><span>revendedor autorizado</span></div>
           </div>
         </div>
         <div class="about-text" data-reveal style="--d:.12s">
-          <p>A <strong>MAXX Elétrica Solar</strong> é uma distribuidora de materiais elétricos de <strong>baixa, média e alta tensão</strong>, fundada em 2023. Nascemos para atender quem trabalha com energia todos os dias: eletricistas, empreiteiras de rede, construtoras, indústrias e revendas.</p>
+          <p>A <strong>MAXX Elétrica Solar</strong> é uma distribuidora de materiais elétricos de <strong>baixa, média e alta tensão</strong>, fundada em julho de 2025. Nascemos para atender quem trabalha com energia todos os dias: eletricistas, empreiteiras de rede, construtoras, indústrias e revendas.</p>
           <p>O material elétrico é o nosso forte. Trabalhamos com <strong>ferramentas de linha viva, conjuntos de aterramento temporário, varas de manobra, coberturas isolantes, escadas e instrumentos de teste</strong>, itens em que a especificação certa faz diferença na segurança de quem está no poste ou na subestação. Somos <strong>revendedor autorizado Ritz</strong>, fabricante de ferramentas e equipamentos para manutenção de sistemas elétricos, o que garante procedência e a linha completa do catálogo.</p>
-          <p>Para você fechar a obra inteira com um só fornecedor, também oferecemos perfilados, eletrocalhas, postes, para-raios e aterramento (SPDA), sinalizadores, combate a incêndio, material de lógica, hidráulica, EPIs e fardamentos profissionais.</p>
+          <p>Para você fechar a obra inteira com um só fornecedor, também oferecemos perfilados, eletrocalhas, postes, para-raios e aterramento (SPDA), sinalizadores, cabos e fios de alumínio, conduletes e eletrodutos de PVC, combate a incêndio, material de lógica, hidráulica, EPIs e fardamentos profissionais.</p>
           <p>Nosso jeito de trabalhar é simples: entender o que a sua obra precisa, indicar o material adequado e responder com preço claro e condições justas.</p>
         </div>
       </div>
@@ -1439,7 +1502,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="img/fachada.jpg" alt="Fachada da loja MAXX Elétrica Solar no Parque Ideal, em Teresina" loading="lazy" width="540" height="828">
           <figcaption>
             <span class="qs-ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <span class="row-txt"><b>Loja física</b><span>Rua Antônio Neves de Melo, 4636 B<br>Parque Ideal, Teresina-PI · CEP 64022-114</span></span>
+            <span class="row-txt"><b>Loja física</b><span>Rua Antônio Neves de Melo, 4636 B<br>Parque Ideal, Teresina-PI · CEP 64077-820</span></span>
             <a class="btn btn-ghost" href="https://share.google/8Zr9PJPt1hZOWpXQ8" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Ver no mapa</a>
           </figcaption>
         </figure>
@@ -1523,7 +1586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot">
       <div>
         <img src="img/logo.jpg" alt="MAXX Elétrica Solar Distribuidora" width="120" height="120" loading="lazy">
-        <p><b style="color:var(--gold-hi)">Revendedor autorizado Ritz.</b> Distribuidora de materiais elétricos, perfilados, eletrocalhas, postes, para-raios e aterramento (SPDA), combate a incêndio, lógica, hidráulica, EPIs e fardamentos.</p>
+        <p><b style="color:var(--gold-hi)">Revendedor autorizado Ritz.</b> Distribuidora de materiais elétricos, perfilados, eletrocalhas, postes, para-raios e aterramento (SPDA), cabos e fios de alumínio, conduletes e eletrodutos de PVC, combate a incêndio, lógica, hidráulica, EPIs e fardamentos.</p>
       </div>
       <nav class="foot-nav" aria-label="Rodapé">
         <h4>Navegação</h4>
@@ -1545,7 +1608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h4>Endereço</h4>
         <p>Rua Antônio Neves de Melo, 4636 B</p>
         <p>Parque Ideal · Teresina-PI</p>
-        <p>CEP 64022-114</p>
+        <p>CEP 64077-820</p>
       </div>
     </div>
     <div class="pay">
@@ -1558,7 +1621,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
     <div class="legal">
-      <span>MAXX DIST BAIXA, MEDIA E ALTA TENSAO LTDA · CNPJ 52.116.031/0001-06</span>
+      <span>MAXX ELETRICA SOLAR LTDA · CNPJ 61.855.316/0001-50</span>
       <span>© <span id="ano">2026</span> MAXX Elétrica Solar · <button type="button" class="link-btn js-privacy">Política de privacidade</button></span>
     </div>
   </div>
@@ -1569,7 +1632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <dialog class="sheet" id="dlg-priv" aria-labelledby="dpv-title"><button type="button" class="sheet-x" data-close aria-label="Fechar">✕</button><div class="sheet-in">
   <p class="eyebrow">LGPD · Lei 13.709/2018</p>
   <h2 id="dpv-title">Política de privacidade</h2>
-  <p>Esta política explica como a <strong>MAXX DIST BAIXA, MEDIA E ALTA TENSAO LTDA</strong> (CNPJ 52.116.031/0001-06), nome fantasia MAXX Elétrica Solar, trata os dados enviados por este site.</p>
+  <p>Esta política explica como a <strong>MAXX ELETRICA SOLAR LTDA</strong> (CNPJ 61.855.316/0001-50), nome fantasia MAXX Elétrica Solar, trata os dados enviados por este site.</p>
   <h3>Quais dados coletamos</h3>
   <p>Somente o que você preenche nos formulários: nome, WhatsApp e, se quiser informar, empresa, cidade, perfil, prazo e a lista de materiais.</p>
   <h3>Para que usamos</h3>
@@ -1645,7 +1708,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  var interesses = ["Aterramento Temporário","Linha viva / bastões","Coberturas isolantes","Instrumentos de teste","Perfilados","Eletrocalhas","Postes","Combate a Incêndio","Material de Lógica","Hidráulica","EPIs","Fardamentos","Para-raios / SPDA","Outros"];
+  var interesses = ["Aterramento Temporário","Linha viva / bastões","Coberturas isolantes","Instrumentos de teste","Perfilados","Eletrocalhas","Postes","Combate a Incêndio","Material de Lógica","Hidráulica","EPIs","Fardamentos","Para-raios / SPDA","Cabos de alumínio","Conduletes e eletrodutos PVC","Outros"];
   var iWrap = document.getElementById("interesses");
   function chipHTML(v){ return '<label class="multi-opt"><input type="checkbox" name="interesse" value="'+v+'"><span>'+v+'</span></label>'; }
   iWrap.innerHTML = interesses.map(chipHTML).join("");
@@ -1723,18 +1786,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }catch(err){}
   }
   // abre o WhatsApp: tenta nova aba; se o navegador bloquear, abre na janela atual
+  // No computador vai direto ao WhatsApp Web (web.whatsapp.com); no celular usa wa.me, que abre o aplicativo.
+  // Evita a página intermediária api.whatsapp.com, que alguns navegadores bloqueiam (ERR_BLOCKED_BY_RESPONSE).
+  var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|Opera Mini|IEMobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  function waTarget(url){
+    var m = String(url).match(/^https:\/\/wa\.me\/(\d+)\/?(?:\?text=([^#]*))?/);
+    if(!m) return url;
+    if(IS_MOBILE) return "https://wa.me/" + m[1] + (m[2] ? "?text=" + m[2] : "");
+    return "https://web.whatsapp.com/send?phone=" + m[1] + (m[2] ? "&text=" + m[2] : "");
+  }
   function openWa(url, noFallback){
-    var w = null;
-    try{ w = window.open(url, "_blank"); }catch(err){ w = null; }
-    if(w){ try{ w.opener = null; }catch(err){} return true; }
+    url = waTarget(url);
+    // link temporário com noopener: a nova aba não fica ligada a esta página
+    try{
+      var a = document.createElement("a");
+      a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.setAttribute("data-wa-direct", ""); a.style.display = "none"; document.body.appendChild(a); a.click(); a.remove();
+      return true;
+    }catch(err){}
     if(noFallback) return false;
-    try{ window.top.location.href = url; return true; }catch(err){}
     try{ window.location.href = url; return true; }catch(err){}
     return false;
   }
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest('a[href^="https://wa.me"]');
-    if(!a) return;
+    if(!a || a.hasAttribute("data-wa-direct")) return;
     track("clique_whatsapp", {origem: a.classList.contains("wa-float") ? "botao_fixo" : "pagina"});
     // abre o WhatsApp de forma robusta (nova aba, ou a própria janela se a aba for bloqueada)
     e.preventDefault();
@@ -1927,7 +2003,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ? '<div class="pd-main"><img id="pd-img" src="' + imgSrc(imgs[0]) + '" alt="' + esc(p.nome) + '"></div>' +
         (imgs.length > 1 ? '<div class="pd-thumbs">' + imgs.map(function(s, i){ return '<button type="button" data-thumb="' + esc(s) + '" aria-pressed="' + (i === 0) + '" aria-label="Foto ' + (i + 1) + '"><img src="' + imgSrc(s) + '" alt=""></button>'; }).join("") + "</div>" : "")
       : '<div class="pd-main" style="background:var(--bg)"><span style="font:900 90px/1 var(--f-display);color:rgba(216,173,70,.35)">' + esc(isLinha ? "" : p.g) + "</span></div>";
-    if(isLinha || p.ilustrativa) gal += '<p class="hint">Imagem ilustrativa. Consulte medidas, marcas e disponibilidade com a equipe.</p>';
+    if(p.ilustrativa || (isLinha && p.ilustrativa !== false)) gal += '<p class="hint">Imagem ilustrativa. Consulte medidas, marcas e disponibilidade com a equipe.</p>';
     var refOpts = p.refs.map(function(r){ return '<option value="' + esc(r) + '">' + esc(r) + "</option>"; }).join("");
     var buy = p.info
       ? '<div class="pd-buy"><p style="margin:0">Conteúdo técnico de referência. Para comprar, escolha os produtos deste grupo ou fale com a equipe.</p></div>'
@@ -2577,15 +2653,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var root = document.documentElement, KEY = "maxx-tema", mq = window.matchMedia && matchMedia("(prefers-color-scheme: light)");
   function current(){ var t = root.getAttribute("data-theme"); return t || (mq && mq.matches ? "light" : "dark"); }
   function label(){
-    var next = current() === "light" ? "escuro" : "claro";
-    btn.setAttribute("aria-label", "Mudar para o tema " + next); btn.title = "Mudar para o tema " + next;
+    var on = current() === "light";
+    var txt = on ? "Apagar a luz (tema escuro)" : "Acender a luz (tema claro)";
+    btn.setAttribute("aria-label", txt); btn.title = txt; btn.setAttribute("aria-pressed", on ? "true" : "false");
   }
-  btn.addEventListener("click", function(){
-    var t = current() === "light" ? "dark" : "light";
+  // interruptor: a tecla vira, a lâmpada pisca e a tela acende (com tremor) ou apaga
+  var fx = document.createElement("div"); fx.className = "lamp-fx"; fx.setAttribute("aria-hidden", "true"); document.body.appendChild(fx);
+  var rm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches, busy = false;
+  function apply(t){
     root.setAttribute("data-theme", t);
     try{ localStorage.setItem(KEY, t); }catch(err){}
     document.querySelectorAll(".theme-sw button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-t") === t ? "true" : "false"); });
     label();
+  }
+  btn.addEventListener("click", function(){
+    if(busy) return;
+    var t = current() === "light" ? "dark" : "light";
+    if(rm){ apply(t); return; }
+    busy = true;
+    fx.className = "lamp-fx"; void fx.offsetWidth;
+    if(t === "light"){
+      fx.classList.add("on"); apply(t);
+      btn.classList.remove("flick"); void btn.offsetWidth; btn.classList.add("flick");
+      setTimeout(function(){ btn.classList.remove("flick"); fx.className = "lamp-fx"; busy = false; }, 780);
+    } else {
+      fx.classList.add("off");
+      setTimeout(function(){ apply(t); }, 130);
+      setTimeout(function(){ fx.className = "lamp-fx"; busy = false; }, 580);
+    }
   });
   new MutationObserver(label).observe(root, {attributes: true, attributeFilter: ["data-theme"]});
   if(mq && mq.addEventListener) mq.addEventListener("change", label);
