@@ -1865,10 +1865,21 @@ nav.main a{padding-block:10px}
   var EMAIL_ENDPOINT = "https://formsubmit.co/ajax/" + EMAIL_TO;
   // ============================================================
 
+
+  // ===== mensagens: saudação conforme o horário e número de protocolo do pedido =====
+  function saudacao(){ var h = new Date().getHours(); return h < 12 ? "Bom dia" : (h < 18 ? "Boa tarde" : "Boa noite"); }
+  function protocolo(){
+    var d = new Date(), p = function(n){ return String(n).padStart(2, "0"); };
+    return "MX-" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes());
+  }
+  function dataHora(){
+    var d = new Date(), p = function(n){ return String(n).padStart(2, "0"); };
+    return p(d.getDate()) + "/" + p(d.getMonth() + 1) + "/" + d.getFullYear() + " às " + p(d.getHours()) + "h" + p(d.getMinutes());
+  }
   var waBase = "https://wa.me/" + WHATS;
   document.querySelectorAll(".js-phone").forEach(function(el){ el.textContent = WHATS_LABEL; });
   document.querySelectorAll(".js-wa").forEach(function(a){
-    a.href = waBase + "?text=" + encodeURIComponent("Olá, MAXX! Vim pelo site e quero um orçamento.");
+    a.href = waBase + "?text=" + encodeURIComponent(saudacao() + ", equipe MAXX Elétrica Solar!\n\nEncontrei vocês pelo site e gostaria de solicitar um orçamento. Podem me atender?\n\nAgradeço desde já.");
   });
   document.getElementById("ano").textContent = new Date().getFullYear();
 
@@ -2179,7 +2190,7 @@ nav.main a{padding-block:10px}
     function updWa(){
       var sel = document.getElementById("pd-ref"), ref = sel ? sel.value : "";
       var a = document.getElementById("pd-wa");
-      if(a) a.href = waBase + "?text=" + encodeURIComponent("Olá, MAXX! Quero um orçamento de:\n- " + p.nome + (ref ? " (Ref. " + ref + ")" : ""));
+      if(a) a.href = waBase + "?text=" + encodeURIComponent(saudacao() + ", equipe MAXX Elétrica Solar!\n\nGostaria de solicitar um orçamento do item abaixo, que vi no catálogo do site:\n\n• *" + p.nome + "*" + (ref ? "\n• Referência: " + ref : "\n• Referência: a definir com a equipe") + "\n• Quantidade: \n\nFico no aguardo de preço, disponibilidade e prazo de entrega.\nAgradeço desde já.");
     }
     updWa();
     var sel = document.getElementById("pd-ref"); if(sel) sel.addEventListener("change", updWa);
@@ -2352,21 +2363,48 @@ nav.main a{padding-block:10px}
       if(bad){ bad.focus(); return; }
 
       var fd = new FormData(form), L = [];
-      L.push(isCatalog ? "*Pedido de catálogo — site MAXX*" : "*Pedido de orçamento — site MAXX*");
-      L.push("Nome: " + fd.get("nome"));
-      L.push("WhatsApp: " + fd.get("tel"));
+      var proto = protocolo(), nome = String(fd.get("nome") || "").trim(), emp = String(fd.get("empresa") || "").trim();
+      form.dataset.proto = proto;
+      L.push(saudacao() + ", equipe MAXX Elétrica Solar!");
+      L.push("");
       if(isCatalog){
-        L.push(""); L.push("Quero receber o catálogo de produtos da MAXX (rev. 07/2026).");
+        L.push("Meu nome é " + nome + " e gostaria de receber o *catálogo de produtos da MAXX* (rev. 07/2026) em PDF.");
+        L.push("");
+        L.push("*DADOS PARA CONTATO*");
+        L.push("• Nome: " + nome);
+        L.push("• WhatsApp: " + fd.get("tel"));
+        L.push("");
+        L.push("Agradeço desde já pelo envio.");
       } else {
-        if(fd.get("empresa")) L.push("Empresa: " + fd.get("empresa"));
-        if(fd.get("cidade")) L.push("Cidade: " + fd.get("cidade"));
-        if(fd.get("perfil")) L.push("Perfil: " + fd.get("perfil"));
-        var ints = fd.getAll("interesse"); if(ints.length) L.push("Linhas: " + ints.join(", "));
-        if(fd.get("prazo")) L.push("Prazo: " + fd.get("prazo"));
-        if(cart.length){ L.push(""); L.push("*Itens do catálogo:*"); cartLines().forEach(function(x){ L.push(x); }); }
+        L.push("Meu nome é " + nome + (emp ? ", da " + emp + "," : "") + " e gostaria de solicitar um *orçamento* para os materiais abaixo.");
+        L.push("");
+        L.push("*DADOS DO SOLICITANTE*");
+        L.push("• Nome: " + nome);
+        L.push("• WhatsApp: " + fd.get("tel"));
+        if(emp) L.push("• Empresa/obra: " + emp);
+        if(fd.get("cidade")) L.push("• Cidade de entrega: " + fd.get("cidade"));
+        if(fd.get("perfil")) L.push("• Perfil: " + fd.get("perfil"));
+        if(cart.length){
+          L.push(""); L.push("*ITENS DO CATÁLOGO*");
+          cart.forEach(function(it, i){ L.push((i + 1) + ". " + it.q + " un. — " + it.nome + (it.ref ? " (Ref. " + it.ref + ")" : "")); });
+        }
         var lista = String(fd.get("lista") || "").trim();
-        if(lista){ L.push(""); L.push(cart.length ? "*Observações / outros itens:*" : "*Materiais:*"); L.push(lista); }
+        if(lista){ L.push(""); L.push(cart.length ? "*OUTROS ITENS / OBSERVAÇÕES*" : "*LISTA DE MATERIAIS*"); L.push(lista); }
+        var ints = fd.getAll("interesse");
+        if(ints.length || fd.get("prazo")){
+          L.push(""); L.push("*INFORMAÇÕES ADICIONAIS*");
+          if(ints.length) L.push("• Linhas de interesse: " + ints.join(", "));
+          if(fd.get("prazo")) L.push("• Prazo desejado: " + fd.get("prazo"));
+        }
+        L.push("");
+        L.push("Fico no aguardo do orçamento com preço, disponibilidade e prazo de entrega.");
+        L.push("Agradeço desde já pela atenção.");
       }
+      L.push("");
+      L.push("Atenciosamente,");
+      L.push(nome + (emp && !isCatalog ? "\n" + emp : ""));
+      L.push("");
+      L.push("_" + (isCatalog ? "Solicitação " : "Pedido ") + proto + (isCatalog ? " · enviada" : " · enviado") + " pelo site da MAXX em " + dataHora() + "_");
       var msg = L.join("\n");
       var url = waBase + "?text=" + encodeURIComponent(msg);
       track(isCatalog ? "pedido_catalogo" : "generate_lead", {form: form.dataset.form, itens: cart.length});
@@ -2411,21 +2449,26 @@ nav.main a{padding-block:10px}
     if(!EMAIL_ENDPOINT) return Promise.reject(new Error("sem endpoint"));
     var hp = form.querySelector('input[name="_honey"]');
     if(hp && hp.value) return Promise.resolve();  // robô preencheu o campo oculto: ignora sem avisar
+    var proto = form.dataset.proto || protocolo(), emp = String(fd.get("empresa") || "").trim();
     var payload = {
-      _subject: (isCatalog ? "Pedido de catálogo" : "Novo pedido de orçamento") + " — site MAXX — " + fd.get("nome"),
+      _subject: (isCatalog ? "Solicitação de catálogo" : "Solicitação de orçamento") + " " + proto + " — " + fd.get("nome") + (emp && !isCatalog ? " (" + emp + ")" : ""),
       _template: "table",
       _captcha: "false",
-      "Tipo de pedido": isCatalog ? "Catálogo de produtos" : "Orçamento",
+      "Protocolo": proto,
+      "Recebido em": dataHora(),
+      "Tipo de pedido": isCatalog ? "Catálogo de produtos (PDF)" : "Orçamento de materiais",
       "Nome": fd.get("nome"),
       "WhatsApp": fd.get("tel")
     };
     if(!isCatalog){
-      ["empresa", "cidade", "perfil", "prazo"].forEach(function(k){ if(fd.get(k)) payload[k.charAt(0).toUpperCase() + k.slice(1)] = fd.get(k); });
+      var LBL = {empresa: "Empresa/obra", cidade: "Cidade de entrega", perfil: "Perfil", prazo: "Prazo desejado"};
+      ["empresa", "cidade", "perfil", "prazo"].forEach(function(k){ if(fd.get(k)) payload[LBL[k]] = fd.get(k); });
       var ints = fd.getAll("interesse"); if(ints.length) payload["Linhas de interesse"] = ints.join(", ");
-      if(cart.length) payload["Itens do catálogo"] = cartLines().map(function(l){ return l.slice(2); }).join(" | ");
+      if(cart.length) payload["Itens do catálogo"] = cart.map(function(it, i){ return (i + 1) + ". " + it.q + " un. — " + it.nome + (it.ref ? " (Ref. " + it.ref + ")" : ""); }).join(" | ");
       if(String(fd.get("lista") || "").trim()) payload[cart.length ? "Observações" : "Materiais"] = String(fd.get("lista")).trim();
     }
-    payload["Pedido completo"] = msg.replace(/\*/g, "");
+    payload["Mensagem do cliente"] = msg.replace(/[*_]/g, "");
+    payload["Próximo passo"] = "Responder pelo WhatsApp " + fd.get("tel") + " com preço, disponibilidade e prazo de entrega.";
     payload["Página"] = location.href.split("#")[0];
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 15000);
