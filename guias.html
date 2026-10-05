@@ -1349,7 +1349,23 @@ nav.main a{padding-block:10px}
 @media (prefers-reduced-motion:no-preference){
   .btn:active,.btn-sm:active,.filters button:active,.blog-tags button:active,.chip span:active,.qty button:active,.car-btn:active,.car-all:active,.cat-bar .cb-arrow:active,.to-top:active{transform:scale(.97)}
 }
-</style>
+/* formulário de orçamento: campos opcionais recolhidos */
+.qs-mais{border:1px dashed var(--line);border-radius:12px}
+.qs-mais>summary{list-style:none;display:flex;align-items:center;gap:8px;min-height:48px;padding:0 14px;cursor:pointer;user-select:none;font:600 .875rem/1 var(--f-body);color:var(--text)}
+.qs-mais>summary::-webkit-details-marker{display:none}
+.qs-mais>summary .opt{font-weight:400;color:var(--muted)}
+.qs-mais>summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+.qs-mais[open]>summary::after{transform:rotate(225deg)}
+.qs-mais>summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:12px}
+.qs-mais-corpo{display:grid;gap:14px;padding:6px 14px 16px}
+/* faixa do catálogo em PDF: versão compacta */
+.catband-min{padding-block:34px}
+.catband-min::after{display:none}
+.catband-min h2{font-size:1.25rem;line-height:1.3;margin-top:8px!important}
+.catband-min .catband-sub{margin:8px 0 0;color:var(--muted);font-size:.9375rem;line-height:1.45}
+.catband-min .catform{padding:14px 16px}
+@media (min-width:861px){.catband.catband-min .wrap{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr)}.catband-min .catform form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px 12px;align-items:end}.catband-min .catform .privacy{grid-column:1/-1;margin:0}.catband-min .catform .btn{min-height:48px;white-space:nowrap}}
+@media (prefers-reduced-motion:reduce){.qs-mais>summary::after{transition:none}}</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1484,16 +1500,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
   <!-- CATÁLOGO EM TROCA DO CONTATO -->
-  <section class="catband" id="catalogo">
+  <section class="catband catband-min" id="catalogo">
     <div class="wrap">
       <div data-reveal>
         <p class="eyebrow">Catálogo de produtos · rev. 07/2026</p>
-        <h2 style="margin-top:14px">Receba o catálogo completo da MAXX</h2>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Mais de 300 páginas com referências, medidas e especificações</li>
-          <li><svg><use href="#i-check"/></svg>12 categorias da linha Ritz, de aterramento a sistemas de medição</li>
-          <li><svg><use href="#i-check"/></svg>14 linhas complementares, incluindo para-raios (SPDA), cabos de alumínio e conduletes</li>
-        </ul>
+        <h2>Prefere o catálogo em PDF?</h2><p class="catband-sub">Mais de 300 páginas com referências, medidas e especificações da MAXX.</p>
       </div>
       <div class="catform" data-reveal style="--d:.1s">
         <form id="cform" novalidate data-form="catalogo">
@@ -1561,7 +1572,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="err">Informe um WhatsApp com DDD.</span>
             </div>
           </div>
-          <div class="row2">
+          <p class="bf-step s2"><i>2</i>Seu pedido</p>
+          <div class="cart-sum" data-cart-sum hidden></div>
+          <div class="field">
+            <label for="f-lista">Lista de materiais</label>
+            <textarea id="f-lista" name="lista" data-need-cart rows="6" placeholder="Item, quantidade e especificação. Ex.:&#10;2 bastões de manobra telescópicos 8 m&#10;100 m cabo de cobre 35 mm²&#10;Ref. ATR17439-1 (1 un.)" required></textarea>
+            <span class="hint">Se tiver planilha ou foto, envie depois pelo WhatsApp que abrir.</span>
+            <span class="err">Descreva pelo menos um item.</span>
+          </div>
+          <details class="qs-mais"><summary>Mais detalhes <span class="opt">(opcional)</span></summary><div class="qs-mais-corpo"><div class="row2">
             <div class="field">
               <label for="f-empresa">Empresa <span class="opt">(opcional)</span></label>
               <input id="f-empresa" name="empresa" autocomplete="organization" placeholder="Razão social ou obra">
@@ -1571,7 +1590,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input id="f-cidade" name="cidade" autocomplete="address-level2" placeholder="Ex.: Timon-MA">
             </div>
           </div>
-          <p class="bf-step s2"><i>2</i>Sobre o pedido</p>
           <div class="row2">
             <div class="field">
               <label for="f-perfil">Você é <span class="opt">(opcional)</span></label>
@@ -1592,13 +1610,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </details>
             </div>
           </div>
-          <div class="cart-sum" data-cart-sum hidden></div>
-          <div class="field">
-            <label for="f-lista">Lista de materiais</label>
-            <textarea id="f-lista" name="lista" data-need-cart rows="6" placeholder="Item, quantidade e especificação. Ex.:&#10;2 bastões de manobra telescópicos 8 m&#10;100 m cabo de cobre 35 mm²&#10;Ref. ATR17439-1 (1 un.)" required></textarea>
-            <span class="hint">Se tiver planilha ou foto, envie depois pelo WhatsApp que abrir.</span>
-            <span class="err">Descreva pelo menos um item.</span>
-          </div>
           <div class="field">
             <label for="f-prazo">Para quando você precisa? <span class="opt">(opcional)</span></label>
             <select id="f-prazo" name="prazo">
@@ -1609,7 +1620,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option>Só cotando por enquanto</option>
             </select>
           </div>
-          <button class="btn btn-gold" type="submit"><svg><use href="#i-wa"/></svg> Enviar pedido de orçamento</button>
+          </div></details><button class="btn btn-gold" type="submit"><svg><use href="#i-wa"/></svg> Enviar pedido de orçamento</button>
           <p class="privacy"><svg><use href="#i-lock"/></svg><span>Seus dados vão só para a equipe de vendas da MAXX e são usados apenas para este orçamento. Veja a <button type="button" class="link-btn js-privacy">política de privacidade</button>.</span></p>
         </form>
         <div class="done" hidden></div>
