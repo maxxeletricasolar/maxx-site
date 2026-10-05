@@ -1345,6 +1345,10 @@ nav.main a{padding-block:10px}
 @keyframes fx-off{0%{opacity:0}25%{opacity:.9}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.lamp-fx{display:none}.lamp.flick .lamp-bulb{animation:none}.lamp-rk{transition:none}}
 
+/* feedback de toque: o botão afunda ao ser pressionado (respeita movimento reduzido) */
+@media (prefers-reduced-motion:no-preference){
+  .btn:active,.btn-sm:active,.filters button:active,.blog-tags button:active,.chip span:active,.qty button:active,.car-btn:active,.car-all:active,.cat-bar .cb-arrow:active,.to-top:active{transform:scale(.97)}
+}
 </style>
 </head>
 <body>
