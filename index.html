@@ -24,6 +24,9 @@
 /* interação: sem atraso de toque duplo e sem rolagem vazando dos modais */
 a,button,summary,label,input,select,textarea,[role=button]{touch-action:manipulation}
 dialog.sheet,dialog.drawer,dialog.lb,dialog .drawer-body{overscroll-behavior:contain}
+
+.qs-estoque{margin-top:clamp(40px,6vw,64px)}
+.facts b span[data-count]{font:inherit;color:inherit;letter-spacing:inherit;text-transform:none}
 </style></head><body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZNQMTZ4"
@@ -1563,7 +1566,7 @@ nav.main a{padding-block:10px}
       <div>
         <span class="ritz"><span class="seal"><svg><use href="#v-escudo"/></svg></span><span><b>Revendedor autorizado Ritz</b> · ferramentas e equipamentos de linha viva</span></span>
         <p class="eyebrow">O máximo em material elétrico</p>
-        <h1>Material elétrico de <em>baixa, média e alta tensão</em> em Teresina, com orçamento rápido.</h1>
+        <h1>Material elétrico de <em>baixa, média e alta tensão</em> em Teresina, com orçamento em até 24 horas.</h1>
         <p class="lede">Ferramentas de linha viva, aterramento temporário, para-raios (SPDA), cabos de alumínio, conduletes e eletrodutos de PVC, perfilados, eletrocalhas, postes, EPIs e muito mais. Mande sua lista e a equipe MAXX retorna com preço, disponibilidade e condições para obra, manutenção ou revenda.</p>
         <div class="tension" aria-label="Classes de tensão atendidas">
           <span><b>BT</b>Baixa tensão</span>
@@ -1647,6 +1650,21 @@ nav.main a{padding-block:10px}
     </div>
   </section>
 
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Como funciona</p>
+        <h2>Da lista ao material em mãos, em 3 passos</h2>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal><h3>Mande sua lista</h3><p>Pelo formulário ou WhatsApp. Pode ser digitada, foto da lista ou planilha do projeto.</p></div>
+        <div class="step" data-reveal><h3>Receba o orçamento</h3><p>Nossa equipe confere especificação, disponibilidade e retorna com preço e condições em até 24 horas.</p></div>
+        <div class="step" data-reveal><h3>Retire ou receba</h3><p>Aprovou, separamos o pedido. Retire na loja em Teresina ou combine a entrega.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== AIDA · DESEJO ===== -->
   <!-- QUEM SOMOS -->
   <section id="quem-somos">
@@ -1663,18 +1681,12 @@ nav.main a{padding-block:10px}
           <div class="facts" style="margin-top:0">
             <div><b>Teresina</b><span>loja no Parque Ideal · desde 2025</span></div>
             <div><b>BT · MT · AT</b><span>classes de tensão atendidas</span></div>
-            <div><b><span data-count="12">12</span> + <span data-count="14">14</span></b><span>categorias de produtos</span></div>
+            <div><b><span data-count="26">26</span></b><span>categorias em 5 linhas de produtos</span></div>
             <div><b>Ritz</b><span>revendedor autorizado</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ESTOQUE -->
-  <section id="estoque" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head" data-reveal>
+    <div class="qs-estoque"><div class="sec-head" data-reveal>
         <p class="eyebrow">Estoque real · Teresina-PI</p>
         <h2>Material separado na prateleira</h2>
         <p class="lede">Fotos da nossa loja e do nosso estoque. Venha conhecer ou retire seu pedido no balcão.</p>
@@ -1687,6 +1699,7 @@ nav.main a{padding-block:10px}
         <figure><img src="img/ferramentas.jpg" alt="Pás Tramontina com cabo de madeira em suporte" width="562" height="1000" loading="lazy"><figcaption>Ferramentas</figcaption></figure>
       </div>
     </div>
+</div>
   </section>
 
   <!-- DEPOIMENTOS -->
@@ -1735,36 +1748,8 @@ nav.main a{padding-block:10px}
     </div>
   </section>
 
-  <!-- GUIAS TÉCNICOS -->
-  <section id="guias" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head" data-reveal>
-        <p class="eyebrow">Blog técnico MAXX</p>
-        <h2>Compre certo da primeira vez</h2>
-        <p class="lede">Artigos práticos sobre linha viva, aterramento, EPIs e segurança elétrica, baseados no nosso catálogo técnico.</p>
-      </div>
-      <div class="guides"><!--BLOG-TEASER--><a class="guide spot" href="guias.html#guia-coberturas-protetoras-regras-de-uso" data-reveal style="--d:0.0s"><span class="gtag">Linha viva<i>4 min de leitura</i></span><h3>Coberturas protetoras de linha viva: regras de uso e conservação</h3><p>Para que servem, quem pode instalar e as regras de inspeção e limpeza antes de cada serviço.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><a class="guide spot" href="guias.html#guia-vara-de-manobra-qual-escolher" data-reveal style="--d:0.08s"><span class="gtag">Ferramentas<i>4 min de leitura</i></span><h3>Vara de manobra: telescópica, seccionável ou bastão de manobra?</h3><p>As diferenças entre os três tipos, para que serve cada um e o que observar na compra.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><a class="guide spot" href="guias.html#guia-luvas-isolantes-qual-classe-usar" data-reveal style="--d:0.16s"><span class="gtag">EPI<i>4 min de leitura</i></span><h3>Luvas isolantes: qual classe usar e como inspecionar</h3><p>As cinco classes da IEC 60903, como identificar pela cor e a inspeção antes de cada uso.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><!--/BLOG-TEASER--></div>
-      <p style="margin-top:22px"><a class="btn btn-ghost" href="guias.html">Ver todos os artigos <svg><use href="#i-arrow"/></svg></a></p>
-    </div>
-  </section>
-
   <!-- ===== AIDA · AÇÃO ===== -->
   
-
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona">
-    <div class="wrap">
-      <div class="sec-head" data-reveal>
-        <p class="eyebrow">Como funciona</p>
-        <h2>Da lista ao material em mãos, em 3 passos</h2>
-      </div>
-      <div class="steps">
-        <div class="step" data-reveal><h3>Mande sua lista</h3><p>Pelo formulário ou WhatsApp. Pode ser digitada, foto da lista ou planilha do projeto.</p></div>
-        <div class="step" data-reveal><h3>Receba o orçamento</h3><p>Nossa equipe confere especificação, disponibilidade e retorna com preço e condições em até 24 horas.</p></div>
-        <div class="step" data-reveal><h3>Retire ou receba</h3><p>Aprovou, separamos o pedido. Retire na loja em Teresina ou combine a entrega.</p></div>
-      </div>
-    </div>
-  </section>
 
   <!-- ORÇAMENTO COMPLETO -->
   <section class="quote-sec" id="orcamento">
@@ -1890,6 +1875,19 @@ nav.main a{padding-block:10px}
         <details><summary><span class="qs-ico"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span><span class="faq-q">Como sei se o material atende a minha rede?</span><svg class="faq-chev" aria-hidden="true"><use href="#i-right"/></svg></summary><p>Informe a classe de tensão (BT, MT ou AT), a corrente de curto-circuito e a bitola dos condutores quando souber. Para aterramento temporário, esses dados definem o conjunto certo.</p></details>
         <details><summary><span class="qs-ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span class="faq-q">Onde fica a loja?</span><svg class="faq-chev" aria-hidden="true"><use href="#i-right"/></svg></summary><p>Rua Antônio Neves de Melo, 4636 B, Parque Ideal, Teresina-PI, CEP 64077-820.</p></details>
       </div>
+    </div>
+  </section>
+
+  <!-- GUIAS TÉCNICOS -->
+  <section id="guias">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Blog técnico MAXX</p>
+        <h2>Compre certo da primeira vez</h2>
+        <p class="lede">Artigos práticos sobre linha viva, aterramento, EPIs e segurança elétrica, baseados no nosso catálogo técnico.</p>
+      </div>
+      <div class="guides"><!--BLOG-TEASER--><a class="guide spot" href="guias.html#guia-coberturas-protetoras-regras-de-uso" data-reveal style="--d:0.0s"><span class="gtag">Linha viva<i>4 min de leitura</i></span><h3>Coberturas protetoras de linha viva: regras de uso e conservação</h3><p>Para que servem, quem pode instalar e as regras de inspeção e limpeza antes de cada serviço.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><a class="guide spot" href="guias.html#guia-vara-de-manobra-qual-escolher" data-reveal style="--d:0.08s"><span class="gtag">Ferramentas<i>4 min de leitura</i></span><h3>Vara de manobra: telescópica, seccionável ou bastão de manobra?</h3><p>As diferenças entre os três tipos, para que serve cada um e o que observar na compra.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><a class="guide spot" href="guias.html#guia-luvas-isolantes-qual-classe-usar" data-reveal style="--d:0.16s"><span class="gtag">EPI<i>4 min de leitura</i></span><h3>Luvas isolantes: qual classe usar e como inspecionar</h3><p>As cinco classes da IEC 60903, como identificar pela cor e a inspeção antes de cada uso.</p><span class="more">Ler artigo <svg width="16" height="16"><use href="#i-arrow"/></svg></span></a><!--/BLOG-TEASER--></div>
+      <p style="margin-top:22px"><a class="btn btn-ghost" href="guias.html">Ver todos os artigos <svg><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
