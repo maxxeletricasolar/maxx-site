@@ -136,7 +136,7 @@ fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
-.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:999px;font-size:0.875rem;cursor:pointer;user-select:none;background:var(--bg);transition:all .15s}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:999px;font-size:0.875rem;cursor:pointer;user-select:none;background:var(--bg);transition:background-color .15s,border-color .15s,color .15s}
 .chip input:checked+span{background:rgba(216,173,70,.14);border-color:var(--gold);color:var(--gold-hi)}
 .chip input:focus-visible+span{outline:3px solid var(--gold-hi);outline-offset:2px}
 .privacy{display:flex;gap:8px;align-items:flex-start;font-size:0.8125rem;color:var(--muted)}
@@ -241,7 +241,7 @@ details p{margin:0 0 18px;color:var(--muted)}
 footer{background:#0a0f15;border-top:1px solid var(--line);padding-block:48px 110px;font-size:0.875rem;color:var(--muted)}
 .foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
 @media (max-width:800px){.foot{grid-template-columns:1fr}}
-.foot h4{font:700 0.8125rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin:0 0 14px}
+.foot h4,.foot h3{font:700 0.8125rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin:0 0 14px}
 .foot p{margin:0 0 6px}
 .foot img{width:120px;border-radius:10px;margin-bottom:14px}
 .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font:500 0.75rem/1.6 var(--f-mono);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
@@ -417,7 +417,7 @@ dialog.lb button{position:fixed;top:18px;right:18px;width:46px;height:46px;borde
 .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
 .search input{padding-left:44px}
 .filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
-.filters button{flex:none;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);font:600 0.8125rem/1 var(--f-body);cursor:pointer;transition:all .2s}
+.filters button{flex:none;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);font:600 0.8125rem/1 var(--f-body);cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
 .filters button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
 .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media (max-width:1000px){.prods{grid-template-columns:repeat(2,1fr)}}
@@ -481,7 +481,7 @@ dialog.drawer::backdrop{background:rgba(5,8,12,.6)}
 .drawer-body{flex:1;overflow:auto;padding:12px 20px;display:grid;gap:12px;align-content:start}
 .drawer-foot{padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:grid;gap:10px}
 .ci{display:grid;grid-template-columns:1fr auto;gap:8px 12px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
-.ci h4{margin:0;font:600 0.9375rem/1.35 var(--f-body)}
+.ci h4,.ci h3{margin:0;font:600 0.9375rem/1.35 var(--f-body)}
 .ci small{font:600 0.75rem/1.3 var(--f-mono);color:var(--muted)}
 .ci .rm{background:none;border:0;color:var(--muted);font-size:0.8125rem;cursor:pointer;text-decoration:underline;justify-self:end}
 .ci .rm:hover{color:var(--err)}
@@ -510,7 +510,7 @@ a.guide{text-decoration:none;color:inherit}
 .blog-hero{padding-block:clamp(36px,5vw,60px) 26px;border-bottom:1px solid var(--line);background:radial-gradient(60% 120% at 90% 0%,rgba(74,127,224,.12),transparent 60%),radial-gradient(50% 100% at 0% 0%,rgba(216,173,70,.1),transparent 60%)}
 .blog-hero h1{font-size:clamp(2rem,5vw,3.375rem);font-weight:900;font-variation-settings:"wdth" 116;margin:14px 0 12px}
 .blog-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.blog-tags button{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);font:600 0.875rem/1 var(--f-body);cursor:pointer;transition:all .2s}
+.blog-tags button{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);font:600 0.875rem/1 var(--f-body);cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
 .blog-tags button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
 .blog-wrap{padding-block:32px 64px;display:grid;gap:18px}
 .post-feature{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);text-decoration:none;color:inherit;transition:border-color .3s,transform .3s}
@@ -1289,7 +1289,7 @@ nav.main a{padding-block:10px}
 @media (prefers-reduced-motion:reduce){.theme-tg svg{transition:none}}
 /* ===== rodapé: formas de pagamento ===== */
 .pay{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
-.pay h4{margin:0!important;font:700 .8125rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
+.pay h4,.pay h3{margin:0!important;font:700 .8125rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
 .pay ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .pay li{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px 8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font:500 .875rem/1.25 var(--f-body)}
 .pay li svg{width:22px;height:22px;flex:none;color:var(--gold)}
@@ -1366,6 +1366,10 @@ nav.main a{padding-block:10px}
 @media (min-width:861px){.catband.catband-min .wrap{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr)}.catband-min .catform form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px 12px;align-items:end}.catband-min .catform .privacy{grid-column:1/-1;margin:0}.catband-min .catform .btn{min-height:48px;white-space:nowrap}}
 @media (prefers-reduced-motion:reduce){.qs-mais>summary::after{transition:none}}.resp-prazo{display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0 0;font:600 .8125rem/1.3 var(--f-body);color:var(--text)}
 .resp-prazo svg{width:16px;height:16px;flex:none;color:var(--ok)}
+
+/* interação: sem atraso de toque duplo e sem rolagem vazando dos modais */
+a,button,summary,label,input,select,textarea,[role=button]{touch-action:manipulation}
+dialog.sheet,dialog.drawer,dialog.lb,dialog .drawer-body{overscroll-behavior:contain}
 </style>
 </head>
 <body id="pg-quem">
@@ -1647,7 +1651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p><b style="color:var(--gold-hi)">Revendedor autorizado Ritz.</b> Distribuidora de materiais elétricos, perfilados, eletrocalhas, postes, para-raios e aterramento (SPDA), cabos e fios de alumínio, conduletes e eletrodutos de PVC, combate a incêndio, lógica, hidráulica, EPIs e fardamentos.</p>
       </div>
       <nav class="foot-nav" aria-label="Rodapé">
-        <h4>Navegação</h4>
+        <h3>Navegação</h3>
         <ul data-foot-nav>
           <li><a href="./">Início</a></li>
           <li><a href="quem-somos.html" aria-current="page">Quem somos</a></li>
@@ -1658,13 +1662,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </nav>
       <div>
-        <h4>Contato</h4>
+        <h3>Contato</h3>
         <p>WhatsApp <a href="tel:+5586994540900"><span class="js-phone">(86) 99454-0900</span></a></p>
         <p class="mail-row"><span>Vendas e orçamentos</span><a href="mailto:comercial@maxxeletricasolar.com.br">comercial@maxxeletricasolar.com.br</a></p>
         <p class="mail-row"><span>Suporte ao cliente (SAC)</span><a href="mailto:sac@maxxeletricasolar.com.br">sac@maxxeletricasolar.com.br</a></p>
       </div>
       <div>
-        <h4>Endereço</h4>
+        <h3>Endereço</h3>
         <p>Rua Antônio Neves de Melo, 4636 B</p>
         <p>Parque Ideal · Teresina-PI</p>
         <p>CEP 64077-820</p>
@@ -1673,7 +1677,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="pay trust">
-      <h4 id="trust-lbl">Compra segura</h4>
+      <h3 id="trust-lbl">Compra segura</h3>
       <ul aria-labelledby="trust-lbl">
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12v9H6zM12 15v2"/></svg>Site seguro · HTTPS</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3 5 6v5c0 4.5 3 8.2 7 10 4-1.8 7-5.5 7-10V6zM9 12l2.2 2.2L15.5 10"/></svg>Dados protegidos · LGPD</li>
@@ -1683,7 +1687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
     <div class="pay">
-      <h4 id="pay-lbl">Formas de pagamento</h4>
+      <h3 id="pay-lbl">Formas de pagamento</h3>
       <ul aria-labelledby="pay-lbl">
         <li class="pay-pix"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3.2 20.8 12 12 20.8 3.2 12Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m7.6 7.6 2.6 2.6a2.5 2.5 0 0 0 3.6 0l2.6-2.6M7.6 16.4l2.6-2.6a2.5 2.5 0 0 1 3.6 0l2.6 2.6"/></svg><span>Pix</span></li>
         <li class="pay-boleto"><svg viewBox="0 0 24 24" aria-hidden="true"><rect fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" x="2.8" y="5" width="18.4" height="14" rx="2"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M6.5 8.5v7M9 8.5v7M11 8.5v7M13.8 8.5v7M16 8.5v7M17.8 8.5v7"/></svg><span>Boleto bancário</span></li>
@@ -1935,7 +1939,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       cartFoot.innerHTML = '<button type="button" class="btn btn-ghost" data-goto="orcamento">Descrever meu pedido no formulário</button>';
     } else {
       cartBody.innerHTML = cart.map(function(it){
-        return '<div class="ci"><div><h4>'+esc(it.nome)+'</h4><small>'+(it.ref ? "Ref. " + esc(it.ref) : "Referência a definir com a equipe")+'</small></div>'+
+        return '<div class="ci"><div><h3>'+esc(it.nome)+'</h3><small>'+(it.ref ? "Ref. " + esc(it.ref) : "Referência a definir com a equipe")+'</small></div>'+
           '<button type="button" class="rm" data-rm="'+esc(it.k)+'">Remover</button>'+qtyHTML(it.k, it.q)+'</div>';
       }).join("");
       cartFoot.innerHTML = '<button type="button" class="btn btn-gold" data-goto="orcamento" data-focus="f-nome">Enviar pedido de orçamento ('+cart.length+(cart.length > 1 ? " produtos" : " produto")+')</button>'+
