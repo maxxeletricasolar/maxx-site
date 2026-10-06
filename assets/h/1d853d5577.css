@@ -1,0 +1,34 @@
+/* rodapé compacto: marca, navegação, contato e endereço lado a lado; selos e pagamento em uma linha; linha legal */
+footer.rd{padding-block:28px 22px;font-size:.8125rem}
+.rd-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1.1fr) minmax(0,1.15fr);gap:20px 28px;align-items:start}
+.rd-logo{flex:none;display:block;width:48px;height:48px}
+.rd h3,.rd h2{font:700 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin:0 0 10px}
+/* títulos da descrição do produto: h2 (hierarquia correta depois do h1) com o mesmo visual do antigo h3 */
+.pd-desc h2{font-size:1.0625rem;font-weight:700;line-height:1.2;letter-spacing:-.02em;margin:6px 0 0;color:var(--text);font-variation-settings:normal}
+.rd p{margin:0 0 4px;line-height:1.5}
+.rd-marca{display:flex;gap:12px;align-items:flex-start}
+.rd-marca img{width:48px;height:48px;border-radius:10px;flex:none;margin:0}
+.rd-marca p b{color:var(--gold-hi)}
+.rd .foot-nav .rd-nav{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.rd .foot-nav ul{list-style:none;margin:0;padding:0;display:contents}
+.rd .foot-nav a,.rd .foot-nav .link-btn{display:inline-flex;align-items:center;gap:8px;min-height:32px;white-space:nowrap;margin:0;padding:0;background:none;border:0;color:var(--muted);font:inherit;text-decoration:none;cursor:pointer;transition:color .2s}
+.rd .foot-nav .link-btn::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--line);transition:background .2s}
+.rd .foot-nav .link-btn:hover{color:var(--text)}
+.rd .foot-nav .link-btn:hover::before{background:var(--gold)}
+.rd .foot-nav li:first-child a{margin-top:0}
+/* o efeito de entrada do efeitos.js não enxerga listas com display:contents; sem isto os itens ficam invisíveis */
+.rd .foot-nav li{opacity:1!important;transform:none!important}
+.rd .mail-row{display:flex;flex-wrap:wrap;gap:0 8px;align-items:baseline}
+.rd .mail-row span{min-width:44px;font-size:.75rem;color:var(--muted)}
+.rd .mail-row a{word-break:normal;overflow-wrap:anywhere}
+.rd-selos{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.rd-selos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.rd-selos li{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);white-space:nowrap}
+.rd-selos li svg{width:15px;height:15px;flex:none;color:var(--gold)}
+.rd-legal{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;font:500 .75rem/1.5 var(--f-body)}
+.rd-legal .legal-links{flex:1 1 auto;justify-content:flex-end;margin-left:0;gap:2px 16px;font-size:0}
+.rd-legal .legal-links a,.rd-legal .legal-links .link-btn{font:500 .75rem/1.5 var(--f-body);min-height:28px}
+@media (min-width:1001px){.rd-selos ul+ul{padding-left:28px;border-left:1px solid var(--line)}}
+@media (pointer:coarse){.rd .foot-nav a,.rd .foot-nav .link-btn{min-height:44px}}
+@media (max-width:1000px){.rd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.rd-grid{grid-template-columns:minmax(0,1fr);gap:16px}.rd-legal .legal-links{margin-left:0;flex-basis:100%;justify-content:flex-start}}
