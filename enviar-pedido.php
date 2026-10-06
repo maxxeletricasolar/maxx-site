@@ -29,7 +29,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') resp(false, 'Método não per
 if (stripos((string)($_SERVER['CONTENT_TYPE'] ?? ''), 'application/json') !== 0) resp(false, 'Tipo de conteúdo inválido', 415);
 $origem = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
 $host = parse_url($origem, PHP_URL_HOST) ?: '';
-if ($host !== DOMINIO && $host !== 'www.' . DOMINIO) resp(false, 'Origem não permitida', 403);
+// o próprio domínio e seus subdomínios (www, teste...) são aceitos; qualquer outro site é recusado
+$sufixo = '.' . DOMINIO;
+if ($host !== DOMINIO && substr($host, -strlen($sufixo)) !== $sufixo) resp(false, 'Origem não permitida', 403);
 
 $raw = file_get_contents('php://input', false, null, 0, MAX_BYTES + 1);
 if ($raw === false || $raw === '' || strlen($raw) > MAX_BYTES) resp(false, 'Pedido inválido', 400);
