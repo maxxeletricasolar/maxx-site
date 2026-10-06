@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /enviar-pedido.php
 
 Sitemap: https://maxxeletricasolar.com.br/sitemap.xml

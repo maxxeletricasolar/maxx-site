@@ -41,6 +41,11 @@ if (!is_array($d)) resp(false, 'Pedido inválido', 400);
 // campo oculto anti-robô: finge sucesso e não envia
 if (!empty($d['_honey'])) resp(true, 'ok');
 
+// o site sempre envia Nome e WhatsApp: pedidos sem eles (ou com telefone impossível) são recusados antes de gastar o limite de envios
+if (!is_string($d['Nome'] ?? null) || trim($d['Nome']) === '') resp(false, 'Informe o nome', 400);
+$digitos = preg_replace('/\D+/', '', is_string($d['WhatsApp'] ?? null) ? $d['WhatsApp'] : '');
+if (strlen($digitos) < 10 || strlen($digitos) > 13) resp(false, 'WhatsApp inválido', 400);
+
 // limite por visitante e limite geral (leitura e gravação travadas com flock, sem condição de corrida)
 // IP real: atrás da CDN o REMOTE_ADDR pode ser o do proxy, então tenta os cabeçalhos dela primeiro
 $ip = '0';

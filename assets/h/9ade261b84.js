@@ -74,7 +74,7 @@
     document.body.appendChild(t);
     setTimeout(function(){ t.remove(); }, actLabel ? 4500 : 2600);
   }
-  function esc(v){ return String(v).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function esc(v){ return String(v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
   function norm(v){ return String(v).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
   function goTo(id, focusId){
     document.getElementById(id).scrollIntoView({behavior: reduceMotion ? "auto" : "smooth"});
@@ -140,7 +140,7 @@
   var cart = [];
   try{ cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(err){ cart = []; }
   if(!Array.isArray(cart)) cart = [];
-  cart = cart.filter(function(it){ return it && it.k && it.nome && it.q > 0; });
+  cart = cart.filter(function(it){ return it && it.k && it.nome; }).map(function(it){ it.k = String(it.k); it.nome = String(it.nome); it.q = Math.min(9999, parseInt(it.q, 10) || 0); return it; }).filter(function(it){ return it.q > 0; });
   function saveCart(){ try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(err){} }
   var LAST_KEY = "maxx-ultimo-pedido";
   function lastOrder(){ try{ var o = JSON.parse(localStorage.getItem(LAST_KEY)); return o && Array.isArray(o.itens) && o.itens.length ? o : null; }catch(err){ return null; } }
@@ -148,7 +148,7 @@
     var o = lastOrder(); if(!o) return "";
     var d = new Date(o.t), dt = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear();
     return '<div class="last-order"><p class="lo-h"><svg width="18" height="18"><use href="#i-doc"/></svg> Seu último pedido de orçamento</p><p class="lo-m">'+dt+' · '+o.itens.length+(o.itens.length > 1 ? " produtos" : " produto")+(o.p ? " · " + esc(o.p) : "")+'</p>'+
-      '<ul>'+o.itens.slice(0, 4).map(function(it){ return "<li>"+it.q+" × "+esc(it.nome)+"</li>"; }).join("")+(o.itens.length > 4 ? "<li>e mais "+(o.itens.length - 4)+"…</li>" : "")+'</ul>'+
+      '<ul>'+o.itens.slice(0, 4).map(function(it){ return "<li>"+(parseInt(it.q, 10) || 0)+" × "+esc(it.nome)+"</li>"; }).join("")+(o.itens.length > 4 ? "<li>e mais "+(o.itens.length - 4)+"…</li>" : "")+'</ul>'+
       '<button type="button" class="btn btn-gold" data-repeat>Repetir este pedido de orçamento</button></div>';
   }
   function keyOf(id, ref){ return id + "|" + (ref || ""); }
@@ -348,7 +348,7 @@
         (p.refs.length ? '<label for="pd-ref">Referência</label><select id="pd-ref"><option value="">Não sei a referência, quero ajuda</option>' + refOpts + "</select>" : "") +
         '<div class="sheet-acts">' + qtyHTML("sheet", 1, 1) +
         '<button type="button" class="btn btn-gold" id="pd-add"><svg><use href="#i-plus"/></svg> Adicionar à lista de orçamento</button></div>' +
-        '<a class="btn btn-ghost" id="pd-wa" target="_blank" rel="noopener" href="#"><svg><use href="#i-wa"/></svg> Pedir orçamento só deste produto no WhatsApp</a></div>';
+        '<a class="btn btn-ghost" id="pd-wa" target="_blank" rel="noopener" href="#"><svg><use href="#i-wa"/></svg> Orçar este produto no WhatsApp</a></div>';
     var desc = (p.conteudo || []).map(blockHTML).join("");
     var tables = (p.tabelas || []).length ? '<details class="pd-more" open><summary>Tabelas técnicas (' + p.tabelas.length + ")</summary><div class=\"pd-tables\" style=\"padding-bottom:16px\">" + p.tabelas.map(tableHTML).join("") + "</div></details>" : "";
     var refs = p.refs.length ? '<details class="pd-more"><summary>Referências do catálogo (' + p.refs.length + ')</summary><div class="pd-refs" style="padding-bottom:16px">' + p.refs.map(function(r){ return '<button type="button" data-pick-ref="' + esc(r) + '">' + esc(r) + "</button>"; }).join("") + "</div></details>" : "";
