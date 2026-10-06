@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-label="Profissional de capacete pensando, com pontos de interrogação dourados ao redor">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d2835"/>
+      <stop offset="1" stop-color="#0f151d"/>
+    </linearGradient>
+    <radialGradient id="brilho" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8ad46" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#d8ad46" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ouro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d98a"/>
+      <stop offset="1" stop-color="#c99a2e"/>
+    </linearGradient>
+    <g id="interroga">
+      <path d="M-34 -52 C-34 -102 52 -102 52 -50 C52 -12 6 -8 6 30" fill="none" stroke="url(#ouro)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="6" cy="76" r="15" fill="url(#ouro)"/>
+    </g>
+  </defs>
+
+  <rect width="1000" height="500" fill="url(#fundo)"/>
+
+  <!-- prateleiras ao fundo -->
+  <g fill="#243242">
+    <rect x="0" y="176" width="1000" height="8"/>
+    <rect x="0" y="336" width="1000" height="8"/>
+    <rect x="40" y="128" width="86" height="48" rx="4"/>
+    <rect x="138" y="144" width="58" height="32" rx="4"/>
+    <rect x="780" y="120" width="94" height="56" rx="4"/>
+    <rect x="890" y="146" width="70" height="30" rx="4"/>
+    <rect x="70" y="288" width="104" height="48" rx="4"/>
+    <rect x="190" y="304" width="60" height="32" rx="4"/>
+    <rect x="800" y="284" width="64" height="52" rx="4"/>
+    <rect x="878" y="300" width="84" height="36" rx="4"/>
+  </g>
+
+  <!-- brilho atrás da interrogação principal -->
+  <circle cx="738" cy="196" r="190" fill="url(#brilho)"/>
+
+  <!-- balões de pensamento -->
+  <circle cx="598" cy="212" r="7" fill="#d8ad46" opacity=".9"/>
+  <circle cx="622" cy="190" r="10" fill="#d8ad46" opacity=".9"/>
+  <circle cx="654" cy="166" r="14" fill="#d8ad46" opacity=".9"/>
+
+  <!-- interrogações -->
+  <use href="#interroga" transform="translate(738 192) scale(1.5)"/>
+  <use href="#interroga" transform="translate(318 142) rotate(-14) scale(.78)" opacity=".85"/>
+  <use href="#interroga" transform="translate(884 84) rotate(12) scale(.5)" opacity=".7"/>
+
+  <!-- corpo -->
+  <path d="M290 500 C290 424 350 388 428 374 L572 374 C650 388 710 424 710 500 Z" fill="#2c3d52"/>
+  <!-- colete -->
+  <path d="M424 378 L474 378 L458 500 L360 500 Z" fill="#d8ad46"/>
+  <path d="M576 378 L526 378 L542 500 L640 500 Z" fill="#d8ad46"/>
+  <path d="M432 430 L470 430 L466 452 L424 452 Z" fill="#f4f1e4" opacity=".92"/>
+  <path d="M568 430 L530 430 L534 452 L576 452 Z" fill="#f4f1e4" opacity=".92"/>
+  <!-- pescoço e gola -->
+  <rect x="470" y="326" width="60" height="58" fill="#b97d52"/>
+  <path d="M458 374 L500 410 L542 374 Z" fill="#1f2c3c"/>
+
+  <!-- cabeça -->
+  <ellipse cx="500" cy="272" rx="62" ry="72" fill="#c98f63"/>
+  <circle cx="438" cy="278" r="13" fill="#b97d52"/>
+  <circle cx="562" cy="278" r="13" fill="#b97d52"/>
+
+  <!-- capacete -->
+  <path d="M424 262 C424 168 576 168 576 262 Z" fill="#f2c230"/>
+  <rect x="490" y="176" width="20" height="86" rx="6" fill="#d9a914"/>
+  <rect x="410" y="258" width="180" height="16" rx="8" fill="#e0b21c"/>
+
+  <!-- rosto: olhando para cima, sobrancelha levantada -->
+  <ellipse cx="474" cy="292" rx="7" ry="9" fill="#2a1a10"/>
+  <ellipse cx="526" cy="292" rx="7" ry="9" fill="#2a1a10"/>
+  <circle cx="477" cy="289" r="2.6" fill="#fff"/>
+  <circle cx="529" cy="289" r="2.6" fill="#fff"/>
+  <path d="M456 274 Q474 264 492 272" fill="none" stroke="#3a2416" stroke-width="5" stroke-linecap="round"/>
+  <path d="M508 268 Q526 256 544 266" fill="none" stroke="#3a2416" stroke-width="5" stroke-linecap="round"/>
+  <path d="M488 332 Q502 326 516 332" fill="none" stroke="#7a4a30" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- braço com a mão no queixo -->
+  <path d="M632 466 L574 360" fill="none" stroke="#2c3d52" stroke-width="54" stroke-linecap="round"/>
+  <circle cx="560" cy="342" r="27" fill="#c98f63"/>
+  <path d="M548 326 L560 312 M562 322 L574 310 M570 336 L584 328" fill="none" stroke="#b97d52" stroke-width="7" stroke-linecap="round"/>
+</svg>

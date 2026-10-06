@@ -8,6 +8,11 @@ const DOMINIO    = 'maxxeletricasolar.com.br';
 const MAX_BYTES  = 100000;
 const LIMITE     = 5;    // envios por visitante...
 const JANELA     = 600;  // ...a cada 10 minutos
+const LIMITE_GERAL = 60;   // teto de e-mails do site inteiro...
+const JANELA_GERAL = 3600; // ...por hora (protege a caixa contra enxurrada vinda de muitos IPs)
+const MAX_CAMPOS = 60;   // campos por pedido
+const MAX_VALOR  = 5000; // caracteres por campo
+const MAX_CHAVE  = 80;   // caracteres no nome do campo
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -20,10 +25,13 @@ function resp($ok, $msg = '', $code = 200) {
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') resp(false, 'Método não permitido', 405);
 
-// só aceita pedidos vindos do próprio site
+// só aceita pedidos JSON vindos do próprio site (o navegador sempre envia Origin ou Referer no POST)
+if (stripos((string)($_SERVER['CONTENT_TYPE'] ?? ''), 'application/json') !== 0) resp(false, 'Tipo de conteúdo inválido', 415);
 $origem = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
 $host = parse_url($origem, PHP_URL_HOST) ?: '';
-if ($host !== '' && $host !== DOMINIO && $host !== 'www.' . DOMINIO) resp(false, 'Origem não permitida', 403);
+// o próprio domínio e seus subdomínios (www, teste...) são aceitos; qualquer outro site é recusado
+$sufixo = '.' . DOMINIO;
+if ($host !== DOMINIO && substr($host, -strlen($sufixo)) !== $sufixo) resp(false, 'Origem não permitida', 403);
 
 $raw = file_get_contents('php://input', false, null, 0, MAX_BYTES + 1);
 if ($raw === false || $raw === '' || strlen($raw) > MAX_BYTES) resp(false, 'Pedido inválido', 400);
@@ -33,19 +41,33 @@ if (!is_array($d)) resp(false, 'Pedido inválido', 400);
 // campo oculto anti-robô: finge sucesso e não envia
 if (!empty($d['_honey'])) resp(true, 'ok');
 
-// limite simples por IP
-$ip = $_SERVER['REMOTE_ADDR'] ?? '0';
-$arq = sys_get_temp_dir() . '/maxx_rl_' . md5($ip);
-$agora = time();
-$marcas = [];
-if (is_file($arq)) {
-    $marcas = array_filter(array_map('intval', explode(',', (string)@file_get_contents($arq))), function ($t) use ($agora) {
-        return $t > $agora - JANELA;
-    });
+// limite por visitante e limite geral (leitura e gravação travadas com flock, sem condição de corrida)
+// IP real: atrás da CDN o REMOTE_ADDR pode ser o do proxy, então tenta os cabeçalhos dela primeiro
+$ip = '0';
+foreach (['HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'] as $h) {
+    $c = trim(explode(',', (string)($_SERVER[$h] ?? ''))[0]);
+    if ($c !== '' && filter_var($c, FILTER_VALIDATE_IP)) { $ip = $c; break; }
 }
-if (count($marcas) >= LIMITE) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
-$marcas[] = $agora;
-@file_put_contents($arq, implode(',', $marcas), LOCK_EX);
+function rate_limit($arq, $limite, $janela) {
+    $agora = time();
+    $fp = @fopen($arq, 'c+');
+    if (!$fp) return true; // sem disco temporário: não derruba o envio
+    flock($fp, LOCK_EX);
+    $marcas = array_filter(array_map('intval', explode(',', (string)stream_get_contents($fp))), function ($t) use ($agora, $janela) {
+        return $t > $agora - $janela;
+    });
+    $ok = count($marcas) < $limite;
+    if ($ok) {
+        $marcas[] = $agora;
+        ftruncate($fp, 0); rewind($fp);
+        fwrite($fp, implode(',', $marcas));
+    }
+    flock($fp, LOCK_UN); fclose($fp);
+    return $ok;
+}
+$tmp = sys_get_temp_dir();
+if (!rate_limit($tmp . '/maxx_rl_' . md5($ip), LIMITE, JANELA)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
+if (!rate_limit($tmp . '/maxx_rl_geral', LIMITE_GERAL, JANELA_GERAL)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
 
 // monta o e-mail
 $limpa = function ($s) { return trim(preg_replace('/[\r\n]+/', ' ', strip_tags((string)$s))); };
@@ -54,12 +76,14 @@ if ($assunto === '') $assunto = 'Pedido pelo site';
 $assunto = mb_substr($assunto, 0, 200);
 
 $linhas = []; $html = '';
+if (count($d) > MAX_CAMPOS) resp(false, 'Pedido inválido', 400);
 foreach ($d as $k => $v) {
     if (!is_string($k) || $k === '' || $k[0] === '_') continue;
     if (is_array($v)) $v = implode(', ', array_map('strval', $v));
     $v = trim((string)$v);
     if ($v === '') continue;
-    $k = $limpa($k);
+    $k = mb_substr($limpa($k), 0, MAX_CHAVE);
+    $v = mb_substr($v, 0, MAX_VALOR);
     $linhas[] = $k . ': ' . $v;
     $html .= '<tr><th align="left" valign="top" style="padding:6px 12px;background:#f3f1ea;border:1px solid #ddd">'
           . htmlspecialchars($k, ENT_QUOTES, 'UTF-8') . '</th><td style="padding:6px 12px;border:1px solid #ddd">'
