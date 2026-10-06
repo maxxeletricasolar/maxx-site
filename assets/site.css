@@ -1484,3 +1484,23 @@ footer{padding-block:32px 96px}
 }
 .qs-steps li{align-content:start}
 .qs-label{margin-top:24px}
+
+/* auditoria de design: acessibilidade e conforto no toque */
+.cx-brands{color:#566170}
+.hx-lb,.hx-seal,.hx-polaroid figcaption{font-size:.75rem}
+.hx-lb b{font-size:.75rem}
+.hero h1{font-size:clamp(2rem,4.4vw,3.25rem)}
+.eyebrow{letter-spacing:.1em}
+.pay>p.ship:first-of-type{display:none}
+@media (pointer:coarse){
+.mail-row a{display:inline-flex;align-items:center;min-height:44px}
+.legal-links a,.legal-links .link-btn{min-height:44px}
+}
+section.ck{padding:12px 14px 14px}
+section.ck h2{font-size:.9375rem;margin:0 0 4px}
+section.ck p{font-size:.8125rem;line-height:1.45}
+section.ck .ck-acts{flex-wrap:nowrap;gap:8px;margin-top:10px}
+section.ck .ck-acts .btn{flex:1 1 0;min-width:0;padding:0 8px;font-size:.8125rem}
+.hx-mosaic .hx-lb,.hx-mosaic .hx-lb b,.hx-mosaic .hx-seal,.hx-polaroid figcaption,.hx-badge{font-size:.75rem}
+.hx-mosaic .hx-badge,.hx-mosaic .hx-badge b,.hx-badge span,.hx-polaroid figcaption{font-size:.75rem!important}
+section.ck .ck-acts .btn{white-space:nowrap}section.ck .ck-acts .btn-gold{flex-grow:1.5}
