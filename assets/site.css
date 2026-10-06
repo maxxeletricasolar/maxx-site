@@ -1473,3 +1473,14 @@ footer{padding-block:32px 96px}
 .legal-links a,.legal-links .link-btn{min-height:28px}
 .foot img{height:auto;aspect-ratio:1/1;object-fit:cover}
 @media (max-width:860px){footer{padding-block:28px 84px}}
+
+/* orçamento: colunas com a mesma altura */
+@media (min-width:961px){
+.quote-grid{align-items:stretch!important}
+.bigform{display:flex;flex-direction:column}
+.bigform form{flex:1;display:flex;flex-direction:column}
+.bigform form>.field:has(textarea){flex:1;grid-template-rows:auto 1fr auto auto}
+.bigform form>.field textarea{height:100%;min-height:120px;resize:none}
+}
+.qs-steps li{align-content:start}
+.qs-label{margin-top:24px}
