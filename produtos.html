@@ -48,10 +48,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @media (max-width:960px){
 .cat-chips{display:flex;gap:8px;overflow-x:auto;margin:0 0 14px;padding:2px 0 10px;scrollbar-width:thin}
 .cat-busca .cat-chips{display:none}
-.cat-chips button{flex:none;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--text);font:600 .875rem/1 var(--f-body);cursor:pointer;white-space:nowrap}
-.cat-chips button[aria-current="true"]{background:var(--gold);border-color:transparent;color:#1a1405}
+.cat-chips button{flex:none;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--text);font:600 .875rem/1 var(--f-body);cursor:pointer;white-space:nowrap;max-width:260px;overflow:hidden;text-overflow:ellipsis}
+.cat-chips button[aria-current="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
 .cat-chips button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cat-chips{position:sticky;top:calc(var(--hh,84px) + 52px);z-index:30;margin-inline:calc(-1 * clamp(16px,4vw,32px));padding:10px clamp(16px,4vw,32px);background:var(--bg);border-bottom:1px solid var(--line)}
+main .cat-sec[id]{scroll-margin-top:calc(var(--hh,84px) + 52px + 68px)!important}
+.cat-toggle .cat-cur{display:none}
+.cat-toggle>span{flex:1}
 }
+/* topo: números do catálogo em cartões iguais */
+.cat-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0 22px}
+.cat-stats>div{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);line-height:1.3}
+@media (min-width:720px){.cat-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* cabeçalho da categoria */
+.cat-head p .meta{display:block;margin-bottom:6px;font:600 .75rem/1.5 var(--f-mono);letter-spacing:.02em;color:var(--muted)}
+.cat-head p .desc{display:block;color:var(--text);opacity:.82;line-height:1.5}
+.cat-head .cat-pagina{min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);text-decoration:none}
+.cat-head .cat-pagina:hover{border-color:var(--gold)}
+/* dentro de uma categoria o nome dela no cartão é repetido: some (volta na busca) */
+#cat-app.cat-modo:not(.cat-busca) .pmeta{display:none}
+/* navegação entre categorias */
+.cat-pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:24px}
+.cat-pager button{display:grid;gap:3px;min-height:60px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);text-align:left;cursor:pointer;font:600 .9375rem/1.25 var(--f-body)}
+.cat-pager button small{font:600 .75rem/1 var(--f-mono);letter-spacing:.04em;color:var(--muted)}
+.cat-pager button:hover{border-color:var(--gold)}
+.cat-pager button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cat-pager .pg-next{grid-column:2;text-align:right}
+.cat-pager .pg-next:only-child{grid-column:1/-1;text-align:left}
+.cat-pager .pg-prev{grid-column:1}
+.cat-busca .cat-pager{display:none}
 </style></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -694,6 +719,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     chips.appendChild(c);
   });
   app.insertBefore(chips, app.firstChild);
+  function irPara(id){ var t = selecionar(id); if(t) setTimeout(function(){ t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start"}); }, 60); }
+  var nomes = {}; [].slice.call(nav.querySelectorAll("a")).forEach(function(a){ var sp = a.querySelector("span"); if(sp) nomes[a.getAttribute("href").slice(1)] = sp.textContent; });
+  // cabeçalho da categoria: separa os dados (letra, produtos, página do catálogo) da descrição
+  secs.forEach(function(sec){
+    var pp = sec.querySelector(".cat-head > p"), it = pp && pp.querySelector("i"); if(!it) return;
+    var meta = document.createElement("span"), desc = document.createElement("span"); meta.className = "meta"; desc.className = "desc";
+    var n = pp.firstChild, passou = false, nodes = [];
+    while(n){ nodes.push(n); n = n.nextSibling; }
+    nodes.forEach(function(x){ if(!passou){ meta.appendChild(x); if(x === it) passou = true; } else desc.appendChild(x); });
+    if(desc.firstChild && desc.firstChild.nodeType === 3) desc.firstChild.textContent = desc.firstChild.textContent.replace(/^\s*[·•]\s*/, "");
+    pp.appendChild(meta); pp.appendChild(desc);
+  });
+  // botões para ir à categoria anterior e à próxima
+  secs.forEach(function(sec, i){
+    var row = sec.querySelector(".prow"); if(!row) return;
+    var pg = document.createElement("nav"); pg.className = "cat-pager"; pg.setAttribute("aria-label", "Navegar entre categorias");
+    function bt(cls, rot, alvo){ var b = document.createElement("button"); b.type = "button"; b.className = cls; var sm = document.createElement("small"); sm.textContent = rot; var st = document.createElement("span"); st.textContent = nomes[alvo.id] || alvo.id; b.appendChild(sm); b.appendChild(st); b.addEventListener("click", function(){ irPara(alvo.id); }); pg.appendChild(b); }
+    if(secs[i-1]) bt("pg-prev", "‹ Anterior", secs[i-1]);
+    if(secs[i+1]) bt("pg-next", "Próxima ›", secs[i+1]);
+    row.insertAdjacentElement("afterend", pg);
+  });
   secs.forEach(function(s){ var r = s.querySelector(".prow"); if(!r) return; r.classList.add("expanded"); r.removeAttribute("tabindex"); var l = r.getAttribute("aria-label"); if(l) r.setAttribute("aria-label", l.replace(/\.\s*Deslize para ver mais\.?/, "")); });
   function atualiza(){ vazio.hidden = !!app.querySelector(".cat-sec.sel") || app.classList.contains("cat-busca"); }
   function selecionar(id){
