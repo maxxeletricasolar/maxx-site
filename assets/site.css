@@ -1452,3 +1452,24 @@ section{padding-block:clamp(48px,7vw,80px)}
   .proof strong{font-size:1rem;white-space:nowrap}
   .proof{font-size:.8125rem}
 }
+
+/* rodapé compacto (mesmo layout, menos altura) */
+footer{padding-block:32px 96px}
+@media (min-width:861px){footer{padding-block:32px 72px}}
+.foot{gap:20px 24px}
+.foot h3,.foot h4,.foot h2{margin-bottom:10px}
+.foot p{margin:0 0 4px;line-height:1.5}
+.foot img{width:64px;margin-bottom:10px}
+.foot>div:first-child p{font-size:.8125rem;max-width:44ch}
+.foot-nav a{min-height:30px}
+.foot-nav li:first-child a{margin-top:0}
+@media (pointer:coarse){.foot-nav a{min-height:44px}}
+.pay{margin-top:18px;padding-top:14px;gap:8px 14px}
+.pay.trust{margin-top:14px}
+.pay li{min-height:34px;padding:5px 12px 5px 8px;font-size:.8125rem}
+.pay li svg{width:18px;height:18px}
+.ship{margin:8px 0 0;font-size:.8125rem}
+.legal{margin-top:18px;padding-top:12px}
+.legal-links a,.legal-links .link-btn{min-height:28px}
+.foot img{height:auto;aspect-ratio:1/1;object-fit:cover}
+@media (max-width:860px){footer{padding-block:28px 84px}}
