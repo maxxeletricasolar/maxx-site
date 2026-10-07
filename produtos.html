@@ -362,7 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="assets/catalogo-data.js?v=64026dca"></script><script type="application/json" id="data-catalogo">{}</script>
 <script type="application/json" id="data-imgs">{}</script>
-<script src="assets/h/9ade261b84.js"></script>
+<script src="assets/h/46e7444144.js"></script>
 
 <script>
 // ===== HIG: tema, rótulos de erro acessíveis, nomes completos dos produtos =====
@@ -649,7 +649,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   function secaoDaHash(){
     var h = location.hash; if(h.length < 2) return null;
-    var el = document.getElementById(decodeURIComponent(h.slice(1))); var s = el && el.closest(".cat-sec");
+    var id; try{ id = decodeURIComponent(h.slice(1)); }catch(err){ return null; }
+    var el = document.getElementById(id); var s = el && el.closest(".cat-sec");
     return s ? {sec: s, el: el} : null;
   }
   function porHash(){ var r = secaoDaHash(); if(!r) return; selecionar(r.sec.id); if(r.el !== r.sec) setTimeout(function(){ r.el.scrollIntoView({block:"center"}); }, 80); }

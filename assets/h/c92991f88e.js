@@ -140,7 +140,7 @@
   var cart = [];
   try{ cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(err){ cart = []; }
   if(!Array.isArray(cart)) cart = [];
-  cart = cart.filter(function(it){ return it && it.k && it.nome; }).map(function(it){ it.k = String(it.k); it.nome = String(it.nome); it.q = Math.min(9999, parseInt(it.q, 10) || 0); return it; }).filter(function(it){ return it.q > 0; });
+  cart = cart.filter(function(it){ return it && it.k && it.nome; }).map(function(it){ it.k = String(it.k); it.nome = String(it.nome); if(it.id != null) it.id = String(it.id); it.ref = it.ref == null ? "" : String(it.ref); it.q = Math.min(9999, parseInt(it.q, 10) || 0); return it; }).filter(function(it){ return it.q > 0; });
   function saveCart(){ try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(err){} }
   var LAST_KEY = "maxx-ultimo-pedido";
   function lastOrder(){ try{ var o = JSON.parse(localStorage.getItem(LAST_KEY)); return o && Array.isArray(o.itens) && o.itens.length ? o : null; }catch(err){ return null; } }
@@ -257,7 +257,7 @@
   });
 
   // ===== catálogo de produtos (só em produtos.html) =====
-  var CAT = null, catById = {}, catGroups = {}, IMGS = {};
+  var CAT = null, catById = Object.create(null), catGroups = Object.create(null), IMGS = {};
   var dlgProd = document.getElementById("dlg-prod"), dpBody = document.getElementById("dp-body");
   function imgSrc(p){ return IMGS[p] || p; }
   if(onCatalogPage){
@@ -485,7 +485,7 @@
   // conteúdo acima se acomoda, a seção sai do lugar. Reposiciona enquanto a página carrega e
   // para assim que o visitante rolar por conta própria.
   (function(){
-    var h = decodeURIComponent(location.hash.slice(1));
+    var h; try{ h = decodeURIComponent(location.hash.slice(1)); }catch(err){ h = location.hash.slice(1); }
     if(!h || /^guia-/.test(h)) return;  // artigo abre na própria janela de leitura (openFromHash)
     var navE = window.performance && performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
     if(navE && navE.type === "back_forward") return;  // voltar/avançar: a posição salva é devolvida acima
