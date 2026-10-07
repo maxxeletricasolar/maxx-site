@@ -13,6 +13,9 @@ const JANELA_GERAL = 3600; // ...por hora (protege a caixa contra enxurrada vind
 const MAX_CAMPOS = 60;   // campos por pedido
 const MAX_VALOR  = 5000; // caracteres por campo
 const MAX_CHAVE  = 80;   // caracteres no nome do campo
+const MAX_NOME   = 100;  // caracteres em Nome, Empresa/obra e Cidade (campos curtos do formulário)
+// hosts que podem enviar pedidos: lista fechada, sem curinga de subdomínio (um subdomínio esquecido ou comprometido não envia)
+const ORIGENS_OK = [DOMINIO, 'www.' . DOMINIO, 'teste.' . DOMINIO];
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -29,21 +32,30 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') resp(false, 'Método não per
 if (stripos((string)($_SERVER['CONTENT_TYPE'] ?? ''), 'application/json') !== 0) resp(false, 'Tipo de conteúdo inválido', 415);
 $origem = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
 $host = parse_url($origem, PHP_URL_HOST) ?: '';
-// o próprio domínio e seus subdomínios (www, teste...) são aceitos; qualquer outro site é recusado
-$sufixo = '.' . DOMINIO;
-if ($host !== DOMINIO && substr($host, -strlen($sufixo)) !== $sufixo) resp(false, 'Origem não permitida', 403);
+// só o domínio, o www e o teste são aceitos; qualquer outro host é recusado
+if (!in_array(strtolower($host), ORIGENS_OK, true)) resp(false, 'Origem não permitida', 403);
 
 $raw = file_get_contents('php://input', false, null, 0, MAX_BYTES + 1);
 if ($raw === false || $raw === '' || strlen($raw) > MAX_BYTES) resp(false, 'Pedido inválido', 400);
 $d = json_decode($raw, true);
 if (!is_array($d)) resp(false, 'Pedido inválido', 400);
+if (count($d) > MAX_CAMPOS) resp(false, 'Pedido inválido', 400); // antes do limite de envios, para não gastá-lo à toa
 
 // campo oculto anti-robô: finge sucesso e não envia
 if (!empty($d['_honey'])) resp(true, 'ok');
 
 // o site sempre envia Nome e WhatsApp: pedidos sem eles (ou com telefone impossível) são recusados antes de gastar o limite de envios
 if (!is_string($d['Nome'] ?? null) || trim($d['Nome']) === '') resp(false, 'Informe o nome', 400);
-$digitos = preg_replace('/\D+/', '', is_string($d['WhatsApp'] ?? null) ? $d['WhatsApp'] : '');
+// campos curtos: tamanho limitado e sem link (o spam costuma colocar o golpe no nome ou na empresa)
+foreach (['Nome', 'Empresa/obra', 'Cidade de entrega'] as $campo) {
+    $v = $d[$campo] ?? '';
+    if (!is_string($v)) resp(false, 'Pedido inválido', 400);
+    if (mb_strlen(trim($v)) > MAX_NOME || preg_match('~https?://|www\.~i', $v)) resp(false, 'Pedido inválido', 400);
+}
+// WhatsApp: só dígitos e a pontuação comum de telefone (sem texto ou link no campo); 10 a 13 dígitos (Brasil, com ou sem DDI)
+$wa = is_string($d['WhatsApp'] ?? null) ? trim($d['WhatsApp']) : '';
+if (!preg_match('/^[\d\s()+.\-]+$/', $wa)) resp(false, 'WhatsApp inválido', 400);
+$digitos = preg_replace('/\D+/', '', $wa);
 if (strlen($digitos) < 10 || strlen($digitos) > 13) resp(false, 'WhatsApp inválido', 400);
 
 // limite por visitante e limite geral (leitura e gravação travadas com flock, sem condição de corrida)
@@ -56,7 +68,7 @@ foreach (['HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'] as $h)
 function rate_limit($arq, $limite, $janela) {
     $agora = time();
     $fp = @fopen($arq, 'c+');
-    if (!$fp) return true; // sem disco temporário: não derruba o envio
+    if (!$fp) { error_log('maxx: rate limit sem disco gravavel em ' . $arq); return true; } // sem disco: não derruba o envio do cliente
     flock($fp, LOCK_EX);
     $marcas = array_filter(array_map('intval', explode(',', (string)stream_get_contents($fp))), function ($t) use ($agora, $janela) {
         return $t > $agora - $janela;
@@ -70,7 +82,16 @@ function rate_limit($arq, $limite, $janela) {
     flock($fp, LOCK_UN); fclose($fp);
     return $ok;
 }
-$tmp = sys_get_temp_dir();
+// marcadores em pasta própria (permissão restrita); na falta dela usa a pasta temporária do sistema
+$tmp = sys_get_temp_dir() . '/maxx_rl';
+if (!is_dir($tmp)) @mkdir($tmp, 0700, true);
+if (!is_dir($tmp) || !is_writable($tmp)) $tmp = sys_get_temp_dir();
+// limpeza: em ~1% dos pedidos remove marcadores sem uso há mais que a maior janela (senão IPs variados enchem o disco)
+if (mt_rand(1, 100) === 1) {
+    foreach (glob($tmp . '/maxx_rl_*') ?: [] as $f) {
+        if (@filemtime($f) < time() - max(JANELA, JANELA_GERAL) - 60) @unlink($f);
+    }
+}
 if (!rate_limit($tmp . '/maxx_rl_' . md5($ip), LIMITE, JANELA)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
 if (!rate_limit($tmp . '/maxx_rl_geral', LIMITE_GERAL, JANELA_GERAL)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
 
@@ -81,7 +102,6 @@ if ($assunto === '') $assunto = 'Pedido pelo site';
 $assunto = mb_substr($assunto, 0, 200);
 
 $linhas = []; $html = '';
-if (count($d) > MAX_CAMPOS) resp(false, 'Pedido inválido', 400);
 foreach ($d as $k => $v) {
     if (!is_string($k) || $k === '' || $k[0] === '_') continue;
     if (is_array($v)) $v = implode(', ', array_map('strval', $v));

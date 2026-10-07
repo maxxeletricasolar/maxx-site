@@ -36,10 +36,13 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
 - Servidor local: `npx http-server . -p 8765 -s -c-1` (não comprime e não usa HTTPS: não use o lab local como verdade de performance).
 - Lighthouse: `npx lighthouse http://localhost:8765/<pagina> --chrome-flags="--headless=new --no-sandbox"`.
 - O `curl` leva 403 da Hostinger em produção; use o navegador.
+- Formulário: `PHP_EXE=C:/caminho/php.exe node tools/testar-formulario.js` sobe o servidor embutido do PHP e roda 23 cenários
+  (origem, tamanho e links nos campos, WhatsApp, limite por IP). Precisa de PHP com `mbstring` ativa. Rode antes de mexer em `enviar-pedido.php`.
 - Medidas de produção (06/10/2026): LCP real ~0,6 s e CLS 0,062; a nota 59 do Lighthouse mobile é simulação de celular lento.
 
 ## Pendências conhecidas
-- Formulário: usar o IP real da CDN no limite de envios (descobrir o cabeçalho da Hostinger), anti-bot (Turnstile), limitar `Nome`.
+- Formulário: usar o IP real da CDN no limite de envios (hoje confia em `CF-Connecting-IP`/`X-Forwarded-For`, que o cliente pode forjar;
+  trocar para `REMOTE_ADDR` sem antes descobrir o cabeçalho real da Hostinger faria todos dividirem o mesmo limite) e anti-bot (Turnstile).
 - CSP definitiva (hoje Report-Only, com `'unsafe-inline'`); `object-src 'none'`; fixar o destino do redirect do `www`.
 - Tabelas de produto (229 páginas): cabeçalhos extraídos de PDF, desalinhados das colunas; exige curadoria.
 - `LocalBusiness` com horário e coordenadas, datas reais no `sitemap.xml`, padronizar "lista"/"pedido".
