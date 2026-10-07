@@ -1,7 +1,12 @@
-/* fontes reserva com métricas ajustadas: evitam o salto de layout quando as fontes web carregam */
-@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Helvetica");size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+/* fontes reserva com métricas ajustadas (regular e negrito; Arial no Windows/Mac, Roboto no Android): evitam o salto de layout quando as fontes web carregam */
+@font-face{font-family:"Inter Fallback R";src:local("Roboto");font-weight:400 500;size-adjust:106.88%;ascent-override:90.64%;descent-override:22.57%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:600 700;size-adjust:106.88%;ascent-override:90.64%;descent-override:22.57%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Helvetica");font-weight:400 500;size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold");font-weight:600 700;size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+@font-face{font-family:"Jakarta Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:600 800;size-adjust:107.57%;ascent-override:96.49%;descent-override:20.64%;line-gap-override:0%}
 @font-face{font-family:"Jakarta Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold");font-weight:600 800;size-adjust:101.62%;ascent-override:102.15%;descent-override:21.85%;line-gap-override:0%}
-@font-face{font-family:"JetBrains Fallback";src:local("Courier New"),local("Courier");size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
+@font-face{font-family:"JetBrains Fallback";src:local("Courier New"),local("Courier");font-weight:400 500;size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
+@font-face{font-family:"JetBrains Fallback";src:local("Courier New Bold"),local("CourierNewPS-BoldMT"),local("Courier Bold");font-weight:600 700;size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
 /* rodapé compacto: marca, navegação, contato e endereço lado a lado; selos e pagamento em uma linha; linha legal */
 footer.rd{padding-block:28px 22px;font-size:.8125rem}
 .rd-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1.1fr) minmax(0,1.15fr);gap:20px 28px;align-items:start}
