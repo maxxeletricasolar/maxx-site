@@ -90,7 +90,7 @@
   }
   addBtn();
   (function(){ var h = document.querySelector("header.site"); if(!h || document.querySelector(".sx-bar")) return;
-    var bar = document.createElement("button"); bar.type = "button"; bar.className = "sx-bar"; bar.setAttribute("aria-label", "Buscar produtos");
+    var bar = document.createElement("button"); bar.type = "button"; bar.className = "sx-bar"; bar.setAttribute("aria-label", "Buscar produto, referência ou categoria");
     bar.innerHTML = ICON + "<span>Buscar produto, referência ou categoria</span>"; bar.addEventListener("click", open);
     var main = document.querySelector("main"); if(main) main.insertBefore(bar, main.firstChild); else h.parentNode.insertBefore(bar, h.nextSibling); })();
   document.querySelectorAll("[data-open-search]").forEach(function(el){ el.addEventListener("click", function(e){ e.preventDefault(); open(); }); });

@@ -74,7 +74,7 @@
     document.body.appendChild(t);
     setTimeout(function(){ t.remove(); }, actLabel ? 4500 : 2600);
   }
-  function esc(v){ return String(v).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function esc(v){ return String(v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
   function norm(v){ return String(v).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
   function goTo(id, focusId){
     document.getElementById(id).scrollIntoView({behavior: reduceMotion ? "auto" : "smooth"});
@@ -140,7 +140,7 @@
   var cart = [];
   try{ cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(err){ cart = []; }
   if(!Array.isArray(cart)) cart = [];
-  cart = cart.filter(function(it){ return it && it.k && it.nome && it.q > 0; });
+  cart = cart.filter(function(it){ return it && it.k && it.nome; }).map(function(it){ it.k = String(it.k); it.nome = String(it.nome); if(it.id != null) it.id = String(it.id); it.ref = it.ref == null ? "" : String(it.ref); it.q = Math.min(9999, parseInt(it.q, 10) || 0); return it; }).filter(function(it){ return it.q > 0; });
   function saveCart(){ try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(err){} }
   var LAST_KEY = "maxx-ultimo-pedido";
   function lastOrder(){ try{ var o = JSON.parse(localStorage.getItem(LAST_KEY)); return o && Array.isArray(o.itens) && o.itens.length ? o : null; }catch(err){ return null; } }
@@ -148,7 +148,7 @@
     var o = lastOrder(); if(!o) return "";
     var d = new Date(o.t), dt = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear();
     return '<div class="last-order"><p class="lo-h"><svg width="18" height="18"><use href="#i-doc"/></svg> Seu último pedido de orçamento</p><p class="lo-m">'+dt+' · '+o.itens.length+(o.itens.length > 1 ? " produtos" : " produto")+(o.p ? " · " + esc(o.p) : "")+'</p>'+
-      '<ul>'+o.itens.slice(0, 4).map(function(it){ return "<li>"+it.q+" × "+esc(it.nome)+"</li>"; }).join("")+(o.itens.length > 4 ? "<li>e mais "+(o.itens.length - 4)+"…</li>" : "")+'</ul>'+
+      '<ul>'+o.itens.slice(0, 4).map(function(it){ return "<li>"+(parseInt(it.q, 10) || 0)+" × "+esc(it.nome)+"</li>"; }).join("")+(o.itens.length > 4 ? "<li>e mais "+(o.itens.length - 4)+"…</li>" : "")+'</ul>'+
       '<button type="button" class="btn btn-gold" data-repeat>Repetir este pedido de orçamento</button></div>';
   }
   function keyOf(id, ref){ return id + "|" + (ref || ""); }
@@ -257,7 +257,7 @@
   });
 
   // ===== catálogo de produtos (só em produtos.html) =====
-  var CAT = null, catById = {}, catGroups = {}, IMGS = {};
+  var CAT = null, catById = Object.create(null), catGroups = Object.create(null), IMGS = {};
   var dlgProd = document.getElementById("dlg-prod"), dpBody = document.getElementById("dp-body");
   function imgSrc(p){ return IMGS[p] || p; }
   if(onCatalogPage){
@@ -485,7 +485,7 @@
   // conteúdo acima se acomoda, a seção sai do lugar. Reposiciona enquanto a página carrega e
   // para assim que o visitante rolar por conta própria.
   (function(){
-    var h = decodeURIComponent(location.hash.slice(1));
+    var h; try{ h = decodeURIComponent(location.hash.slice(1)); }catch(err){ h = location.hash.slice(1); }
     if(!h || /^guia-/.test(h)) return;  // artigo abre na própria janela de leitura (openFromHash)
     var navE = window.performance && performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
     if(navE && navE.type === "back_forward") return;  // voltar/avançar: a posição salva é devolvida acima
