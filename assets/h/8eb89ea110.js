@@ -352,12 +352,13 @@
     var desc = (p.conteudo || []).map(blockHTML).join("");
     var tables = (p.tabelas || []).length ? '<details class="pd-more" open><summary>Tabelas técnicas (' + p.tabelas.length + ")</summary><div class=\"pd-tables\" style=\"padding-bottom:16px\">" + p.tabelas.map(tableHTML).join("") + "</div></details>" : "";
     var refs = p.refs.length ? '<details class="pd-more"><summary>Referências do catálogo (' + p.refs.length + ')</summary><div class="pd-refs" style="padding-bottom:16px">' + p.refs.map(function(r){ return '<button type="button" data-pick-ref="' + esc(r) + '">' + esc(r) + "</button>"; }).join("") + "</div></details>" : "";
+    var share = window.MaxxShare ? MaxxShare.html(MaxxShare.site + "/produtos/" + p.id + ".html", p.nome, "ic", "Compartilhar este produto") : "";
     dpBody.innerHTML =
       '<div class="pd-grid"><div class="pd-gal">' + gal + '</div><div class="pd-info">' +
       '<p class="eyebrow">' + (p.marca ? esc(p.marca) + " · " : "") + (isLinha ? "" : "Categoria " + esc(p.g) + " · ") + esc(g.nome) + (pages ? " · catálogo pág. " + pages : "") + "</p>" +
       '<h2 id="dp-title">' + esc(p.nome) + "</h2>" +
       (p.normas.length ? '<div class="badges"><span class="hint" style="margin-right:4px">Normas:</span>' + p.normas.map(function(n){ return '<span class="badge">' + esc(n) + "</span>"; }).join("") + "</div>" : "") +
-      buy +
+      buy + share +
       (desc ? '<div class="pd-desc">' + desc + "</div>" : "") +
       tables + refs +
       '<p class="hint">Informações do Catálogo de Produtos MAXX rev. 07/2026. Confirme a especificação com a equipe antes da compra.</p>' +
@@ -417,9 +418,10 @@
     var waQ = waBase + "?text=" + encodeURIComponent("Olá, MAXX! Li o artigo \"" + g.titulo + "\" e tenho uma dúvida:");
     var others = GUIDES.filter(function(x){ return x.id !== g.id && x.tag === g.tag; })
       .concat(GUIDES.filter(function(x){ return x.id !== g.id && x.tag !== g.tag; })).slice(0, 2);
+    var share = window.MaxxShare ? MaxxShare.html(MaxxShare.site + "/guias/" + g.id + ".html", g.titulo, "txt", "Compartilhar este artigo, final do texto", "Gostou? Compartilhe este artigo") : "";
     dgBody.innerHTML = '<p class="eyebrow">' + esc(g.tag) + ' · ' + esc(g.leitura) + ' de leitura</p><h2 id="dg-title">' + esc(g.titulo) + '</h2>' +
       '<p class="lede" style="font-size:16px">' + esc(g.resumo) + '</p>' +
-      '<div class="post-body">' + g.html.replace(/<table>/g, '<div class="tbl-wrap"><table>').replace(/<\/table>/g, '</table></div>') + '</div>' +
+      '<div class="post-body">' + g.html.replace(/<table>/g, '<div class="tbl-wrap"><table>').replace(/<\/table>/g, '</table></div>') + '</div>' + share +
       (g.rel && g.rel.length ? '<div class="post-rel"><h3>Produtos citados neste artigo</h3><div class="post-rel-list">' + g.rel.map(function(r){
         return '<a href="produtos.html#p-' + r.id + '">' + esc(r.nome) + ' <svg width="14" height="14"><use href="#i-arrow"/></svg></a>';
       }).join("") + '</div></div>' : '') +
