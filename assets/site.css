@@ -943,9 +943,9 @@ body.cat-open .to-top{display:none!important}
 }
 /* ===== tipografia moderna e acabamento profissional ===== */
 :root{
-  --f-display:"Plus Jakarta Sans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --f-display:"Plus Jakarta Sans","Jakarta Fallback R","Jakarta Fallback","Inter","Inter Fallback R","Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-body:"Inter","Inter Fallback R","Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono","JetBrains Fallback",ui-monospace,SFMono-Regular,Consolas,monospace;
 }
 *{font-variation-settings:normal!important}
 body{font-family:var(--f-body);font-size:1rem;line-height:1.65;font-feature-settings:"cv11","ss01";text-rendering:optimizeLegibility}
@@ -1504,3 +1504,15 @@ section.ck .ck-acts .btn{flex:1 1 0;min-width:0;padding:0 8px;font-size:.8125rem
 .hx-mosaic .hx-lb,.hx-mosaic .hx-lb b,.hx-mosaic .hx-seal,.hx-polaroid figcaption,.hx-badge{font-size:.75rem}
 .hx-mosaic .hx-badge,.hx-mosaic .hx-badge b,.hx-badge span,.hx-polaroid figcaption{font-size:.75rem!important}
 section.ck .ck-acts .btn{white-space:nowrap}section.ck .ck-acts .btn-gold{flex-grow:1.5}
+
+/* fontes reserva com métricas ajustadas (regular e negrito; Arial no Windows/Mac, Roboto no Android): evitam o salto de layout quando as fontes web carregam */
+@font-face{font-family:"Inter Fallback R";src:local("Roboto");font-weight:400 500;size-adjust:106.88%;ascent-override:90.64%;descent-override:22.57%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:600 700;size-adjust:106.88%;ascent-override:90.64%;descent-override:22.57%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Helvetica");font-weight:400 500;size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold");font-weight:600 700;size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+@font-face{font-family:"Jakarta Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:600 800;size-adjust:107.57%;ascent-override:96.49%;descent-override:20.64%;line-gap-override:0%}
+@font-face{font-family:"Jakarta Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold");font-weight:600 800;size-adjust:101.62%;ascent-override:102.15%;descent-override:21.85%;line-gap-override:0%}
+@font-face{font-family:"JetBrains Fallback";src:local("Courier New"),local("Courier");font-weight:400 500;size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
+@font-face{font-family:"JetBrains Fallback";src:local("Courier New Bold"),local("CourierNewPS-BoldMT"),local("Courier Bold");font-weight:600 700;size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
+/* título da descrição do produto (h2 no lugar de h3, sem salto de nível de título) */
+.pd-desc h2{font-size:1.0625rem;font-weight:700;line-height:1.2;letter-spacing:-.02em;margin:6px 0 0;color:var(--text);font-variation-settings:normal}
