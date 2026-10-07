@@ -1,1 +1,26 @@
-{"name": "MAXX Elétrica Solar", "short_name": "MAXX", "icons": [{"src": "img/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "img/icon-512.png", "sizes": "512x512", "type": "image/png"}], "theme_color": "#1b2330", "background_color": "#1b2330", "display": "standalone", "start_url": "./"}
+{
+    "id":  "/",
+    "name":  "MAXX Elétrica Solar",
+    "short_name":  "MAXX",
+    "lang":  "pt-BR",
+    "description":  "Distribuidora de material elétrico de baixa, média e alta tensão em Teresina-PI. Revendedor autorizado Ritz.",
+    "start_url":  "/",
+    "scope":  "/",
+    "display":  "standalone",
+    "theme_color":  "#1b2330",
+    "background_color":  "#1b2330",
+    "icons":  [
+                  {
+                      "purpose":  "any",
+                      "type":  "image/png",
+                      "sizes":  "192x192",
+                      "src":  "img/icon-192.png"
+                  },
+                  {
+                      "purpose":  "any",
+                      "type":  "image/png",
+                      "sizes":  "512x512",
+                      "src":  "img/icon-512.png"
+                  }
+              ]
+}

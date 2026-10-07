@@ -1,0 +1,20 @@
+# arquivos de sistema e de editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# segredos e variáveis de ambiente (nunca versionar)
+.env
+.env.*
+*.pem
+*.key
+
+# arquivos temporários e de trabalho
+*.bak
+*.log
+*.tmp
+node_modules/
+.claude/
+_tmp*
