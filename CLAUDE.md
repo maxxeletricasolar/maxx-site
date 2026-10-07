@@ -26,6 +26,12 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
 5. `tools/` e `.ps1` são bloqueados no `.htaccess` (têm caminhos locais). Não remova essa regra.
 6. Decorações são `aria-hidden="true"`: ao gerar HTML com `<svg>` decorativo, inclua o atributo.
 7. Cabeçalho (`<head>`) fecha antes do `<body>`: `<title>`, `description`, canonical e Open Graph ficam dentro dele.
+8. Links de compartilhamento (WhatsApp, Facebook, LinkedIn, X, e-mail, copiar link) ficam em produtos, categorias, artigos do blog, na
+   calculadora, no modal do catálogo e no leitor do blog. O HTML estático é gerado por `node tools/compartilhar-paginas.js` (idempotente;
+   rode depois de incluir produtos, categorias ou artigos novos, e em seguida `tools\reindexar-assets.ps1`). O mesmo módulo
+   `assets/compartilhar.js` monta o bloco no navegador. O estilo vem de `tools/compartilhar.css`, que a ferramenta injeta no `site.css` e nos
+   CSS com hash de `produtos.html` e `guias.html` entre marcadores `/*share:ini*/ ... /*share:fim*/`: não edite o bloco direto nesses CSS.
+   Ícones em `img/share.svg`. Sem scripts de terceiros; o clique gera o evento `compartilhar` no `dataLayer`.
 
 ## Decisões de produto já tomadas
 - Card de produto no catálogo: só imagem, categoria, nome e resumo.

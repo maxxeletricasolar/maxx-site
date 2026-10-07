@@ -1,0 +1,16 @@
+/* compartilhar: links para WhatsApp, Facebook, LinkedIn, X, e-mail e copiar link (assets/compartilhar.js) */
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:16px 0}
+.share-t{font:600 .8125rem/1.3 var(--f-body);color:var(--muted)}
+.share ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.sh{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text);font:600 .875rem/1 var(--f-body);text-decoration:none;cursor:pointer;transition:border-color .15s,color .15s,background-color .15s}
+.share-txt .sh{padding:0 16px}
+.sh svg{width:20px;height:20px;flex:none}
+.sh:hover{border-color:var(--gold);color:var(--gold-hi)}
+.sh:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.share-ok{flex-basis:100%;font:500 .8125rem/1.4 var(--f-body);color:var(--gold-hi)}
+.share-ok:empty{display:none}
+.share-txt{padding:16px 0 0;margin:28px 0 8px;border-top:1px solid var(--line)}
+.share-txt .share-t{flex-basis:100%;font:700 1rem/1.3 var(--f-display);color:var(--text)}
+.pd-info .share{margin:14px 0 6px}
+.cg-intro .share{margin:14px 0 0}
+@media (prefers-reduced-motion:reduce){.sh{transition:none}}
