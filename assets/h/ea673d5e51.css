@@ -1,3 +1,7 @@
+/* fontes reserva com métricas ajustadas: evitam o salto de layout quando as fontes web carregam */
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Helvetica");size-adjust:106.46%;ascent-override:91%;descent-override:22.66%;line-gap-override:0%}
+@font-face{font-family:"Jakarta Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold");font-weight:600 800;size-adjust:101.62%;ascent-override:102.15%;descent-override:21.85%;line-gap-override:0%}
+@font-face{font-family:"JetBrains Fallback";src:local("Courier New"),local("Courier");size-adjust:100%;ascent-override:102%;descent-override:30%;line-gap-override:0%}
 /* rodapé compacto: marca, navegação, contato e endereço lado a lado; selos e pagamento em uma linha; linha legal */
 footer.rd{padding-block:28px 22px;font-size:.8125rem}
 .rd-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1.1fr) minmax(0,1.15fr);gap:20px 28px;align-items:start}
@@ -26,8 +30,8 @@ footer.rd{padding-block:28px 22px;font-size:.8125rem}
 .rd-selos li{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);white-space:nowrap}
 .rd-selos li svg{width:15px;height:15px;flex:none;color:var(--gold)}
 .rd-legal{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;font:500 .75rem/1.5 var(--f-body)}
-.rd-legal .legal-links{flex:1 1 auto;justify-content:flex-end;margin-left:0;gap:2px 16px;font-size:0}
-.rd-legal .legal-links a,.rd-legal .legal-links .link-btn{font:500 .75rem/1.5 var(--f-body);min-height:28px}
+.rd-legal .legal-links{flex:1 1 auto;justify-content:flex-end;margin-left:0;gap:8px 16px;font-size:0}
+.rd-legal .legal-links a,.rd-legal .legal-links .link-btn{font:500 .75rem/1.5 var(--f-body);min-height:28px;padding-block:0;display:inline-flex;align-items:center}
 @media (min-width:1001px){.rd-selos ul+ul{padding-left:28px;border-left:1px solid var(--line)}}
 @media (pointer:coarse){.rd .foot-nav a,.rd .foot-nav .link-btn{min-height:44px}}
 @media (max-width:1000px){.rd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
