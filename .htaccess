@@ -4,7 +4,8 @@ ErrorDocument 404 /404.html
 
 # Nunca servir o repositório nem arquivos de trabalho (.git, .env, backups, logs, dumps, markdown)
 RedirectMatch 404 /\.git
-<FilesMatch "(^\.(?!well-known)|\.(bak|log|sql|md|env|old|orig|swp)$)">
+RedirectMatch 404 ^/tools(/|$)
+<FilesMatch "(^\.(?!well-known)|\.(bak|log|sql|md|env|old|orig|swp|ps1|sh)$)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
