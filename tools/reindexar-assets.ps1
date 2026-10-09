@@ -24,7 +24,7 @@ foreach ($f in Get-ChildItem $dir -File | Where-Object { $_.Extension -in '.css'
   }
 }
 # versao (?v=) dos estaticos sem hash no nome (site.css, busca.js, efeitos.js): quando o conteudo muda, a URL muda e o navegador baixa de novo
-$estaticos = @('site.css', 'busca.js', 'efeitos.js', 'compartilhar.js')
+$estaticos = @('site.css', 'busca.js', 'efeitos.js', 'compartilhar.js', 'lista.js')
 $vers = @{}
 foreach ($n in $estaticos) {
   $pe = Join-Path $Repo ('assets\' + $n)
