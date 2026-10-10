@@ -42,6 +42,9 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
    na mesma chave (`maxx-orcamento-v2`) das páginas principais. Sem PowerShell: `node tools/reindexar-assets.js` faz o mesmo que o `.ps1`.
    Ordem: paginas-produto, shell-paginas, reindexar-assets.
 
+## Pendências e continuidade
+Lista viva das melhorias de layout e design e do que depende do usuário: `tools/handoff/PENDENCIAS.md` (leia antes de começar; diagnóstico completo em `tools/handoff/analise-impeccable-maxx.md`). Atualize o arquivo ao concluir cada item.
+
 ## Decisões de produto já tomadas
 - Card de produto no catálogo: só imagem, categoria, nome e resumo.
 - Home mostra as 5 categorias principais, com os mesmos títulos do menu de `produtos.html`.
