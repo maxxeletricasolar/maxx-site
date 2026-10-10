@@ -33,6 +33,15 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
    CSS com hash de `produtos.html` e `guias.html` entre marcadores `/*share:ini*/ ... /*share:fim*/`: não edite o bloco direto nesses CSS.
    Ícones em `img/share.svg`. Sem scripts de terceiros; o clique gera o evento `compartilhar` no `dataLayer`.
 
+9. Páginas de produto: o bloco de compra (seletor por tensão ou referência) e a seção "Referências e medidas" (tabela com seleção
+   múltipla e barra fixa) são gerados por `node tools/paginas-produto.js` (idempotente, marcadores `<!--pm-buy-->` e `<!--pm-tab-->`).
+   As tabelas vêm de `assets/catalogo-data.js`, limpas por `tools/tabelas.js`; correções manuais conferidas ficam em
+   `tools/tabelas-curadas.json` (têm prioridade) e `tools/revisao-tabelas.csv` lista o que a equipe ainda precisa conferir.
+   `node tools/shell-paginas.js` leva tema, botão da lista e barra de navegação do celular às 360 páginas geradas e injeta
+   `tools/produto.css` em `assets/site.css` (entre `/*pm:ini*/` e `/*pm:fim*/`: não edite o bloco direto). `assets/lista.js` guarda a lista
+   na mesma chave (`maxx-orcamento-v2`) das páginas principais. Sem PowerShell: `node tools/reindexar-assets.js` faz o mesmo que o `.ps1`.
+   Ordem: paginas-produto, shell-paginas, reindexar-assets.
+
 ## Decisões de produto já tomadas
 - Card de produto no catálogo: só imagem, categoria, nome e resumo.
 - Home mostra as 5 categorias principais, com os mesmos títulos do menu de `produtos.html`.

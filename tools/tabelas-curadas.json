@@ -1,0 +1,141 @@
+{
+ "_aviso": "Tabelas conferidas contra o texto extraído do catálogo Ritz (págs. 87 a 90). A equipe deve validar com o catálogo impresso antes de divulgar.",
+ "b-bastao-de-manobra": {
+  "0": {
+   "legenda": "Bastão de manobra com punho plástico",
+   "cols": [
+    "Referência",
+    "Ø (mm)",
+    "Comprimento isolante (m)",
+    "Comprimento total (m)",
+    "Tensão máxima de uso (kV)",
+    "Sacola (opcional)",
+    "Peso aprox. (kg)",
+    "Peso aprox. (lb)"
+   ],
+   "rows": [
+    [
+     "FLV403-0291",
+     "32",
+     "0,54",
+     "1,43",
+     "15",
+     "FLV18339-1",
+     "2,28",
+     "5,03"
+    ],
+    [
+     "FLV403-0292",
+     "32",
+     "0,74",
+     "2,04",
+     "35",
+     "FLV18339-2",
+     "2,56",
+     "5,64"
+    ],
+    [
+     "FLV403-0293",
+     "32",
+     "1,30",
+     "2,65",
+     "138",
+     "FLV18339-3",
+     "3,04",
+     "6,07"
+    ],
+    [
+     "FLV403-0294",
+     "32",
+     "1,86",
+     "3,26",
+     "230",
+     "FLV18339-4",
+     "3,42",
+     "7,54"
+    ],
+    [
+     "FLV403-0295",
+     "32",
+     "2,42",
+     "3,87",
+     "345",
+     "FLV18339-5",
+     "3,90",
+     "8,60"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": 4,
+   "conferida": "2026-10-09 (texto do catálogo; validar com a equipe)"
+  },
+  "1": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Ø (mm)",
+    "Comprimento isolante (m)",
+    "Comprimento total (m)",
+    "Tensão máxima de uso (kV)",
+    "Sacola (opcional)",
+    "Peso aprox. (kg)",
+    "Peso aprox. (lb)"
+   ],
+   "rows": [
+    [
+     "FLV08958-1",
+     "25",
+     "0,54",
+     "1,43",
+     "15",
+     "FLV18339-1",
+     "2,15",
+     "4,74"
+    ],
+    [
+     "FLV08958-2",
+     "25",
+     "0,74",
+     "2,04",
+     "35",
+     "FLV18339-2",
+     "2,50",
+     "5,51"
+    ],
+    [
+     "FLV08958-3",
+     "25",
+     "1,30",
+     "2,65",
+     "138",
+     "FLV18339-3",
+     "2,85",
+     "6,28"
+    ],
+    [
+     "FLV08958-4",
+     "25",
+     "1,86",
+     "3,26",
+     "230",
+     "FLV18339-4",
+     "3,20",
+     "7,05"
+    ],
+    [
+     "FLV08958-5",
+     "25",
+     "2,42",
+     "3,87",
+     "345",
+     "FLV18339-5",
+     "3,55",
+     "7,83"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": 4,
+   "conferida": "2026-10-09 (texto do catálogo; validar com a equipe)"
+  }
+ }
+}
