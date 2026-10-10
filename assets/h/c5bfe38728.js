@@ -253,14 +253,8 @@
   });
 
   // ===== catálogo de produtos (só em produtos.html) =====
-  var CAT = null, catById = Object.create(null), catGroups = Object.create(null), IMGS = {};
-  function imgSrc(p){ return IMGS[p] || p; }
+  function imgSrc(p){ return p; }
   if(onCatalogPage){
-    CAT = JSON.parse(document.getElementById("data-catalogo").textContent);
-    var imgData = document.getElementById("data-imgs");
-    if(imgData){ try{ IMGS = JSON.parse(imgData.textContent); }catch(err){ IMGS = {}; } }
-    CAT.produtos.forEach(function(p){ catById[p.id] = p; });
-    CAT.grupos.forEach(function(g){ catGroups[g.id] = g; });
 
     // imagens dos cartões
     document.querySelectorAll("img[data-src]").forEach(function(im){ im.src = imgSrc(im.getAttribute("data-src")); });
@@ -422,7 +416,8 @@
   // links antigos #p-<id> (produtos.html) vão para a página do produto; #guia-<id> abre o artigo (guias.html)
   function openFromHash(){
     var h = location.hash.slice(1);
-    if(h.indexOf("p-") === 0 && onCatalogPage && catById[h.slice(2)]){ location.replace("produtos/" + h.slice(2) + ".html"); }
+    var cardLink = h.indexOf("p-") === 0 && onCatalogPage ? document.getElementById(h) : null; cardLink = cardLink && cardLink.querySelector("a[href]");
+    if(cardLink){ location.replace(cardLink.getAttribute("href")); }
     else if(h.indexOf("guia-") === 0 && GUIDES.length){ openGuide(h.slice(5)); }
   }
   openFromHash(); addEventListener("hashchange", openFromHash);
