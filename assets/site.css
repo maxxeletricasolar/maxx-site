@@ -1345,8 +1345,10 @@ nav.main a{padding-block:10px}
 .cg-grid{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:14px}
 .cg-grid a{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s}
 .cg-grid a:hover{border-color:var(--gold);transform:translateY(-2px)}
-.cg-grid .ph{aspect-ratio:4/3;background:#fff;display:grid;place-items:center;border-bottom:1px solid var(--line)}
-.cg-grid .ph img{width:100%;height:100%;object-fit:contain;padding:10px}
+.cg-grid .ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:#fff;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.cg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cg-grid .tx{padding:10px}.cg-grid strong{font-size:.875rem}}
+.cg-grid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px}
+.cg-grid .ph img[src$="sem-foto.svg"]{padding:0;object-fit:cover}
 .cg-grid .tx{padding:12px 14px 14px;display:grid;gap:4px}
 .cg-grid strong{font-weight:600;font-size:.9375rem;line-height:1.35}
 .cg-grid small{color:var(--muted);font-size:.75rem}
