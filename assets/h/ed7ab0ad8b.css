@@ -1391,3 +1391,12 @@ footer{padding-block:32px 96px}@media (min-width:861px){footer{padding-block:32p
   .hero .lede{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:1rem!important}
   .hero h1{font-size:clamp(1.75rem,8vw,2.25rem)!important;line-height:1.12!important;margin-top:0!important}
 }
+
+/*txt200*/
+.hero-grid>*,.about-grid>*,.post-body>*,.qs-page *{min-width:0}
+.proof strong,.btn{white-space:normal}
+.post-body,.qs-page,.about-lead,.lede{overflow-wrap:anywhere}
+.seg{flex-wrap:wrap}
+.seg label{white-space:normal;min-width:0}
+
+@media (max-width:640px){.cx-tot{display:none}}

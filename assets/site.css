@@ -1649,3 +1649,10 @@ dialog.drawer .lista-vazia{color:var(--muted);line-height:1.5}
 .cg-intro .share{margin:14px 0 0}
 @media (prefers-reduced-motion:reduce){.sh{transition:none}}
 /*share:fim*/
+
+/*txt200*/
+.hero-grid>*,.about-grid>*,.post-body>*,.qs-page *{min-width:0}
+.proof strong,.btn{white-space:normal}
+.post-body,.qs-page,.about-lead,.lede{overflow-wrap:anywhere}
+.seg{flex-wrap:wrap}
+.seg label{white-space:normal;min-width:0}
