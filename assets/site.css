@@ -1386,8 +1386,12 @@ nav.main a{padding-block:10px}
 .res-big{display:flex;align-items:baseline;gap:10px;margin:4px 0 6px}
 .res-big b{font:800 2.5rem/1 var(--f-display)}
 .res-st{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-weight:600;font-size:.875rem}
-.res-st.ok{background:rgba(63,178,127,.15);color:#2f9a6a}
-.res-st.bad{background:rgba(255,122,107,.15);color:#d4513f}
+.res-st.ok{background:rgba(63,178,127,.15);color:var(--ok)}
+.res-st.bad{background:rgba(255,122,107,.15);color:var(--err)}
+.f.invalid input{border-color:var(--err)}
+.f .err{display:none}
+.f.invalid .err{display:block;margin-top:4px}
+.calc-card .btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
 .res-list{list-style:none;margin:16px 0;padding:0;display:grid;gap:0}
 .res-list li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:.9375rem}
 .res-list li span{color:var(--muted)}

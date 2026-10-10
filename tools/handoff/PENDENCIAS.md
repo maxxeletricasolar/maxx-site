@@ -18,7 +18,7 @@ Ordem sugerida: clarify/harden, optimize, distill+quieter, adapt+colorize, docum
 4. 19 produtos sem foto: placeholder único (resíduo de PDF "Continuação na próxima página" já removido do Bastão Universal; era o único). Conferir também as fotos genéricas da Vara de Manobra Seccionável e Telescópica e os resumos de cartão que começam no meio do texto.
 5. Artigos: produtos citados comprávis (mini-card + "Adicionar à lista"); remover bloco de compartilhar duplicado.
 6. Quem somos: prova real (fotos, depoimentos, nota do Google); tirar "preço claro" e "estoque completo".
-7. Calculadora: validar entrada (P0: aceita -5 A e 0 m e diz "dentro do limite"); contraste do selo (3,08 a 3,69:1); botão flutuante cobre CTA; resultado longe dos campos no celular; `aria-live` só no resultado.
+7. Calculadora: FEITO a validação (corrente, potência, comprimento e fator de potência com erro no campo; sem resultado nem WhatsApp com entrada inválida; "Mais de 100%" no lugar de valores absurdos), o contraste do selo (usa --ok/--err do tema) e o `aria-live` só no resultado. FALTA: botão flutuante cobrindo o CTA no computador e resultado longe dos campos no celular.
 8. Fim do pedido: "Seu pedido está pronto" antes do envio no WhatsApp; `generate_lead` dispara cedo. Texto: "Falta um passo: envie no WhatsApp"; medir o lead no e-mail confirmado.
 9. Rótulos: só "Adicionar à lista de orçamento" e "Pedir orçamento no WhatsApp" (+ "Enviar pedido de orçamento" no formulário).
 10. Celular: texto a 200% com rolagem lateral (7 de 12 modelos); cartão "Linhas complementares"; tabelas largas.
