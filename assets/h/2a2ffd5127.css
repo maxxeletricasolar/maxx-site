@@ -1347,3 +1347,7 @@ footer{padding-block:32px 96px}@media (min-width:861px){footer{padding-block:32p
 .cg-intro .share{margin:14px 0 0}
 @media (prefers-reduced-motion:reduce){.sh{transition:none}}
 /*share:fim*/
+
+.qs-deps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));margin-top:20px}
+.qs-deps .dep{flex:none;max-width:none;grid-column:auto;padding:24px}
+.qs-prova .dep-g{margin-top:18px}
