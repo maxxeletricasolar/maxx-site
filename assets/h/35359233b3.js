@@ -240,10 +240,6 @@
       return;
     }
     if((el = t.closest("[data-add-prod]"))){ addToCart({id: el.getAttribute("data-add-prod"), nome: el.getAttribute("data-nome") || el.getAttribute("data-add-prod")}, 1); return; }
-    if((el = t.closest("[data-open]"))){
-      if(onCatalogPage){ e.preventDefault(); openProd(el.getAttribute("data-open")); }
-      return;
-    }
     if((el = t.closest("[data-guide]"))){ if(GUIDES.length){ e.preventDefault(); openGuide(el.getAttribute("data-guide")); } return; }
     if((el = t.closest(".js-privacy"))){ document.getElementById("dlg-priv").showModal(); return; }
     if((el = t.closest("[data-close]"))){ el.closest("dialog").close(); return; }
@@ -258,7 +254,6 @@
 
   // ===== catálogo de produtos (só em produtos.html) =====
   var CAT = null, catById = Object.create(null), catGroups = Object.create(null), IMGS = {};
-  var dlgProd = document.getElementById("dlg-prod"), dpBody = document.getElementById("dp-body");
   function imgSrc(p){ return IMGS[p] || p; }
   if(onCatalogPage){
     CAT = JSON.parse(document.getElementById("data-catalogo").textContent);
@@ -266,7 +261,6 @@
     if(imgData){ try{ IMGS = JSON.parse(imgData.textContent); }catch(err){ IMGS = {}; } }
     CAT.produtos.forEach(function(p){ catById[p.id] = p; });
     CAT.grupos.forEach(function(g){ catGroups[g.id] = g; });
-    dlgProd.classList.add("wide");
 
     // imagens dos cartões
     document.querySelectorAll("img[data-src]").forEach(function(im){ im.src = imgSrc(im.getAttribute("data-src")); });
@@ -312,93 +306,6 @@
     }
   }
 
-  function blockHTML(b){
-    if(b.t === "h") return "<h3>" + esc(b.x) + "</h3>";
-    if(b.t === "ul") return "<ul>" + b.x.map(function(i){ return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
-    var x = String(b.x);
-    if(/^- /.test(x)){
-      var parts = x.slice(2).split(/\s-\s(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9])/);
-      if(parts.length > 1) return "<ul>" + parts.map(function(i){ return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
-    }
-    return "<p>" + esc(x) + "</p>";
-  }
-  function tableHTML(rows){
-    var head = rows[0], body = rows.slice(1).filter(function(r){ return r.some(function(c){ return String(c == null ? "" : c).trim(); }); });
-    var titleRow = head.length > 1 && String(head[0] || "").trim() && head.slice(1).every(function(c){ return !String(c == null ? "" : c).trim(); });
-    if(titleRow) return '<div class="tbl-wrap"><table><thead><tr><th class="tbl-title" colspan="' + head.length + '">' + esc(head[0]) + "</th></tr></thead><tbody>" +
-      body.map(function(r){ return "<tr>" + r.map(function(c){ return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
-    return '<div class="tbl-wrap"><table><thead><tr>' + head.map(function(c){ return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" +
-      body.map(function(r){ return "<tr>" + r.map(function(c){ return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
-  }
-  function openProd(id){
-    var p = catById[id]; if(!p) return;
-    var g = catGroups[p.g] || {nome: ""};
-    var isLinha = g.tipo === "linha";
-    var pages = p.paginas && p.paginas.length > 1 ? p.paginas[0] + "–" + p.paginas[p.paginas.length - 1] : p.pag;
-    var imgs = p.imgs || [];
-    var gal = imgs.length
-      ? '<div class="pd-main"><img id="pd-img" src="' + imgSrc(imgs[0]) + '" alt="' + esc(p.nome) + '"></div>' +
-        (imgs.length > 1 ? '<div class="pd-thumbs">' + imgs.map(function(s, i){ return '<button type="button" data-thumb="' + esc(s) + '" aria-pressed="' + (i === 0) + '" aria-label="Foto ' + (i + 1) + '"><img src="' + imgSrc(s) + '" alt=""></button>'; }).join("") + "</div>" : "")
-      : '<div class="pd-main" style="background:var(--bg)"><span style="font:900 90px/1 var(--f-display);color:rgba(216,173,70,.35)">' + esc(isLinha ? "" : p.g) + "</span></div>";
-    if(p.ilustrativa || (isLinha && p.ilustrativa !== false)) gal += '<p class="hint">Imagem ilustrativa. Consulte medidas, marcas e disponibilidade com a equipe.</p>';
-    var refOpts = p.refs.map(function(r){ return '<option value="' + esc(r) + '">' + esc(r) + "</option>"; }).join("");
-    var buy = p.info
-      ? '<div class="pd-buy"><p style="margin:0">Conteúdo técnico de referência. Para comprar, escolha os produtos desta categoria ou fale com a equipe.</p></div>'
-      : '<div class="pd-buy">' +
-        (p.refs.length ? '<label for="pd-ref">Referência</label><select id="pd-ref"><option value="">Não sei a referência, quero ajuda</option>' + refOpts + "</select>" : "") +
-        '<div class="sheet-acts">' + qtyHTML("sheet", 1, 1) +
-        '<button type="button" class="btn btn-gold" id="pd-add"><svg><use href="#i-plus"/></svg> Adicionar à lista de orçamento</button></div>' +
-        '<a class="btn btn-ghost" id="pd-wa" target="_blank" rel="noopener" href="#"><svg><use href="#i-wa"/></svg> Pedir orçamento só deste produto no WhatsApp</a></div>';
-    var desc = (p.conteudo || []).map(blockHTML).join("");
-    var tables = (p.tabelas || []).length ? '<details class="pd-more" open><summary>Tabelas técnicas (' + p.tabelas.length + ")</summary><div class=\"pd-tables\" style=\"padding-bottom:16px\">" + p.tabelas.map(tableHTML).join("") + "</div></details>" : "";
-    var refs = p.refs.length ? '<details class="pd-more"><summary>Referências do catálogo (' + p.refs.length + ')</summary><div class="pd-refs" style="padding-bottom:16px">' + p.refs.map(function(r){ return '<button type="button" data-pick-ref="' + esc(r) + '">' + esc(r) + "</button>"; }).join("") + "</div></details>" : "";
-    var share = window.MaxxShare ? MaxxShare.html(MaxxShare.site + "/produtos/" + p.id + ".html", p.nome, "ic", "Compartilhar este produto") : "";
-    dpBody.innerHTML =
-      '<div class="pd-grid"><div class="pd-gal">' + gal + '</div><div class="pd-info">' +
-      '<p class="eyebrow">' + (p.marca ? esc(p.marca) + " · " : "") + (isLinha ? "" : "Categoria " + esc(p.g) + " · ") + esc(g.nome) + (pages ? " · catálogo pág. " + pages : "") + "</p>" +
-      '<h2 id="dp-title">' + esc(p.nome) + "</h2>" +
-      (p.normas.length ? '<div class="badges"><span class="hint" style="margin-right:4px">Normas:</span>' + p.normas.map(function(n){ return '<span class="badge">' + esc(n) + "</span>"; }).join("") + "</div>" : "") +
-      buy + share +
-      (desc ? '<div class="pd-desc">' + desc + "</div>" : "") +
-      tables + refs +
-      '<p class="hint">Informações do Catálogo de Produtos MAXX rev. 07/2026. Confirme a especificação com a equipe antes da compra.</p>' +
-      "</div></div>";
-    function updWa(){
-      var sel = document.getElementById("pd-ref"), ref = sel ? sel.value : "";
-      var a = document.getElementById("pd-wa");
-      if(a) a.href = waBase + "?text=" + encodeURIComponent(saudacao() + ", equipe MAXX Elétrica Solar!\n\nGostaria de fazer um pedido de orçamento do produto abaixo, que vi no catálogo do site:\n\n• *" + p.nome + "*" + (ref ? "\n• Referência: " + ref : "\n• Referência: a definir com a equipe") + "\n• Quantidade: \n\nFico no aguardo de preço, disponibilidade e prazo de entrega.\nAgradeço desde já.");
-    }
-    updWa();
-    var sel = document.getElementById("pd-ref"); if(sel) sel.addEventListener("change", updWa);
-    var addB = document.getElementById("pd-add");
-    if(addB) addB.addEventListener("click", function(){
-      var q = dpBody.querySelector('.pd-buy [data-qty]').value;
-      addToCart({id: p.id, nome: p.nome, ref: sel ? sel.value : ""}, q);
-      dlgProd.close();
-    });
-    dpBody.querySelectorAll("[data-thumb]").forEach(function(b){
-      b.addEventListener("click", function(){
-        document.getElementById("pd-img").src = imgSrc(b.getAttribute("data-thumb"));
-        dpBody.querySelectorAll("[data-thumb]").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      });
-    });
-    dpBody.querySelectorAll("[data-pick-ref]").forEach(function(b){
-      b.addEventListener("click", function(){
-        if(!sel) return;
-        sel.value = b.getAttribute("data-pick-ref"); updWa();
-        dpBody.querySelectorAll("[data-pick-ref]").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-        dpBody.querySelector(".pd-buy").scrollIntoView({behavior: reduceMotion ? "auto" : "smooth", block: "center"});
-      });
-    });
-    if(!dlgProd.open) dlgProd.showModal();
-    dlgProd.querySelector(".sheet-in").scrollTop = 0; dlgProd.scrollTop = 0;
-    try{ history.replaceState(null, "", "#p-" + p.id); }catch(err){}
-    track("view_item", {item: p.id});
-  }
-  if(dlgProd) dlgProd.addEventListener("close", function(){
-    if(location.hash.indexOf("#p-") === 0){ try{ history.replaceState(null, "", location.pathname + location.search); }catch(err){} }
-  });
-
   // ===== blog técnico (guias.html) =====
   var guideData = document.getElementById("data-guias"), GUIDES = [];
   if(guideData){
@@ -423,7 +330,7 @@
       '<p class="lede" style="font-size:16px">' + esc(g.resumo) + '</p>' +
       '<div class="post-body">' + g.html.replace(/<table>/g, '<div class="tbl-wrap"><table>').replace(/<\/table>/g, '</table></div>') + '</div>' + share +
       (g.rel && g.rel.length ? '<div class="post-rel"><h3>Produtos citados neste artigo</h3><div class="post-rel-list">' + g.rel.map(function(r){
-        return '<a href="produtos.html#p-' + r.id + '">' + esc(r.nome) + ' <svg width="14" height="14"><use href="#i-arrow"/></svg></a>';
+        return '<a href="produtos/' + r.id + '.html">' + esc(r.nome) + ' <svg width="14" height="14"><use href="#i-arrow"/></svg></a>';
       }).join("") + '</div></div>' : '') +
       '<p class="hint">Fonte: Catálogo de Produtos MAXX rev. 07/2026, ' + esc(g.fonte || "") + '. <a href="guias/' + g.id + '.html" style="color:var(--gold-hi)">Abrir em página própria</a></p>' +
       '<div class="sheet-acts"><button type="button" class="btn btn-gold" data-goto="orcamento" data-focus="f-nome">Pedir orçamento</button>' +
@@ -512,14 +419,10 @@
     setTimeout(stop, 3000);
   })();
 
-  // links diretos: #p-<id> (produtos.html) e #guia-<id> (guias.html)
+  // links antigos #p-<id> (produtos.html) vão para a página do produto; #guia-<id> abre o artigo (guias.html)
   function openFromHash(){
     var h = location.hash.slice(1);
-    if(h.indexOf("p-") === 0 && onCatalogPage && catById[h.slice(2)]){
-      var card = document.getElementById(h);
-      if(card){ var sec = card.closest(".cat-sec"); (sec || card).scrollIntoView({block: "start"}); revealCard(card); }
-      openProd(h.slice(2));
-    }
+    if(h.indexOf("p-") === 0 && onCatalogPage && catById[h.slice(2)]){ location.replace("produtos/" + h.slice(2) + ".html"); }
     else if(h.indexOf("guia-") === 0 && GUIDES.length){ openGuide(h.slice(5)); }
   }
   openFromHash(); addEventListener("hashchange", openFromHash);
