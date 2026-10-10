@@ -487,7 +487,9 @@
       L.push("_" + (isCatalog ? "Pedido de catálogo " : "Pedido de orçamento ") + proto + " · enviado" + " pelo site da MAXX em " + dataHora() + "_");
       var msg = L.join("\n");
       var url = waBase + "?text=" + encodeURIComponent(msg);
-      track(isCatalog ? "pedido_catalogo" : "generate_lead", {form: form.dataset.form, itens: cart.length});
+      track(isCatalog ? "pedido_catalogo" : "pedido_preparado", {form: form.dataset.form, itens: cart.length});
+      /* generate_lead só conta quando o pedido de fato chega à MAXX: cópia por e-mail confirmada ou clique em Enviar no WhatsApp. */
+      function lead(via){ if(isCatalog || form.dataset.leadProto === proto) return; form.dataset.leadProto = proto; track("generate_lead", {form: form.dataset.form, itens: cart.length, via: via}); }
       if(!isCatalog && cart.length){ try{ localStorage.setItem(LAST_KEY, JSON.stringify({t: Date.now(), p: proto, itens: cart.map(function(it){ return {k: it.k, id: it.id, nome: it.nome, ref: it.ref, q: it.q}; })})); }catch(err){} }
 
       var waOpened = openWa(url, true);
@@ -495,9 +497,10 @@
       var done = form.nextElementSibling;
       done.innerHTML =
         '<div class="check"><svg width="26" height="26"><use href="#i-check"/></svg></div>'+
-        '<h3>Seu pedido está pronto</h3>'+
+        '<h3 data-done-title>Falta um passo: envie no WhatsApp</h3>'+
+        '<p style="margin:0;font-weight:600">Protocolo '+proto+' · resposta em até 24 horas · orçamento válido por 7 dias</p>'+
         (waOpened ? '' : '<p class="mail-st fail" style="margin:0">O navegador não abriu o WhatsApp automaticamente. Toque no botão abaixo para enviar.</p>')+
-        '<p style="margin:0;color:var(--muted)">Toque em <b>Enviar no WhatsApp</b> e confirme o envio na conversa com a MAXX. Se preferir, copie o texto e mande para '+WHATS_LABEL+' ou '+EMAIL_TO+'.</p>'+
+        '<p style="margin:0;color:var(--muted)">Seu pedido ainda não foi enviado por WhatsApp. Toque em <b>Enviar no WhatsApp</b> e confirme o envio na conversa com a MAXX. Se preferir, copie o texto e mande para '+WHATS_LABEL+' ou '+EMAIL_TO+'.</p>'+
         '<p class="mail-st" data-mail-status><svg width="16" height="16"><use href="#i-mail"/></svg> Enviando uma cópia para o e-mail da MAXX…</p>'+
         '<pre></pre>'+
         '<div class="acts"><a class="btn btn-gold" target="_blank" rel="noopener" href="'+url+'"><svg><use href="#i-wa"/></svg> Enviar no WhatsApp</a>'+
@@ -511,11 +514,13 @@
         if(navigator.clipboard){ navigator.clipboard.writeText(msg).then(function(){ toast("Pedido copiado."); }, sel); } else sel();
       });
       done.querySelector(".js-back").addEventListener("click", function(){ done.hidden = true; form.hidden = false; });
+      done.querySelector("a.btn").addEventListener("click", function(){ lead("whatsapp"); });
       done.querySelector("a.btn").focus();
 
       // cópia do pedido para o e-mail da empresa (não trava o WhatsApp)
       var st = done.querySelector("[data-mail-status]");
-      function mailStatus(ok, text){ st.classList.toggle("ok", ok === true); st.classList.toggle("fail", ok === false); st.lastChild.textContent = " " + text; }
+      function mailStatus(ok, text){ st.classList.toggle("ok", ok === true); st.classList.toggle("fail", ok === false); st.lastChild.textContent = " " + text;
+        if(ok === true){ var tt = done.querySelector("[data-done-title]"); if(tt) tt.textContent = "Pedido recebido pela MAXX. Enviar no WhatsApp agiliza a resposta"; lead("email"); } }
       if(form.dataset.lastSent === msg){ mailStatus(true, "Cópia deste pedido já enviada para o e-mail da MAXX."); return; }
       sendEmailCopy(form, fd, msg, isCatalog).then(function(){
         form.dataset.lastSent = msg;
