@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"></noscript>
-<link rel="stylesheet" href="./assets/site.css?v=5a8479ea">
+<link rel="stylesheet" href="./assets/site.css?v=d01f4e48">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de queda de tensão e bitola de cabo","url":"https://maxxeletricasolar.com.br/calculadora-queda-de-tensao.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"publisher":{"@type":"Organization","name":"MAXX Elétrica Solar","url":"https://maxxeletricasolar.com.br/"}}</script>
 </head>
 <body class="sub">
@@ -96,10 +96,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hint">Comprimento = distância de ida, do quadro até a carga. Se informar a potência, a corrente é calculada.</p>
   </div>
-  <div class="calc-card" aria-live="polite">
+  <div class="calc-card">
     <h2>Resultado</h2>
     <div class="res-big"><b id="r-pct">–</b><span id="r-v"></span></div>
-    <span class="res-st" id="r-st"></span>
+    <span class="res-st" id="r-st" role="status"></span>
     <ul class="res-list">
       <li><span>Corrente de cálculo</span><b id="r-i">–</b></li>
       <li><span>Tensão no fim do cabo</span><b id="r-fim">–</b></li>
@@ -128,26 +128,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fill();
   $("c-mat").addEventListener("change",fill);
   function f(n,d){return n.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});}
+  var ZERO="–", WA="https://wa.me/5586994540900", wa=$("r-wa");
+  /* Limites de plausibilidade: fora deles a entrada é tratada como erro de digitação. */
+  var MAXI=2000, MAXP=1000000, MAXL=5000;
+  function erro(id,msg){
+    var el=$(id), box=el.parentNode, e=$("e-"+id);
+    if(!e){ e=document.createElement("span"); e.className="err"; e.id="e-"+id; box.appendChild(e); }
+    if(msg){ e.textContent=msg; box.classList.add("invalid"); el.setAttribute("aria-invalid","true"); el.setAttribute("aria-describedby","e-"+id); }
+    else { e.textContent=""; box.classList.remove("invalid"); el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+  }
+  function num(id){ var t=$(id).value.trim().replace(",","."); return t===""?NaN:+t; }
+  function limpa(st){
+    $("r-pct").textContent=ZERO; $("r-v").textContent="";
+    ["r-i","r-fim","r-s"].forEach(function(i){ $(i).textContent=ZERO; });
+    $("r-sug").innerHTML=""; st.className="res-st bad"; st.textContent="Corrija os dados para calcular";
+    wa.href=WA; wa.setAttribute("aria-disabled","true");
+  }
   function calc(){
-    var sis=document.querySelector("input[name=sis]:checked").value, V=+$("c-v").value, mat=$("c-mat").value, fp=Math.min(1,Math.max(.5,+$("c-fp").value||1));
-    var I=+$("c-i").value||0, P=+$("c-p").value||0, L=+$("c-l").value||0, s=+sel.value, lim=+$("c-lim").value, k=sis==="tri"?Math.sqrt(3):2;
-    if(P>0){ I = sis==="tri" ? P/(Math.sqrt(3)*V*fp) : P/(V*fp); $("c-i").value = Math.round(I*10)/10; }
+    var sis=document.querySelector("input[name=sis]:checked").value, V=+$("c-v").value, mat=$("c-mat").value;
+    var s=+sel.value, lim=+$("c-lim").value, k=sis==="tri"?Math.sqrt(3):2, st=$("r-st");
+    var P=num("c-p"), usaP=!isNaN(P), I=num("c-i"), L=num("c-l"), fp=num("c-fp"), bad=false;
+    function chk(id,v,ok,msg){ var m=ok(v)?"":msg; erro(id,m); if(m) bad=true; }
+    chk("c-l",L,function(v){return v>0&&v<=MAXL;},"Informe o comprimento entre 0,1 e "+f(MAXL,0)+" m.");
+    chk("c-fp",fp,function(v){return v>=.5&&v<=1;},"O fator de potência fica entre 0,5 e 1.");
+    if(usaP){ erro("c-i",""); chk("c-p",P,function(v){return v>0&&v<=MAXP;},"Informe a potência entre 1 e "+f(MAXP,0)+" W."); }
+    else { erro("c-p",""); chk("c-i",I,function(v){return v>0&&v<=MAXI;},"Informe a corrente entre 0,1 e "+f(MAXI,0)+" A."); }
+    if(bad){ limpa(st); return; }
+    wa.removeAttribute("aria-disabled");
+    if(usaP){ I = sis==="tri" ? P/(Math.sqrt(3)*V*fp) : P/(V*fp); $("c-i").value = Math.round(I*10)/10; }
     function dv(sec){ return k*RHO[mat]*L*I*fp/sec; }
-    var d=dv(s), pct=V?d/V*100:0, ok=pct<=lim;
-    $("r-pct").textContent=f(pct,2)+"%"; $("r-v").textContent="("+f(d,1)+" V)";
-    var st=$("r-st"); st.className="res-st "+(ok?"ok":"bad"); st.textContent=ok?"Dentro do limite de "+lim+"%":"Acima do limite de "+lim+"%";
-    $("r-i").textContent=f(I,1)+" A"; $("r-fim").textContent=f(V-d,1)+" V"; $("r-s").textContent=String(s).replace(".",",")+" mm² de "+(mat==="cu"?"cobre":"alumínio");
+    var d=dv(s), pct=V?d/V*100:0, ok=pct<=lim, absurdo=pct>=100;
+    $("r-pct").textContent=absurdo?"Mais de 100%":f(pct,2)+"%"; $("r-v").textContent=absurdo?"(cabo pequeno demais para esta carga)":"("+f(d,1)+" V)";
+    st.className="res-st "+(ok?"ok":"bad"); st.textContent=ok?"Dentro do limite de "+lim+"%":"Acima do limite de "+lim+"%";
+    $("r-i").textContent=f(I,1)+" A"; $("r-fim").textContent=absurdo?ZERO:f(V-d,1)+" V"; $("r-s").textContent=String(s).replace(".",",")+" mm² de "+(mat==="cu"?"cobre":"alumínio");
     var min=null; for(var i=0;i<S.length;i++){ if(S[i]>=MIN[mat] && dv(S[i])/V*100<=lim){min=S[i];break;} }
     var nome=(mat==="cu"?"cobre":"alumínio");
     $("r-sug").innerHTML = min===null ? "<b>Nenhuma seção até 240 mm² atende.</b> Reduza o comprimento, divida a carga ou consulte a equipe." :
       "<b>Menor seção pela queda de tensão: "+String(min).replace(".",",")+" mm² de "+nome+"</b><br><span class='hint'>"+(mat==="al"?"Para alumínio, a NBR 5410 exige no mínimo 16 mm², por isso a lista começa em 16. ":"")+"Confira também a capacidade de corrente e o disjuntor.</span>";
     var txt="Olá, equipe MAXX! Usei a calculadora do site e preciso de orçamento de cabo de "+nome+" "+(min?String(min).replace(".",","):String(s).replace(".",","))+" mm², "+f(L,0)+" m, circuito "+(sis==="tri"?"trifásico":sis==="bi"?"bifásico":"monofásico")+" "+V+" V, "+f(I,1)+" A.";
-    $("r-wa").href="https://wa.me/5586994540900?text="+encodeURIComponent(txt);
+    wa.href=WA+"?text="+encodeURIComponent(txt);
   }
   $("calc").addEventListener("input",function(e){ if(e.target.id==="c-i") $("c-p").value=""; calc(); });
   $("calc").addEventListener("change",calc);
   calc();
-  $("r-wa").addEventListener("click",function(){try{(window.dataLayer=window.dataLayer||[]).push({event:"clique_whatsapp",origem:"calculadora"})}catch(e){}});
+  $("r-wa").addEventListener("click",function(e){if(this.getAttribute("aria-disabled")==="true"){e.preventDefault();return;}try{(window.dataLayer=window.dataLayer||[]).push({event:"clique_whatsapp",origem:"calculadora"})}catch(e){}});
 })();
 </script>
 </main>
