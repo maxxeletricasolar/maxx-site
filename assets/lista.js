@@ -239,6 +239,11 @@
     carrega();
     document.addEventListener("click", function (e) { if (e.target.closest("[data-lista-abrir]")) { e.preventDefault(); abreLista(); } });
     $$("[data-lista-prod]").forEach(iniciaCompra);
+    document.addEventListener("click", function (e) {
+      var bt = e.target.closest("[data-add-prod]"); if (!bt) return;
+      adiciona({ id: bt.getAttribute("data-add-prod"), nome: bt.getAttribute("data-nome") || bt.getAttribute("data-add-prod") }, 1); salva();
+      aviso("Adicionado à lista de orçamento.", "Ver lista", abreLista);
+    });
     iniciaPick();
     iniciaTema();
     atualiza();

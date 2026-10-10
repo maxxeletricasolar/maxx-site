@@ -240,7 +240,6 @@
       return;
     }
     if((el = t.closest("[data-add-prod]"))){ addToCart({id: el.getAttribute("data-add-prod"), nome: el.getAttribute("data-nome") || el.getAttribute("data-add-prod")}, 1); return; }
-    if((el = t.closest("[data-guide]"))){ if(GUIDES.length){ e.preventDefault(); openGuide(el.getAttribute("data-guide")); } return; }
     if((el = t.closest(".js-privacy"))){ document.getElementById("dlg-priv").showModal(); return; }
     if((el = t.closest("[data-close]"))){ el.closest("dialog").close(); return; }
   });
@@ -306,9 +305,8 @@
   }
 
   // ===== blog técnico (guias.html) =====
-  var guideData = document.getElementById("data-guias"), GUIDES = [];
+  var guideData = document.getElementById("data-guias");
   if(guideData){
-    GUIDES = JSON.parse(guideData.textContent);
     var tagBar = document.getElementById("blog-tags");
     if(tagBar) tagBar.addEventListener("click", function(e){
       var btn = e.target.closest("button[data-tag]"); if(!btn) return;
@@ -318,34 +316,6 @@
       track("filtro_blog", {tema: tag || "todos"});
     });
   }
-  var dlgGuia = document.getElementById("dlg-guia"), dgBody = document.getElementById("dg-body");
-  function openGuide(id){
-    var g = GUIDES.filter(function(x){ return x.id === id; })[0]; if(!g) return;
-    var waQ = waBase + "?text=" + encodeURIComponent("Olá, MAXX! Li o artigo \"" + g.titulo + "\" e tenho uma dúvida:");
-    var others = GUIDES.filter(function(x){ return x.id !== g.id && x.tag === g.tag; })
-      .concat(GUIDES.filter(function(x){ return x.id !== g.id && x.tag !== g.tag; })).slice(0, 2);
-    var share = window.MaxxShare ? MaxxShare.html(MaxxShare.site + "/guias/" + g.id + ".html", g.titulo, "txt", "Compartilhar este artigo, final do texto", "Gostou? Compartilhe este artigo") : "";
-    dgBody.innerHTML = '<p class="eyebrow">' + esc(g.tag) + ' · ' + esc(g.leitura) + ' de leitura</p><h2 id="dg-title">' + esc(g.titulo) + '</h2>' +
-      '<p class="lede" style="font-size:16px">' + esc(g.resumo) + '</p>' +
-      '<div class="post-body">' + g.html.replace(/<table>/g, '<div class="tbl-wrap"><table>').replace(/<\/table>/g, '</table></div>') + '</div>' + share +
-      (g.rel && g.rel.length ? '<div class="post-rel"><h3>Produtos citados neste artigo</h3><div class="post-rel-list">' + g.rel.map(function(r){
-        return '<a href="produtos/' + r.id + '.html">' + esc(r.nome) + ' <svg width="14" height="14"><use href="#i-arrow"/></svg></a>';
-      }).join("") + '</div></div>' : '') +
-      '<p class="hint">Fonte: Catálogo de Produtos MAXX rev. 07/2026, ' + esc(g.fonte || "") + '. <a href="guias/' + g.id + '.html" style="color:var(--gold-hi)">Abrir em página própria</a></p>' +
-      '<div class="sheet-acts"><button type="button" class="btn btn-gold" data-goto="orcamento" data-focus="f-nome">Pedir orçamento</button>' +
-      '<a class="btn btn-ghost" target="_blank" rel="noopener" href="' + waQ + '"><svg><use href="#i-wa"/></svg> Tirar uma dúvida</a></div>' +
-      (others.length ? '<div class="post-next"><h3>Leia também</h3>' + others.map(function(o){
-        return '<button type="button" class="guide" data-guide="' + o.id + '"><span class="gtag">' + esc(o.tag) + '<i>' + esc(o.leitura) + '</i></span><h3>' + esc(o.titulo) + '</h3></button>';
-      }).join("") + '</div>' : '');
-    if(!dlgGuia.open) dlgGuia.showModal();
-    dgBody.scrollTop = 0; dlgGuia.scrollTop = 0;
-    try{ history.replaceState(null, "", "#guia-" + g.id); }catch(err){}
-    track("ler_guia", {guia: id});
-  }
-  if(dlgGuia) dlgGuia.addEventListener("close", function(){
-    if(location.hash.indexOf("#guia-") === 0){ try{ history.replaceState(null, "", location.pathname + location.search); }catch(err){} }
-  });
-
   renderCart();
 
   // rola a fileira horizontal até deixar o cartão do produto à vista
@@ -423,7 +393,7 @@
     var h = location.hash.slice(1);
     var cardLink = h.indexOf("p-") === 0 && onCatalogPage ? document.getElementById(h) : null; cardLink = cardLink && cardLink.querySelector("a[href]");
     if(cardLink){ location.replace(cardLink.getAttribute("href")); }
-    else if(h.indexOf("guia-") === 0 && GUIDES.length){ openGuide(h.slice(5)); }
+    else if(h.indexOf("guia-") === 0){ var gl = document.querySelector('a[data-guide="' + h.slice(5) + '"]'); if(gl) location.replace(gl.getAttribute("href")); }
   }
   openFromHash(); addEventListener("hashchange", openFromHash);
 

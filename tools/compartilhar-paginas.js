@@ -73,7 +73,7 @@ for (const p of paginas()) {
     if (fl > 0 && r > fl) {
       // embaixo primeiro (posição maior), para o índice de cima continuar valendo
       s = s.slice(0, r) + bloco(url, titulo, 'txt', 'Compartilhar este artigo, final do texto', 'Gostou? Compartilhe este artigo') + s.slice(r);
-      s = s.slice(0, fl) + bloco(url, titulo, 'ic', 'Compartilhar este artigo') + s.slice(fl);
+      // um só bloco por artigo: o do final do texto (o de cima competia com o botão de orçamento)
       tipo = 'guia';
     }
   } else if (rel === 'calculadora-queda-de-tensao.html') {
