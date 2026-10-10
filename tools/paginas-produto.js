@@ -138,8 +138,8 @@ function secaoTabelas(p, tabs, refsSoltas, relatorio) {
   const bar = temPick
     ? `<div class="pm-bar" data-pm-bar data-id="${esc(p.id)}" data-nome="${esc(p.nome)}" hidden><div class="wrap">` +
       '<p data-bar-txt aria-live="polite">0 referências</p>' +
-      '<button type="button" class="btn btn-gold" data-bar-add>Adicionar à lista</button>' +
-      '<a class="btn btn-ghost" data-bar-wa href="https://wa.me/5586994540900">Pedir no WhatsApp</a></div></div>'
+      '<button type="button" class="btn btn-gold" data-bar-add>Adicionar à lista de orçamento</button>' +
+      '<a class="btn btn-ghost" data-bar-wa href="https://wa.me/5586994540900">Pedir orçamento no WhatsApp</a></div></div>'
     : '';
   return { html, bar, temPick };
 }

@@ -58,8 +58,8 @@
       b.addEventListener("click", function () { t.remove(); fn(); });
       t.appendChild(b);
     }
-    document.body.appendChild(t); clearTimeout(toastT);
-    toastT = setTimeout(function () { t.remove(); }, rotulo ? 6000 : 3000);
+    (document.querySelector("dialog[open]") || document.body).appendChild(t); clearTimeout(toastT); /* dentro do popup aberto, senão ele cobre o aviso */
+    toastT = setTimeout(function () { t.remove(); }, rotulo ? 8000 : 4000);
   }
 
   /* ===== gaveta da lista ===== */
@@ -75,7 +75,7 @@
       var st = e.target.closest("[data-step]"), rm = e.target.closest("[data-rm]"), lim = e.target.closest("[data-limpar]");
       if (st) { var it = achar(st.getAttribute("data-k")); if (it) { it.q = Math.max(0, Math.min(9999, it.q + parseInt(st.getAttribute("data-step"), 10))); if (!it.q) cart.splice(cart.indexOf(it), 1); salva(); } }
       if (rm) { var r = achar(rm.getAttribute("data-rm")); if (r) { cart.splice(cart.indexOf(r), 1); salva(); } }
-      if (lim) { cart = []; salva(); }
+      if (lim) { var bak = cart.slice(); cart = []; salva(); if (bak.length) aviso("Lista limpa.", "Desfazer", function () { cart = bak; salva(); if (dlg && dlg.open) desenhaGaveta(); }); }
     });
     dlg.addEventListener("change", function (e) {
       var inp = e.target.closest("[data-qty]"); if (!inp) return;
@@ -239,6 +239,11 @@
     carrega();
     document.addEventListener("click", function (e) { if (e.target.closest("[data-lista-abrir]")) { e.preventDefault(); abreLista(); } });
     $$("[data-lista-prod]").forEach(iniciaCompra);
+    document.addEventListener("click", function (e) {
+      var bt = e.target.closest("[data-add-prod]"); if (!bt) return;
+      adiciona({ id: bt.getAttribute("data-add-prod"), nome: bt.getAttribute("data-nome") || bt.getAttribute("data-add-prod") }, 1); salva();
+      aviso("Adicionado à lista de orçamento.", "Ver lista", abreLista);
+    });
     iniciaPick();
     iniciaTema();
     atualiza();
