@@ -26,7 +26,7 @@
   });
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  var interesses = ["Aterramento Temporário","Linha viva / bastões","Coberturas isolantes","Instrumentos de teste","Perfilados","Eletrocalhas","Postes","Combate a Incêndio","Material de Lógica","Hidráulica","EPIs","Fardamentos","Outros"];
+  var interesses = ["Aterramento Temporário","Linha viva / bastões","Coberturas isolantes","Instrumentos de teste","Perfilados","Eletrocalhas","Postes","Combate a Incêndio","Material de Lógica","Hidráulica","EPIs","Fardamentos","Para-raios / SPDA","Cabos de alumínio","Conduletes e eletrodutos PVC","Outros"];
   var iWrap = document.getElementById("interesses");
   function chipHTML(v){ return '<label class="multi-opt"><input type="checkbox" name="interesse" value="'+v+'"><span>'+v+'</span></label>'; }
   iWrap.innerHTML = interesses.map(chipHTML).join("");
@@ -71,8 +71,8 @@
       b.addEventListener("click", function(){ t.remove(); actFn(); });
       t.appendChild(b);
     }
-    document.body.appendChild(t);
-    setTimeout(function(){ t.remove(); }, actLabel ? 4500 : 2600);
+    (document.querySelector("dialog[open]") || document.body).appendChild(t);  // dentro do popup aberto, senão ele cobre o aviso
+    setTimeout(function(){ t.remove(); }, actLabel ? 8000 : 4000);
   }
   function esc(v){ return String(v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
   function norm(v){ return String(v).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
@@ -220,7 +220,7 @@
       inp.value = nv; if(!inSheet) setQty(el.getAttribute("data-k"), nv); return;
     }
     if((el = t.closest("[data-rm]"))){ setQty(el.getAttribute("data-rm"), 0); return; }
-    if((el = t.closest("[data-clear]"))){ cart = []; saveCart(); renderCart(); return; }
+    if((el = t.closest("[data-clear]"))){ var bak = cart.slice(); cart = []; saveCart(); renderCart(); if(bak.length) toast("Lista limpa.", "Desfazer", function(){ cart = bak; saveCart(); renderCart(); }); return; }
     if((el = t.closest("[data-repeat]"))){ var lo = lastOrder(); if(lo){
         el.disabled = true;
         // produtos fora de linha não voltam para a lista (decisão 0005): só entram os que ainda estão no catálogo
@@ -268,12 +268,7 @@
         var hay = c.getAttribute("data-q"), ok = terms.every(function(t){ return hay.indexOf(t) >= 0; });
         c.hidden = !ok; if(ok) shown++;
       });
-      secs.forEach(function(s){
-        var n = s.querySelectorAll(".pcard:not([hidden])").length; s.hidden = !n;
-        /* o cabeçalho da categoria também mostra o total do catálogo; durante a busca mostra quantos casam */
-        var m = s.querySelector(".cat-head .meta"), tn = m && [].filter.call(m.childNodes, function(x){ return x.nodeType === 3 && /\d+ produtos?/.test(x.textContent); })[0];
-        if(tn){ if(tn.o === undefined) tn.o = tn.textContent; tn.textContent = terms.length ? tn.o.replace(/(\d+) produtos?/, n + " de $1 produtos") : tn.o; }
-      });
+      secs.forEach(function(s){ s.hidden = !s.querySelector(".pcard:not([hidden])"); });
       cEmpty.hidden = shown > 0;
       cCount.textContent = terms.length ? shown + (shown === 1 ? " produto encontrado" : " produtos encontrados") + " para “" + cq.value.trim() + "”" : "";
     }
