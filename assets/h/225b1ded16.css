@@ -1421,3 +1421,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 .cg-intro .share{margin:14px 0 0}
 @media (prefers-reduced-motion:reduce){.sh{transition:none}}
 /*share:fim*/
+
+/*menu-categorias*/
+@media (max-width:960px){.cat-side.open .cat-nav{max-height:calc(100vh - var(--hh,65px) - 130px - env(safe-area-inset-bottom,0px))!important;max-height:calc(100dvh - var(--hh,65px) - 130px - env(safe-area-inset-bottom,0px))!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}}
