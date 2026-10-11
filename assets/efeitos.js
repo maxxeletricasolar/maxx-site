@@ -53,3 +53,15 @@
     new MutationObserver(function(){ c.classList.remove("fx-pop"); void c.offsetWidth; c.classList.add("fx-pop"); }).observe(c, {childList:true, characterData:true, subtree:true});
   });
 })();
+
+/* menu de hambúrguer das páginas geradas (tools/menu-paginas.js) */
+(function(){
+  var d = document.getElementById("dlg-menu-g"); if(!d || !d.showModal) return;
+  var btn = null;
+  document.addEventListener("click", function(e){
+    var o = e.target.closest("[data-menu-open]");
+    if(o){ e.preventDefault(); btn = o; if(!d.open) d.showModal(); o.setAttribute("aria-expanded", "true"); return; }
+    if(d.open && (e.target === d || e.target.closest("[data-fecha-menu]") || e.target.closest("#dlg-menu-g a"))) d.close();
+  });
+  d.addEventListener("close", function(){ if(btn){ btn.setAttribute("aria-expanded", "false"); btn.focus(); } });
+})();

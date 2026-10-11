@@ -1334,7 +1334,6 @@ nav.main a{padding-block:10px}
 .mini-pol .link-btn{color:inherit}
 .sub-nav{display:none}
 @media (max-width:1140px){.sub-nav{display:flex;gap:4px;overflow-x:auto;padding:0 clamp(16px,4vw,32px) 8px;scrollbar-width:none}.sub-nav::-webkit-scrollbar{display:none}.sub-nav a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted);text-decoration:none;font-weight:600;font-size:.875rem}.sub-nav a:hover{color:var(--text);border-color:var(--gold)}}
-@media (max-width:520px){.sub-nav{overflow:visible;flex-wrap:wrap;justify-content:center}.sub-nav a{flex:1 1 auto;justify-content:center;padding:0 8px;min-height:40px;font-size:.8125rem}.sub-nav a:first-child{display:none}}
 .sub .wa-float{display:flex!important}
 @media (max-width:760px){body.sub{padding-bottom:0}.sub .wa-float{padding:15px}.sub .wa-float span{display:none}}
 
