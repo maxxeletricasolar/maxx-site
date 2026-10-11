@@ -12,7 +12,7 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
   - Rótulos únicos em todas as páginas, no botão fixo (aria-label igual ao texto), na barra de seleção e na calculadora.
   - Catálogo: `produtos.html` não carrega mais `catalogo-data.js` (638 KB); nome do produto nunca cortado; cabeçalho de categoria mostra "3 de 13 produtos" durante a busca; hero compacto no celular.
   - Foto sob consulta (`img/sem-foto.svg`) no lugar das três variantes; grade de categorias regular (4:3, 2 colunas no celular); resumos de 6 cartões corrigidos.
-  - Artigos: "Produtos citados" com foto e "Adicionar à lista de orçamento"; um só bloco de compartilhar; leitor em popup do blog removido (links antigos redirecionam).
+  - Artigos: "Produtos citados" em linhas alinhadas, com foto e "Adicionar à lista de orçamento"; navegação anterior/próximo; um só bloco de compartilhar; leitor em popup do blog removido (links antigos redirecionam).
   - Quem somos: depoimentos reais da home e link do Google; sem "preço claro" nem "estoque completo".
   - Calculadora: sem botão fixo cobrindo o pedido; resumo fixo do resultado no celular.
   - Home: botão de orçamento na 1ª tela do celular (y 880 para 505); sem polaroide, selo Ritz repetido, faixa animada e passos repetidos; título sem gradiente animado.
