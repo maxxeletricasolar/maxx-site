@@ -51,7 +51,7 @@ Lista viva das melhorias de layout e design e do que depende do usuário: `tools
 - Produto e artigo abrem em página própria (`/produtos/<id>.html`, `/guias/<id>.html`); não há popup nem leitor. Links antigos `#p-<id>` e `#guia-<id>` redirecionam. Foto que falta usa só `img/sem-foto.svg`.
 - `generate_lead` só dispara com a cópia por e-mail confirmada ou no clique em Enviar no WhatsApp; o envio da tela vira `pedido_preparado`.
 - Rótulos: "Adicionar à lista de orçamento", "Pedir orçamento no WhatsApp" e, no formulário, "Enviar pedido de orçamento".
-- Card de produto no catálogo: só imagem, categoria, nome e resumo.
+- Catálogo em linhas compactas (foto pequena, nome, resumo de 1 linha e botão "+ Lista"; produtos só informativos ficam sem o botão). O botão usa `data-add-prod` e o rótulo é definido no JS principal ("+ Lista" / "✓ Na lista (n)"). Para voltar aos cartões, reverter o commit "Catálogo B".
 - Home mostra as 5 categorias principais, com os mesmos títulos do menu de `produtos.html`.
 - Em `produtos.html` o catálogo abre direto na primeira categoria, com atalhos de categoria no celular (PR #7); uma seção por vez (classe `cat-modo`, `.sel` na ativa) e a busca mostra todas.
 - O rodapé e o contraste/áreas de toque atuais vêm do trabalho de design dos PRs #3 a #7 (branch `claude/admiring-dirac-qubp6u`). Não recrie o rodapé `footer.rd` antigo.
