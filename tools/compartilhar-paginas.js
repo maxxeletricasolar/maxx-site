@@ -65,7 +65,9 @@ for (const p of paginas()) {
     if (f < 0) { const t = s.indexOf('</h1>'); f = t < 0 ? -1 : t + 5; } // páginas de conteúdo técnico não têm bloco de compra: entra logo após o título
     if (f > 0) { s = s.slice(0, f) + bloco(url, titulo, 'ic', 'Compartilhar este produto') + s.slice(f); tipo = 'produto'; }
   } else if (rel.startsWith('categorias/')) {
-    const i = s.indexOf('<div class="cg-meta">'), f = i < 0 ? -1 : fimDiv(s, i);
+    // o bloco de compartilhar entra depois de Como escolher (tools/categorias-guia.js); sem ele, depois dos selos antigos
+    const g = s.indexOf('<!--/cg-guia-->'), i = s.indexOf('<div class="cg-meta">');
+    const f = g >= 0 ? g + '<!--/cg-guia-->'.length : (i < 0 ? -1 : fimDiv(s, i));
     if (f > 0) { s = s.slice(0, f) + bloco(url, titulo, 'ic', 'Compartilhar esta categoria') + s.slice(f); tipo = 'categoria'; }
   } else if (rel.startsWith('guias/')) {
     const a = s.indexOf('<article class="art">'), l = a < 0 ? -1 : s.indexOf('<p class="lede"', a), fl = l < 0 ? -1 : fimParagrafo(s, l);
