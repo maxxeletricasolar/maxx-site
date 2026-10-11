@@ -71,8 +71,8 @@
       b.addEventListener("click", function(){ t.remove(); actFn(); });
       t.appendChild(b);
     }
-    document.body.appendChild(t);
-    setTimeout(function(){ t.remove(); }, actLabel ? 4500 : 2600);
+    (document.querySelector("dialog[open]") || document.body).appendChild(t);  // dentro do popup aberto, senão ele cobre o aviso
+    setTimeout(function(){ t.remove(); }, actLabel ? 8000 : 4000);
   }
   function esc(v){ return String(v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
   function norm(v){ return String(v).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
@@ -220,7 +220,7 @@
       inp.value = nv; if(!inSheet) setQty(el.getAttribute("data-k"), nv); return;
     }
     if((el = t.closest("[data-rm]"))){ setQty(el.getAttribute("data-rm"), 0); return; }
-    if((el = t.closest("[data-clear]"))){ cart = []; saveCart(); renderCart(); return; }
+    if((el = t.closest("[data-clear]"))){ var bak = cart.slice(); cart = []; saveCart(); renderCart(); if(bak.length) toast("Lista limpa.", "Desfazer", function(){ cart = bak; saveCart(); renderCart(); }); return; }
     if((el = t.closest("[data-repeat]"))){ var lo = lastOrder(); if(lo){
         el.disabled = true;
         // produtos fora de linha não voltam para a lista (decisão 0005): só entram os que ainda estão no catálogo
@@ -240,7 +240,6 @@
       return;
     }
     if((el = t.closest("[data-add-prod]"))){ addToCart({id: el.getAttribute("data-add-prod"), nome: el.getAttribute("data-nome") || el.getAttribute("data-add-prod")}, 1); return; }
-    if((el = t.closest("[data-guide]"))){ if(GUIDES.length){ e.preventDefault(); openGuide(el.getAttribute("data-guide")); } return; }
     if((el = t.closest(".js-privacy"))){ document.getElementById("dlg-priv").showModal(); return; }
     if((el = t.closest("[data-close]"))){ el.closest("dialog").close(); return; }
   });
@@ -253,14 +252,8 @@
   });
 
   // ===== catálogo de produtos (só em produtos.html) =====
-  var CAT = null, catById = Object.create(null), catGroups = Object.create(null), IMGS = {};
-  function imgSrc(p){ return IMGS[p] || p; }
+  function imgSrc(p){ return p; }
   if(onCatalogPage){
-    CAT = JSON.parse(document.getElementById("data-catalogo").textContent);
-    var imgData = document.getElementById("data-imgs");
-    if(imgData){ try{ IMGS = JSON.parse(imgData.textContent); }catch(err){ IMGS = {}; } }
-    CAT.produtos.forEach(function(p){ catById[p.id] = p; });
-    CAT.grupos.forEach(function(g){ catGroups[g.id] = g; });
 
     // imagens dos cartões
     document.querySelectorAll("img[data-src]").forEach(function(im){ im.src = imgSrc(im.getAttribute("data-src")); });
@@ -275,7 +268,12 @@
         var hay = c.getAttribute("data-q"), ok = terms.every(function(t){ return hay.indexOf(t) >= 0; });
         c.hidden = !ok; if(ok) shown++;
       });
-      secs.forEach(function(s){ s.hidden = !s.querySelector(".pcard:not([hidden])"); });
+      secs.forEach(function(s){
+        var n = s.querySelectorAll(".pcard:not([hidden])").length; s.hidden = !n;
+        /* o cabeçalho da categoria também mostra o total do catálogo; durante a busca mostra quantos casam */
+        var m = s.querySelector(".cat-head .meta"), tn = m && [].filter.call(m.childNodes, function(x){ return x.nodeType === 3 && /\d+ produtos?/.test(x.textContent); })[0];
+        if(tn){ if(tn.o === undefined) tn.o = tn.textContent; tn.textContent = terms.length ? tn.o.replace(/(\d+) produtos?/, n + " de $1 produtos") : tn.o; }
+      });
       cEmpty.hidden = shown > 0;
       cCount.textContent = terms.length ? shown + (shown === 1 ? " produto encontrado" : " produtos encontrados") + " para “" + cq.value.trim() + "”" : "";
     }
@@ -307,9 +305,8 @@
   }
 
   // ===== blog técnico (guias.html) =====
-  var guideData = document.getElementById("data-guias"), GUIDES = [];
+  var guideData = document.getElementById("data-guias");
   if(guideData){
-    GUIDES = JSON.parse(guideData.textContent);
     var tagBar = document.getElementById("blog-tags");
     if(tagBar) tagBar.addEventListener("click", function(e){
       var btn = e.target.closest("button[data-tag]"); if(!btn) return;
@@ -319,34 +316,6 @@
       track("filtro_blog", {tema: tag || "todos"});
     });
   }
-  var dlgGuia = document.getElementById("dlg-guia"), dgBody = document.getElementById("dg-body");
-  function openGuide(id){
-    var g = GUIDES.filter(function(x){ return x.id === id; })[0]; if(!g) return;
-    var waQ = waBase + "?text=" + encodeURIComponent("Olá, MAXX! Li o artigo \"" + g.titulo + "\" e tenho uma dúvida:");
-    var others = GUIDES.filter(function(x){ return x.id !== g.id && x.tag === g.tag; })
-      .concat(GUIDES.filter(function(x){ return x.id !== g.id && x.tag !== g.tag; })).slice(0, 2);
-    var share = window.MaxxShare ? MaxxShare.html(MaxxShare.site + "/guias/" + g.id + ".html", g.titulo, "txt", "Compartilhar este artigo, final do texto", "Gostou? Compartilhe este artigo") : "";
-    dgBody.innerHTML = '<p class="eyebrow">' + esc(g.tag) + ' · ' + esc(g.leitura) + ' de leitura</p><h2 id="dg-title">' + esc(g.titulo) + '</h2>' +
-      '<p class="lede" style="font-size:16px">' + esc(g.resumo) + '</p>' +
-      '<div class="post-body">' + g.html.replace(/<table>/g, '<div class="tbl-wrap"><table>').replace(/<\/table>/g, '</table></div>') + '</div>' + share +
-      (g.rel && g.rel.length ? '<div class="post-rel"><h3>Produtos citados neste artigo</h3><div class="post-rel-list">' + g.rel.map(function(r){
-        return '<a href="produtos/' + r.id + '.html">' + esc(r.nome) + ' <svg width="14" height="14"><use href="#i-arrow"/></svg></a>';
-      }).join("") + '</div></div>' : '') +
-      '<p class="hint">Fonte: Catálogo de Produtos MAXX rev. 07/2026, ' + esc(g.fonte || "") + '. <a href="guias/' + g.id + '.html" style="color:var(--gold-hi)">Abrir em página própria</a></p>' +
-      '<div class="sheet-acts"><button type="button" class="btn btn-gold" data-goto="orcamento" data-focus="f-nome">Pedir orçamento</button>' +
-      '<a class="btn btn-ghost" target="_blank" rel="noopener" href="' + waQ + '"><svg><use href="#i-wa"/></svg> Tirar uma dúvida</a></div>' +
-      (others.length ? '<div class="post-next"><h3>Leia também</h3>' + others.map(function(o){
-        return '<button type="button" class="guide" data-guide="' + o.id + '"><span class="gtag">' + esc(o.tag) + '<i>' + esc(o.leitura) + '</i></span><h3>' + esc(o.titulo) + '</h3></button>';
-      }).join("") + '</div>' : '');
-    if(!dlgGuia.open) dlgGuia.showModal();
-    dgBody.scrollTop = 0; dlgGuia.scrollTop = 0;
-    try{ history.replaceState(null, "", "#guia-" + g.id); }catch(err){}
-    track("ler_guia", {guia: id});
-  }
-  if(dlgGuia) dlgGuia.addEventListener("close", function(){
-    if(location.hash.indexOf("#guia-") === 0){ try{ history.replaceState(null, "", location.pathname + location.search); }catch(err){} }
-  });
-
   renderCart();
 
   // rola a fileira horizontal até deixar o cartão do produto à vista
@@ -422,8 +391,9 @@
   // links antigos #p-<id> (produtos.html) vão para a página do produto; #guia-<id> abre o artigo (guias.html)
   function openFromHash(){
     var h = location.hash.slice(1);
-    if(h.indexOf("p-") === 0 && onCatalogPage && catById[h.slice(2)]){ location.replace("produtos/" + h.slice(2) + ".html"); }
-    else if(h.indexOf("guia-") === 0 && GUIDES.length){ openGuide(h.slice(5)); }
+    var cardLink = h.indexOf("p-") === 0 && onCatalogPage ? document.getElementById(h) : null; cardLink = cardLink && cardLink.querySelector("a[href]");
+    if(cardLink){ location.replace(cardLink.getAttribute("href")); }
+    else if(h.indexOf("guia-") === 0){ var gl = document.querySelector('a[data-guide="' + h.slice(5) + '"]'); if(gl) location.replace(gl.getAttribute("href")); }
   }
   openFromHash(); addEventListener("hashchange", openFromHash);
 
@@ -487,7 +457,9 @@
       L.push("_" + (isCatalog ? "Pedido de catálogo " : "Pedido de orçamento ") + proto + " · enviado" + " pelo site da MAXX em " + dataHora() + "_");
       var msg = L.join("\n");
       var url = waBase + "?text=" + encodeURIComponent(msg);
-      track(isCatalog ? "pedido_catalogo" : "generate_lead", {form: form.dataset.form, itens: cart.length});
+      track(isCatalog ? "pedido_catalogo" : "pedido_preparado", {form: form.dataset.form, itens: cart.length});
+      /* generate_lead só conta quando o pedido de fato chega à MAXX: cópia por e-mail confirmada ou clique em Enviar no WhatsApp. */
+      function lead(via){ if(isCatalog || form.dataset.leadProto === proto) return; form.dataset.leadProto = proto; track("generate_lead", {form: form.dataset.form, itens: cart.length, via: via}); }
       if(!isCatalog && cart.length){ try{ localStorage.setItem(LAST_KEY, JSON.stringify({t: Date.now(), p: proto, itens: cart.map(function(it){ return {k: it.k, id: it.id, nome: it.nome, ref: it.ref, q: it.q}; })})); }catch(err){} }
 
       var waOpened = openWa(url, true);
@@ -495,9 +467,10 @@
       var done = form.nextElementSibling;
       done.innerHTML =
         '<div class="check"><svg width="26" height="26"><use href="#i-check"/></svg></div>'+
-        '<h3>Seu pedido está pronto</h3>'+
+        '<h3 data-done-title>Falta um passo: envie no WhatsApp</h3>'+
+        '<p style="margin:0;font-weight:600">Protocolo '+proto+' · resposta em até 24 horas · orçamento válido por 7 dias</p>'+
         (waOpened ? '' : '<p class="mail-st fail" style="margin:0">O navegador não abriu o WhatsApp automaticamente. Toque no botão abaixo para enviar.</p>')+
-        '<p style="margin:0;color:var(--muted)">Toque em <b>Enviar no WhatsApp</b> e confirme o envio na conversa com a MAXX. Se preferir, copie o texto e mande para '+WHATS_LABEL+' ou '+EMAIL_TO+'.</p>'+
+        '<p style="margin:0;color:var(--muted)">Seu pedido ainda não foi enviado por WhatsApp. Toque em <b>Enviar no WhatsApp</b> e confirme o envio na conversa com a MAXX. Se preferir, copie o texto e mande para '+WHATS_LABEL+' ou '+EMAIL_TO+'.</p>'+
         '<p class="mail-st" data-mail-status><svg width="16" height="16"><use href="#i-mail"/></svg> Enviando uma cópia para o e-mail da MAXX…</p>'+
         '<pre></pre>'+
         '<div class="acts"><a class="btn btn-gold" target="_blank" rel="noopener" href="'+url+'"><svg><use href="#i-wa"/></svg> Enviar no WhatsApp</a>'+
@@ -511,11 +484,13 @@
         if(navigator.clipboard){ navigator.clipboard.writeText(msg).then(function(){ toast("Pedido copiado."); }, sel); } else sel();
       });
       done.querySelector(".js-back").addEventListener("click", function(){ done.hidden = true; form.hidden = false; });
+      done.querySelector("a.btn").addEventListener("click", function(){ lead("whatsapp"); });
       done.querySelector("a.btn").focus();
 
       // cópia do pedido para o e-mail da empresa (não trava o WhatsApp)
       var st = done.querySelector("[data-mail-status]");
-      function mailStatus(ok, text){ st.classList.toggle("ok", ok === true); st.classList.toggle("fail", ok === false); st.lastChild.textContent = " " + text; }
+      function mailStatus(ok, text){ st.classList.toggle("ok", ok === true); st.classList.toggle("fail", ok === false); st.lastChild.textContent = " " + text;
+        if(ok === true){ var tt = done.querySelector("[data-done-title]"); if(tt) tt.textContent = "Pedido recebido pela MAXX. Enviar no WhatsApp agiliza a resposta"; lead("email"); } }
       if(form.dataset.lastSent === msg){ mailStatus(true, "Cópia deste pedido já enviada para o e-mail da MAXX."); return; }
       sendEmailCopy(form, fd, msg, isCatalog).then(function(){
         form.dataset.lastSent = msg;

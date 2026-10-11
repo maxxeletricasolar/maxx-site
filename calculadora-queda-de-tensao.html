@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"></noscript>
-<link rel="stylesheet" href="./assets/site.css?v=d01f4e48">
+<link rel="stylesheet" href="./assets/site.css?v=ae88798e">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de queda de tensão e bitola de cabo","url":"https://maxxeletricasolar.com.br/calculadora-queda-de-tensao.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"publisher":{"@type":"Organization","name":"MAXX Elétrica Solar","url":"https://maxxeletricasolar.com.br/"}}</script>
 </head>
 <body class="sub">
@@ -96,6 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hint">Comprimento = distância de ida, do quadro até a carga. Se informar a potência, a corrente é calculada.</p>
   </div>
+  <div class="calc-mini" id="calc-mini" aria-hidden="true" hidden><b id="m-pct"></b><span class="res-st" id="m-st"></span></div>
   <div class="calc-card">
     <h2>Resultado</h2>
     <div class="res-big"><b id="r-pct">–</b><span id="r-v"></span></div>
@@ -106,7 +107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><span>Seção informada</span><b id="r-s">–</b></li>
     </ul>
     <div class="res-sug" id="r-sug"></div>
-    <a class="btn btn-gold" id="r-wa" href="https://wa.me/5586994540900" target="_blank" rel="noopener">Pedir orçamento deste cabo</a>
+    <a class="btn btn-gold" id="r-wa" href="https://wa.me/5586994540900" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
     <p class="hint" style="margin-top:12px">Ver <a href="categorias/cabos-e-fios-de-aluminio.html">cabos de alumínio</a> no catálogo.</p>
   </div>
 </form>
@@ -128,6 +129,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fill();
   $("c-mat").addEventListener("change",fill);
   function f(n,d){return n.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});}
+  /* resumo fixo no celular: só aparece quando o cartão de resultado está fora da tela */
+  function mini(){ $("m-pct").textContent=$("r-pct").textContent; var m=$("m-st"); m.className=$("r-st").className; m.textContent=$("r-st").textContent; }
+  (function(){ var card=$("r-pct").closest(".calc-card"), box=$("calc-mini"); if(!card||!box||!window.IntersectionObserver) return;
+    new IntersectionObserver(function(es){ box.hidden = es[0].isIntersecting; },{threshold:0.15}).observe(card); })();
   var ZERO="–", WA="https://wa.me/5586994540900", wa=$("r-wa");
   /* Limites de plausibilidade: fora deles a entrada é tratada como erro de digitação. */
   var MAXI=2000, MAXP=1000000, MAXL=5000;
@@ -143,6 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ["r-i","r-fim","r-s"].forEach(function(i){ $(i).textContent=ZERO; });
     $("r-sug").innerHTML=""; st.className="res-st bad"; st.textContent="Corrija os dados para calcular";
     wa.href=WA; wa.setAttribute("aria-disabled","true");
+    mini();
   }
   function calc(){
     var sis=document.querySelector("input[name=sis]:checked").value, V=+$("c-v").value, mat=$("c-mat").value;
@@ -167,6 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       "<b>Menor seção pela queda de tensão: "+String(min).replace(".",",")+" mm² de "+nome+"</b><br><span class='hint'>"+(mat==="al"?"Para alumínio, a NBR 5410 exige no mínimo 16 mm², por isso a lista começa em 16. ":"")+"Confira também a capacidade de corrente e o disjuntor.</span>";
     var txt="Olá, equipe MAXX! Usei a calculadora do site e preciso de orçamento de cabo de "+nome+" "+(min?String(min).replace(".",","):String(s).replace(".",","))+" mm², "+f(L,0)+" m, circuito "+(sis==="tri"?"trifásico":sis==="bi"?"bifásico":"monofásico")+" "+V+" V, "+f(I,1)+" A.";
     wa.href=WA+"?text="+encodeURIComponent(txt);
+    mini();
   }
   $("calc").addEventListener("input",function(e){ if(e.target.id==="c-i") $("c-p").value=""; calc(); });
   $("calc").addEventListener("change",calc);
@@ -258,7 +265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }catch(e){}
 })();
 </script>
-<a class="wa-float" data-wa="Encontrei a MAXX pelo site e gostaria de fazer um pedido de orçamento." data-origem="botao_fixo" href="https://wa.me/5586994540900" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>Orçamento no WhatsApp</span></a>
+<a class="wa-float" data-wa="Encontrei a MAXX pelo site e gostaria de fazer um pedido de orçamento." data-origem="botao_fixo" href="https://wa.me/5586994540900" aria-label="Pedir orçamento no WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>Pedir orçamento no WhatsApp</span></a>
 <script>
 (function(){
   try{var t=localStorage.getItem("maxx-tema");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -275,7 +282,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll("[data-thumb]").forEach(function(b){b.addEventListener("click",function(){var m=document.getElementById("pd-img");m.src=b.getAttribute("data-thumb");document.querySelectorAll("[data-thumb]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});});});
 })();
 </script>
-<script src="./assets/busca.js?v=0ef4c34b" data-base="./" data-mode="site" defer></script>
+<script src="./assets/busca.js?v=d02706f7" data-base="./" data-mode="site" defer></script>
+<style>
+.sub a.wa-float{display:none!important}
+.calc-mini{display:none}
+@media (max-width:760px){.calc-mini{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:54;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 24px -10px rgba(0,0,0,.45);font-size:.9375rem}.calc-mini[hidden]{display:none}.calc-mini b{font:700 1.125rem/1 var(--f-display)}}
+</style>
 <!-- Barra de cookies -->
 <style>
 .ck{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:90;max-width:720px;margin-inline:auto;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);padding:18px 18px 16px;font-size:.875rem;line-height:1.55}

@@ -59,7 +59,7 @@
     var r = search(q), h = "";
     if(r.c.length) h += '<p class="sx-h">Categorias</p>' + r.c.map(function(c){ return '<a href="' + catUrl(c) + '" role="option"><b>' + esc(c.b) + '</b><span><strong>' + hl(c.n, r.toks) + '</strong><small>' + c.q + (c.q === 1 ? " produto" : " produtos") + '</small></span></a>'; }).join("");
     if(r.p.length) h += '<p class="sx-h">Produtos</p>' + r.p.map(function(p){ return '<a href="' + prodUrl(p) + '" role="option"><b>' + esc(p.b) + '</b><span><strong>' + hl(p.n, r.toks) + '</strong><small>' + esc(p.g) + (p.r ? " · " + hl(p.r, r.toks) : "") + '</small></span></a>'; }).join("");
-    if(!h) h = '<p class="sx-empty">Nada encontrado para "<b>' + esc(q) + '</b>". Temos mais de 2.300 referências: <a href="https://wa.me/5586994540900?text=' + encodeURIComponent("Olá, equipe MAXX! Procuro: " + q) + '" target="_blank" rel="noopener">pergunte à equipe no WhatsApp</a>.</p>';
+    if(!h) h = '<p class="sx-empty">Nada encontrado para "<b>' + esc(q) + '</b>". Temos mais de 2.000 referências: <a href="https://wa.me/5586994540900?text=' + encodeURIComponent("Olá, equipe MAXX! Procuro: " + q) + '" target="_blank" rel="noopener">pergunte à equipe no WhatsApp</a>.</p>';
     res.innerHTML = h; sel = -1;
     clearTimeout(timer); timer = setTimeout(function(){ try{ (window.dataLayer = window.dataLayer || []).push({event:"busca_produto", termo:q, resultados:r.p.length + r.c.length, origem:"busca_rapida"}); }catch(e){} }, 900);
   }

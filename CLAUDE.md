@@ -7,7 +7,7 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
 ## Estrutura
 - `index.html`, `produtos.html`, `guias.html`, `quem-somos.html`, páginas legais e `404.html` na raiz.
 - `produtos/` (324 páginas), `categorias/` (26) e `guias/` (10): páginas geradas, quase idênticas entre si.
-- `assets/catalogo-data.js`: catálogo (`window.__CAT`); só `produtos.html` o lê.
+- `assets/catalogo-data.js`: catálogo (`window.__CAT`), fonte das ferramentas em `tools/` (`produtos.html` não o carrega mais; o popup de produto saiu).
 - `assets/h/<hash10>.css|js`: CSS e JS grandes, com o hash do conteúdo no nome (cache de 1 ano).
 - `assets/site.css`, `assets/busca.js`, `assets/efeitos.js`: sem hash no nome, versionados por `?v=<hash8>` nas páginas.
 - `enviar-pedido.php`: formulário (e-mail). PHP não está instalado nesta máquina, então nunca foi executado aqui.
@@ -45,7 +45,12 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
 ## Pendências e continuidade
 Lista viva das melhorias de layout e design e do que depende do usuário: `tools/handoff/PENDENCIAS.md` (leia antes de começar; diagnóstico completo em `tools/handoff/analise-impeccable-maxx.md`). Atualize o arquivo ao concluir cada item.
 
+10. Artigos do blog: `node tools/artigos-produtos.js` (idempotente, marcadores `<!--art-prod-->`) troca a lista de links de texto por cartões de "Produtos citados neste artigo", com foto e "Adicionar à lista de orçamento" (`data-add-prod` em `assets/lista.js`). A fonte dos produtos citados é o JSON `data-guias` de `guias.html` (campo `rel`). Cada artigo tem um só bloco de compartilhar, o do final do texto. Ordem: artigos-produtos, compartilhar-paginas, shell-paginas, reindexar-assets.
+
 ## Decisões de produto já tomadas
+- Produto e artigo abrem em página própria (`/produtos/<id>.html`, `/guias/<id>.html`); não há popup nem leitor. Links antigos `#p-<id>` e `#guia-<id>` redirecionam. Foto que falta usa só `img/sem-foto.svg`.
+- `generate_lead` só dispara com a cópia por e-mail confirmada ou no clique em Enviar no WhatsApp; o envio da tela vira `pedido_preparado`.
+- Rótulos: "Adicionar à lista de orçamento", "Pedir orçamento no WhatsApp" e, no formulário, "Enviar pedido de orçamento".
 - Card de produto no catálogo: só imagem, categoria, nome e resumo.
 - Home mostra as 5 categorias principais, com os mesmos títulos do menu de `produtos.html`.
 - Em `produtos.html` o catálogo abre direto na primeira categoria, com atalhos de categoria no celular (PR #7); uma seção por vez (classe `cat-modo`, `.sel` na ativa) e a busca mostra todas.
