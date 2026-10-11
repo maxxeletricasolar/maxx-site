@@ -205,7 +205,7 @@
     document.querySelectorAll("[data-add-prod]").forEach(function(b){
       var q = qtyOfProduct(b.getAttribute("data-add-prod"));
       b.classList.toggle("added", q > 0);
-      b.innerHTML = q > 0 ? "✓ Na lista (" + q + ")" : '<svg><use href="#i-plus"/></svg> Orçamento';
+      b.textContent = q > 0 ? "✓ Na lista (" + q + ")" : "+ Lista";
     });
   }
   function openCart(){ renderCart(); if(dlgCart.showModal) dlgCart.showModal(); track("ver_orcamento", {itens: cart.length}); }
@@ -268,7 +268,12 @@
         var hay = c.getAttribute("data-q"), ok = terms.every(function(t){ return hay.indexOf(t) >= 0; });
         c.hidden = !ok; if(ok) shown++;
       });
-      secs.forEach(function(s){ s.hidden = !s.querySelector(".pcard:not([hidden])"); });
+      secs.forEach(function(s){
+        var n = s.querySelectorAll(".pcard:not([hidden])").length; s.hidden = !n;
+        /* o cabeçalho da categoria também mostra o total do catálogo; durante a busca mostra quantos casam */
+        var m = s.querySelector(".cat-head .meta"), tn = m && [].filter.call(m.childNodes, function(x){ return x.nodeType === 3 && /\d+ produtos?/.test(x.textContent); })[0];
+        if(tn){ if(tn.o === undefined) tn.o = tn.textContent; tn.textContent = terms.length ? tn.o.replace(/(\d+) produtos?/, n + " de $1 produtos") : tn.o; }
+      });
       cEmpty.hidden = shown > 0;
       cCount.textContent = terms.length ? shown + (shown === 1 ? " produto encontrado" : " produtos encontrados") + " para “" + cq.value.trim() + "”" : "";
     }

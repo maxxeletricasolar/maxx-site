@@ -20,13 +20,18 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
   - Sistema: "Limpar lista" com Desfazer (o aviso agora aparece dentro do popup aberto), avisos de 4 s (8 s com ação), anel de foco nos campos, botão fixo pulsa só 3 vezes, `produtos.html` com as 15 linhas de interesse.
   - Conteúdo: "2.000+ referências" (eram 2.340 somadas, 2.065 distintas).
 
+## Aplicado por sua escolha, sem dados que o confirmem (reverter se não gostar)
+- Home A: campo "Cole aqui a sua lista" na primeira tela (commit "Home A"). Evento `lista_na_home`.
+- Catálogo B: linhas compactas com "+ Lista" (commit "Catálogo B").
+- Categorias B: bloco "Como escolher" no lugar dos selos (commit "Categorias B").
+- Para reverter uma delas: `git revert <commit>` e PR. Medir antes e depois com o GA4 quando existir (`lista_na_home`, `pedido_preparado`, `generate_lead`).
+
 ## Pendente: layout e design (não feito de propósito)
 - Unificar os 4 CSS e 2 JS e trocar as ~163 cores fixas por tokens: refactor grande, sem teste visual automatizado; fazer em PR próprio, página por página, com captura antes e depois.
 - Banner de cookies no fim do DOM (ordem de foco) e brilho dourado decorativo da home.
 - Foto: 19 produtos ainda sem foto (agora com "Foto sob consulta"); a Vara de Manobra Seccionável e a Telescópica usam fotos genéricas de poste e de operário. Foto de produto: mostrar ao usuário antes de adicionar; fotos com pessoas do setor elétrico, realistas.
 - Resumos de cartão: o de "Mastro para Cruzeta" e dois "Esse conjunto..." começam com pronome; revisar com a equipe.
 - Evento `view_item` (GA) deixou de ser enviado ao remover o popup; reincluir nas páginas de produto quando o GA4 existir.
-- Opções de layout (2 a 3 em imagem) para home, catálogo e categorias, como pedido do usuário: ver o artefato publicado nesta sessão.
 
 ## Pendente: depende do usuário ou da equipe
 - Conferir as tabelas (`tools/revisao-tabelas.csv`) com o catálogo impresso (só as 2 primeiras do bastão de manobra foram conferidas, em `tools/tabelas-curadas.json`).
