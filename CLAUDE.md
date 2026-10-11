@@ -51,6 +51,8 @@ Lista viva das melhorias de layout e design e do que depende do usuário: `tools
 
 12. Menu de celular das páginas geradas (produtos, categorias, artigos, calculadora, legais e 404): `node tools/menu-paginas.js` (idempotente, marcadores `<!--menu-btn-->` e `<!--menu-dlg-->`) põe o botão de hambúrguer e a gaveta de links, no lugar da antiga fileira de atalhos `.sub-nav`; o clique é tratado no fim de `assets/efeitos.js` (`data-menu-open`). Rode depois de `shell-paginas.js` ao incluir páginas novas.
 
+13. Compartilhamento e sitemap: `python3 tools/og-produtos.py` (idempotente; precisa de Pillow) troca o `og:image` WebP das páginas de produto, categoria e artigo por um JPG 1200x630 em `img/og/` (foto pequena ou muito alongada usa `img/og-maxx.jpg`), porque Facebook e WhatsApp lidam mal com WebP e imagem pequena. `node tools/sitemap-datas.js` põe no `sitemap.xml` a data real de cada página (git; arquivo não commitado vale hoje). Rode os dois depois de incluir páginas ou fotos.
+
 ## Decisões de produto já tomadas
 - Produto e artigo abrem em página própria (`/produtos/<id>.html`, `/guias/<id>.html`); não há popup nem leitor. Links antigos `#p-<id>` e `#guia-<id>` redirecionam. Foto que falta usa só `img/sem-foto.svg`.
 - `generate_lead` só dispara com a cópia por e-mail confirmada ou no clique em Enviar no WhatsApp; o envio da tela vira `pedido_preparado`.
