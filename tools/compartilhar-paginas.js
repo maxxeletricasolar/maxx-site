@@ -69,7 +69,8 @@ for (const p of paginas()) {
     if (f > 0) { s = s.slice(0, f) + bloco(url, titulo, 'ic', 'Compartilhar esta categoria') + s.slice(f); tipo = 'categoria'; }
   } else if (rel.startsWith('guias/')) {
     const a = s.indexOf('<article class="art">'), l = a < 0 ? -1 : s.indexOf('<p class="lede"', a), fl = l < 0 ? -1 : fimParagrafo(s, l);
-    const r = s.indexOf('<section class="rel"', a);
+    // o bloco de baixo entra antes dos produtos citados; sem eles, antes de Leia também; sem nenhum dos dois, no fim do artigo
+    const r = ['<!--art-prod-->', '<section class="rel"', '</article>'].map(x => s.indexOf(x, a)).filter(i => i > fl)[0] ?? -1;
     if (fl > 0 && r > fl) {
       // embaixo primeiro (posição maior), para o índice de cima continuar valendo
       s = s.slice(0, r) + bloco(url, titulo, 'txt', 'Compartilhar este artigo, final do texto', 'Gostou? Compartilhe este artigo') + s.slice(r);
