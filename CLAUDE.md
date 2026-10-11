@@ -49,6 +49,8 @@ Lista viva das melhorias de layout e design e do que depende do usuário: `tools
 
 11. Categorias: `node tools/categorias-guia.js` (idempotente, marcadores `<!--cg-guia-->`) põe o bloco "Como escolher" (3 passos; modelo Ritz nas categorias A a L e modelo geral nas demais) e os artigos do blog que citam produtos da categoria, no lugar dos selos de frete e retirada. `tools/compartilhar-paginas.js` ancora o compartilhar depois dele. Ordem: categorias-guia, compartilhar-paginas, shell-paginas, reindexar-assets. Para voltar aos selos, reverter o commit "Categorias B".
 
+12. Menu de celular das páginas geradas (produtos, categorias, artigos, calculadora, legais e 404): `node tools/menu-paginas.js` (idempotente, marcadores `<!--menu-btn-->` e `<!--menu-dlg-->`) põe o botão de hambúrguer e a gaveta de links, no lugar da antiga fileira de atalhos `.sub-nav`; o clique é tratado no fim de `assets/efeitos.js` (`data-menu-open`). Rode depois de `shell-paginas.js` ao incluir páginas novas.
+
 ## Decisões de produto já tomadas
 - Produto e artigo abrem em página própria (`/produtos/<id>.html`, `/guias/<id>.html`); não há popup nem leitor. Links antigos `#p-<id>` e `#guia-<id>` redirecionam. Foto que falta usa só `img/sem-foto.svg`.
 - `generate_lead` só dispara com a cópia por e-mail confirmada ou no clique em Enviar no WhatsApp; o envio da tela vira `pedido_preparado`.
