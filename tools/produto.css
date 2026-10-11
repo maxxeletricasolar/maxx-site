@@ -73,7 +73,7 @@ dialog.drawer .lista-vazia{color:var(--muted);line-height:1.5}
 .pm-noimg b{color:var(--text);font:700 1rem var(--f-display)}
 .pm-noimg a{color:var(--gold);font-weight:600;text-underline-offset:3px}
 @media (max-width:700px){
- .pm-bar .wrap{flex-wrap:wrap}.pm-bar p{flex-basis:100%}.pm-bar .btn-gold{flex:1}.pm-bar .btn{padding:0 14px}
+ .pm-bar .wrap{flex-wrap:wrap}.pm-bar p{flex-basis:100%}.pm-bar .btn{flex:1 1 0;min-width:0;white-space:normal;text-align:center;justify-content:center;line-height:1.15;font-size:.8125rem;padding:8px 10px;min-height:48px;height:auto}
  .pm-tbl[data-pick]{border:0;background:none;overflow:visible}
  .pm-tbl[data-pick] caption{display:block;width:100%;padding:0 0 10px;border:0}
  .pm-tbl[data-pick] thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
