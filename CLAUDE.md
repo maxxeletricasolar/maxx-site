@@ -17,7 +17,7 @@ nada vai direto para a `main`: trabalhar em branch, abrir PR, conferir no ar dep
 1. **Editou um arquivo de `assets/h/` ou um estático sem hash? Rode o reindexador:**
    `powershell -NoProfile -ExecutionPolicy Bypass -File tools\reindexar-assets.ps1`
    Ele renomeia pelo novo hash, atualiza as 371 páginas, versiona `site.css`/`busca.js`/`efeitos.js` com `?v=`
-   e avisa de referências quebradas. Sem isso as páginas apontam para arquivos que não existem.
+   versiona também `img/ui.svg` (`ui.svg?v=<hash8>#icone`, senão o navegador usa a cópia em cache sem os ícones novos) e avisa de referências quebradas. Sem isso as páginas apontam para arquivos que não existem.
 2. **Incluiu produto?** Atualize `assets/catalogo-data.js`, rode `tools\sincronizar-home.ps1` (cartões e totais da
    home) e confira `produtos.html`. Home e produtos andam juntos. O hash `?v=` do catálogo muda com o conteúdo.
 3. Scripts `.ps1` precisam de **BOM UTF-8** (o PowerShell 5.1 lê UTF-8 sem BOM como ANSI e quebra acentos).

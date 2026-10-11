@@ -26,10 +26,12 @@ fs.readdirSync(dirH).filter((f) => /\.(css|js)$/.test(f)).forEach((f) => {
 // 2) ?v= dos estáticos
 const vers = {};
 ESTATICOS.forEach((n) => { const p = path.join(RAIZ, 'assets', n); if (fs.existsSync(p)) vers[n] = hash(p, 8); });
+const verSvg = hash(path.join(RAIZ, 'img/ui.svg'), 8);
 let altV = 0, altM = 0;
 paginas.forEach((pg) => {
   let t = fs.readFileSync(pg, 'utf8'); const o = t;
   Object.keys(vers).forEach((n) => { t = t.replace(new RegExp('(assets/' + n.replace('.', '\\.') + ')(\\?v=[0-9a-f]+)?(?=["\'])', 'g'), `$1?v=${vers[n]}`); });
+  t = t.replace(/(img\/ui\.svg)(\?v=[0-9a-f]+)?(?=#)/g, (m, a) => `${a}?v=${verSvg}`);
   if (t !== o) { fs.writeFileSync(pg, t); altV++; }
   if (Object.keys(mapa).length) { let u = t; Object.keys(mapa).forEach((k) => { u = u.split('assets/h/' + k).join('assets/h/' + mapa[k]); }); if (u !== t) { fs.writeFileSync(pg, u); altM++; } }
 });
