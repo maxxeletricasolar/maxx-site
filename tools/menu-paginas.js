@@ -14,9 +14,14 @@ function paginas(dir) {
 }
 
 const BOTAO = '<!--menu-btn--><button type="button" class="menu-btn" data-menu-open aria-label="Abrir menu" aria-controls="dlg-menu-g" aria-expanded="false"><svg aria-hidden="true"><use href="/img/ui.svg#i-menu"/></svg></button><!--/menu-btn-->';
-const gaveta = b => `<!--menu-dlg--><dialog class="drawer drawer-menu" id="dlg-menu-g" aria-label="Menu"><div class="drawer-head"><img src="${b}img/logo.jpg" alt="MAXX Elétrica Solar" width="44" height="44" style="border-radius:8px"><button type="button" class="sheet-x" style="float:none;margin:0" data-fecha-menu aria-label="Fechar menu">✕</button></div>` +
-  `<nav class="menu-links" aria-label="Menu principal"><a href="${b}">Início</a><a href="${b}quem-somos.html">Quem somos</a><a href="${b}produtos.html">Produtos</a><a href="${b}guias.html">Blog técnico</a><a href="${b}#contato">Contato e endereço</a><a href="${b}calculadora-queda-de-tensao.html">Calculadora de queda de tensão</a></nav>` +
-  `<div class="drawer-foot"><a class="btn btn-gold" href="${b}produtos.html#orcamento">Pedir orçamento</a><a class="btn btn-ghost" href="https://wa.me/5586994540900" data-wa="Encontrei a MAXX pelo site e gostaria de fazer um pedido de orçamento." data-origem="menu" target="_blank" rel="noopener">WhatsApp (86) 99454-0900</a></div></dialog><!--/menu-dlg-->\n`;
+const ico = id => `<svg aria-hidden="true"><use href="/img/ui.svg#${id}"/></svg>`;
+// Mesmo menu da home e do catálogo: ícones, item da página atual marcado e o rodapé com WhatsApp e a frase da Ritz.
+const gaveta = (b, atual) => {
+  const cur = k => (atual === k ? ' aria-current="page"' : '');
+  return `<!--menu-dlg--><dialog class="drawer drawer-menu" id="dlg-menu-g" aria-label="Menu"><div class="drawer-head"><img src="${b}img/logo.jpg" alt="MAXX Elétrica Solar" width="44" height="44" style="border-radius:8px"><button type="button" class="sheet-x" style="float:none;margin:0" data-fecha-menu aria-label="Fechar menu">✕</button></div>` +
+  `<nav class="menu-links" aria-label="Menu principal"><a href="${b}">${ico('i-home')}Início</a><a href="${b}quem-somos.html"${cur('quem')}>${ico('i-escudo')}Quem somos</a><a href="${b}produtos.html"${cur('produtos')}>${ico('i-grid')}Produtos</a><a href="${b}guias.html"${cur('blog')}>${ico('i-book')}Blog técnico</a><a href="${b}#contato">${ico('i-pin')}Contato e endereço</a></nav>` +
+  `<div class="drawer-foot"><a class="btn btn-gold" href="${b}produtos.html#orcamento">Pedir orçamento</a><a class="btn btn-ghost" href="https://wa.me/5586994540900" data-wa="Encontrei a MAXX pelo site e gostaria de fazer um pedido de orçamento." data-origem="menu" target="_blank" rel="noopener">${ico('i-wa')} WhatsApp <span>(86) 99454-0900</span></a><p class="hint" style="margin:4px 0 0">Revendedor autorizado Ritz · Teresina-PI</p></div></dialog><!--/menu-dlg-->\n`;
+};
 
 let n = 0;
 for (const p of paginas(RAIZ)) {
@@ -29,7 +34,8 @@ for (const p of paginas(RAIZ)) {
   if (!s.includes('<!--menu-btn-->')) s = s.replace(/(<header class="site">[\s\S]*?)(<a class="btn btn-gold" href="[^"]*#orcamento">Pedir orçamento<\/a>)/, (m, a, c) => a + BOTAO + '\n    ' + c);
   s = s.replace(/<!--menu-dlg-->[\s\S]*?<!--\/menu-dlg-->\n?/, '');
   const i = s.lastIndexOf('</body>');
-  if (i > 0) s = s.slice(0, i) + gaveta(b) + s.slice(i);
+  const rel = path.relative(RAIZ, p).replace(/\\/g, '/'), atual = /^(produtos|categorias)\//.test(rel) ? 'produtos' : /^guias\//.test(rel) ? 'blog' : null;
+  if (i > 0) s = s.slice(0, i) + gaveta(b, atual) + s.slice(i);
   if (crlf) s = s.replace(/\n/g, '\r\n');
   if (s !== orig) { fs.writeFileSync(p, s); n++; }
 }
