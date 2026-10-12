@@ -1,5 +1,5 @@
-// Põe a faixa escura do topo (descrição + WhatsApp) em todas as páginas que ainda não a têm (as 4 principais já trazem a sua).
-// Idempotente (marcadores <!--topbar--> ... <!--/topbar-->). Uso: node tools/topbar-paginas.js (a partir da raiz); depois, reindexar-assets.
+// Põe no topo de todas as páginas: a faixa escura (descrição + WhatsApp; as 4 principais já trazem a sua) e, logo depois dela, a faixa dourada de
+// categorias que passa da direita para a esquerda (só a partir de 761 px). Idempotente (marcadores <!--topbar--> e <!--ticker-->). Uso: node tools/topbar-paginas.js (a partir da raiz); depois, reindexar-assets.
 'use strict';
 const fs = require('fs'), path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
@@ -10,6 +10,8 @@ const BLOCO = `<!--topbar--><div class="topbar">
   </div>
 </div><!--/topbar-->
 `;
+const CATS = ["Aterramento temporário", "Varas de manobra", "Coberturas isolantes", "Escadas isolantes", "Detectores de tensão", "Jumpers temporários", "Perfilados", "Eletrocalhas", "Postes", "Combate a incêndio", "Lógica", "Hidráulica", "EPIs", "Fardamentos", "Para-raios", "Hastes de aterramento", "Sinalizadores", "Cabos de alumínio", "Conduletes", "Eletrodutos PVC"];
+const FAIXA = '<!--ticker--><div class="ticker" aria-label="Categorias de produtos">\n  <div class="ticker-track">' + CATS.map((c) => '<span>' + c + '</span>').join('') + CATS.map((c) => '<span aria-hidden="true">' + c + '</span>').join('') + '</div>\n</div><!--/ticker-->\n';
 function htmls(d, a = []) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
     const p = path.join(d, e.name);
@@ -20,15 +22,14 @@ function htmls(d, a = []) {
 }
 let n = 0, ja = 0, sem = [];
 for (const p of htmls(RAIZ)) {
-  let t = fs.readFileSync(p, 'utf8');
-  const i = t.indexOf('<header class="site"');
-  if (i < 0) { sem.push(path.relative(RAIZ, p)); continue; }
-  if (/class="topbar"/.test(t) && !t.includes('<!--topbar-->')) { ja++; continue; } // as 4 páginas principais têm a sua
-  const nl = t.includes('\r\n') ? '\r\n' : '\n';
-  const bloco = BLOCO.replace(/\n/g, nl);
-  t = t.replace(/<!--topbar-->[\s\S]*?<!--\/topbar-->\r?\n?/g, '');
+  const orig = fs.readFileSync(p, 'utf8');
+  if (orig.indexOf('<header class="site"') < 0) { sem.push(path.relative(RAIZ, p)); continue; }
+  const nl = orig.includes('\r\n') ? '\r\n' : '\n';
+  let t = orig.replace(/<!--topbar-->[\s\S]*?<!--\/topbar-->\r?\n?/g, '').replace(/<!--ticker-->[\s\S]*?<!--\/ticker-->\r?\n?/g, '');
+  t = t.replace(/ {2}<div class="ticker"[\s\S]*?\n {2}<\/div>\r?\n(\r?\n)?/, ''); // a faixa antiga, abaixo do hero da home
+  const propria = /class="topbar"/.test(t); if (propria) ja++;
   const j = t.indexOf('<header class="site"');
-  const novo = t.slice(0, j) + bloco + t.slice(j);
-  if (novo !== fs.readFileSync(p, 'utf8')) { fs.writeFileSync(p, novo); n++; }
+  t = t.slice(0, j) + (propria ? '' : BLOCO.replace(/\n/g, nl)) + FAIXA.replace(/\n/g, nl) + t.slice(j);
+  if (t !== orig) { fs.writeFileSync(p, t); n++; }
 }
 console.log(`topbar: ${n} página(s) atualizadas; ${ja} já tinham a própria; sem <header class="site">: ${sem.join(', ') || 'nenhuma'}`);
