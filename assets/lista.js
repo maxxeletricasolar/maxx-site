@@ -191,6 +191,7 @@
     var bar = $("[data-pm-bar]"); if (!bar) return;
     var id = bar.getAttribute("data-id"), nome = bar.getAttribute("data-nome");
     $$("[data-pick]").forEach(function (t) {
+      t.addEventListener("click", function (e) { var td = e.target.closest("td.chk"); if (td && e.target === td) { var c = $("input[type=checkbox]", td); if (c) { c.checked = !c.checked; c.dispatchEvent(new Event("change", { bubbles: true })); } } });
       t.addEventListener("change", function (e) {
         var tr = e.target.closest("tr[data-row]"); if (!tr) return;
         if (e.target.type === "number") { var c = $("input[type=checkbox]", tr); if (c && !c.checked && parseInt(e.target.value, 10) > 0) c.checked = true; }

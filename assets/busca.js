@@ -89,7 +89,7 @@
     var ref = w.querySelector(".theme-tg") || w.querySelector(".btn-gold") || null; w.insertBefore(b, ref);
   }
   addBtn();
-  (function(){ var h = document.querySelector("header.site"); if(!h || document.querySelector(".sx-bar")) return;
+  (function(){ var h = document.querySelector("header.site"); if(!h || document.querySelector(".sx-bar") || document.getElementById("cat-q") || document.querySelector(".pd-grid")) return;
     var bar = document.createElement("button"); bar.type = "button"; bar.className = "sx-bar"; bar.setAttribute("aria-label", "Buscar produto, referência ou categoria");
     bar.innerHTML = ICON + "<span>Buscar produto, referência ou categoria</span>"; bar.addEventListener("click", open);
     var main = document.querySelector("main"); if(main) main.insertBefore(bar, main.firstChild); else h.parentNode.insertBefore(bar, h.nextSibling); })();

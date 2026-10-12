@@ -20,6 +20,8 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
   - Sistema: "Limpar lista" com Desfazer (o aviso agora aparece dentro do popup aberto), avisos de 4 s (8 s com ação), anel de foco nos campos, botão fixo pulsa só 3 vezes, `produtos.html` com as 15 linhas de interesse.
   - Conteúdo: "2.000+ referências" (eram 2.340 somadas, 2.065 distintas).
 
+- Revisão de design (12/10): botão de comprar mais alto no produto (compartilhar desceu), uma só busca no catálogo e no produto, WhatsApp flutuante oculto onde a barra inferior já tem WhatsApp, seletor de tensão sem quebra de linha, área de toque de 44 px nos links pequenos e na caixa de seleção das tabelas, caminho de navegação em uma linha. Ainda não feito dessa revisão: rótulo do controle de tema (conferir leitor de tela) e botões da barra de seleção com 2 linhas (rótulos fixados no CLAUDE.md).
+
 ## Aplicado por sua escolha, sem dados que o confirmem (reverter se não gostar)
 - Home A: campo "Cole aqui a sua lista" na primeira tela (commit "Home A"). Evento `lista_na_home`.
 - Catálogo B: linhas compactas com "+ Lista" (commit "Catálogo B").
