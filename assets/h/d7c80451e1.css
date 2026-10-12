@@ -1422,3 +1422,5 @@ a[href^="tel:"]::after,.hl-cat::after,.pm-note a::after,.pbody h3 a::after{conte
 footer a:not(.btn)::after{content:"";position:absolute;inset:-4px -4px}
 .cat-count:empty{display:none}
 }
+/*ticker-mobile*/
+@media (max-width:760px){.ticker{display:none}}
