@@ -128,3 +128,24 @@ dialog.drawer .lista-vazia{color:var(--muted);line-height:1.5}
 .cg-guia-lk{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .cg-guia-lk a{color:var(--text);text-underline-offset:3px;font-size:.9375rem}
 .cg-guia .btn-sm{justify-self:start;margin-top:6px;min-height:44px}
+
+/*apple-1*/
+@media (max-width:760px){
+.tabbar~.wa-float,.sub .tabbar~.wa-float{display:none!important}
+.pm-seg{grid-template-columns:repeat(auto-fit,minmax(76px,1fr))}
+.pm-seg-i span{white-space:nowrap}
+.pm-tbl[data-pick] .chk{display:flex;align-items:flex-start;justify-content:center;cursor:pointer;padding-top:2px!important}
+.pm-tbl[data-pick] .chk input{width:28px;height:28px}
+.pm-tbl[data-pick] tr{grid-template-columns:44px 1fr auto;gap:0 6px}
+.pp .crumbs{font-size:0;line-height:0}
+.pp .crumbs a{display:none}
+.pp .crumbs a:last-of-type{display:block;font:500 .8125rem/1.4 var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;padding:13px 4px;margin:-13px -4px}
+.pp .crumbs a:last-of-type::before{content:"\2039\00a0"}
+}
+/*toque*/
+@media (max-width:760px){
+a[href^="tel:"],footer a:not(.btn),.hl-cat,.pm-note a,.pbody h3 a{position:relative}
+a[href^="tel:"]::after,.hl-cat::after,.pm-note a::after,.pbody h3 a::after{content:"";position:absolute;inset:-14px -6px}
+footer a:not(.btn)::after{content:"";position:absolute;inset:-4px -4px}
+.cat-count:empty{display:none}
+}

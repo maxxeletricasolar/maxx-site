@@ -60,7 +60,8 @@ for (const p of paginas()) {
   let tipo = null;
 
   if (rel.startsWith('produtos/')) {
-    const i = s.indexOf('<div class="pd-buy">');
+    // o bloco de compartilhar vem depois da compra (pm-buy; antes, pd-buy), para o botão de adicionar subir na tela do celular
+    let i = s.indexOf('<div class="pm-buy"'); if (i < 0) i = s.indexOf('<div class="pd-buy">');
     let f = i < 0 ? -1 : fimDiv(s, i);
     if (f < 0) { const t = s.indexOf('</h1>'); f = t < 0 ? -1 : t + 5; } // páginas de conteúdo técnico não têm bloco de compra: entra logo após o título
     if (f > 0) { s = s.slice(0, f) + bloco(url, titulo, 'ic', 'Compartilhar este produto') + s.slice(f); tipo = 'produto'; }

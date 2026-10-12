@@ -53,6 +53,8 @@ Lista viva das melhorias de layout e design e do que depende do usuário: `tools
 
 13. Compartilhamento e sitemap: `python3 tools/og-produtos.py` (idempotente; precisa de Pillow) troca o `og:image` WebP das páginas de produto, categoria e artigo por um JPG 1200x630 em `img/og/` (foto pequena ou muito alongada usa `img/og-maxx.jpg`), porque Facebook e WhatsApp lidam mal com WebP e imagem pequena. `node tools/sitemap-datas.js` põe no `sitemap.xml` a data real de cada página (git; arquivo não commitado vale hoje). Rode os dois depois de incluir páginas ou fotos.
 
+14. Celular (revisão de design, PR de 12/10): nas páginas com barra inferior (`.tabbar`) o botão flutuante do WhatsApp fica oculto (o WhatsApp já é uma aba); a barra "Buscar produto" de `assets/busca.js` não aparece no catálogo (`#cat-q`) nem nas páginas de produto (`.pd-grid`); o bloco de compartilhar do produto vem depois do bloco de compra (`tools/compartilhar-paginas.js`); o caminho de navegação do produto vira um link de volta em uma linha. Áreas de toque: links pequenos ganham área de 44 px com `::after` (bloco `/*toque*/` no CSS, repetido nos 3 CSS com hash) e a célula da caixa de seleção das tabelas é clicável (`assets/lista.js`).
+
 ## Decisões de produto já tomadas
 - Produto e artigo abrem em página própria (`/produtos/<id>.html`, `/guias/<id>.html`); não há popup nem leitor. Links antigos `#p-<id>` e `#guia-<id>` redirecionam. Foto que falta usa só `img/sem-foto.svg`.
 - `generate_lead` só dispara com a cópia por e-mail confirmada ou no clique em Enviar no WhatsApp; o envio da tela vira `pedido_preparado`.
