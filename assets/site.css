@@ -1705,3 +1705,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 .cg-intro .share{margin:14px 0 0}
 @media (prefers-reduced-motion:reduce){.sh{transition:none}}
 /*share:fim*/
+/*ticker-topo*/
+.ticker-track{padding-block:8px}
+.ticker span{font-size:.75rem;padding-inline:18px;gap:18px}
+@media (max-width:760px){.ticker{display:none}}

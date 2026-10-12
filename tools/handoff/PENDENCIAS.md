@@ -15,7 +15,7 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
   - Artigos: "Produtos citados" em linhas alinhadas, com foto e "Adicionar à lista de orçamento"; navegação anterior/próximo; um só bloco de compartilhar; leitor em popup do blog removido (links antigos redirecionam).
   - Quem somos: depoimentos reais da home e link do Google; sem "preço claro" nem "estoque completo".
   - Calculadora: sem botão fixo cobrindo o pedido; resumo fixo do resultado no celular.
-  - Home: botão de orçamento na 1ª tela do celular (y 880 para 505); sem polaroide, selo Ritz repetido e passos repetidos (a faixa animada de categorias voltou só no tablet e no desktop, escondida abaixo de 760 px); título sem gradiente animado.
+  - Home: botão de orçamento na 1ª tela do celular (y 880 para 505); sem polaroide, selo Ritz repetido e passos repetidos (a faixa animada de categorias voltou no topo de todas as páginas, abaixo da faixa escura, só no tablet e no desktop); título sem gradiente animado.
   - Celular: sem rolagem lateral com texto a 200% em 10 páginas medidas; cartão "Linhas complementares" legível.
   - Sistema: "Limpar lista" com Desfazer (o aviso agora aparece dentro do popup aberto), avisos de 4 s (8 s com ação), anel de foco nos campos, botão fixo pulsa só 3 vezes, `produtos.html` com as 15 linhas de interesse.
   - Conteúdo: "2.000+ referências" (eram 2.340 somadas, 2.065 distintas).
