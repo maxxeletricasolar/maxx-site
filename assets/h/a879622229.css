@@ -1424,3 +1424,9 @@ footer a:not(.btn)::after{content:"";position:absolute;inset:-4px -4px}
 }
 /*ticker-mobile*/
 @media (max-width:760px){.ticker{display:none}}
+/*refino*/
+.hero h1 em{background:none!important;-webkit-background-clip:border-box;background-clip:border-box;color:var(--gold-hi)!important}
+.pl-add:hover,.pl-add:focus-visible{background:#e7b54a;border-color:#e7b54a;color:#1a1304}
+.btn-gold{box-shadow:0 1px 2px rgba(15,27,45,.12),0 10px 24px -14px rgba(216,173,70,.65)}
+h1,h2{text-wrap:balance}
+@media (min-width:761px){#cat-app .pcard{padding:12px 14px;border-radius:14px}#cat-app .pimg{flex-basis:88px;width:88px;border-radius:10px}#cat-app .pbody h3{font-size:1rem}}

@@ -14,6 +14,7 @@
       var re = new RegExp("(" + t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&") + ")", "ig");
       // destaca ignorando acentos de forma simples: só quando o texto contém o termo literal
       out = out.replace(re, "<mark>$1</mark>"); }); return out; }
+  function thumb(p){ return p.m ? '<i class="sx-th"><img src="' + BASE + esc(p.m) + '" alt="" width="52" height="52" loading="lazy" decoding="async"></i>' : '<b>' + esc(p.b) + '</b>'; }
   function search(q){
     var toks = norm(q).split(" ").filter(Boolean); if(!toks.length || !DATA) return {c:[],p:[],toks:toks};
     function score(hay, name){ var s = 0; for(var i=0;i<toks.length;i++){ var t = toks[i], k = hay.indexOf(t); if(k < 0) return -1;
@@ -36,6 +37,8 @@
   '.sx-res a{display:flex;align-items:center;gap:12px;min-height:48px;padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none}'+
   '.sx-res a[aria-selected="true"],.sx-res a:hover{background:var(--surface-2,#f1f3f6)}'+
   '.sx-res a b{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--surface-2,#f1f3f6);color:var(--gold,#b8892a);font:700 .75rem/1 var(--f-body,system-ui)}'+
+  '.sx-res a i.sx-th{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:10px;border:1px solid var(--line,#ddd);background:#fff;overflow:hidden}'+
+  '.sx-res a i.sx-th img{width:100%;height:100%;object-fit:contain;padding:3px;box-sizing:border-box}'+
   '.sx-res a span{flex:1;min-width:0}.sx-res a strong{display:block;font-weight:500;font-size:.9375rem;line-height:1.3}'+
   '.sx-res a small{display:block;color:var(--muted,#666);font-size:.75rem;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}'+
   '.sx-res mark{background:rgba(216,173,70,.35);color:inherit;border-radius:3px;padding:0 1px}'+
@@ -58,7 +61,7 @@
     if(!q){ res.innerHTML = '<p class="sx-h">Buscas comuns</p>' + SUG.map(function(s){ return '<a href="#" data-sug="' + s + '" role="option"><b>' + ICON + '</b><span><strong>' + s + '</strong></span></a>'; }).join(""); sel = -1; return; }
     var r = search(q), h = "";
     if(r.c.length) h += '<p class="sx-h">Categorias</p>' + r.c.map(function(c){ return '<a href="' + catUrl(c) + '" role="option"><b>' + esc(c.b) + '</b><span><strong>' + hl(c.n, r.toks) + '</strong><small>' + c.q + (c.q === 1 ? " produto" : " produtos") + '</small></span></a>'; }).join("");
-    if(r.p.length) h += '<p class="sx-h">Produtos</p>' + r.p.map(function(p){ return '<a href="' + prodUrl(p) + '" role="option"><b>' + esc(p.b) + '</b><span><strong>' + hl(p.n, r.toks) + '</strong><small>' + esc(p.g) + (p.r ? " · " + hl(p.r, r.toks) : "") + '</small></span></a>'; }).join("");
+    if(r.p.length) h += '<p class="sx-h">Produtos</p>' + r.p.map(function(p){ return '<a href="' + prodUrl(p) + '" role="option">' + thumb(p) + '<span><strong>' + hl(p.n, r.toks) + '</strong><small>' + esc(p.g) + (p.r ? " · " + hl(p.r, r.toks) : "") + '</small></span></a>'; }).join("");
     if(!h) h = '<p class="sx-empty">Nada encontrado para "<b>' + esc(q) + '</b>". Temos mais de 2.000 referências: <a href="https://wa.me/5586994540900?text=' + encodeURIComponent("Olá, equipe MAXX! Procuro: " + q) + '" target="_blank" rel="noopener">pergunte à equipe no WhatsApp</a>.</p>';
     res.innerHTML = h; sel = -1;
     clearTimeout(timer); timer = setTimeout(function(){ try{ (window.dataLayer = window.dataLayer || []).push({event:"busca_produto", termo:q, resultados:r.p.length + r.c.length, origem:"busca_rapida"}); }catch(e){} }, 900);
@@ -89,7 +92,7 @@
     var ref = w.querySelector(".theme-tg") || w.querySelector(".btn-gold") || null; w.insertBefore(b, ref);
   }
   addBtn();
-  (function(){ var h = document.querySelector("header.site"); if(!h || document.querySelector(".sx-bar") || document.getElementById("cat-q") || document.querySelector(".pd-grid")) return;
+  (function(){ var h = document.querySelector("header.site"); if(!h || document.querySelector(".sx-bar") || document.getElementById("cat-q")) return;
     var bar = document.createElement("button"); bar.type = "button"; bar.className = "sx-bar"; bar.setAttribute("aria-label", "Buscar produto, referência ou categoria");
     bar.innerHTML = ICON + "<span>Buscar produto, referência ou categoria</span>"; bar.addEventListener("click", open);
     var main = document.querySelector("main"); if(main) main.insertBefore(bar, main.firstChild); else h.parentNode.insertBefore(bar, h.nextSibling); })();
