@@ -136,7 +136,8 @@
         if (sel) {
           cartao.hidden = false;
           var dl = cols.map(function (t, i) { return (i === refI || i === kvI || !t || !sel[i]) ? "" : "<div><dt>" + esc(t) + "</dt><dd>" + esc(sel[i]) + "</dd></div>"; }).join("");
-          cartao.innerHTML = '<p class="pm-sel-ref"><span>Referência</span><b>' + esc(sel[refI]) + "</b></p><dl>" + dl + "</dl>";
+          var fi = document.getElementById("pd-img"), fs = fi && fi.getAttribute("src"), foto = fs && !/sem-foto/.test(fs) ? '<img class="pm-sel-img" src="' + esc(fs) + '" alt="" width="56" height="56">' : "";
+          cartao.innerHTML = '<div class="pm-sel-top">' + foto + '<p class="pm-sel-ref"><span>Referência</span><b>' + esc(sel[refI]) + "</b></p></div><dl>" + dl + "</dl>";
         } else { cartao.hidden = true; cartao.innerHTML = ""; }
       }
       var ref = refEscolhida();

@@ -21,6 +21,9 @@
 .pm-seg-i input:focus-visible+span{outline:3px solid var(--gold);outline-offset:1px}
 .pm-sel{border-radius:12px;border:1px solid var(--line);padding:14px 16px;background:var(--bg)}
 .pm-sel[hidden]{display:none}
+.pm-sel-top{display:flex;align-items:center;gap:14px;margin:0 0 12px}
+.pm-sel-img{flex:none;width:56px;height:56px;object-fit:contain;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;background:#fff}
+.pm-sel-top .pm-sel-ref{flex:1;min-width:0;margin:0}
 .pm-sel-ref{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 10px}
 .pm-sel-ref span{font-size:.8125rem;color:var(--muted)}
 .pm-sel-ref b{font:600 1.0625rem/1 var(--f-mono)}
