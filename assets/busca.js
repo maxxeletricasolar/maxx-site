@@ -46,7 +46,7 @@
   '.sx-foot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid var(--line,#ddd);font-size:.75rem;color:var(--muted,#666)}'+
   '.sx-foot a{color:inherit}'+
   '.sx-bar{display:none}'+
-  '@media (max-width:640px){header.site .sx-btn{display:none}.sx-bar{display:flex;align-items:center;gap:10px;width:calc(100% - 32px);margin:12px 16px 0;min-height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--muted,#666);font:500 .9375rem/1 var(--f-body,system-ui);text-align:left;cursor:pointer}.sx-bar svg{width:18px;height:18px;flex:none}'+
+  '@media (max-width:640px){header.site .sx-btn{width:44px;height:44px}.sx-bar{display:none;align-items:center;gap:10px;width:calc(100% - 32px);margin:12px 16px 0;min-height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--muted,#666);font:500 .9375rem/1 var(--f-body,system-ui);text-align:left;cursor:pointer}.sx-bar svg{width:18px;height:18px;flex:none}'+
   '.sx-dlg{margin:0;width:100vw;max-width:100vw;height:100%;max-height:100%}.sx-box{border-radius:0;height:100%;display:flex;flex-direction:column}.sx-res{max-height:none;flex:1}.sx-in kbd{display:none}.sx-foot .sx-k{display:none}}';
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   var ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
