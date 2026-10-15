@@ -1755,4 +1755,5 @@ h1,h2{text-wrap:balance}
 .cg-more a{min-height:44px;padding:0!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:none!important}
 .cg-more a:hover{border-bottom-color:var(--gold)!important;color:var(--gold-hi)}
 .cg-more a.cg-all{border-bottom:0!important;display:inline-block;margin-top:16px;font-weight:600;color:var(--gold-hi);text-decoration:none}
+@media (max-width:640px){.topbar{display:none}}
 /*menu2:fim*/
