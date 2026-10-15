@@ -40,4 +40,8 @@
 .cg-more a:hover{border-bottom-color:var(--gold)!important;color:var(--gold-hi)}
 .cg-more a.cg-all{border-bottom:0!important;display:inline-block;margin-top:16px;font-weight:600;color:var(--gold-hi);text-decoration:none}
 @media (max-width:640px){.topbar{display:none}}
+.pcard{position:relative}
+.pcard h3 a{position:static}
+.pcard h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.pcard .pl-add,.pcard button{position:relative;z-index:2}
 /*menu2:fim*/
