@@ -5,7 +5,7 @@ ErrorDocument 404 /404.html
 # Nunca servir o repositório nem arquivos de trabalho (.git, .env, backups, logs, dumps, markdown)
 RedirectMatch 404 /\.git
 RedirectMatch 404 ^/tools(/|$)
-<FilesMatch "(^\.(?!well-known)|\.(bak|log|sql|md|env|old|orig|swp|ps1|sh)$)">
+<FilesMatch "(^\.(?!well-known)|\.(bak|log|sql|md|env|old|orig|swp|ps1|sh|py|csv|ini|yml|yaml|lock|zip|tar|gz|dist)$)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
@@ -52,6 +52,8 @@ AddOutputFilterByType DEFLATE text/html text/css text/javascript application/jav
 Header always set X-Content-Type-Options "nosniff"
 Header always set X-Frame-Options "SAMEORIGIN"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+Header always set X-Permitted-Cross-Domain-Policies "none"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 # CSS e JS externos em assets/h/ têm o hash do conteúdo no nome: quando mudam, o nome muda. Cache de 1 ano.
 <FilesMatch "^[0-9a-f]{10}\.(css|js)$">
@@ -61,5 +63,5 @@ Header set Cache-Control "public, max-age=31536000, immutable"
 Header always set Strict-Transport-Security "max-age=15552000"
 # CSP em modo Report-Only: não bloqueia nada, só avisa no console (F12) do navegador.
 # Depois de navegar o site inteiro sem avisos, troque por Content-Security-Policy.
-Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net; frame-src https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://wa.me https://api.whatsapp.com"
+Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net; frame-src https://www.googletagmanager.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me https://api.whatsapp.com"
 </IfModule>
