@@ -93,6 +93,10 @@ if (mt_rand(1, 100) === 1) {
     }
 }
 if (!rate_limit($tmp . '/maxx_rl_' . md5($ip), LIMITE, JANELA)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
+// o cabeçalho de IP acima pode ser forjado pelo cliente: um segundo limite, pelo endereço da conexão (REMOTE_ADDR), segura quem troca o cabeçalho
+// a cada envio. É mais folgado porque atrás da CDN vários visitantes podem dividir o mesmo endereço.
+$conexao = filter_var((string)($_SERVER['REMOTE_ADDR'] ?? ''), FILTER_VALIDATE_IP) ?: '0';
+if (!rate_limit($tmp . '/maxx_rl_conn_' . md5($conexao), LIMITE * 6, JANELA)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
 if (!rate_limit($tmp . '/maxx_rl_geral', LIMITE_GERAL, JANELA_GERAL)) resp(false, 'Muitos envios. Tente novamente em alguns minutos.', 429);
 
 // monta o e-mail
