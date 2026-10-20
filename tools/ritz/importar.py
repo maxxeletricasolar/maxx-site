@@ -119,6 +119,11 @@ def rel(t, p):
            ''.join(f'<li><a href="{q["id"]}.html">{esc(q["nome"])}</a></li>' for q in outros) +
            f'</ul><p style="margin-top:14px"><a href="../categorias/{SLUG_G}.html">Ver todos os produtos de {esc(NOME_G)} →</a></p></section>')
     return re.sub(r'<section class="rel".*?</section>', lambda m: sec, t, count=1, flags=re.S)
+def titulo(nome):
+    # Google corta titulos acima de ~65 caracteres: tira Teresina e depois Elétrica Solar
+    for suf in (' | MAXX Elétrica Solar Teresina', ' | MAXX Elétrica Solar', ' | MAXX'):
+        if len(nome + suf) <= 65: return esc(nome) + suf
+    return esc(nome) + ' | MAXX'
 def pagina(p):
     t = modelo; url = f'{BASE}produtos/{p["id"]}.html'; nome = p['nome']
     d1 = p['conteudo'][0]['x'] if p['conteudo'] else nome
@@ -127,10 +132,10 @@ def pagina(p):
     def sub(pat, rep):
         nonlocal t
         t = re.sub(pat, lambda m: rep, t, count=1, flags=re.S)
-    sub(r'<title>.*?</title>', f'<title>{esc(nome)} | MAXX Elétrica Solar Teresina</title>')
+    sub(r'<title>.*?</title>', f'<title>{titulo(nome)}</title>')
     sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{esc(desc)}">')
     sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{url}">')
-    sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{esc(nome)} | MAXX Elétrica Solar Teresina">')
+    sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{titulo(nome)}">')
     sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{esc(desc)}">')
     sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{url}">')
     sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{BASE}img/og-maxx.jpg">')
