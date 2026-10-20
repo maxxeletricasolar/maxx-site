@@ -137,5 +137,653 @@
    "tensaoCol": 4,
    "conferida": "2026-10-09 (texto do catálogo; validar com a equipe)"
   }
+ },
+ "a-conjunto-de-aterramento-estatico": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RT600-0891",
+     "Conjunto de aterramento estático"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-aterramento-multiangular": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG4229-1SJ",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso; Permite a operação em ângulos contínuos de até 75°"
+    ],
+    [
+     "ATR13159-1",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso; Travamento dos ângulos de operação pré- ajustáveis e fixos através de porca borboleta"
+    ],
+    [
+     "RHG4229-6SJ",
+     "Corpo em alumínio; Mordente serrilhado; Fixo no tubo RITZGLAS® Ø 32 mm x 1,83 m; Conexão do cabo através de terminal liso; Permite a operação em ângulos contínuos de até 75°"
+    ],
+    [
+     "RC600-1732",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado; Permite a operação em ângulos contínuos de até 75°"
+    ],
+    [
+     "RG4228-10SJ",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso; Permite a operação em ângulos contínuos de até 75°"
+    ],
+    [
+     "ATR10777-1",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso; Travamento dos ângulos de operação pré- ajustáveis e fixos através de porca borboleta"
+    ],
+    [
+     "RHG4228-16SJ",
+     "Corpo em alumínio; Mordente serrilhado; Fixo no tubo RITZGLAS® Ø 32 mm x 1,83 m; Conexão do cabo através de terminal liso; Permite a operação em ângulos contínuos de até 75°"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-para-barramento": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG3369",
+     "Corpo e sapata regulável em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-0337",
+     "Permite o uso de dois cabos de 95 mm² simultaneamente; Corpo e sapata regulável em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR03308-2",
+     "Permite o uso de dois cabos de 95 mm² simultaneamente; Corpo e sapata regulável em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-com-bastao": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR08947-1",
+     "Corpo em bronze; Fixo em um tarugo isolante Ø 1/2” x 640 mm, com punho de borracha; Conexão do cabo através de terminal de cobre estanhado"
+    ],
+    [
+     "ATR09033-1",
+     "Corpo em bronze; Fixo em um tarugo isolante Ø 1/2” x 640 mm, com punho de borracha; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR17348-1",
+     "Corpo em alumínio; Mordente liso; Fixo em tubo isolante Ø 25 mm x 300 mm, com punho de borracha; instalação no condutor por efeito mola; Conexão do cabo através de terminal de cobre estanhado"
+    ],
+    [
+     "ATR19433-1",
+     "Grampo desenvolvido principalmente para aterramento de cubículos com barramentos retangulares verticais. Corpo em alumínio; Mordente liso; Fixo em tubo isolante Ø 25 mm x 600 mm, com punho de borracha; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR19357-1",
+     "Grampo desenvolvido principalmente para aterramento de cubículos com barramentos retangulares transfersais. Corpo em alumínio; Mordente serrilhado; Fixo em tubo isolante Ø 25 mm x 600 mm, com punho de borracha; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR17461-1",
+     "Corpo em alumínio; Mordente liso; Fixo no elemento ponta da vara de manobra Ø 25 mm x 1,25 m, com sistema de engate; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR17460-1",
+     "Corpo em alumínio; Mordente liso; Fixo na vara de manobra telescópica Ø 33 mm base, comp. recolhido de 1 m e estendido de 1,80 m; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR17462-1",
+     "Corpo em alumínio; Mordente liso; Fixo na vara de manobra telescópica - Ø 33 mm base, comp. recolhido de 1,43 m e estendido de 2,58 m; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR17459-1",
+     "Corpo em alumínio; Mordente liso; Fixo em tubo isolante Ø 25 mm x 1,25 m; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-0386",
+     "Corpo em alumínio; Mordente serrilhado; Fixo no tubo RITZGLAS® Ø 32 mm x 1,83 m; Conexão do cabo através de terminal liso"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-para-chave-faca": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR01726-3",
+     "Grampo de Aterramento Temporário para Chave Faca Corrente máxima de curto-circuito: 30 ciclos - 20 kA"
+    ],
+    [
+     "FLV30060-1",
+     "Pino Rosqueável para criar ponto para o aterramento temporário em chaves facas"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-para-chave-fusivel": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RC600-0861",
+     "com suporte “T” - Corrente máxima de curto-circuito: 30 ciclos - 20 kA"
+    ],
+    [
+     "RC600-0862",
+     "com suporte “L” - Corrente máxima de curto-circuito: 30 ciclos - 20 kA"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-de-linha-viva": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "FLV19192-1",
+     "Corrente de condução de corrente: 230A"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-de-aterramento-de-multi-conexao": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RC600-2316",
+     "Corpo principal em alumínio; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado sem saia"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-olhal": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG3403",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RG3404-1",
+     "Permite a conexão de 02 terminais roscados no mesmo corpo do grampo; Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "RG3405-1",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "RG3406-1",
+     "Permite a conexão de 02 terminais roscados no mesmo corpo do grampo; Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "ATR11627-1",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RG3368",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RG3367-2",
+     "Corpo em alumínio; Mordente removível e liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-1743",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado sem saia"
+    ],
+    [
+     "RG3622-1",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-0434",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-0065",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "RC600-0965",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-2282",
+     "Corpo em alumínio; mordente serrilhado; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-aterramento-para-ponto-terra": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG3403T",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RG3404-2",
+     "Permite a conexão de 02 terminais roscados no mesmo corpo do grampo; Corpo em alumínio; Mordente liso; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "RG3363-4SJ",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RG3363-1",
+     "Corpo em alumínio; Mordente serrilhado; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-0085",
+     "Corpo em alumínio; Mordente com coxim de bronze para melhor contato com a superfície da cantoneira; Flange em alumínio (removível) para fixação na cantoneira; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "ATR11627-2",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-1617",
+     "Corpo em bronze; Mordente móvel serrilhado; Parafuso de aperto tipo “T; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-2231",
+     "Corpo em bronze; Mordente serrilhado; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal roscado sem saia"
+    ],
+    [
+     "ATR16449-3",
+     "Corpo em bronze; Mordente serrilhado; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal roscado sem saia"
+    ],
+    [
+     "RG3622-1T",
+     "Corpo em alumínio; Mordente liso; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal liso"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-por-pressao-efeito-mola": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR03653-1",
+     "Corpo em alumínio; Mordente liso; lâmina de encaixe no trapézio (ATR04694- 1) em aço galvanizado; Conexão do cabo través de terminal de cobre estanhado"
+    ],
+    [
+     "ATR13628-1",
+     "Corpo em alumínio; Mordente liso; encaixe no trapézio (ATR14442-1) por sistema auto travamento; Conexão do cabo através de terminal de cobre estanhado"
+    ],
+    [
+     "ATR13047-1",
+     "Corpo em alumínio; Instalação no rabicho por efeito de mola; Empunhadura plástica na cor vermelho"
+    ],
+    [
+     "ATR13047-2",
+     "Corpo em alumínio; Instalação no rabicho por efeito de mola; Empunhadura plástica na cor preto"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-grampo-com-roletes-para-aterramento-de-cabo-condutor": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR32005-1",
+     "Grampo com Roletes para Aterramento de Cabo Condutor Peso aprox. 5 kg (11,02 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-pino-bola-e-grampo-concha-bola": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR08969-1",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-2",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-3",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-4",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-5",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-6",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR08969-7",
+     "Para Ponto de Aterramento Temporário tipo reto"
+    ],
+    [
+     "ATR13147-1",
+     "Para Ponto de Aterramento Temporário tipo L"
+    ],
+    [
+     "RC600-2300",
+     "Corpo principal em liga de bronze; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RC600-2101",
+     "Corpo principal em liga de bronze; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal roscado"
+    ],
+    [
+     "ATR08968-1",
+     "Corpo principal em liga de bronze; Parafuso de aperto tipo olhal; Conexão do cabo através de terminal de cobre estanhado"
+    ],
+    [
+     "RT600-2321",
+     "Corpo principal em liga de bronze; Parafuso de perto tipo “T”; Conexão do cabo através de terminal liso"
+    ],
+    [
+     "RT600-2320",
+     "Corpo principal em liga de bronze; Parafuso de aperto tipo “T”; Conexão do cabo através de terminal roscado"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-trapezio-de-elevacao": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR04694-1",
+     "Construído em alumínio e haste de aço galvanizado e encaixe universal em bronze, esse trapézio é próprio para operações de instalação e retirada dos grampos de aterramento por pressão (ATR03653-1). Peso aprox. : 0,53 kg (1,17 lb)"
+    ],
+    [
+     "ATR04116-1",
+     "Construído em alumínio, com conectores de bronze, é próprio para uso com grampos de tamanho médio. Peso aprox.: 1,0 kg (2,20 lb)"
+    ],
+    [
+     "ATR14442-1",
+     "Construído em alumínio e haste em aço galvanizado, esse modelo é próprio para elevação, instalação e retirada dos grampos ATR13628-1 (sistema de mola). Peso aprox.: 0,68 kg (1,50 lb)"
+    ],
+    [
+     "ATR18867-1",
+     "Construído em alumínio e haste em aço galvanizado, esse modelo é próprio para elevação, instalação e retirada dos grampos ATR13628-1 (sistema de mola). Peso aprox.: 0,68 kg (1,50 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-trapezio-tipo-sela": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR03318-1",
+     "Construído em alumínio é dotado de esticador de corrente e volante de aperto para o perfeito contato elétrico com o poste. Peso aprox.: 3,17 kg (6,99 lb)"
+    ],
+    [
+     "RC600-0152",
+     "Construído com chapa de alumínio e tarugo de cobre. Permite a conexão de terminais lisos para cabos de aterramento de 16 a 95 mm². Peso aprox.: 4,30 kg (9,48 lb)"
+    ],
+    [
+     "ATR14477-1",
+     "Construído com dispositivo de fixação ao poste através de corrente, tirante de náilon e porca borboleta para conexão aos cabos. Peso aprox.: 0,43 kg (0,95 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-suporte-de-descanso-para-grampos": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG3625",
+     "Material Alumínio. Peso aprox. 0,13 kg (0,29 lb)"
+    ],
+    [
+     "RG3626",
+     "Material Alumínio. Peso aprox. 0,06 kg (0,13 lb)"
+    ],
+    [
+     "RC600-0080",
+     "Material Bronze Específico para terminal roscado. Peso aprox. 0,15 kg (0,33 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-trado-de-aterramento": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR00137-1",
+     "Ø 17 mm x 1,50 m"
+    ],
+    [
+     "ATR00137-2",
+     "Ø 17 mm x 1,00 m"
+    ],
+    [
+     "ATR00137-3",
+     "Ø 17 mm x 1,80 m"
+    ],
+    [
+     "ATR08814-1",
+     "Ø 19 mm x 1,00 m"
+    ],
+    [
+     "ATR08814-2",
+     "Ø 19 mm x 1,20 m"
+    ],
+    [
+     "ATR08814-3",
+     "Ø 19 mm x 1,50 m"
+    ],
+    [
+     "ATR08814-4",
+     "Ø 19 mm x 0,85 m"
+    ],
+    [
+     "ATR03402-1",
+     "Ø 20 mm x 0,80 m"
+    ],
+    [
+     "ATR31691-1",
+     "Ø 17,5 mm x 1,20 m"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-carretel-para-cabo-de-aterramento": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "ATR03641-1",
+     "Carretel de fixação, com grampo de bronze, para conexão ao trado e acondicionamento do cabo de terra"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-bloco-terminal": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RG4754-1",
+     "Bloco construído em alumínio, com 04 conectores para cabos de aterramento de 25 a 95 mm². Peso aprox.: 0,51 kg (1,12 lb)"
+    ],
+    [
+     "ATR17574-1",
+     "Bloco terminal construído em termoplástico para até 5 terminais de cobre estanhado para cabo de aterramento até 50 mm². Peso aprox.: 0,32 kg (0,71 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "a-conector-especial-e-adaptador": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RC600-1584",
+     "Conector roscado para fixação do terminal rosqueável do cabo ao grampo de aterramento em situações especiais em que o referido grampo possui conexão sem rosca. Peso aprox.: 0,19 kg (0,42 lb)"
+    ],
+    [
+     "ATR26555-1",
+     "O Conector Duplo permite a montagem de 02 cabos de aterramento em um único grampo, sendo que em um cabo deve ser fixado um terminal liso e no outro cabo um terminal roscado. Peso aprox.: 0,11 kg (0,24 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
  }
 }

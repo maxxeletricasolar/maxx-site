@@ -28,6 +28,12 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
 - Categorias B: bloco "Como escolher" no lugar dos selos (commit "Categorias B").
 - Para reverter uma delas: `git revert <commit>` e PR. Medir antes e depois com o GA4 quando existir (`lista_na_home`, `pedido_preparado`, `generate_lead`).
 
+## Linhas Ritz alinhadas ao site do fabricante (20/10/2026)
+- Feita: linha A (Aterramento temporário): 27 produtos (16 novos), fotos do catálogo PDF, descrições reescritas, tabelas do fabricante. Os produtos agrupados "Grampo de Aterramento" e "Equipamentos Auxiliares" viraram páginas individuais e têm 301 no `.htaccess`.
+- Falta: linhas B a L e luvas/alicates (ver regra 18 do CLAUDE.md). O fornecedor lista 172 produtos nas 14 linhas; temos 167 + os 16 novos da linha A, menos 2 aposentados.
+- Linha A sem foto: Conjunto de Aterramento Temporário e Conjuntos para Alta Tensão (o catálogo só tem desenhos); as fotos do catálogo são pequenas (90 a 930 px). Pedir à Ritz as fotos grandes e sem marca d'água.
+- 32 arquivos `img/catalogo/x*.webp` ficaram sem uso (fotos antigas dos produtos aposentados ou trocados); podem ser apagados.
+
 ## Pendente: layout e design (não feito de propósito)
 - Unificar os 4 CSS e 2 JS e trocar as ~163 cores fixas por tokens: refactor grande, sem teste visual automatizado; fazer em PR próprio, página por página, com captura antes e depois.
 - Banner de cookies no fim do DOM (ordem de foco) e brilho dourado decorativo da home.
