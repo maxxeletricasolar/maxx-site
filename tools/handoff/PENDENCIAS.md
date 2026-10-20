@@ -32,7 +32,13 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
 - Feita: linha A (Aterramento temporário): 27 produtos (16 novos), fotos do catálogo PDF, descrições reescritas, tabelas do fabricante. Os produtos agrupados "Grampo de Aterramento" e "Equipamentos Auxiliares" viraram páginas individuais e têm 301 no `.htaccess`.
 - Falta: linhas B a L e luvas/alicates (ver regra 18 do CLAUDE.md). O fornecedor lista 172 produtos nas 14 linhas; temos 167 + os 16 novos da linha A, menos 2 aposentados.
 - Linha A sem foto: Conjunto de Aterramento Temporário e Conjuntos para Alta Tensão (o catálogo só tem desenhos); as fotos do catálogo são pequenas (90 a 930 px). Pedir à Ritz as fotos grandes e sem marca d'água.
-- 32 arquivos `img/catalogo/x*.webp` ficaram sem uso (fotos antigas dos produtos aposentados ou trocados); podem ser apagados.
+- Os 35 arquivos `img/catalogo/x*.webp` sem uso foram apagados na auditoria de 20/10/2026.
+
+## Auditoria de 20/10/2026 (skill site-completo): nota geral 8,2
+- Feito: títulos acima de 65 caracteres encurtados (6 páginas; `importar.py` agora usa `titulo()`); "Bloco Terminal" da linha A e da linha L (produtos diferentes) com títulos distintos.
+- Falta, depende do usuário: HTTPS forçado no painel da Hostinger; GA4 e Pixel; links e nota do Google; fotos grandes da Ritz; caixas `comercial@`/`sac@` e envio de teste do formulário; remover `teste.` do formulário (`ORIGENS_OK`) e a pasta `teste/` da Hostinger.
+- Falta, técnico: `assets/catalogo-data.js` (609 KB) e os 3 CSS com hash (~120 KB cada) pesam no LCP; CSP definitiva; IP real do formulário (`REMOTE_ADDR`) e Turnstile; `LocalBusiness` com coordenadas.
+- Lighthouse local da home (mobile, sem compressão): desempenho 56, acessibilidade 100, boas práticas 100, SEO 100. Em produção o LCP medido é ~0,6 s.
 
 ## Pendente: layout e design (não feito de propósito)
 - Unificar os 4 CSS e 2 JS e trocar as ~163 cores fixas por tokens: refactor grande, sem teste visual automatizado; fazer em PR próprio, página por página, com captura antes e depois.
