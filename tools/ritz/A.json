@@ -1,0 +1,244 @@
+{
+ "grupo": "A",
+ "aposentar": [
+  "a-grampo-de-aterramento",
+  "a-equipamentos-auxiliares"
+ ],
+ "produtos": [
+  {
+   "slug": "ours",
+   "id": "a-conjunto-de-aterramento-temporario",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "ours",
+   "id": "a-conjuntos-de-aterramento-para-baixa-tensao",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "ours",
+   "id": "a-conjuntos-de-aterramento-para-media-tensao",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "aterramento-alta-tensao",
+   "id": "a-conjuntos-de-aterramento-para-alta-tensao",
+   "nome": null,
+   "descricao": [
+    "Conjunto de aterramento temporário para linhas de transmissão em alta tensão, em estruturas de madeira, concreto e metálicas.",
+    "Liga os condutores à terra de forma temporária durante a manutenção, para proteger a equipe se a linha for energizada por engano ou houver curto-circuito.",
+    "Cada referência é um conjunto completo, com grampos, cabos e acessórios. A corrente de curto-circuito suportada está na tabela."
+   ]
+  },
+  {
+   "slug": "conjunto-aterramento-estatico",
+   "id": "a-conjunto-de-aterramento-estatico",
+   "nome": null,
+   "descricao": [
+    "Conjunto para retirar com segurança a carga estática de sistemas desenergizados, como terminais e condutores de transformadores ou geradores.",
+    "Para usar, prenda o grampo a um ponto de terra seguro e, com o gancho de cobre na ponta do bastão, toque o ponto que será descarregado."
+   ]
+  },
+  {
+   "slug": "sistema-elevacao-instalacao-aterramentos-subestacoes",
+   "id": "a-sistema-de-elevacao-e-instalacao-para-aterramentos-em-subestacoes",
+   "nome": null,
+   "descricao": [
+    "Conjunto de ferramentas que ergue e instala o aterramento temporário nos barramentos de subestações de extra alta tensão, direto do solo, até 8 m de altura.",
+    "As seções da ponta são acopladas em varas de manobra separadas, com comprimento compatível com a altura do barramento."
+   ]
+  },
+  {
+   "slug": "cabo-aterramento",
+   "id": "a-cabo-para-aterramento",
+   "nome": null,
+   "descricao": [
+    "Cabo extra flexível em cobre (CTC) ou alumínio (CTA), com isolamento de 750 V em PVC cristal transparente, que deixa ver o estado dos fios por dentro.",
+    "Próprio para aterramentos temporários e terminais. A bitola, a aplicação e o ano de fabricação vêm gravados em todo o comprimento do cabo, o que facilita identificar e classificar."
+   ]
+  },
+  {
+   "slug": "terminal-cabos-aterramento",
+   "id": "a-terminal-para-cabos-de-aterramento",
+   "nome": null,
+   "descricao": [
+    "Terminais prensados nas pontas dos cabos de aterramento, com diâmetro interno ajustado à seção do cabo, para uma conexão elétrica e mecânica firme com os grampos.",
+    "Há duas opções de prensagem: com saia, que pega a proteção de PVC e o cabo, e sem saia, que prensa só o condutor. Em alumínio, cobre ou cobre estanhado."
+   ]
+  },
+  {
+   "slug": "grampo-aterramento-multiangular",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo que opera em ângulos contínuos, com ajustes pré-definidos que travam a posição de trabalho.",
+    "Corpo em alumínio e mordente serrilhado. Indicado para conexões em linhas de transmissão e subestações de alta e extra alta tensão."
+   ]
+  },
+  {
+   "slug": "grampo-barramento",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo de aterramento temporário com abertura maior, que se adapta a vários tipos de barramento.",
+    "Corpo e sapata ajustável em alumínio, mordente liso e parafuso de aperto tipo olhal. Um dos modelos aceita dois cabos de 95 mm² ao mesmo tempo."
+   ]
+  },
+  {
+   "slug": "grampo-bastao",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo de aterramento temporário preso a um tarugo ou bastão isolante, feito para redes aéreas.",
+    "A instalação é prática e mantém a distância de segurança entre o operador e a rede. O tipo de terminal e as medidas de cada modelo estão na tabela."
+   ]
+  },
+  {
+   "slug": "grampo-chave-faca",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo para o aterramento temporário da base da chave faca em redes de média tensão.",
+    "Corpo e mordentes em alumínio fundido e parafuso olhal em bronze, instalado com vara ou bastão de manobra. Tem suporte em T para ligar o cabo. Há também um pino rosqueável que cria o ponto de aterramento na chave."
+   ]
+  },
+  {
+   "slug": "grampo-chave-fusivel",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo para aterrar chaves fusíveis em redes de média tensão, com a chave ainda instalada na rede.",
+    "Isso evita manobras acidentais durante a manutenção e dá mais segurança à equipe. A instalação é simples. Há modelos com suporte em T e em L, ambos para 20 kA em 30 ciclos."
+   ]
+  },
+  {
+   "slug": "grampo-linha-viva",
+   "id": "a-grampo-de-linha-viva",
+   "nome": null,
+   "descricao": [
+    "Usado principalmente para ligar transformadores às redes de média tensão, com ou sem conector tipo estribo.",
+    "Carcaça e mordente em alumínio fundido, e só o conector e o parafuso olhal em bronze fundido, o que deixa o grampo bem mais leve. Conduz até 230 A."
+   ]
+  },
+  {
+   "slug": "grampo-multi-conexao",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampo que se instala em condutores circulares, barras retangulares e pinos bola.",
+    "Os dois alojamentos roscados recebem pinos bola para erguer ao mesmo tempo mais dois grampos, formando um aterramento trifásico."
+   ]
+  },
+  {
+   "slug": "grampo-olhal",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampos de aterramento temporário com parafuso olhal, instalados com vara ou bastão de manobra em redes aéreas.",
+    "A instalação é prática e mantém a distância de segurança do operador. Corpo em alumínio e mordente liso. Alguns modelos aceitam dois terminais roscados no mesmo grampo."
+   ]
+  },
+  {
+   "slug": "grampo-ponto-terra",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampos com parafuso tipo “T” para ligar o aterramento ao ponto de terra, com instalação manual rápida, por contato.",
+    "Corpo em alumínio e mordente liso. Há modelos que aceitam dois terminais roscados no mesmo grampo."
+   ]
+  },
+  {
+   "slug": "grampo-pressao",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Grampos de aterramento temporário para redes aéreas, com fixação por efeito mola que prende o condutor com firmeza.",
+    "Bons para manutenções rápidas. Os modelos se encaixam nos trapézios de elevação, por lâmina ou por sistema de autotravamento."
+   ]
+  },
+  {
+   "slug": "grampo-roletes-aterramento",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Usado em linhas de transmissão durante o lançamento ou o reparo dos cabos, para escoar a energia estática gerada.",
+    "Em liga de alumínio de alta resistência, tem 4 roldanas que deixam deslizar com suavidade cabos de Ø 25 a Ø 44,5 mm. Peso aproximado de 5 kg."
+   ]
+  },
+  {
+   "slug": "pino-bola-grampo-concha-bola",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Pinos bola e grampos concha-bola resolvem aterramentos temporários onde falta espaço ou superfície de contato.",
+    "Em cubículos com barramentos retangulares, por exemplo, os grampos comuns são grandes demais. O concha-bola se encaixa no pino bola do ponto de aterramento. Há pinos retos e em L."
+   ]
+  },
+  {
+   "slug": "trapezio-elevacao",
+   "id": "a-trapezio-de-elevacao",
+   "nome": null,
+   "descricao": [
+    "Trapézios que erguem os grampos de aterramento até os condutores ao mesmo tempo, numa sequência segura de operações.",
+    "São usados em intervenções de redes aéreas convencionais de média tensão. Em alumínio, com conectores ou encaixes de bronze."
+   ]
+  },
+  {
+   "slug": "trapezio-tipo-sela",
+   "id": "a-trapezio-tipo-sela",
+   "nome": null,
+   "descricao": [
+    "Trapézios que formam um ponto de terra intermediário na estrutura de trabalho.",
+    "Em alumínio, com esticador de corrente e volante de aperto para um contato elétrico firme com o poste. Um dos modelos usa chapa de alumínio e tarugo de cobre e aceita terminais lisos de cabos de 16 a 95 mm²."
+   ]
+  },
+  {
+   "slug": "suporte-descanso-grampos",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Acessório que permite erguer vários grampos de uma vez.",
+    "Em alumínio, adapta-se a qualquer tipo de grampo."
+   ]
+  },
+  {
+   "slug": "trado-aterramento",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Trado com haste de aço cobreado, suporte e ponta rosqueável em liga de cobre fundido com proteção de borracha.",
+    "O punho de aço desmonta, o que facilita guardar e transportar."
+   ]
+  },
+  {
+   "slug": "carretel-cabo-aterramento",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Carretel metálico com grampo de bronze, para ligar o cabo ao trado ou à haste de aterramento.",
+    "Também serve para enrolar e guardar o cabo durante o transporte."
+   ]
+  },
+  {
+   "slug": "bloco-terminal-atr",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Bloco que reúne, num único ponto, os cabos de aterramento dos grampos de fase e do grampo de terra.",
+    "Há um modelo em alumínio, com 4 conectores para cabos de 25 a 95 mm², e outro em termoplástico, para até 5 terminais de cobre estanhado em cabos de até 50 mm²."
+   ]
+  },
+  {
+   "slug": "conector-especial-adaptador",
+   "id": null,
+   "nome": null,
+   "descricao": [
+    "Conectores para fixar o terminal do cabo ao grampo de aterramento em situações especiais.",
+    "O conector roscado liga um terminal rosqueável a um grampo sem rosca. O conector duplo permite montar dois cabos num só grampo, um com terminal liso e outro com terminal roscado."
+   ]
+  }
+ ]
+}
