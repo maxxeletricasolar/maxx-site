@@ -240,5 +240,79 @@
     "O conector roscado liga um terminal rosqueável a um grampo sem rosca. O conector duplo permite montar dois cabos num só grampo, um com terminal liso e outro com terminal roscado."
    ]
   }
- ]
+ ],
+ "fotos_manuais": {
+  "a-grampo-de-aterramento-de-multi-conexao": [
+   "r063-1.webp",
+   "r063-2.webp",
+   "r063-3.webp"
+  ],
+  "a-grampo-com-roletes-para-aterramento-de-cabo-condutor": [
+   "r075-1.webp"
+  ],
+  "a-trapezio-de-elevacao": [
+   "r064-1.webp",
+   "r080-1.webp",
+   "r080-2.webp",
+   "r080-3.webp"
+  ],
+  "a-grampo-por-pressao-efeito-mola": [
+   "r064-2.webp",
+   "r064-3.webp",
+   "r064-4.webp"
+  ],
+  "a-grampo-para-chave-faca": [
+   "r076-1.webp",
+   "r076-2.webp"
+  ],
+  "a-carretel-para-cabo-de-aterramento": [
+   "r076-5.webp"
+  ],
+  "a-suporte-de-descanso-para-grampos": [
+   "r082-1.webp",
+   "r082-2.webp",
+   "r082-3.webp"
+  ],
+  "a-bloco-terminal": [
+   "r082-4.webp",
+   "r082-5.webp"
+  ],
+  "a-conector-especial-e-adaptador": [
+   "r082-6.webp",
+   "r082-7.webp"
+  ],
+  "a-pino-bola-e-grampo-concha-bola": [
+   "r061-1.webp",
+   "r062-2.webp",
+   "r062-3.webp",
+   "r062-4.webp",
+   "r062-5.webp",
+   "r062-1.webp",
+   "r062-6.webp"
+  ],
+  "a-cabo-para-aterramento": [
+   "r077-1.webp",
+   "r077-2.webp",
+   "r077-3.webp",
+   "r077-4.webp"
+  ],
+  "a-terminal-para-cabos-de-aterramento": [
+   "r079-1.webp",
+   "r079-2.webp",
+   "r079-3.webp"
+  ],
+  "a-conjunto-de-aterramento-estatico": [],
+  "a-conjuntos-de-aterramento-para-alta-tensao": []
+ },
+ "descartar_paginas": [
+  23,
+  58
+ ],
+ "descartar": [
+  "r076-3.webp",
+  "r076-4.webp"
+ ],
+ "substituir_em_guias": {
+  "a-grampo-de-aterramento": "a-grampo-olhal"
+ }
 }
