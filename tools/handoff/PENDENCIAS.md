@@ -2,6 +2,7 @@
 
 Atualizado em 10/10/2026. Contexto do produto: `PRODUCT.md` (raiz). Diagnóstico completo, com notas e ordem sugerida: `tools/handoff/analise-impeccable-maxx.md`.
 Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` publica sozinha).
+Lista marcável do que falta, com responsável: `tools/handoff/CHECKLIST.md` (atualizar a cada item concluído).
 
 ## Feito
 - PR #13: página de produto (324) com seletor por tensão ou referência, "Adicionar à lista" que adiciona, tabela com seleção múltipla e barra fixa; casca única nas páginas geradas (`assets/lista.js`, `tools/shell-paginas.js`).
