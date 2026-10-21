@@ -15,24 +15,27 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] Títulos até 65 caracteres e "Bloco Terminal" A e L distintos (PR 39)
 - [x] 35 fotos órfãs removidas (PR 39)
 - [x] Linha A (Aterramento temporário) alinhada ao fabricante: 27 produtos
+- [x] Fontes locais sem Google Fonts, foco visível nos campos e política de privacidade corrigida (PR desta rodada)
 
 ## 2. Jurídico e LGPD
 - [ ] **[Você]** Depoimentos: dizer quais dos 6 são reais e têm permissão do cliente para usar o nome (print do Google ou mensagem autorizando)
 - [ ] **[Claude]** Remover ou ajustar os depoimentos sem prova e as promessas ligadas a eles ("fornecedor oficial", "tudo certificado, com garantia", "estoque de verdade", "laudo e pronta entrega"); deixar só o link para avaliar no Google
 - [ ] **[Você]** Informar o nome e o e-mail do encarregado de dados (sugestão: `privacidade@maxxeletricasolar.com.br`)
 - [ ] **[Claude]** Pôr o encarregado na seção 1 da política de privacidade e no resumo de privacidade dos formulários
-- [ ] **[Claude]** Corrigir a política: seção 4 diz que o GitHub hospeda o site (é a Hostinger); seção 8 diz que usa HTTPS (só vale depois do item 5)
+- [x] **[Claude]** Corrigir a política: seção 4 dizia que o GitHub hospeda o site (é a Hostinger; o GitHub só guarda o código); seção 8 (HTTPS) conferida em produção: HTTPS e HSTS funcionam
 - [ ] **[Claude]** Nota na política e na de cookies de que o GA4 e o Pixel só entram quando forem ativados
 - [ ] **[Você]** Comprovante de revenda autorizada Ritz (contrato ou carta). Sem ele, o texto vira "trabalhamos com produtos Ritz"
 - [ ] **[Claude]** Ajustar "Revendedor autorizado Ritz" no site conforme o comprovante
 - [ ] **[Você]** Dizer a origem de cada foto: `hero-*.webp`, `banner.jpg`, `cabos`, `ferragens`, `ferramentas`, `isoladores`, `fachada`, `catalogo-equipe` (própria, banco de imagens, IA)
-- [ ] **[Claude]** Registrar a origem e a licença em `tools/handoff/imagens-licencas.md`; trocar ou remover o que não tiver licença
+- [x] **[Claude]** Registrar as imagens em `tools/handoff/imagens-licencas.md` (feito, com a coluna de origem em branco); trocar ou remover o que não tiver licença continua pendente
 - [ ] **[Você]** Pedir à Ritz autorização por escrito para usar as fotos e os textos do catálogo
 - [ ] **[Você]** Revisão de um advogado nas políticas e nos termos
 - [ ] **[Juntos]** Rever "Orçamento em até 24 horas" e "preço sob consulta": só manter o que a equipe cumpre
+- [ ] **[Você]** Preencher a coluna Origem e a licença de cada imagem em `tools/handoff/imagens-licencas.md`
+- [ ] **[Você]** Confirmar a remoção das imagens que nenhuma página usa (`hero-eletricista`, `hero-linha-viva`, `hero-subestacao`, `catalogo-equipe` e os JPG duplicados de `cabos`, `ferragens`, `ferramentas`, `isoladores`)
 
 ## 3. Acessibilidade e contraste
-- [ ] **[Claude]** Contorno de foco visível nos campos (hoje `input:focus{outline:none}` só muda a cor da borda) — WCAG 2.4.7
+- [x] **[Claude]** Contorno de foco visível nos campos (contorno de 3 px conferido no navegador na home, no catálogo e na calculadora) — WCAG 2.4.7
 - [ ] **[Claude]** Banner de cookies fora da ordem de foco: mover para o início do DOM ou prender o foco no diálogo
 - [ ] **[Claude]** Testar o teclado de ponta a ponta (menu, busca, lista, tabela de referências, formulário, banner) e anotar o resultado
 - [ ] **[Claude]** Rótulo do controle de tema conferido com leitor de tela
@@ -47,7 +50,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Claude]** Medir `lista_na_home`, `pedido_preparado` e `generate_lead` antes e depois de cada mudança de layout
 
 ## 5. Hospedagem, segurança e formulário
-- [ ] **[Você]** Ligar o HTTPS obrigatório no painel da Hostinger e confirmar que `http://` redireciona
+- [ ] **[Você]** HTTPS e HSTS já funcionam em produção; falta confirmar no painel da Hostinger que `http://` redireciona para `https://`
 - [ ] **[Você]** Criar as caixas `comercial@` e `sac@` (e `privacidade@`, se criar o encarregado)
 - [ ] **[Juntos]** Envio de teste do formulário de ponta a ponta (a Hostinger precisa de PHP com `mbstring`)
 - [ ] **[Você]** Remover o subdomínio `teste.maxxeletricasolar.com.br` e a pasta `teste/` da Hostinger
@@ -55,8 +58,10 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Juntos]** Descobrir o cabeçalho de IP real da Hostinger; então trocar o limite por visitante para `REMOTE_ADDR`
 - [ ] **[Você]** Criar a conta do anti-robô (Cloudflare Turnstile); **[Claude]** ligar no formulário
 - [ ] **[Claude]** CSP definitiva: navegar o site com o F12 aberto, zerar os avisos, trocar `Report-Only` por `Content-Security-Policy` e planejar a saída de `'unsafe-inline'`
-- [ ] **[Claude]** Hospedar as fontes (Inter, Plus Jakarta Sans, JetBrains Mono) no próprio site e tirar o Google Fonts (hoje envia o IP antes do consentimento)
+- [x] **[Claude]** Hospedar as fontes (Inter, Plus Jakarta Sans, JetBrains Mono) no próprio site e tirar o Google Fonts (386 páginas, `assets/fonts/`; a CSP já não cita o Google Fonts)
 - [ ] **[Claude]** Fixar o destino do redirect do `www` e `object-src 'none'`
+- [ ] **[Juntos]** Decidir se o Tag Manager passa a carregar só depois do consentimento (hoje ele carrega em toda página e consulta o Google, sem gravar cookies de medição)
+- [ ] **[Claude]** Remover o arquivo `CNAME` da raiz (sobra de GitHub Pages; a produção é Hostinger), depois da sua confirmação
 
 ## 6. Desempenho
 - [ ] **[Claude]** Reduzir `assets/catalogo-data.js` (609 KB) e carregá-lo só onde faz falta

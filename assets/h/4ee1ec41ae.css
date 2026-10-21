@@ -84,7 +84,7 @@ form{display:grid;gap:16px}
 input,textarea,select{width:100%;font:400 1rem/1.4 var(--f-body);color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;min-height:48px;transition:border-color .15s}
 textarea{min-height:120px;resize:vertical}
 input::placeholder,textarea::placeholder{color:#6d7b8b}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold)}
+input:focus,textarea:focus,select:focus{border-color:var(--gold)}
 .field.invalid input,.field.invalid textarea{border-color:var(--err)}
 .hint{font-size:0.8125rem;color:var(--muted)}
 .err{font-size:0.8125rem;color:var(--err);display:none}
@@ -999,7 +999,7 @@ select option{background:var(--surface);color:var(--text)}
 .multi>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 40px 12px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%239aa8b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;font:400 1rem/1.4 var(--f-body);color:#6d7b8b;cursor:pointer;transition:border-color .15s}
 .multi>summary::-webkit-details-marker{display:none}
 .multi>summary::after{display:none!important}
-.multi[open]>summary,.multi>summary:focus-visible{border-color:var(--gold);outline:none}
+.multi[open]>summary,.multi>summary:focus-visible{border-color:var(--gold)}
 .multi-sum{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .multi-sum.on{color:var(--text)}
 .multi-list{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;max-height:280px;overflow:auto;padding:6px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);box-shadow:0 18px 40px -16px rgba(0,0,0,.85);display:grid;gap:2px;overscroll-behavior:contain}
