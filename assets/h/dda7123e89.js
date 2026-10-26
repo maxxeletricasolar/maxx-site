@@ -745,10 +745,11 @@
   if(lb && lb.showModal){
     var lbImg = lb.querySelector("img"), lbCap = lb.querySelector("p");
     document.querySelectorAll(".gallery figure").forEach(function(f){
-      f.tabIndex = 0; f.setAttribute("role", "button");
+      var im0 = f.querySelector("img");
+      im0.tabIndex = 0; im0.setAttribute("role", "button"); im0.setAttribute("aria-haspopup", "dialog");
       function open(){ var im = f.querySelector("img"); lbImg.src = im.src; lbImg.alt = im.alt; lbCap.textContent = f.querySelector("figcaption").textContent; lb.showModal(); }
       f.addEventListener("click", open);
-      f.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); open(); } });
+      im0.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); open(); } });
     });
     lb.addEventListener("click", function(e){ if(e.target === lb || e.target.tagName === "BUTTON") lb.close(); });
   }

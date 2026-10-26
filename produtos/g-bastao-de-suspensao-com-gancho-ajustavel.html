@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" href="../assets/fonts/inter-latin-6ab57b.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-d4d84d.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css?v=7791d4ae">
-<link rel="stylesheet" href="../assets/site.css?v=4d1e5a7a">
+<link rel="stylesheet" href="../assets/site.css?v=52a21916">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Bastão de Suspensão com Gancho Ajustável","description":"A posição do gancho para condutor pode ser ajustada ao longo do bastão de acordo com o comprimento da cadeia de isolador. O aperto das porcas em cada lado do grampo do gancho ajustável garante sua firme conexão ao bastão.","category":"Ferramentas de Tracionamento, Locomoção e Suporte","url":"https://maxxeletricasolar.com.br/produtos/g-bastao-de-suspensao-com-gancho-ajustavel.html","brand":{"@type":"Brand","name":"Ritz"},"sku":"RH4710-4"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://maxxeletricasolar.com.br/"},{"@type":"ListItem","position":2,"name":"Ferramentas de Tracionamento, Locomoção e Suporte","item":"https://maxxeletricasolar.com.br/categorias/grupo-g.html"},{"@type":"ListItem","position":3,"name":"Bastão de Suspensão com Gancho Ajustável","item":"https://maxxeletricasolar.com.br/produtos/g-bastao-de-suspensao-com-gancho-ajustavel.html"}]}</script>
 </head>
@@ -56,8 +56,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div><!--/topbar-->
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="MAXX Elétrica Solar, início">
-      <img src="../img/logo.jpg" alt="Logotipo MAXX Elétrica Solar Distribuidora" width="64" height="64">
+    <a class="brand" href="../">
+      <img src="../img/logo.jpg" alt="" width="64" height="64">
       <span>MAXX ELÉTRICA SOLAR<small>DISTRIBUIDORA · BT · MT · AT</small></span>
     </a>
     <nav class="main" aria-label="Principal">
@@ -223,13 +223,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var K="maxx-consent",box=document.getElementById("ck"),opts=document.getElementById("ck-opts"),ca=document.getElementById("ck-a"),cm=document.getElementById("ck-m"),bc=document.getElementById("ck-custom");
   function read(){try{var c=JSON.parse(localStorage.getItem(K)||"null");return c&&c.v===1&&Date.now()-c.t<31536e6?c:null}catch(e){return null}}
   function lift(){var tb=document.querySelector(".tabbar");var h=tb&&getComputedStyle(tb).display!=="none"?tb.offsetHeight:0;box.style.bottom="calc("+(h+12)+"px + env(safe-area-inset-bottom,0px))";}
-  function show(custom){var c=read();ca.checked=!!(c&&c.a);cm.checked=!!(c&&c.m);opts.hidden=!custom;bc.textContent=custom?"Salvar escolhas":"Personalizar";lift();box.hidden=false;}
+  function show(custom){var c=read();ca.checked=!!(c&&c.a);cm.checked=!!(c&&c.m);opts.hidden=!custom;bc.textContent=custom?"Salvar escolhas":"Personalizar";lift();var sk=document.querySelector(".skip");if(sk)sk.after(box);else document.body.prepend(box);box.hidden=false;if(custom)ca.focus();}
   function save(a,m){
     try{localStorage.setItem(K,JSON.stringify({v:1,a:a,m:m,t:Date.now()}))}catch(e){}
     window.dataLayer=window.dataLayer||[];
     if(typeof gtag==="function")gtag("consent","update",{analytics_storage:a?"granted":"denied",ad_storage:m?"granted":"denied",ad_user_data:m?"granted":"denied",ad_personalization:m?"granted":"denied"});
     dataLayer.push({event:"consent_update",consent_analytics:a,consent_marketing:m});
-    box.hidden=true;
+    var had=box.contains(document.activeElement);box.hidden=true;
+    if(had){var mn=document.getElementById("topo");if(mn)mn.focus();}
   }
   box.addEventListener("click",function(e){var b=e.target.closest("[data-ck]");if(!b)return;var k=b.getAttribute("data-ck");
     if(k==="all")save(true,true);else if(k==="none")save(false,false);else if(opts.hidden){opts.hidden=false;bc.textContent="Salvar escolhas";}else save(ca.checked,cm.checked);});

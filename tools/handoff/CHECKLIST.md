@@ -16,6 +16,8 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] 35 fotos órfãs removidas (PR 39)
 - [x] Linha A (Aterramento temporário) alinhada ao fabricante: 27 produtos
 - [x] Fontes locais sem Google Fonts, foco visível nos campos e política de privacidade corrigida (PR desta rodada)
+- [x] Acessibilidade medida com o axe (0 violações em 10 páginas, 2 temas, 2 tamanhos) e corrigida: nome do logotipo e do botão da lista, galeria de fotos, tabelas roláveis, contraste do "aberto agora" e links do rodapé
+- [x] Teclado: banner de cookies no início da ordem de foco, com foco devolvido ao conteúdo ao fechar
 
 ## 2. Jurídico e LGPD
 - [ ] **[Você]** Depoimentos: dizer quais dos 6 são reais e têm permissão do cliente para usar o nome (print do Google ou mensagem autorizando)
@@ -36,11 +38,12 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 
 ## 3. Acessibilidade e contraste
 - [x] **[Claude]** Contorno de foco visível nos campos (contorno de 3 px conferido no navegador na home, no catálogo e na calculadora) — WCAG 2.4.7
-- [ ] **[Claude]** Banner de cookies fora da ordem de foco: mover para o início do DOM ou prender o foco no diálogo
-- [ ] **[Claude]** Testar o teclado de ponta a ponta (menu, busca, lista, tabela de referências, formulário, banner) e anotar o resultado
-- [ ] **[Claude]** Rótulo do controle de tema conferido com leitor de tela
-- [ ] **[Claude]** Botões da barra de seleção do produto com uma linha só no celular
-- [ ] **[Claude]** Medir contraste das combinações dourado sobre escuro e cinza sobre escuro nos três temas
+- [x] **[Claude]** Banner de cookies na ordem de foco: agora é o 2º item do Tab (depois de "Pular para o conteúdo"); "Preferências de cookies" leva o foco ao primeiro interruptor e, ao salvar, o foco volta ao conteúdo
+- [x] **[Claude]** Teclado testado no Chromium (home em 1280 px e produto em 390 px): 70 paradas de Tab, todas visíveis e com contorno, sem armadilha de foco; banner, preferências e salvar conferidos. Falta só leitor de tela de verdade (item abaixo)
+- [x] **[Claude]** Rótulo do controle de tema conferido no código: descreve a ação ("Acender a luz (tema claro)" / "Apagar a luz (tema escuro)"). Leitor de tela real continua no item abaixo
+- [x] **[Claude]** Botões da barra de seleção do produto: decidido manter 2 linhas por botão em 360 e 390 px (os rótulos são fixos no CLAUDE.md; um botão por linha deixaria a barra bem mais alta e cobriria o conteúdo)
+- [x] **[Claude]** Contraste medido com o axe em 10 páginas, tema claro e escuro, tela larga e de celular: o único erro real era "aberto agora" em verde claro (2,26:1), corrigido; hoje 0 violações
+- [ ] **[Você]** Testar com leitor de tela de verdade (NVDA no Windows, TalkBack no Android ou VoiceOver no iPhone): home, produto, lista de orçamento e banner de cookies
 
 ## 4. Rastreamento e medição
 - [ ] **[Você]** Criar o GA4 e o Pixel da Meta e passar os IDs (`G-...` e Pixel ID)
@@ -57,9 +60,9 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Claude]** Tirar `teste.` de `ORIGENS_OK` em `enviar-pedido.php` depois do item anterior
 - [ ] **[Juntos]** Descobrir o cabeçalho de IP real da Hostinger; então trocar o limite por visitante para `REMOTE_ADDR`
 - [ ] **[Você]** Criar a conta do anti-robô (Cloudflare Turnstile); **[Claude]** ligar no formulário
-- [ ] **[Claude]** CSP definitiva: navegar o site com o F12 aberto, zerar os avisos, trocar `Report-Only` por `Content-Security-Policy` e planejar a saída de `'unsafe-inline'`
+- [ ] **[Claude]** CSP definitiva: navegar o site com o F12 aberto, zerar os avisos, trocar `Report-Only` por `Content-Security-Policy` e planejar a saída de `'unsafe-inline'` Medido em 29 páginas, com e sem consentimento: 0 violações da política atual. Falta decidir virar para modo bloqueante (risco: tags futuras do Tag Manager) e confirmar no ar
 - [x] **[Claude]** Hospedar as fontes (Inter, Plus Jakarta Sans, JetBrains Mono) no próprio site e tirar o Google Fonts (386 páginas, `assets/fonts/`; a CSP já não cita o Google Fonts)
-- [ ] **[Claude]** Fixar o destino do redirect do `www` e `object-src 'none'`
+- [x] **[Claude]** Redirect do `www` com destino fixo (`https://maxxeletricasolar.com.br`) e `object-src 'none'` na CSP
 - [ ] **[Juntos]** Decidir se o Tag Manager passa a carregar só depois do consentimento (hoje ele carrega em toda página e consulta o Google, sem gravar cookies de medição)
 - [ ] **[Claude]** Remover o arquivo `CNAME` da raiz (sobra de GitHub Pages; a produção é Hostinger), depois da sua confirmação
 

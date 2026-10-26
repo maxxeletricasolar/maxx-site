@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" href="../assets/fonts/inter-latin-6ab57b.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-d4d84d.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css?v=7791d4ae">
-<link rel="stylesheet" href="../assets/site.css?v=4d1e5a7a">
+<link rel="stylesheet" href="../assets/site.css?v=52a21916">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Vara de manobra: telescópica, seccionável ou bastão de manobra?","description":"As diferenças entre os três tipos, para que serve cada um e o que observar na compra.","url":"https://maxxeletricasolar.com.br/guias/vara-de-manobra-qual-escolher.html","inLanguage":"pt-BR","author":{"@type":"Organization","name":"MAXX Elétrica Solar","url":"https://maxxeletricasolar.com.br/"},"publisher":{"@type":"Organization","name":"MAXX Elétrica Solar","logo":{"@type":"ImageObject","url":"https://maxxeletricasolar.com.br/img/logo.jpg"}},"mainEntityOfPage":"https://maxxeletricasolar.com.br/guias/vara-de-manobra-qual-escolher.html","image":"https://maxxeletricasolar.com.br/img/catalogo/x696.webp"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://maxxeletricasolar.com.br/"},{"@type":"ListItem","position":2,"name":"Blog técnico","item":"https://maxxeletricasolar.com.br/guias.html"},{"@type":"ListItem","position":3,"name":"Vara de manobra: telescópica, seccionável ou bastão de manobra?","item":"https://maxxeletricasolar.com.br/guias/vara-de-manobra-qual-escolher.html"}]}</script>
 </head>
@@ -58,8 +58,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div><!--/topbar-->
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="MAXX Elétrica Solar, início">
-      <img src="../img/logo.jpg" alt="Logotipo MAXX Elétrica Solar Distribuidora" width="64" height="64">
+    <a class="brand" href="../">
+      <img src="../img/logo.jpg" alt="" width="64" height="64">
       <span>MAXX ELÉTRICA SOLAR<small>DISTRIBUIDORA · BT · MT · AT</small></span>
     </a>
     <nav class="main" aria-label="Principal">
@@ -92,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul><li><strong>Aberto:</strong> para enganchar o olhal do grampo ou da peça.</li><li><strong>Fechado:</strong> o gancho prende o olhal, mas deixa a peça articular, permitindo torção inclusive em ângulo.</li><li><strong>Recolhido:</strong> a peça fica rígida junto ao bastão, a posição certa para instalar e retirar grampos.</li></ul>
 <p>É a ferramenta indicada para instalar e retirar grampos de linha viva, conjuntos de aterramento temporário, coberturas protetoras e instrumentos de medição.</p>
 <h2>Resumo rápido</h2>
-<div class="tbl-wrap"><table><thead><tr><th>Tipo</th><th>Melhor para</th></tr></thead><tbody><tr><td>Telescópica</td><td>Manobras do solo, com rapidez e pouco peso</td></tr><tr><td>Seccionável</td><td>Montar o comprimento exato e trocar ferramentas na ponta</td></tr><tr><td>Bastão de manobra</td><td>Instalar e retirar grampos e aterramentos com firmeza</td></tr></tbody></table></div>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="Tabela, role para o lado para ver tudo"><table><thead><tr><th>Tipo</th><th>Melhor para</th></tr></thead><tbody><tr><td>Telescópica</td><td>Manobras do solo, com rapidez e pouco peso</td></tr><tr><td>Seccionável</td><td>Montar o comprimento exato e trocar ferramentas na ponta</td></tr><tr><td>Bastão de manobra</td><td>Instalar e retirar grampos e aterramentos com firmeza</td></tr></tbody></table></div>
 <p class='note'>Para operar em segurança, respeite as distâncias mínimas de trabalho para a tensão da rede. Informe a altura e a tensão que a MAXX indica o comprimento certo.</p></div>
 <p class="hint">Fonte: Catálogo de Produtos MAXX rev. 07/2026, págs. 87 a 95.</p>
 <div class="acts" style="margin-top:20px"><a class="btn btn-gold" href="../produtos.html#orcamento">Pedir orçamento</a><a class="btn btn-ghost" data-wa="Li o artigo &quot;Vara de manobra: telescópica, seccionável ou bastão de manobra?&quot; no site e tenho uma dúvida:" data-origem="artigo" href="https://wa.me/5586994540900">Tirar uma dúvida no WhatsApp</a></div>
@@ -238,13 +238,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var K="maxx-consent",box=document.getElementById("ck"),opts=document.getElementById("ck-opts"),ca=document.getElementById("ck-a"),cm=document.getElementById("ck-m"),bc=document.getElementById("ck-custom");
   function read(){try{var c=JSON.parse(localStorage.getItem(K)||"null");return c&&c.v===1&&Date.now()-c.t<31536e6?c:null}catch(e){return null}}
   function lift(){var tb=document.querySelector(".tabbar");var h=tb&&getComputedStyle(tb).display!=="none"?tb.offsetHeight:0;box.style.bottom="calc("+(h+12)+"px + env(safe-area-inset-bottom,0px))";}
-  function show(custom){var c=read();ca.checked=!!(c&&c.a);cm.checked=!!(c&&c.m);opts.hidden=!custom;bc.textContent=custom?"Salvar escolhas":"Personalizar";lift();box.hidden=false;}
+  function show(custom){var c=read();ca.checked=!!(c&&c.a);cm.checked=!!(c&&c.m);opts.hidden=!custom;bc.textContent=custom?"Salvar escolhas":"Personalizar";lift();var sk=document.querySelector(".skip");if(sk)sk.after(box);else document.body.prepend(box);box.hidden=false;if(custom)ca.focus();}
   function save(a,m){
     try{localStorage.setItem(K,JSON.stringify({v:1,a:a,m:m,t:Date.now()}))}catch(e){}
     window.dataLayer=window.dataLayer||[];
     if(typeof gtag==="function")gtag("consent","update",{analytics_storage:a?"granted":"denied",ad_storage:m?"granted":"denied",ad_user_data:m?"granted":"denied",ad_personalization:m?"granted":"denied"});
     dataLayer.push({event:"consent_update",consent_analytics:a,consent_marketing:m});
-    box.hidden=true;
+    var had=box.contains(document.activeElement);box.hidden=true;
+    if(had){var mn=document.getElementById("topo");if(mn)mn.focus();}
   }
   box.addEventListener("click",function(e){var b=e.target.closest("[data-ck]");if(!b)return;var k=b.getAttribute("data-ck");
     if(k==="all")save(true,true);else if(k==="none")save(false,false);else if(opts.hidden){opts.hidden=false;bc.textContent="Salvar escolhas";}else save(ca.checked,cm.checked);});
