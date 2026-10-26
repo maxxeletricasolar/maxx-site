@@ -18,10 +18,11 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] Fontes locais sem Google Fonts, foco visível nos campos e política de privacidade corrigida (PR desta rodada)
 - [x] Acessibilidade medida com o axe (0 violações em 10 páginas, 2 temas, 2 tamanhos) e corrigida: nome do logotipo e do botão da lista, galeria de fotos, tabelas roláveis, contraste do "aberto agora" e links do rodapé
 - [x] Teclado: banner de cookies no início da ordem de foco, com foco devolvido ao conteúdo ao fechar
+- [x] Desempenho: catálogo de 118 KB para 65 KB comprimidos, nota 57 para 72 no lab; home 81 para 85; saltos de layout corrigidos (PR desta rodada)
 
 ## 2. Jurídico e LGPD
-- [ ] **[Você]** Depoimentos: dizer quais dos 6 são reais e têm permissão do cliente para usar o nome (print do Google ou mensagem autorizando)
-- [ ] **[Claude]** Remover ou ajustar os depoimentos sem prova e as promessas ligadas a eles ("fornecedor oficial", "tudo certificado, com garantia", "estoque de verdade", "laudo e pronta entrega"); deixar só o link para avaliar no Google
+- [x] **[Você]** Depoimentos: o dono decidiu manter todos os 6 (26/10/2026). A autenticidade e a autorização do uso dos nomes passam a ser responsabilidade do dono
+- [x] **[Claude]** Depoimentos e promessas ligadas a eles: dispensado, o dono decidiu manter (26/10/2026). Se mudar de ideia, é só pedir a remoção, deixando o link para avaliar no Google
 - [ ] **[Você]** Informar o nome e o e-mail do encarregado de dados (sugestão: `privacidade@maxxeletricasolar.com.br`)
 - [ ] **[Claude]** Pôr o encarregado na seção 1 da política de privacidade e no resumo de privacidade dos formulários
 - [x] **[Claude]** Corrigir a política: seção 4 dizia que o GitHub hospeda o site (é a Hostinger; o GitHub só guarda o código); seção 8 (HTTPS) conferida em produção: HTTPS e HSTS funcionam
@@ -63,14 +64,15 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Claude]** CSP definitiva: navegar o site com o F12 aberto, zerar os avisos, trocar `Report-Only` por `Content-Security-Policy` e planejar a saída de `'unsafe-inline'` Medido em 29 páginas, com e sem consentimento: 0 violações da política atual. Falta decidir virar para modo bloqueante (risco: tags futuras do Tag Manager) e confirmar no ar
 - [x] **[Claude]** Hospedar as fontes (Inter, Plus Jakarta Sans, JetBrains Mono) no próprio site e tirar o Google Fonts (386 páginas, `assets/fonts/`; a CSP já não cita o Google Fonts)
 - [x] **[Claude]** Redirect do `www` com destino fixo (`https://maxxeletricasolar.com.br`) e `object-src 'none'` na CSP
-- [ ] **[Juntos]** Decidir se o Tag Manager passa a carregar só depois do consentimento (hoje ele carrega em toda página e consulta o Google, sem gravar cookies de medição)
+- [ ] **[Juntos]** Decidir se o Tag Manager passa a carregar só depois do consentimento (hoje ele carrega em toda página e consulta o Google, sem gravar cookies de medição). Hoje ele carrega no primeiro toque, tecla ou rolagem, ou 6 s depois (não há tags dentro); se criar tags para disparar na abertura, reverter (CLAUDE.md, regra 19)
 - [ ] **[Claude]** Remover o arquivo `CNAME` da raiz (sobra de GitHub Pages; a produção é Hostinger), depois da sua confirmação
 
 ## 6. Desempenho
-- [ ] **[Claude]** Reduzir `assets/catalogo-data.js` (609 KB) e carregá-lo só onde faz falta
+- [x] **[Claude]** Peso do catálogo: o `catalogo-data.js` (609 KB) nenhuma página carrega, só as ferramentas; o peso real era o texto de busca `data-q` do `produtos.html` (53 KB de 118 KB comprimidos). Movido para `assets/catalogo-busca.json`, que só baixa ao clicar na busca: HTML de 118 KB para 65 KB, busca com resultados idênticos em 10 consultas
 - [ ] **[Claude]** Unificar os 4 CSS e 2 JS e trocar as ~163 cores fixas por tokens (PR próprio, página por página, com captura antes e depois)
 - [ ] **[Claude]** Minificar CSS e JS e tirar o CSS que bloqueia a renderização
-- [ ] **[Claude]** Refazer o Lighthouse mobile e o PageSpeed em produção; metas: desempenho 90+, LCP abaixo de 2,5 s, CLS abaixo de 0,1
+- [ ] **[Claude]** Refazer o Lighthouse mobile e o PageSpeed em produção; metas: desempenho 90+, LCP abaixo de 2,5 s, CLS abaixo de 0,1. Lab local de 26/10 (mobile simulado, 2 rodadas): home 81 para 85, catálogo 57 para 72. Em produção (antes do PR) a home dava 64, o produto 83 e o catálogo 63
+- [x] **[Claude]** Fontes dentro do CSS (um pedido a menos antes de pintar), Tag Manager sob demanda (118 KB a menos no carregamento), salto de layout do catálogo (0,169 para 0,049) e da home (0,039 para 0,001) corrigidos
 
 ## 7. SEO e dados da empresa
 - [ ] **[Você]** Passar os links separados de avaliação e de mapa do Google (hoje os dois usam `share.google/8Zr9PJPt1hZOWpXQ8`)

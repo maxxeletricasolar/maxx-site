@@ -262,13 +262,29 @@
     var cq = document.getElementById("cat-q"), cCount = document.getElementById("cat-count"), cEmpty = document.getElementById("cat-empty");
     var cards = [].slice.call(document.querySelectorAll(".pcard")), secs = [].slice.call(document.querySelectorAll(".cat-sec"));
     var qTimer;
+    // o texto de busca de cada cartão fica em assets/catalogo-busca.json (tools/busca-catalogo.js) e só é baixado ao usar a busca
+    var DQ = null, DQcarrega = false;
+    function carregaDQ(depois){
+      if(DQ){ if(depois) depois(); return; }
+      if(DQcarrega) return; DQcarrega = true;
+      fetch("assets/catalogo-busca.json?v=" + (cq.getAttribute("data-busca-v") || "")).then(function(r){ return r.json(); })
+        .then(function(j){ DQ = j; if(depois) depois(); })
+        .catch(function(){ DQ = {}; if(depois) depois(); });   // sem o arquivo, a busca usa o texto do cartão
+    }
+    cq.addEventListener("focus", function(){ carregaDQ(); }, {once: true});
     function runSearch(){
       var terms = norm(cq.value.trim()).split(/\s+/).filter(Boolean), shown = 0;
+      if(terms.length && !DQ){ carregaDQ(runSearch); return; }
       cards.forEach(function(c){
-        var hay = c.getAttribute("data-q"), ok = terms.every(function(t){ return hay.indexOf(t) >= 0; });
+        var hay = (DQ && DQ[c.id]) || norm(c.textContent), ok = terms.every(function(t){ return hay.indexOf(t) >= 0; });
         c.hidden = !ok; if(ok) shown++;
       });
-      secs.forEach(function(s){ s.hidden = !s.querySelector(".pcard:not([hidden])"); });
+      secs.forEach(function(s){
+        var n = s.querySelectorAll(".pcard:not([hidden])").length; s.hidden = !n;
+        /* o cabeçalho da categoria também mostra o total do catálogo; durante a busca mostra quantos casam */
+        var m = s.querySelector(".cat-head .meta"), tn = m && [].filter.call(m.childNodes, function(x){ return x.nodeType === 3 && /\d+ produtos?/.test(x.textContent); })[0];
+        if(tn){ if(tn.o === undefined) tn.o = tn.textContent; tn.textContent = terms.length ? tn.o.replace(/(\d+) produtos?/, n + " de $1 produtos") : tn.o; }
+      });
       cEmpty.hidden = shown > 0;
       cCount.textContent = terms.length ? shown + (shown === 1 ? " produto encontrado" : " produtos encontrados") + " para “" + cq.value.trim() + "”" : "";
     }
