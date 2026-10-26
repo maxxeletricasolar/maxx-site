@@ -32,7 +32,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] **[Claude]** Registrar as imagens em `tools/handoff/imagens-licencas.md` (feito, com a coluna de origem em branco); trocar ou remover o que não tiver licença continua pendente
 - [ ] **[Você]** Pedir à Ritz autorização por escrito para usar as fotos e os textos do catálogo
 - [ ] **[Você]** Revisão de um advogado nas políticas e nos termos
-- [ ] **[Juntos]** Rever "Orçamento em até 24 horas" e "preço sob consulta": só manter o que a equipe cumpre
+- [x] **[Juntos]** Rever "Orçamento em até 24 horas" e "preço sob consulta": só manter o que a equipe cumpre (confirmado pelo dono em 26/10/2026)
 - [ ] **[Você]** Preencher a coluna Origem e a licença de cada imagem em `tools/handoff/imagens-licencas.md`
 - [ ] **[Você]** Confirmar a remoção das imagens que nenhuma página usa (`hero-eletricista`, `hero-linha-viva`, `hero-subestacao`, `catalogo-equipe` e os JPG duplicados de `cabos`, `ferragens`, `ferramentas`, `isoladores`)
 
@@ -55,7 +55,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 ## 5. Hospedagem, segurança e formulário
 - [ ] **[Você]** HTTPS e HSTS já funcionam em produção; falta confirmar no painel da Hostinger que `http://` redireciona para `https://`
 - [ ] **[Você]** Criar as caixas `comercial@` e `sac@` (e `privacidade@`, se criar o encarregado)
-- [ ] **[Juntos]** Envio de teste do formulário de ponta a ponta (a Hostinger precisa de PHP com `mbstring`)
+- [x] **[Juntos]** Envio de teste do formulário de ponta a ponta (a Hostinger precisa de PHP com `mbstring`) (confirmado pelo dono em 26/10/2026)
 - [ ] **[Você]** Remover o subdomínio `teste.maxxeletricasolar.com.br` e a pasta `teste/` da Hostinger
 - [ ] **[Claude]** Tirar `teste.` de `ORIGENS_OK` em `enviar-pedido.php` depois do item anterior
 - [ ] **[Juntos]** Descobrir o cabeçalho de IP real da Hostinger; então trocar o limite por visitante para `REMOTE_ADDR`
