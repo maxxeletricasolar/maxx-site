@@ -5,7 +5,7 @@
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const RAIZ = path.resolve(__dirname, '..');
 const hash = (arq, n) => crypto.createHash('sha1').update(fs.readFileSync(arq, 'utf8').replace(/\r\n/g, '\n'), 'utf8').digest('hex').slice(0, n);
-const ESTATICOS = ['site.css', 'busca.js', 'efeitos.js', 'compartilhar.js', 'lista.js'];
+const ESTATICOS = ['site.css', 'busca.js', 'efeitos.js', 'compartilhar.js', 'lista.js', 'analytics.js'];
 
 function htmls(dir, acc = []) {
   fs.readdirSync(dir, { withFileTypes: true }).forEach((e) => {

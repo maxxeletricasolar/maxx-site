@@ -19,6 +19,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] Acessibilidade medida com o axe (0 violações em 10 páginas, 2 temas, 2 tamanhos) e corrigida: nome do logotipo e do botão da lista, galeria de fotos, tabelas roláveis, contraste do "aberto agora" e links do rodapé
 - [x] Teclado: banner de cookies no início da ordem de foco, com foco devolvido ao conteúdo ao fechar
 - [x] Desempenho: catálogo de 118 KB para 65 KB comprimidos, nota 57 para 72 no lab; home 81 para 85; saltos de layout corrigidos (PR desta rodada)
+- [x] Google Analytics 4 instalado em todas as páginas só depois do aceite de cookies (`assets/analytics.js`, ID `G-30QV93FJ7E`): sem aceite nada é enviado; ao retirar o aceite o envio para; eventos do site (orçamento, WhatsApp, lista, busca, compartilhar) vão ao GA4. Sinais do Google e personalização de anúncios desligados
 
 ## 2. Jurídico e LGPD
 - [x] **[Você]** Depoimentos: o dono decidiu manter todos os 6 (26/10/2026). A autenticidade e a autorização do uso dos nomes passam a ser responsabilidade do dono
@@ -47,11 +48,12 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Você]** Testar com leitor de tela de verdade (NVDA no Windows, TalkBack no Android ou VoiceOver no iPhone): home, produto, lista de orçamento e banner de cookies
 
 ## 4. Rastreamento e medição
-- [ ] **[Você]** Criar o GA4 e o Pixel da Meta e passar os IDs (`G-...` e Pixel ID)
-- [ ] **[Claude]** Montar o contêiner do GTM (GTM-WZNQMTZ4) só com disparo após consentimento
+- [ ] **[Você]** GA4 criado (ID `G-30QV93FJ7E`, passado em 27/10/2026). Falta só o Pixel da Meta, se for anunciar (passar o ID numérico)
+- [ ] **[Claude]** GTM (GTM-WZNQMTZ4): o GA4 já está instalado direto no site (`assets/analytics.js`), então NÃO criar tag do GA4 no GTM (contaria em dobro). O contêiner só será usado para o Pixel da Meta, quando houver o ID
 - [ ] **[Você]** Verificar o domínio na Meta por DNS
 - [ ] **[Claude]** Reincluir o evento `view_item` nas páginas de produto
 - [ ] **[Claude]** Medir `lista_na_home`, `pedido_preparado` e `generate_lead` antes e depois de cada mudança de layout
+- [ ] **[Você]** Depois do merge: abrir o site, aceitar os cookies e conferir no GA4 > Relatórios > Tempo real se a visita aparece; no GA4 > Administrador > Eventos, marcar `generate_lead` como evento-chave (conversão)
 
 ## 5. Hospedagem, segurança e formulário
 - [ ] **[Você]** HTTPS e HSTS já funcionam em produção; falta confirmar no painel da Hostinger que `http://` redireciona para `https://`

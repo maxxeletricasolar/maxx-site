@@ -211,6 +211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll("[data-thumb]").forEach(function(b){b.addEventListener("click",function(){var m=document.getElementById("pd-img");m.src=b.getAttribute("data-thumb");document.querySelectorAll("[data-thumb]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});});});
 })();
 </script>
+<script src="./assets/analytics.js?v=ffdf82f2" defer></script>
 <script src="./assets/busca.js?v=11b967c4" data-base="./" data-mode="site" defer></script>
 <!-- Barra de cookies -->
 <style>
@@ -253,6 +254,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer=window.dataLayer||[];
     if(typeof gtag==="function")gtag("consent","update",{analytics_storage:a?"granted":"denied",ad_storage:m?"granted":"denied",ad_user_data:m?"granted":"denied",ad_personalization:m?"granted":"denied"});
     dataLayer.push({event:"consent_update",consent_analytics:a,consent_marketing:m});
+    document.dispatchEvent(new CustomEvent("maxx:consent",{detail:{a:a,m:m}}));
     var had=box.contains(document.activeElement);box.hidden=true;
     if(had){var mn=document.getElementById("topo");if(mn)mn.focus();}
   }
