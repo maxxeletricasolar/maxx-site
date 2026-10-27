@@ -785,5 +785,131 @@
    "tensaoCol": -1,
    "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
   }
+ },
+ "b-bastao-alavanca": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "RC305-0021",
+     "Possui tirante de náilon, com 48 mm de largura e 1,83 m de comprimento e tem capacidade de até 3402 daN (7500 lb) de resistência à tração, agarrando firmemente os postes, com até Ø 480 mm, inclusive, em superfícies lisas. Comprimento Isolante 1,22 m; Peso aprox.: 2,90 kg (6,39 lb)"
+    ],
+    [
+     "RC305-0008",
+     "Possui um gancho de aço galvanizado articulável em sua extremidade e sua fixação regulável. Assim, possibilita agarrar poste de madeira de diferentes diâmetros. Comprimento Isolante 0,91 m; Peso aprox.: 3,40 kg (7,50 lb)"
+    ],
+    [
+     "RC200T",
+     "Possui mandíbulas que permitem agarrar poste de Ø 180 a 406 mm. Comprimento Isolante 0,85 m; Peso aprox.: 6,00 kg (13,22 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "b-bau-para-moto-plantao": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "COB32957-1",
+     "Baú para moto-plantão"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
+ },
+ "b-cabecotes-para-manobra": {
+  "0": {
+   "legenda": "",
+   "cols": [
+    "Referência",
+    "Característica"
+   ],
+   "rows": [
+    [
+     "VMR02579-1",
+     "Sistema de travamento através de semi-esfera com pressão regulável. Peso aprox.: 0,19 kg (0,42 lb)"
+    ],
+    [
+     "RM4455-29B",
+     "Utilizado para operação de grampos de aterramento através do travamento com parafuso olhal, com sistema de encaixe universal. Peso aprox.: 0,30 kg (0,66 lb)"
+    ],
+    [
+     "VMR07205-1",
+     "Possui haste de aço que permite o alinhamento e fixação automática do grampo através de efeito mola. Peso aprox.: 0,25 kg (0,55 lb)"
+    ],
+    [
+     "FLV11554-1",
+     "Corpo principal em aço galvanizado e trava de segurança. Peso aprox.: 0,34 kg (0,75 lb)"
+    ],
+    [
+     "FLV32003-1",
+     "Corpo principal em aço galvanizado e trava de segurança. Peso aprox.: 0,34 kg (0,75 lb)"
+    ],
+    [
+     "FLV13872-1",
+     "Corpo principal em aço revestido com plástico e trava de segurança. Peso aprox.: 0,30 kg (0,66 lb)"
+    ],
+    [
+     "FLV31179-1",
+     "Corpo principal em aço galvanizado e a região da barra redonda é revestida com plástisol. Utilizado para a instalação e retirada do gancho de linha de vida. Peso aprox.: 0,75 kg (1,65 lb)"
+    ],
+    [
+     "FLV30824-1",
+     "Dispositivo DAQC. Corpo fabricado em polímero de alta resistência e peças metálicas em aço carbono com galvanização eletrolítica. Peso aprox.: 0,32 kg (0,70 lb)"
+    ],
+    [
+     "VMR16483-1",
+     "Inclinado, em alumínio, com haste para manobra de chaves corta-circuito e encaixe para lingueta do cartucho porta-fusível. Peso aprox.: 0,25 kg (0,55 lb)"
+    ],
+    [
+     "RM4455-9",
+     "Cabeçote desconector (liga de alumínio), com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,06 kg (0,13 lb)"
+    ],
+    [
+     "VMR01479-2",
+     "Cabeçote desconector (liga de bronze), com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,17 kg (0,37 lb)"
+    ],
+    [
+     "VMR00884-1",
+     "Em aço inoxidável, com haste para manobra de chaves corta-circuito e encaixe para lingueta do cartucho porta-fusível. Peso aprox.: 0,29 kg (0,64 lb)"
+    ],
+    [
+     "VMR11560-1",
+     "Em aço inoxidável, com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,13 kg (0,29 lb)"
+    ],
+    [
+     "VMR08974-1",
+     "Em bronze, com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,11 kg (0,24 lb)"
+    ],
+    [
+     "VMR03414-1",
+     "Em aço com tratamento anticorrosivo de galvanização eletrolítica. Destinado à manobra de chaves corta-circuito, como chaves faca e fusíveis, através de sua haste de manobra. Projetado para encaixe em linguetas de cartucho porta-fusível, agulhão e gancho de ancoragem ICC. Pode ser utilizado para instalação de linha de vida. Peso aprox.: 0,28 kg (0,62 lb)"
+    ],
+    [
+     "FLV32023-1",
+     "Formato em espiral que permite a retirada de até três porta-fusíveis simultaneamente, reduzindo o desgaste físico do eletricista e economizando tempo. Oferece proteção adicional contra quedas de porta-fusíveis Peso aprox.: 0,43 kg (0,95 lb)"
+    ],
+    [
+     "FLV31941-1",
+     "Cabeçote Universal Duplo, utilizado para acoplagem de ferramentas universais, facilitando operações manuais mesmo em ângulos ou posicionamentos desfavoráveis Peso aprox.: 0,50 kg (1,10 lb)Peso aprox.: 0,43 kg (0,95 lb)"
+    ]
+   ],
+   "refCol": 0,
+   "tensaoCol": -1,
+   "conferida": "2026-10-20 (site do fabricante; validar com a equipe)"
+  }
  }
 }

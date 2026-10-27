@@ -82,7 +82,8 @@ for r in regs:
     v = r['velho']; imgs = r['imgs'] or ((v or {}).get('imgs') or [])
     pgs = sorted({f['pag'] for f in fotos if f['dono'] is r} | {int(a[1:4]) for a in manuais.get(r['id'], [])}) or [grupo['pag']]
     novos.append({'id': r['id'], 'g': G, 'nome': r['nome'], 'pag': (v or {}).get('pag') or pgs[0], 'paginas': (v or {}).get('paginas') or pgs,
-                  'conteudo': [{'t': 'p', 'x': x} for x in r['desc']], 'tabelas': r['tabelas'], 'refs': r['refs'],
+                  'conteudo': [{'t': 'p', 'x': x} for x in r['desc']] if r['desc'] else (v or {}).get('conteudo', []),  # sem descricao nova: mantem a atual
+                  'tabelas': r['tabelas'], 'refs': r['refs'],
                   'normas': (v or {}).get('normas', []), 'imgs': imgs, 'marca': 'Ritz', 'info': (v or {}).get('info', False)})
 ids_novos = [p['id'] for p in novos]
 P = {p['id']: p for p in novos}
@@ -160,6 +161,8 @@ def pagina(p):
         gal = '<div class="pd-main"><img src="../img/sem-foto.svg" alt="Foto sob consulta" width="320" height="240"></div>'
     sub(r'<div class="pd-gal">.*?</div></div><div class="pd-info">', '<div class="pd-gal">' + gal + '</div><div class="pd-info">')
     sub(r'<h1>.*?</h1>', f'<h1>{esc(nome)}</h1>')
+    sub(r'<nav class="crumbs".*?</nav>', f'<nav class="crumbs" aria-label="Você está em"><a href="../">Início</a> › <a href="../produtos.html">Produtos</a> › <a href="../categorias/{SLUG_G}.html">{esc(NOME_G)}</a></nav>')
+    sub(r'<p class="eyebrow">.*?</p>', f'<p class="eyebrow">Ritz · {esc(NOME_G)}</p>')
     sub(r'data-id="[^"]*" data-nome="[^"]*"', f'data-id="{p["id"]}" data-nome="{esc(nome)}"')
     t = re.sub(r'<!--share-->.*?<!--/share-->', '', t, flags=re.S)
     sub(r'<div class="pd-desc">.*?</div>', '<div class="pd-desc">' + ''.join(f'<p>{esc(b["x"])}</p>' for b in p['conteudo']) + '</div>')

@@ -1,9 +1,11 @@
 # Extrai as fotos do Catalogo de Produtos Ritz (PDF) para img/catalogo/r<pag>-<n>.webp, em resolucao original e com fundo branco.
 # Registra em tools/ritz/fotos-<grupo>.json a pagina, o tamanho e a REFERENCIA da coluna logo abaixo de cada foto (quando houver).
-# Precisa de: pip install pymupdf pillow. Uso: python3 tools/ritz/catalogo-fotos.py <catalogo.pdf> <grupo> <pag-inicial> <pag-final>
+# Precisa de: pip install pymupdf pillow. Uso: python3 tools/ritz/catalogo-fotos.py <catalogo.pdf> <grupo> <pag-inicial> <pag-final> [proporcao-maxima]
+# proporcao-maxima (padrao 4): use 14 em linhas com bastoes compridos (ex.: B); acima de 4:1 o lado menor pode ter so 40 px.
 import fitz, re, json, hashlib, sys, os
 from PIL import Image
 pdf, grupo, p0, p1 = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
+MAXA = float(sys.argv[5]) if len(sys.argv) > 5 else 4.0
 doc = fitz.open(pdf)
 RE_REF = re.compile(r'^(?:[A-Z]{2,4}\d{3,6}[A-Z]?(?:-\d+[A-Z]*)?|CT[AC]-\d+|[A-Z]{2,4}/[A-Z-]+)$')
 os.makedirs('img/catalogo', exist_ok=True)
@@ -28,7 +30,8 @@ for pn in range(p0, p1 + 1):
         except Exception:
             continue
         w, h = im.size
-        if w < 80 or h < 80 or w / h > 4 or h / w > 4 or r.width * r.height > 0.6 * W * H: continue
+        asp = max(w / h, h / w)
+        if min(w, h) < (40 if asp > 4 else 80) or asp > MAXA or r.width * r.height > 0.6 * W * H: continue
         if im.mode in ('RGBA', 'LA'):
             bg = Image.new('RGB', im.size, (255, 255, 255)); bg.paste(im, mask=im.split()[-1]); im = bg
         else:

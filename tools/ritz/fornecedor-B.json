@@ -1,0 +1,1279 @@
+{
+ "bastao-alavanca": {
+  "nome": "Bastão Alavanca",
+  "refs": [
+   "RC200T",
+   "RC305-0008",
+   "RC305-0021"
+  ],
+  "rows": [
+   [
+    "RC305-0021",
+    "Possui tirante de náilon, com 48 mm de largura e 1,83 m de comprimento e tem capacidade de até 3402 daN (7500 lb) de resistência à tração, agarrando firmemente os postes, com até Ø 480 mm, inclusive, em superfícies lisas. Comprimento Isolante 1,22 m; Peso aprox.: 2,90 kg (6,39 lb)"
+   ],
+   [
+    "RC305-0008",
+    "Possui um gancho de aço galvanizado articulável em sua extremidade e sua fixação regulável. Assim, possibilita agarrar poste de madeira de diferentes diâmetros. Comprimento Isolante 0,91 m; Peso aprox.: 3,40 kg (7,50 lb)"
+   ],
+   [
+    "RC200T",
+    "Possui mandíbulas que permitem agarrar poste de Ø 180 a 406 mm. Comprimento Isolante 0,85 m; Peso aprox.: 6,00 kg (13,22 lb)"
+   ]
+  ]
+ },
+ "bastao-amarracao": {
+  "nome": "Bastão de Amarração",
+  "refs": [
+   "RH1855-25",
+   "RH1855-26"
+  ],
+  "rows": [
+   [
+    "RH1855-25",
+    "Com gancho rotativo e lâmina rotativa"
+   ],
+   [
+    "RH1855-26",
+    "Com lâmina rotativa e cabeçote universal"
+   ]
+  ]
+ },
+ "bastao-auxiliar-posicionamento-poste": {
+  "nome": "Bastão Auxiliar para Posicionamento de Poste",
+  "refs": [
+   "FLV30841-1",
+   "FLV31428-1",
+   "FLV31428-2"
+  ],
+  "rows": [
+   [
+    "FLV30841-1",
+    "Comprimento total 1,70 m para posicionamento de postes com Ø de 250 a 300 mm"
+   ],
+   [
+    "FLV31428-1",
+    "Comprimento total 1,66 m para posicionamento de postes com Ø de 250 a 350 mm"
+   ],
+   [
+    "FLV31428-2",
+    "Comprimento total 1,83 m para posicionamento de postes com Ø de 250 a 350 mm"
+   ]
+  ]
+ },
+ "bastao-manobra": {
+  "nome": "Bastão de Manobra",
+  "refs": [
+   "FLV08958-1",
+   "FLV08958-2",
+   "FLV08958-3",
+   "FLV08958-4",
+   "FLV08958-5",
+   "FLV403-0291",
+   "FLV403-0292",
+   "FLV403-0293",
+   "FLV403-0294",
+   "FLV403-0295",
+   "FLV403-0296",
+   "FLV403-0297",
+   "FLV403-0298",
+   "FLV403-0299",
+   "FLV403-0342",
+   "FLV403-0343",
+   "RC403-0377",
+   "RC403-0378",
+   "RE403-2543P",
+   "RM1867"
+  ],
+  "rows": [
+   [
+    "FLV403-0291",
+    "Comprimento total 1,43 m, tensão máxima de uso 15 kV"
+   ],
+   [
+    "FLV403-0292",
+    "Comprimento total 2,04 m, tensão máxima de uso 35 kV"
+   ],
+   [
+    "FLV403-0293",
+    "Comprimento total 2,65 m, tensão máxima de uso 138 kV"
+   ],
+   [
+    "FLV403-0294",
+    "Comprimento total 3,26 m, tensão máxima de uso 230 kV"
+   ],
+   [
+    "FLV403-0295",
+    "Comprimento total 3,87 m, tensão máxima de uso 345 kV"
+   ],
+   [
+    "FLV08958-1",
+    "Comprimento total 1,43 m, tensão máxima de uso 15 kV"
+   ],
+   [
+    "FLV08958-2",
+    "Comprimento total 2,04 m, tensão máxima de uso 35 kV"
+   ],
+   [
+    "FLV08958-3",
+    "Comprimento total 2,65 m, tensão máxima de uso 138 kV"
+   ],
+   [
+    "FLV08958-4",
+    "Comprimento total 3,26 m, tensão máxima de uso 230 kV"
+   ],
+   [
+    "FLV08958-5",
+    "Comprimento total 3,87 m, tensão máxima de uso 345 kV"
+   ],
+   [
+    "FLV403-0296",
+    "Comprimento total 2,04 m, comprimento dobrado 1,03 m, tensão máxima de uso 36 kV"
+   ],
+   [
+    "FLV403-0297",
+    "Comprimento total 2,65 m, comprimento dobrado 1,33 m, tensão máxima de uso 138 kV"
+   ],
+   [
+    "FLV403-0298",
+    "Comprimento total 3,26 m, comprimento dobrado 1603 m, tensão máxima de uso 230 kV"
+   ],
+   [
+    "FLV403-0299",
+    "Comprimento total 3,87 m, comprimento dobrado 1,93 m, tensão máxima de uso 290 kV"
+   ],
+   [
+    "FLV403-0342",
+    "Comprimento total 4,46 m, comprimento dobrado 2,23 m, tensão máxima de uso 345 kV"
+   ],
+   [
+    "FLV403-0343",
+    "Comprimento total 5,06 m, comprimento dobrado 2,33 m, tensão máxima de uso 500 kV"
+   ],
+   [
+    "RM1867",
+    "Utilização em bastões de manobra, de forma a permitir o acoplamento de ferramentas com encaixe universal, por meio da montagem do dispositivo na extremidade do bastão. Peso aprox.: 0,14 (0,31 lb)"
+   ],
+   [
+    "RE403-2543P",
+    "Utilizada especialmente naqueles bastão de manobra com maior comprimento, onde exige um esforço muito grande por parte do eletricista para sua sustentação quando em uso, principalmente na posição horizontal. Peso aprox.: 0,42 (0,93 lb)"
+   ],
+   [
+    "RC403-0378",
+    "Comprimento total 1,83 m"
+   ],
+   [
+    "RC403-0377",
+    "Comprimento total 1,22 m"
+   ]
+  ]
+ },
+ "bastao-medicao-extensao": {
+  "nome": "Bastão de Medição e Extensão",
+  "refs": [
+   "FLV16140-1",
+   "FLV16146-1"
+  ],
+  "rows": [
+   [
+    "FLV16140-1",
+    "Bastão de medição"
+   ],
+   [
+    "FLV16146-1",
+    "Extensão"
+   ]
+  ]
+ },
+ "bastao-podador": {
+  "nome": "Bastão Podador",
+  "refs": [
+   "FLV21137-1",
+   "FLV31479-2",
+   "FLV31519-1",
+   "FLV31800-1T",
+   "RH2106"
+  ],
+  "rows": [
+   [
+    "FLV31519-1",
+    "Bastão com Podador de galho com cabeçote universal"
+   ],
+   [
+    "RH2106",
+    "Bastão com Podador de galho com engate rápido"
+   ],
+   [
+    "FLV21137-1",
+    "Bastão com Podador de galho com engate rápido"
+   ],
+   [
+    "FLV31479-2",
+    "Serra para poda Permite serrar galhos de árvores nas proximidades de instalações energizadas. Peso aprox.: 0,36 kg (0,79 lb)"
+   ],
+   [
+    "FLV31800-1T",
+    "Serra para poda com gancho auxiliares Possui ganchos nas extremidades para auxiliar na remoção dos galhos cortados. Peso aprox.: 0,46 kg (1,02 lb)"
+   ]
+  ]
+ },
+ "bastao-prendedor-condutor": {
+  "nome": "Bastão Prendedor de Condutor",
+  "refs": [
+   "RC403-3068",
+   "RC403-3069"
+  ],
+  "rows": [
+   [
+    "RC403-3068",
+    "Bastão prendedor de condutor, Ø 32 mm, comprimento total 1,98 m"
+   ],
+   [
+    "RC403-3069",
+    "Bastão prendedor de condutor, Ø 32 mm, comprimento total 2,58 m"
+   ]
+  ]
+ },
+ "bastao-punho-isolante": {
+  "nome": "Bastão Punho Isolante",
+  "refs": [
+   "RH1861-1",
+   "RH1861-2"
+  ],
+  "rows": [
+   [
+    "RH1861-1",
+    "Bastão Punho com alicate"
+   ],
+   [
+    "RH1861-2",
+    "Somente o Bastão punho (par)"
+   ]
+  ]
+ },
+ "bastao-resgate": {
+  "nome": "Bastão de Resgate",
+  "refs": [
+   "FLV09429-1",
+   "FLV17154-2",
+   "FLV18759-2",
+   "FLV31907-1",
+   "FLV31907-2"
+  ],
+  "rows": [
+   [
+    "FLV09429-1",
+    "Dimensões Ø 32 mm, comprimento total 2,25 m"
+   ],
+   [
+    "FLV18759-2",
+    "Modelo dobrável. Dimensões Ø 32 mm, comprimento total 2,28 m, comprimento dobrado 1,32 m"
+   ],
+   [
+    "FLV17154-2",
+    "Modelo com 1 gancho. Dimensões Ø 32 mm, comprimento total 2,30 m"
+   ],
+   [
+    "FLV31907-1",
+    "Modelo com 1 gancho dobrável. Dimensões Ø 32 mm, comprimento total 1,85 m, comprimento dobrado 0,93 m"
+   ],
+   [
+    "FLV31907-2",
+    "Modelo com 1 gancho dobrável. Dimensões Ø 32 mm, comprimento total 2,50 m, comprimento dobrado 1,28 m"
+   ]
+  ]
+ },
+ "bastao-soquete-flexivel": {
+  "nome": "Bastão Soquete Flexível",
+  "refs": [
+   "R066780",
+   "RC403-1085",
+   "RC403-1085M",
+   "RC403-2136",
+   "RH1891-2",
+   "RH1891-3",
+   "RH1891-6"
+  ],
+  "rows": [
+   [
+    "RC403-2136",
+    "Bastão com Soquete flexível e soquete fixo tipo fêmea"
+   ],
+   [
+    "RH1891-2",
+    "Bastão com Soquete flexível e soquete fixo tipo macho"
+   ],
+   [
+    "RH1891-3",
+    "Bastão com Soquete flexível e soquete fixo tipo macho"
+   ],
+   [
+    "RH1891-6",
+    "Bastão com Soquete flexível e cabeçote universal"
+   ],
+   [
+    "R066780",
+    "Chave catraca manual para soquete macho e fêmea de 1/2”"
+   ],
+   [
+    "RC403-1085",
+    "Jogo com 11 soquetes longos em aço, nas medidas: ½”, 9/16”, 5/8”, 11/16”, 3/4”, 13/16”, 7/8”,15/16”, 1”,1.1/16”, 1.1/8” acondicionados em estojo"
+   ],
+   [
+    "RC403-1085M",
+    "Jogo com 10 soquetes longos em aço, nas medidas: 10 mm, 11 mm, 12 mm, 13 mm, 14 mm, 15 mm, 16 mm, 17 mm, 18 mm, 19 mm, acondicionados em estojo"
+   ]
+  ]
+ },
+ "bastao-soquete-multi-angular": {
+  "nome": "Bastão com Soquete Multi-Angular",
+  "refs": [
+   "FLV01121-4",
+   "RC403-0184",
+   "RC403-0185",
+   "RC403-0186"
+  ],
+  "rows": [
+   [
+    "RC403-0184",
+    "Bastão com soquete multi-angular permite Ø 38 mm, comprimento total 1,83 m"
+   ],
+   [
+    "RC403-0185",
+    "Bastão com soquete multi-angular permite Ø 38 mm, comprimento total 2,44 m"
+   ],
+   [
+    "RC403-0186",
+    "Bastão com soquete multi-angular permite Ø 38 mm, comprimento total 3,05 m"
+   ],
+   [
+    "FLV01121-4",
+    "Bastão com soquete multi-angular permite Ø 38 mm, comprimento total 3,67 m"
+   ]
+  ]
+ },
+ "bastao-tira-pipa": {
+  "nome": "Bastão Tira-Pipa",
+  "refs": [
+   "FLV09311-1",
+   "FLV13907-1",
+   "FLV30173-1"
+  ],
+  "rows": [
+   [
+    "FLV13907-1",
+    "Bastão tira-pipa"
+   ],
+   [
+    "FLV09311-1",
+    "Cabeçote universal tipo alfange"
+   ],
+   [
+    "FLV30173-1",
+    "Cabeçote universal com lâmina"
+   ]
+  ]
+ },
+ "bastao-universal": {
+  "nome": "Bastão Universal",
+  "refs": [
+   "RH1760",
+   "RH1760-1",
+   "RH1760-10",
+   "RH1760-12",
+   "RH1760-14",
+   "RH1760-2",
+   "RH1760-3",
+   "RH1760-4",
+   "RH1760-6",
+   "RH1761",
+   "RH1761-1",
+   "RH1770",
+   "RH1790-10",
+   "RH1790-12",
+   "RH1790-14",
+   "RH1790-8",
+   "RT403-0752"
+  ],
+  "rows": [
+   [
+    "RH1760",
+    "Com 1 cabeçote em uma das extremidades, base de borracha na outra e gancho de amarração"
+   ],
+   [
+    "RH1760-1",
+    "Com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RH1760-2",
+    "Seccionável, sendo 2 seções de bastões interligados por uma emenda rígida, 1 cabeçote universal em uma das extremidades, base de borracha na outra e gancho de amarração"
+   ],
+   [
+    "RH1760-3",
+    "Com 2 cabeçotes (1 em cada extremidade) e gancho de amarração"
+   ],
+   [
+    "RH1760-4",
+    "Com 2 cabeçotes (1 em cada extremidade) e gancho de amarração"
+   ],
+   [
+    "RH1760-6",
+    "Seccionável, sendo 2 seções de bastões interligados por uma emenda rígida, cabeçotes universais nas extremidades e gancho de amarração"
+   ],
+   [
+    "RH1760-10",
+    "Com 2 cabeçotes (1 em cada extremidade)"
+   ],
+   [
+    "RH1760-12",
+    "Com 2 cabeçotes (1 em cada extremidade)"
+   ],
+   [
+    "RH1760-14",
+    "Com 2 cabeçotes (1 em cada extremidade)"
+   ],
+   [
+    "RH1761",
+    "Com 1 cabeçote em uma das extremidades, base de borracha na outra e 2 pingadeiras de borracha"
+   ],
+   [
+    "RH1761-1",
+    "Com 1 cabeçote em uma das extremidades, base de borracha na outra e 3 pingadeiras de borracha"
+   ],
+   [
+    "RH1770",
+    "Dobrável, com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RH1790-8",
+    "Dobrável, com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RH1790-10",
+    "Dobrável, com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RH1790-12",
+    "Dobrável, com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RH1790-14",
+    "Dobrável, com 1 cabeçote em uma das extremidades e base de borracha na outra"
+   ],
+   [
+    "RT403-0752",
+    "Seccionável, sendo: 1 seção de bastão com 3 m Contém 1 emenda rígida no centro, 1 cabeçote universal na extremidade de 32 mm e uma base de borracha na seção de 38 mm"
+   ]
+  ]
+ },
+ "bastao-volt-amperimetro": {
+  "nome": "Bastão Volt-Amperímetro",
+  "refs": [
+   "RH1968-8",
+   "RH1978-8"
+  ],
+  "rows": [
+   [
+    "RH1968-8",
+    "Bastão Volt-Amperímetro, Ø 32 mm, comprimento total 2,51 m"
+   ],
+   [
+    "RH1978-8",
+    "Bastão Volt-Amperímetro dobrável, Ø 32 mm, comprimento total 2,51 m, dobrado 1,25 m"
+   ]
+  ]
+ },
+ "bau-para-moto-plantao": {
+  "nome": "Baú para Moto-Plantão",
+  "refs": [
+   "COB32957-1"
+  ],
+  "rows": [
+   [
+    "COB32957-1",
+    "Baú para moto-plantão"
+   ]
+  ]
+ },
+ "cabecotes-manobra": {
+  "nome": "Cabeçotes para Manobra",
+  "refs": [
+   "FLV11554-1",
+   "FLV13872-1",
+   "FLV30824-1",
+   "FLV31179-1",
+   "FLV32003-1",
+   "FLV32023-1",
+   "RM4455-29B",
+   "RM4455-9",
+   "VMR00884-1",
+   "VMR01479-2",
+   "VMR02579-1",
+   "VMR03414-1",
+   "VMR07205-1",
+   "VMR08974-1",
+   "VMR11560-1",
+   "VMR16483-1",
+   "FLV31941-1"
+  ],
+  "rows": [
+   [
+    "VMR02579-1",
+    "Sistema de travamento através de semi-esfera com pressão regulável. Peso aprox.: 0,19 kg (0,42 lb)"
+   ],
+   [
+    "RM4455-29B",
+    "Utilizado para operação de grampos de aterramento através do travamento com parafuso olhal, com sistema de encaixe universal. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "VMR07205-1",
+    "Possui haste de aço que permite o alinhamento e fixação automática do grampo através de efeito mola. Peso aprox.: 0,25 kg (0,55 lb)"
+   ],
+   [
+    "FLV11554-1",
+    "Corpo principal em aço galvanizado e trava de segurança. Peso aprox.: 0,34 kg (0,75 lb)"
+   ],
+   [
+    "FLV32003-1",
+    "Corpo principal em aço galvanizado e trava de segurança. Peso aprox.: 0,34 kg (0,75 lb)"
+   ],
+   [
+    "FLV13872-1",
+    "Corpo principal em aço revestido com plástico e trava de segurança. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "FLV31179-1",
+    "Corpo principal em aço galvanizado e a região da barra redonda é revestida com plástisol. Utilizado para a instalação e retirada do gancho de linha de vida. Peso aprox.: 0,75 kg (1,65 lb)"
+   ],
+   [
+    "FLV30824-1",
+    "Dispositivo DAQC. Corpo fabricado em polímero de alta resistência e peças metálicas em aço carbono com galvanização eletrolítica. Peso aprox.: 0,32 kg (0,70 lb)"
+   ],
+   [
+    "VMR16483-1",
+    "Inclinado, em alumínio, com haste para manobra de chaves corta-circuito e encaixe para lingueta do cartucho porta-fusível. Peso aprox.: 0,25 kg (0,55 lb)"
+   ],
+   [
+    "RM4455-9",
+    "Cabeçote desconector (liga de alumínio), com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,06 kg (0,13 lb)"
+   ],
+   [
+    "VMR01479-2",
+    "Cabeçote desconector (liga de bronze), com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,17 kg (0,37 lb)"
+   ],
+   [
+    "VMR00884-1",
+    "Em aço inoxidável, com haste para manobra de chaves corta-circuito e encaixe para lingueta do cartucho porta-fusível. Peso aprox.: 0,29 kg (0,64 lb)"
+   ],
+   [
+    "VMR11560-1",
+    "Em aço inoxidável, com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,13 kg (0,29 lb)"
+   ],
+   [
+    "VMR08974-1",
+    "Em bronze, com haste para manobra de chaves corta-circuito, permitindo a abertura ou fechamento de chaves faca ou fusíveis. Peso aprox.: 0,11 kg (0,24 lb)"
+   ],
+   [
+    "VMR03414-1",
+    "Em aço com tratamento anticorrosivo de galvanização eletrolítica. Destinado à manobra de chaves corta-circuito, como chaves faca e fusíveis, através de sua haste de manobra. Projetado para encaixe em linguetas de cartucho porta-fusível, agulhão e gancho de ancoragem ICC. Pode ser utilizado para instalação de linha de vida. Peso aprox.: 0,28 kg (0,62 lb)"
+   ],
+   [
+    "FLV32023-1",
+    "Formato em espiral que permite a retirada de até três porta-fusíveis simultaneamente, reduzindo o desgaste físico do eletricista e economizando tempo. Oferece proteção adicional contra quedas de porta-fusíveis Peso aprox.: 0,43 kg (0,95 lb)"
+   ],
+   [
+    "FLV31941-1",
+    "Cabeçote Universal Duplo, utilizado para acoplagem de ferramentas universais, facilitando operações manuais mesmo em ângulos ou posicionamentos desfavoráveis Peso aprox.: 0,50 kg (1,10 lb)Peso aprox.: 0,43 kg (0,95 lb)"
+   ]
+  ]
+ },
+ "cabide-cavalete-bastoes": {
+  "nome": "Cabide e Cavalete para Bastões",
+  "refs": [
+   "RM1860",
+   "RM4660",
+   "RM4660-E1"
+  ],
+  "rows": [
+   [
+    "RM1860",
+    "Cabide para bastões"
+   ],
+   [
+    "RM4660",
+    "Cavalete para bastões"
+   ],
+   [
+    "RM4660-E1",
+    "Par de Cavalete para bastões"
+   ]
+  ]
+ },
+ "cortador-de-ramais": {
+  "nome": "Cortador de Ramais",
+  "refs": [
+   "FLV17844-1",
+   "FLV31413-2",
+   "FLV31666-1"
+  ],
+  "rows": [
+   [
+    "FLV17844-1",
+    "Cabeçote para corte de ramais, abertura da lâmina de corte 15 mm para bitola de cabos 35 mm² 2 AWG"
+   ],
+   [
+    "FLV31666-1",
+    "Cortador de ramais por alavanca, abertura da lâmina de corte 13 mm para bitola de cabos 35 mm² 2 AWG"
+   ]
+  ]
+ },
+ "ferramenta-universal": {
+  "nome": "Ferramenta Universal",
+  "refs": [
+   "FLV03811-3",
+   "FLV11042-1",
+   "FLV16148-1",
+   "FLV16159-1",
+   "FLV16165-1",
+   "FLV29611-2",
+   "FLV30755-1",
+   "FLV31479-2",
+   "FLV31800-1T",
+   "FLV32670-1",
+   "RC403-0005",
+   "RC403-0006",
+   "RC403-0011",
+   "RC403-0126",
+   "RC403-0175",
+   "RC403-0177",
+   "RC403-0314",
+   "RC403-0320",
+   "RC403-0450",
+   "RC403-0834",
+   "RC403-1071",
+   "RC403-1416",
+   "RC403-1417",
+   "RC403-2270",
+   "RH4455-64",
+   "RM1889",
+   "RM4455-10",
+   "RM4455-100",
+   "RM4455-102",
+   "RM4455-103",
+   "RM4455-12",
+   "RM4455-13",
+   "RM4455-15",
+   "RM4455-17",
+   "RM4455-18",
+   "RM4455-19",
+   "RM4455-2",
+   "RM4455-22",
+   "RM4455-23",
+   "RM4455-28",
+   "RM4455-37",
+   "RM4455-38",
+   "RM4455-39",
+   "RM4455-40",
+   "RM4455-46",
+   "RM4455-5",
+   "RM4455-50",
+   "RM4455-6",
+   "RM4455-63",
+   "RM4455-66",
+   "RM4455-67",
+   "RM4455-69",
+   "RM4455-70",
+   "RM4455-71",
+   "RM4455-72",
+   "RM4455-77",
+   "RM4455-78",
+   "RM4455-79",
+   "RM4455-80",
+   "RM4455-82",
+   "RM4455-84",
+   "RM4455-85",
+   "RM4455-86",
+   "RM4455-87",
+   "RM4455-88",
+   "RM4455-92",
+   "RM4455-93",
+   "RM4455-96",
+   "RM4455-97",
+   "RT403-1101",
+   "RM4455-36"
+  ],
+  "rows": [
+   [
+    "RC403-0005",
+    "Removedor de contrapino É utilizado em desacoplamento de isolador de disco para deslocar o contrapino quando o olhal deste está em sentido oposto da estrutura. Peso aprox.: 0,38 kg (0,84 lb)"
+   ],
+   [
+    "RC403-0006",
+    "Posicionador de contrapino É utilizado em acoplamento de isolador de disco para introduzir o contrapino à sua posição de travamento quando o olhal deste está no sentido oposto da estrutura. Peso aprox.: 0,35 kg (0,77 lb)"
+   ],
+   [
+    "RM4455-87",
+    "Garfo ajustador de concha Permite posicionar a concha do isolador durante a instalação ou retirada deste. É utilizado tambémcomo ferramenta auxiliar durante a instalação do berço em cadeias em “V” e na instalação dos bastões tensores. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "RC403-0126",
+    "Garfo ajustador de concha Similar ao garfo ajustador de concha RM4455-87, essa ferramenta está designada para manipular objetos de até Ø 69 mm. Peso aprox.: 0,32 kg (0,71 lb)"
+   ],
+   [
+    "RC403-0011",
+    "Adaptador com mola para impulso Devido ao impacto causado pela sua mola espiral, essa ferramenta facilita a extração de contrapinos quando é utilizada em conjunto com os sacadores de contrapinos, principalmente, em espaços reduzidos e condições adversas. Peso aprox.: 0,27 kg (0,60 lb)"
+   ],
+   [
+    "RC403-0175",
+    "Garfo ajustador de concha (revestido com plástico) O revestimento de plástico evita danificar os isoladores de disco ou bastões durante a sua manipulação. Peso aprox.: 0,35 kg (0,77 lb)"
+   ],
+   [
+    "RC403-0177",
+    "Tenaz multi-angular Desenvolvido para segurar porcas, ferragens ou quaisquer outras partes móveis durante a intervenção. Sua porca borboleta permite o ajuste prévio do melhor ângulo desejado. Peso aprox.: 0,88 kg (1,94 lb)"
+   ],
+   [
+    "RC403-0834",
+    "Aplicador de preformado Foi desenvolvido especialmente para trabalhos de instalação ou remoção de preformados ou laços em condutores energizados, pois permite controlar a rotação, o que é difícil com as outras ferramentas. Recomendado para trabalhos com laços de topo. Peso aprox.: 0,10 kg (0,22 lb)"
+   ],
+   [
+    "RC403-1071",
+    "Aplicador de preformado Foi desenvolvido especialmente para trabalhos de instalação ou remoção de preformados ou laços em condutores energizados, pois permite controlar a rotação, o que é difícil com as outras ferramentas. aprox.: 0,10 kg (0,22 lb)"
+   ],
+   [
+    "FLV30755-1",
+    "Tenaz para isolador Tem como principal aplicação segurar, guiar e movimentar a cadeia de isolador durante sua instalação ou remoção. Através do olhal de içamento, o Tenaz pode ser ut ilizado para elevar a cadeia do solo até o local de instalação ou a operação inversa (retirada da cadeia do local de trabalho e levá-la até o solo). Peso aprox.: 1,00 kg (2,20 lb)"
+   ],
+   [
+    "RC403-1416",
+    "Garra de amarração Em forma de mão, atua como uma pinça para manipular o arame ou preformado durante sua instalação no condutor. Peso aprox.: 0,22 kg (0,49 lb)"
+   ],
+   [
+    "RC403-0314",
+    "Lixa para condutor Desenvolvida para limpar a superfície do condutor energizado antes da instalação do conector ou grampo de aterramento, especialmente, condutores de cobre com oxidação em que a limpeza através de outros métodos é difícil. Peso aprox.: 0,29 kg (0,64 lb)"
+   ],
+   [
+    "RC403-1417",
+    "Cabeçote multi-uso Utilizado nas mais variadas interrupções em instalações energizadas, tais como: instalar ou retirar o moitão, tirantes de náilon, chaves etc. Peso aprox.: 0,24 kg (0,53 lb)"
+   ],
+   [
+    "RM4455-2",
+    "Colocador e sacador de pino Permite a colocação e retirada de pinos em cadeias de isoladores através da sua lâmina, que mantém firme a cabeça de pinos até Ø 15 mm durante o seu manuseio. Peso aprox.: 0,21 kg (0,46 lb)"
+   ],
+   [
+    "RM4455-12",
+    "Extrator de contrapino por impulso Ferramenta com ação tipo mola que permite a retirada de contrapinos dos isoladores em instalações energizadas quando a cabeça deste estiver direcionada para a estrutura. Peso aprox.: 0,17 kg (0,37 lb)"
+   ],
+   [
+    "RM4455-5",
+    "Grampo para anel de guarda Permite o manuseio do anel de corona Ø máx. 45 mm através de seu formato tipo morsa, dotada de ganchos plastificados. Abertura máx. 75 mm Peso aprox.: 0,78 kg (1,72 lb)"
+   ],
+   [
+    "RM4455-13",
+    "Desconector por impulso Ferramenta com ação tipo mola que permite a abertura de chave faca ou fusível que estiverem emperradas. Peso aprox.: 0,20 kg (0,44 lb)"
+   ],
+   [
+    "RM4455-6",
+    "Chave com catraca Desenvolvida para permitir o manuseio de parafusos e porcas em instalações energizadas através de soquetes cambiáveis. Dotada de parafuso universal rotativo em sua extremidade, pode ser utilizada em conjunto com bastões universais. Peso aprox.: 0,69 kg (1,52 lb)"
+   ],
+   [
+    "RM4455-15",
+    "Locador de pino É utilizada para facilitar a introdução de pinos e parafusos nas ferragens da estrutura metálica e cadeias de isoladores quando há necessidade de alinhamento entre os respectivos furos destas ferragens. Peso aprox.: 0,32 kg (0,71 lb)"
+   ],
+   [
+    "RM4455-10",
+    "Adaptador de peças Desenvolvido para permitir a instalação de diversas ferramentas através de suas fixações com soldas, tornando-as universal para as várias intervenções nas instalações energizadas. Peso aprox.: 0,12 kg (0,26 lb)"
+   ],
+   [
+    "RM4455-17",
+    "Cabeçote com gancho duplo Permite operações seguras durante a realização de amarrações de arame, evitando que a extremidade do laço de arame se solte e entre em contato com a cruzeta. Peso aprox.: 0,18 kg (0,40 lb)"
+   ],
+   [
+    "RM4455-18",
+    "Instalador de Contrapino Permite a reposição de pinos ou ferragens através de suas pinças, que as seguram firmemente, quando estão fora do alcance do eletricista. Peso aprox.: 0,12 kg (0,26 lb)"
+   ],
+   [
+    "FLV31479-2",
+    "Serra para poda Permite serrar galhos de árvores nas proximidades de instalações energizadas. Peso aprox.: 0,36 kg (0,79 lb)"
+   ],
+   [
+    "FLV31800-1T",
+    "Serra para poda com gancho auxiliares Possui ganchos nas extremidades para auxiliar na remoção dos galhos cortados. Peso aprox.: 0,46 kg (1,02 lb)"
+   ],
+   [
+    "RM4455-66",
+    "Cabo para serra Essa ferramenta atua como empunhadura da serra de poda FLV31479-2, nos trabalhos pelo método ao contato. Peso aprox.: 0,20 kg (0,44 lb)"
+   ],
+   [
+    "RM4455-19",
+    "Sacador auxiliar de contrapino Auxilia o desacoplamento e acoplamento de isoladores tipo campânula. A extremidade reta permite deslocar o contrapino do alojamento interno da concha, enquanto que, a parte curva é utilizada para empurrar o contrapino de volta para o alojamento. Peso aprox.: 0,33 kg (0,73 lb)"
+   ],
+   [
+    "RM4455-22",
+    "Suporte de concha Com formato de um gancho, possibilita manipular a posição da concha durante a instalação ou retirada do contrapino. Peso aprox.: 0,34 kg (0,75 lb)"
+   ],
+   [
+    "RM4455-28",
+    "Chave de fenda Permite a instalação e retirada de parafusos com cabeças fendadas em instalações energizadas. Peso aprox.: 0,12 kg (0,26 lb)"
+   ],
+   [
+    "RM4455-23",
+    "Arco de serra Permite o corte de componentes próximo ao condutor energizado, mesmo em ângulos desfavoráveis. Peso aprox.: 0,42 kg (0,93 lb)"
+   ],
+   [
+    "RM4455-36",
+    "Torniquete Auxiliar Permite segurar componentes ou condutores leves durante intervenções em instalações energizadas. Possui capacidade de abertura de 6 a 19 mm. As arestas do corpo são arredondadas para evitar danos aos condutores. Peso aprox.: 0,36 kg (0,79 lb)"
+   ],
+   [
+    "RM4455-37",
+    "Adaptador de ferramentas Permitir acoplamento de diversas ferramentas, com uma fixação firme através de porca borboleta, tornando-as universal para as várias intervenções energizadas. Peso aprox.: 0,14 kg (0,31 lb)"
+   ],
+   [
+    "RM4455-46",
+    "Suporte flexível para soquete hexagonal Permite o encaixe de soquetes de padrão 1/2”, na instalação ou retirada de parafusos ou porcas. Peso aprox.: 0,42 kg (0,93 lb)"
+   ],
+   [
+    "RM4455-38",
+    "Espelho Permite inspecionar partes de instalações energizadas não diretamente visíveis. O ângulo do espelho côncavo pode ser pré-ajustado, permitindo ao eletricista uma melhor posição de trabalho. Peso aprox.: 0,37 kg (0,82 lb)"
+   ],
+   [
+    "RM4455-50",
+    "Faca Permite o corte de objetos ou retirada do isolamento de condutores em instalações energizadas. Peso aprox.: 0,11 kg (0,24 lb)"
+   ],
+   [
+    "RM4455-39",
+    "Gancho para isolador Para o manuseio e elevação de cadeias de isoladores. Sua articulação permite manter durante todo tempo o alinhamento com o isolador. Utilizado também como apoio durante as intervenções em instalações energizadas, tais como: instalações de bastões ou jugos. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "RM4455-63",
+    "Escova em “V” para limpeza de condutor Possui cerdas de aço que permitem excelente pressão ao entorno do condutor durante a limpeza, com encaixe universal para uso em acoplamento no bastão universal. Peso aprox.: 0,17 kg (0,37 lb)"
+   ],
+   [
+    "RM1889",
+    "Escova em “V” para limpeza de condutor Possui cerdas de aço que permitem excelente pressão ao entorno do condutor durante a limpeza, com empunhadura para uso manual (desde que utilizada com luvas isolantes de borracha). Peso aprox.: 0,36 kg (0,79 lb)"
+   ],
+   [
+    "RM4455-40",
+    "Lâmina fixa para amarração É dotada de lâmina, com inclinação de 60° em relação ao bastão, permitindo manipular arames de amarração. Suas fendas profundas em formato “V”, facilitam a extração do arame, mesmo em locais de difícil acesso. Peso aprox.: 0,20 kg (0,44 lb)"
+   ],
+   [
+    "RH4455-64",
+    "Extensão com pingadeiras Essa ferramenta foi desenvolvida para acoplamento em bastões isolantes para uso em situações de manobras de emergência sob chuva. Peso aprox.: 1,10 kg (2,42 lb)"
+   ],
+   [
+    "RM4455-67",
+    "Tenaz para isolador Permite segurar o isolador durante sua instalação ou remoção. Com ângulo pré-ajustado na porca borboleta, e através do giro do parafuso, os mordentes de fibra são ajustados de 76 a 108 mm (3” a 4-1/4”). Peso aprox.: 1,06 kg (2,34 lb)"
+   ],
+   [
+    "RT403-1101",
+    "Tenaz para isolador Permite segurar o isolador durante sua instalação ou remoção. Com ângulo pré-ajustado na porca borboleta, e através do giro do parafuso, os mordentes de fibra são ajustados de 57 a 89 mm (2 1/4” a 3-1/2”). Peso aprox.: 1,06 kg (2,34 lb)"
+   ],
+   [
+    "RM4455-72",
+    "Medidor de bitola de condutor Permite uma rápida e precisa medição da bitola de condutores CAA, cobre sólido ou multifilamentados, bitola 4 Cu até 4/0 CAA. Peso aprox.: 0,08 kg (0,18 lb)"
+   ],
+   [
+    "RM4455-69",
+    "Gancho rotativo para amarração Possui gancho giratório livre para fazer e desfazer amarração com olhal em suas extremidades. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "RM4455-77",
+    "Extrator de cartucho Dotada de encaixe universal, é utilizada para instalar, mobilizar ou retirar cartuchos de chave fusível de Ø 13 a 38 mm em instalações energizadas através do giro do bastão universal. O extrator de cartucho pode ter seu ângulo ajustado previamente através da porca borboleta. Peso aprox.: 0,97 kg (2,14 lb)"
+   ],
+   [
+    "RM4455-78",
+    "Extrator de cartucho De aplicação similar ao modelo RM4455-77, essa ferramenta tem capacidade de abertura de Ø 25 a 64 mm. Peso aprox.: 1,0 kg (2,20 lb)"
+   ],
+   [
+    "FLV03811-3",
+    "Extrator de cartucho Utilizada para instalar, mobilizar ou retirar cartuchos de chave fusível de Ø 30 a 90 mm em instalações energizadas, através do giro do bastão universal. Peso aprox.: 1,40 kg (3,09 lb)"
+   ],
+   [
+    "RM4455-70",
+    "Lâmina rotativa para amarração Ferramenta com lâmina de aço formato “V” e giro livre sobre seu eixo. É utilizada para desfazer a amarração sem olhal em sua extremidade. Peso aprox.: 0,26 kg (0,57 lb)"
+   ],
+   [
+    "RM4455-71",
+    "Desconector pontado Cabeçote utilizado na manobra de chaves cortacircuito. Peso aprox.: 0,09 kg (0,20 lb)"
+   ],
+   [
+    "RC403-2270",
+    "Aplicador de Aerossol Para aplicações de pinturas ou lubrificantes em equipamentos energizados como também inseticidas em ninhos de insetos. Opcional: CPR-30485 - Cobertura Protetora para Aplicador de Aerossol. Peso aprox.: 0,21 kg (0,46 lb)"
+   ],
+   [
+    "RM4455-82",
+    "Colocador e extrator de contrapino Desenvolvida especialmente para instalar e extrair contrapinos em cadeias de ancoragem de isoladores. Possui ranhuras que guiam o contrapino durante sua instalação. Peso aprox.: 0,09 kg (0,20 lb)"
+   ],
+   [
+    "RM4455-79",
+    "Gancho espiral Permite a realização de diversas tarefas, tais como: - abertura da trava dos jugos para liberação dos munhões, ou da luva ajustável no bastão tensor; - auxiliar na instalação do jugo lado energizado; - instalação e remoção do esticador de cabo. Peso aprox.: 0,18 kg (0,40 lb)"
+   ],
+   [
+    "RM4455-84",
+    "Adaptador universal Acompanhado de parafuso borboleta (para acoplamento ao cabeçote universal) esse dispositivo permite modificar o ângulo de instalação de uma ferramenta. Peso aprox.: 0,11 kg (0,24 lb)"
+   ],
+   [
+    "RM4455-80",
+    "Gancho para corda e galho Possibilita empurrar/puxar galhos de árvores para fora da área de trabalho próximos às instalações energizadas ou para desembaraçar cordas. Peso aprox.: 0,15 kg (0,33 lb)"
+   ],
+   [
+    "RM4455-85",
+    "Martelo Permite golpear com força equipamentos em instalações energizadas para movê-los. Peso aprox.: 0,42 kg (0,93 lb)"
+   ],
+   [
+    "RM4455-86",
+    "Mordente auxiliar Permite ao eletricista ancorar provisoriamente as pontas dos condutores cortados durante as manutenções, a fim de evitar que estes fiquem soltos. Peso aprox.: 0,13 kg (0,29 lb)"
+   ],
+   [
+    "RM4455-88",
+    "Chave fixa Atua como uma chave fixa para parafusos de Ø 3/4” e 5/8”, evitando que girem quando a porca é movimentada com a chave cachimbo com catraca RM4455-89 e soquetes multi-angular RC403-1085 e RC403-1085M. Peso aprox.: 0,42 kg (0,93 lb)"
+   ],
+   [
+    "RM4455-93",
+    "Escova tubular manual para condutor Similar ao modelo RM4455-92 (Ø 64 mm), utilizada manualmente com auxílio de luvas isolantes para maior segurança do eletricista. Peso aprox.: 0,30 kg (0,66 lb)"
+   ],
+   [
+    "RC403-0320",
+    "Escova Tubular Manual para Condutor (Ø 64 mm externo), similar ao modelo RM4455-92, possui uma alça de aço com revestimento plástico para uma melhor empunhadura do eletricista, que deve utilizar luvas isolantes durante o seu manuseio. Peso aprox.: 0,22 kg (0,49 lb)"
+   ],
+   [
+    "RC403-0450",
+    "Escova Tubular Manual para Condutor (Ø 76 mm externo), similar ao modelo RM4455-92, possui uma alça de aço com revestimento plástico para uma melhor empunhadura do eletricista, que deve utilizar luvas isolantes durante o seu manuseio. Peso aprox.: 0,45 kg (0,99 lb)"
+   ],
+   [
+    "RM4455-92",
+    "Escova tubular para condutor Possui formato semitubular com Ø externo 64 mm e cabeçote giratório com encaixe universal para uso em acoplamento no bastão universal. Permite a limpeza em toda circunferência do condutor energizado. Peso aprox.: 0,53 kg (1,17 lb)"
+   ],
+   [
+    "FLV16165-1",
+    "Prolongador universal Essa ferramenta permite a extensão, em certos casos, de outras ferramentas universais em locais de difícil acesso. Peso aprox.: 0,15 kg (0,33 lb)"
+   ],
+   [
+    "RM4455-97",
+    "Ferramenta para chave “W” Permite a reposição de contrapinos tipo “W” (comumente usados na Europa e Japão) através de sua ranhura. Peso aprox.: 0,22 kg (0,49 lb)"
+   ],
+   [
+    "FLV16148-1",
+    "Gancho universal Essa ferramenta permite manipular objetos com até Ø 64 mm. Peso aprox.: 0,34 kg (0,75 lb)"
+   ],
+   [
+    "RM4455-100",
+    "Adaptador universal flexível Essa ferramenta possibilita o giro de outra ferramenta universal em série com ela, mesmo em ângulo quando acoplado ao bastão universal ou vara de manobra. Peso aprox.: 0,72 kg (1,59 lb)"
+   ],
+   [
+    "FLV16159-1",
+    "Martelo com proteção de borracha Permite golpear equipamentos em instalações energizadas para movê-los. Peso aprox.: 0,40 kg (0,88 lb)"
+   ],
+   [
+    "RM4455-102",
+    "Instalador de pino Essa ferramenta permite a colocação de pinos em cadeias de isoladores através de suas três pinças que agarram firmemente. Peso aprox.: 0,40 kg (0,88 lb)"
+   ],
+   [
+    "FLV11042-1",
+    "Cabeçote Tipo Croque Geralmente utilizado por bombeiros para quebrar vidros, telhados etc. para desobstruir locais com necessidade de serem acessados, tais como prédios, residências, galpões após incêndio, reduzindo a ocorrência de acidentes. Peso aprox.: 0,85 kg (1,87 lb)"
+   ],
+   [
+    "RM4455-103",
+    "Instalador de Contrapino Essa ferramenta permite a instalação de contrapinos em ângulo nas cadeias de isoladores através de seu dispositivo multi-encaixe. Peso aprox.: 0,26 kg (0,57 lb)"
+   ],
+   [
+    "FLV29611-2",
+    "Cabeçote para instalação de espaçadores Pontas fabricadas em aço com o intuito de permitir uma certa flexibilidade para que o eletricista consiga posicioná-las da melhor maneira possível durante a utilização. Revestido em plastisol vermelho para melhorar a visibilidade à distância da ferramenta. Peso aprox.: 0,20 kg (0,44 lb)"
+   ],
+   [
+    "RM4455-96",
+    "Sacador de contrapino em alavanca Permite com facilidade a extração parcial do contrapino através de seu formato tipo “pétala” que, com o movimento de alavanca, extrai de maneira suave o contrapino que está em posição perpendicular à estrutura. Peso aprox.: 0,28 kg (0,62 lb)"
+   ],
+   [
+    "FLV32670-1",
+    "Adaptador Universal para câmeras de ação Projetado para acoplar câmeras de ação e celulares em bastões de manobra para inspeções em locais de difícil acesso. Peso aprox.: 0,20 kg (0,44 lb)"
+   ]
+  ]
+ },
+ "tesourao": {
+  "nome": "Tesourão",
+  "refs": [
+   "FLV02818-2",
+   "FLV19245-1",
+   "RC403-1382",
+   "RC403-1384",
+   "RH1871-4",
+   "RH1871-6",
+   "RH1873-4",
+   "RH1873-6",
+   "RH1875-4",
+   "RH1875-6"
+  ],
+  "rows": [
+   [
+    "FLV02818-2",
+    "Dimensões Ø 32 mm, comprimento total 0,72m"
+   ],
+   [
+    "FLV19245-1",
+    "Dimensões Ø 38 mm, comprimento total 0,84 m"
+   ],
+   [
+    "RH1871-4",
+    "Dimensões Ø 32 mm, comprimento total 1,45 m. Para bitolas de cabos até 1/0 CAA (ACSR) Ø 10,11 mm"
+   ],
+   [
+    "RH1871-6",
+    "Dimensões Ø 32 mm, comprimento total 2,00 m. Para bitolas de cabos até 1/0 CAA (ACSR) Ø 10,11 mm"
+   ],
+   [
+    "RH1873-4",
+    "Dimensões Ø 38 mm, comprimento total 1,45 m. Para bitolas de cabos até 4/0 CAA Ø 14,31 mm"
+   ],
+   [
+    "RH1873-6",
+    "Dimensões Ø 38 mm, comprimento total 2,00 m. Para bitolas de cabos até 4/0 CAA Ø 14,31 mm"
+   ],
+   [
+    "RH1875-4",
+    "Dimensões Ø 38 mm, comprimento total 1,45 m. Para bitolas de cabos até 336,8 MCM CAA Ø 18,83 mm"
+   ],
+   [
+    "RH1875-6",
+    "Dimensões Ø 38 mm, comprimento total 2,00 m. Para bitolas de cabos até 336,8 MCM CAA Ø 18,83 mm"
+   ],
+   [
+    "RC403-1382",
+    "Dimensões Ø 38 mm, comprimento total 1,97 m"
+   ],
+   [
+    "RC403-1384",
+    "Dimensões Ø 38 mm, comprimento total 2,58 m"
+   ]
+  ]
+ },
+ "vara-manobra-seccionavel": {
+  "nome": "Vara de Manobra Seccionável",
+  "refs": [
+   "FLV30832-1",
+   "FLV30833-1",
+   "FLV30834-1",
+   "VMR-15",
+   "VMR-15/L",
+   "VMR-30",
+   "VMR-30/L",
+   "VMR-45",
+   "VMR-45/L",
+   "VMR-70",
+   "VMR-70/L",
+   "VMR-90",
+   "VMR-90/L",
+   "VMR-S",
+   "VMR/L-S",
+   "VMR-I",
+   "VMR/L-I",
+   "VMR-P",
+   "VMR/L-P"
+  ],
+  "rows": [
+   [
+    "VMR-S",
+    "Elemento Ponta"
+   ],
+   [
+    "VMR/L-S",
+    "Elemento Ponta Leve"
+   ],
+   [
+    "VMR-I",
+    "Elemento Intermediário"
+   ],
+   [
+    "VMR/L-I",
+    "Elemento Intermediário Leve"
+   ],
+   [
+    "VMR-P",
+    "Punho"
+   ],
+   [
+    "VMR/L-P",
+    "Punho Leve"
+   ],
+   [
+    "VMR-15",
+    ""
+   ],
+   [
+    "VMR-15/L",
+    ""
+   ],
+   [
+    "VMR-30",
+    ""
+   ],
+   [
+    "VMR-30/L",
+    ""
+   ],
+   [
+    "VMR-45",
+    ""
+   ],
+   [
+    "VMR-45/L",
+    ""
+   ],
+   [
+    "VMR-70",
+    ""
+   ],
+   [
+    "VMR-70/L",
+    ""
+   ],
+   [
+    "VMR-90",
+    ""
+   ],
+   [
+    "VMR-90/L",
+    ""
+   ],
+   [
+    "FLV30834-1",
+    "Elemento Ponta"
+   ],
+   [
+    "FLV30833-1",
+    "Elemento Intermediário"
+   ],
+   [
+    "FLV30832-1",
+    "Elemento Punho"
+   ]
+  ]
+ },
+ "vara-manobra-telescopica": {
+  "nome": "Vara de Manobra Telescópica VTT – Seção Triangular RITZGLAS",
+  "refs": [
+   "VTT 28790-1/9",
+   "VTT 29537-1/2",
+   "VTT 29537-1/3",
+   "VTT 29537-1/4",
+   "VTT 29537-1/5",
+   "VTT 29537-1/6",
+   "VTT 29537-1/7",
+   "VTT 29537-1/8",
+   "VTT-1/2",
+   "VTT-1/3",
+   "VTT-1/4",
+   "VTT-1/5",
+   "VTT-1/5-1800",
+   "VTT-1/6",
+   "VTT-1/7",
+   "VTT-1/8",
+   "VTT-1/9",
+   "VTT-3HD/4",
+   "VTT-3HD/5",
+   "VTT-3HD/6",
+   "VTT-3HD/7",
+   "VTT-3HD/8",
+   "VTT-3HD/9",
+   "VTT-PR-2",
+   "VTT-PR-3",
+   "VTT-PR-4",
+   "VTT-PR-5",
+   "VTT-PR-6",
+   "VTT-PR-7",
+   "VTT-PR-8"
+  ],
+  "rows": [
+   [
+    "VTT-1/5-1800",
+    "5 Secciones; 0,62 m Longitud Retraída 1,80 m Longitud Extendida 1,28 kg"
+   ],
+   [
+    "VTT-1/2",
+    "2 Secciones; 1,43 m Longitud Retraída 2,58 m Longitud Extendida 1,30 kg"
+   ],
+   [
+    "VTT-1/3",
+    "3 Secciones; 1,48 m Longitud Retraída 3,82 m Longitud Extendida 1,90 kg"
+   ],
+   [
+    "VTT-1/4",
+    "4 Secciones; 1,53 m Longitud Retraída 5,10 m Longitud Extendida 2,50 kg"
+   ],
+   [
+    "VTT-1/5",
+    "5 Secciones; 1,59 m Longitud Retraída 6,43 m Longitud Extendida 3,20 kg"
+   ],
+   [
+    "VTT-1/6",
+    "6 Secciones; 1,63 m Longitud Retraída 7,77 m Longitud Extendida 3,90 kg"
+   ],
+   [
+    "VTT-1/7",
+    "7 Secciones; 1,68 m Longitud Retraída 9,16 m Longitud Extendida 4,70 kg"
+   ],
+   [
+    "VTT-1/8",
+    "8 Secciones; 1,74 m Longitud Retraída 10,59 m Longitud Extendida 5,70 kg"
+   ],
+   [
+    "VTT-1/9",
+    "9 Secciones; 1,77 m Longitud Retraída 12,04 m Longitud Extendida 6,90 kg"
+   ],
+   [
+    "VTT-3HD/4",
+    "2 Secciones; 1,51 m Longitud Retraída 2,74 m Longitud Extendida 1,80 kg"
+   ],
+   [
+    "VTT-3HD/5",
+    "3 Secciones; 1,58 m Longitud Retraída 4,07 m Longitud Extendida 2,50 kg"
+   ],
+   [
+    "VTT-3HD/6",
+    "4 Secciones; 1,61 m Longitud Retraída 5,43 m Longitud Extendida 3,20 kg"
+   ],
+   [
+    "VTT-3HD/7",
+    "5 Secciones; 1,66 m Longitud Retraída 6,81 m Longitud Extendida 4,00 kg"
+   ],
+   [
+    "VTT-3HD/8",
+    "6 Secciones; 1,73 m Longitud Retraída 8,24 m Longitud Extendida 5,00 kg"
+   ],
+   [
+    "VTT-3HD/9",
+    "7 Secciones; 1,76 m Longitud Retraída 9,71 m Longitud Extendida 6,20 kg"
+   ],
+   [
+    "VTT-PR-2",
+    "2 Secciones; 1,54 m Longitud Retraída 2,570 m Longitud Extendida 1,20 kg"
+   ],
+   [
+    "VTT-PR-3",
+    "3 Secciones; 1,56 m Longitud Retraída 3,82 m Longitud Extendida 1,90 kg"
+   ],
+   [
+    "VTT-PR-4",
+    "4 Secciones; 1,67 m Longitud Retraída 5,10 m Longitud Extendida 2,50 kg"
+   ],
+   [
+    "VTT-PR-5",
+    "5 Secciones; 1,78 m Longitud Retraída 6,42 m Longitud Extendida 3,30 kg"
+   ],
+   [
+    "VTT-PR-6",
+    "6 Secciones; 1,89 m Longitud Retraída 7,76 m Longitud Extendida 4,20 kg"
+   ],
+   [
+    "VTT-PR-7",
+    "7 Secciones; 2,00 m Longitud Retraída 9,12 m Longitud Extendida 5,20 kg"
+   ],
+   [
+    "VTT-PR-8",
+    "8 Secciones; 2,10 m Longitud Retraída 10,50 m Longitud Extendida 6,20 kg"
+   ],
+   [
+    "VTT 28790-1/9",
+    "9 Secciones; 1,44 m Longitud Retraída 8,94 m Longitud Extendida 5,50 kg"
+   ]
+  ]
+ }
+}

@@ -31,7 +31,8 @@ Lista marcável do que falta, com responsável: `tools/handoff/CHECKLIST.md` (at
 
 ## Linhas Ritz alinhadas ao site do fabricante (20/10/2026)
 - Feita: linha A (Aterramento temporário): 27 produtos (16 novos), fotos do catálogo PDF, descrições reescritas, tabelas do fabricante. Os produtos agrupados "Grampo de Aterramento" e "Equipamentos Auxiliares" viraram páginas individuais e têm 301 no `.htaccess`.
-- Falta: linhas B a L e luvas/alicates (ver regra 18 do CLAUDE.md). O fornecedor lista 172 produtos nas 14 linhas; temos 167 + os 16 novos da linha A, menos 2 aposentados.
+- Feita (27/10/2026): linha B (Bastões e Ferramentas Universais): 22 produtos do fabricante casados com os nossos, 144 fotos do catálogo PDF conferidas em folha de contato, descrições reescritas; `Dispositivo`, `Decapador`, `Alicates` e `Aferidor` continuam com as fotos antigas (só nossos). `tools/ritz/preparar.py` automatiza o início de cada linha.
+- Falta: linhas C a L e luvas/alicates (ver regra 18 do CLAUDE.md). O fornecedor lista 172 produtos nas 14 linhas; temos 167 + os 16 novos da linha A, menos 2 aposentados.
 - Linha A sem foto: Conjunto de Aterramento Temporário e Conjuntos para Alta Tensão (o catálogo só tem desenhos); as fotos do catálogo são pequenas (90 a 930 px). Pedir à Ritz as fotos grandes e sem marca d'água.
 - Os 35 arquivos `img/catalogo/x*.webp` sem uso foram apagados na auditoria de 20/10/2026.
 
