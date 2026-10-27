@@ -20,6 +20,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] Teclado: banner de cookies no início da ordem de foco, com foco devolvido ao conteúdo ao fechar
 - [x] Desempenho: catálogo de 118 KB para 65 KB comprimidos, nota 57 para 72 no lab; home 81 para 85; saltos de layout corrigidos (PR desta rodada)
 - [x] Google Analytics 4 instalado em todas as páginas só depois do aceite de cookies (`assets/analytics.js`, ID `G-30QV93FJ7E`): sem aceite nada é enviado; ao retirar o aceite o envio para; eventos do site (orçamento, WhatsApp, lista, busca, compartilhar) vão ao GA4. Sinais do Google e personalização de anúncios desligados
+- [x] Cabeçalho `<meta charset>` no início do `<head>` de Quem somos, Produtos e Guias (o Lighthouse acusava "charset tarde demais" no catálogo)
 
 ## 2. Jurídico e LGPD
 - [x] **[Você]** Depoimentos: o dono decidiu manter todos os 6 (26/10/2026). A autenticidade e a autorização do uso dos nomes passam a ser responsabilidade do dono
@@ -53,7 +54,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Você]** Verificar o domínio na Meta por DNS
 - [ ] **[Claude]** Reincluir o evento `view_item` nas páginas de produto
 - [ ] **[Claude]** Medir `lista_na_home`, `pedido_preparado` e `generate_lead` antes e depois de cada mudança de layout
-- [ ] **[Você]** Depois do merge: abrir o site, aceitar os cookies e conferir no GA4 > Relatórios > Tempo real se a visita aparece; no GA4 > Administrador > Eventos, marcar `generate_lead` como evento-chave (conversão)
+- [ ] **[Você]** Depois do merge: abrir o site, aceitar os cookies e conferir no GA4 > Relatórios > Tempo real se a visita aparece; no GA4 > Administrador > Eventos, marcar `generate_lead` como evento-chave (conversão). Já conferido por mim no site no ar: sem aceite nada vai ao Google; ao aceitar, o `gtag/js` com o ID `G-30QV93FJ7E` carrega e a visita é enviada (`g/collect`)
 
 ## 5. Hospedagem, segurança e formulário
 - [ ] **[Você]** HTTPS e HSTS já funcionam em produção; falta confirmar no painel da Hostinger que `http://` redireciona para `https://`
@@ -73,7 +74,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [x] **[Claude]** Peso do catálogo: o `catalogo-data.js` (609 KB) nenhuma página carrega, só as ferramentas; o peso real era o texto de busca `data-q` do `produtos.html` (53 KB de 118 KB comprimidos). Movido para `assets/catalogo-busca.json`, que só baixa ao clicar na busca: HTML de 118 KB para 65 KB, busca com resultados idênticos em 10 consultas
 - [ ] **[Claude]** Unificar os 4 CSS e 2 JS e trocar as ~163 cores fixas por tokens (PR próprio, página por página, com captura antes e depois)
 - [ ] **[Claude]** Minificar CSS e JS e tirar o CSS que bloqueia a renderização
-- [ ] **[Claude]** Refazer o Lighthouse mobile e o PageSpeed em produção; metas: desempenho 90+, LCP abaixo de 2,5 s, CLS abaixo de 0,1. Lab local de 26/10 (mobile simulado, 2 rodadas): home 81 para 85, catálogo 57 para 72. Em produção (antes do PR) a home dava 64, o produto 83 e o catálogo 63
+- [x] **[Claude]** Lighthouse mobile em produção (27/10/2026, depois dos PRs 40 e 41, 2 rodadas): home 95 (LCP 2,2 s, CLS 0,001), produto 99 (LCP 1,8 s), catálogo 98 (LCP 2,2 s, CLS 0,050); acessibilidade 99 a 100, SEO 100. Antes: 64, 83 e 63. Metas de desempenho 90+, LCP abaixo de 2,5 s e CLS abaixo de 0,1: atingidas. Falta o PageSpeed Insights (dados de campo) e uma nova medida depois de algumas semanas de visitas reais
 - [x] **[Claude]** Fontes dentro do CSS (um pedido a menos antes de pintar), Tag Manager sob demanda (118 KB a menos no carregamento), salto de layout do catálogo (0,169 para 0,049) e da home (0,039 para 0,001) corrigidos
 
 ## 7. SEO e dados da empresa
