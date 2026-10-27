@@ -91,7 +91,7 @@ Aviso: este checklist reduz risco, mas não substitui um advogado nas páginas l
 - [ ] **[Juntos]** Conferir as tabelas em `tools/revisao-tabelas.csv` com o catálogo impresso
 - [ ] **[Claude]** Texto bruto de tabela do PDF em 4 produtos; resumos de cartão de "Mastro para Cruzeta" e de dois "Esse conjunto..." que começam com pronome
 - [ ] **[Claude]** Vara de Manobra Seccionável e Telescópica ainda usam fotos genéricas
-- [ ] **[Você]** Autorizar a importação das linhas B a L e de luvas e alicates (um PR por linha, começando pela B)
+- [ ] **[Você]** Autorizar a importação das linhas B a L e de luvas e alicates (um PR por linha; a B está pronta no PR, as demais seguem)
 
 ## 9. Design
 - [ ] **[Você]** Aprovar ou ajustar o redesenho do canvas (home, categoria, produto e celular): https://claude.ai/artifact/3T6jvKqe5mCTiqZevQQ8Wd

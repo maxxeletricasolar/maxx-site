@@ -1,0 +1,286 @@
+{
+ "grupo": "B",
+ "aposentar": [],
+ "produtos": [
+  {
+   "slug": "bastao-alavanca",
+   "id": "b-bastao-alavanca",
+   "nome": null,
+   "descricao": [
+    "Ferramenta para girar e posicionar postes no ponto de instalação, seja de madeira, metal ou concreto, redondos ou de outras seções.",
+    "Usa tubo isolante RITZGLAS® de 51 mm, que mantém o eletricista afastado da rede."
+   ]
+  },
+  {
+   "slug": "bastao-amarracao",
+   "id": "b-bastao-de-amarracao",
+   "nome": null,
+   "descricao": [
+    "Bastões para fazer e desfazer laços de amarração do condutor no isolador, com a rede energizada.",
+    "Há cabeçotes com gancho, fixo ou rotativo, para laços com olhal, e com lâmina rotativa, para laços sem olhal. A escolha segue a aplicação e a preferência do eletricista."
+   ]
+  },
+  {
+   "slug": "bastao-auxiliar-posicionamento-poste",
+   "id": "b-bastao-auxiliar-para-posicionamento-de-poste",
+   "nome": null,
+   "descricao": [
+    "Apoio isolante para instalar e retirar postes mantendo a equipe longe de qualquer risco de choque.",
+    "Feito em tubo RITZGLAS® de 32 mm, com empunhadura antiderrapante e cinta de poliéster com protetor e catraca para prender o bastão ao poste.",
+    "Existe a versão com haste giratória, cabeçote roscado e sapata de apoio, e a versão com cabeçote e sapata articulados, própria para terreno em aclive ou declive."
+   ]
+  },
+  {
+   "slug": "bastao-manobra",
+   "id": "b-bastao-de-manobra",
+   "nome": null,
+   "descricao": [
+    "Bastão com gancho articulável e retrátil na ponta, acionado por uma manopla regulável no punho em três posições de trabalho, com cremalheira e duas travas de segurança.",
+    "Serve para instalar e retirar grampos de linha viva, conjuntos de aterramento temporário, coberturas protetoras e instrumentos de medição, entre outros usos.",
+    "Modelos com punho plástico de 32 mm, leve de 25 mm e dobrável de 32 mm, todos com tração nominal de trabalho de 133 daN. Acessórios: adaptador de encaixe universal, colarinho com argola para içamento e extensão."
+   ]
+  },
+  {
+   "slug": "bastao-medicao-extensao",
+   "id": "b-bastao-de-medicao-e-extensao",
+   "nome": null,
+   "descricao": [
+    "Mede comprimentos e vãos de até 3 m em rede energizada quando não dá para manter a distância mínima de segurança.",
+    "Os bastões isolantes têm marcações de 10 cm em laranja e preto, com ganchos e conexões universais de alumínio e bronze. Permite medir em ângulo, ao contato ou à distância, acoplado a uma vara de manobra. Para mais de 3 m, acople a extensão FLV16146-1."
+   ]
+  },
+  {
+   "slug": "bastao-podador",
+   "id": "b-bastao-podador",
+   "nome": null,
+   "descricao": [
+    "Corta galhos próximos à rede elétrica com segurança, até 1 polegada de diâmetro, usando lâminas de aço forjado.",
+    "O sistema de polias multiplica a força em 3 vezes: 4,5 daN na corda viram 13,5 daN nas lâminas. A corda tem 7,60 m. Há encaixe universal perto da lâmina para trocar por uma serra de poda.",
+    "Acopla em bastões complementares pelo cabeçote universal (FLV31519-1) ou pelo engate rápido (RH2106 e FLV21137-1)."
+   ]
+  },
+  {
+   "slug": "bastao-prendedor-condutor",
+   "id": "b-bastao-prendedor-de-condutor",
+   "nome": null,
+   "descricao": [
+    "Segura e posiciona cabos e jumpers durante trabalhos à distância, principalmente em seccionamento, e também faz e desfaz a amarração do condutor em isolador de pino.",
+    "A alavanca trava o condutor no mordente. A porca estriada pré-ajusta a abertura conforme a bitola e o cabeçote pode ficar à esquerda, ao centro ou à direita. Dois parafusos recartilhados travam a alavanca depois de fixada."
+   ]
+  },
+  {
+   "slug": "bastao-punho-isolante",
+   "id": "b-bastao-punho-isolante",
+   "nome": null,
+   "descricao": [
+    "Permite usar um alicate ou outra ferramenta manual em linha energizada, pelo método à distância.",
+    "Vem em duas versões: com o alicate incluído ou só o par de bastões. Cada bastão tem cabeçote para fixar a ferramenta compatível."
+   ]
+  },
+  {
+   "slug": "bastao-resgate",
+   "id": "b-bastao-de-resgate",
+   "nome": null,
+   "descricao": [
+    "Afasta a vítima de acidente elétrico de partes energizadas, em instalações de até 34,5 kV, com ganchos de formato anatômico.",
+    "Usa o mesmo tubo RITZGLAS® das ferramentas de linha viva: leve, resistente e com boa rigidez dielétrica. Serve somente para afastar a vítima o suficiente para os primeiros socorros com segurança."
+   ]
+  },
+  {
+   "slug": "bastao-soquete-flexivel",
+   "id": "b-bastao-soquete-flexivel",
+   "nome": null,
+   "descricao": [
+    "Recebe ferramentas de aperto de porcas em equipamentos energizados. O soquete flexível dá mais liberdade em ângulos acentuados.",
+    "Os modelos RH1891-2 e RH1891-3 têm soquete macho para a chave catraca R066780, e o RH1891-6 tem cabeçote universal. O RC403-2136 tem encaixe fêmea numa ponta e macho de 1/2 polegada na outra. Torque máximo de 5,5 daN·m.",
+    "O jogo de soquetes hexagonais, em estojo, tem 11 peças em polegadas ou 10 em milímetros."
+   ]
+  },
+  {
+   "slug": "bastao-soquete-multi-angular",
+   "id": "b-bastao-com-soquete-multi-angular",
+   "nome": null,
+   "descricao": [
+    "A engrenagem articulável permite ajustar o ângulo do soquete para alcançar porcas em equipamentos energizados, trabalhando à distância, com variação de até 140°.",
+    "Um tirante de fibra de vidro paralelo ao tubo mantém o cabeçote alinhado mesmo quando o bastão gira. O encaixe quadrado de 1/2 polegada recebe os soquetes."
+   ]
+  },
+  {
+   "slug": "bastao-tira-pipa",
+   "id": "b-bastao-tira-pipa",
+   "nome": null,
+   "descricao": [
+    "Remove pipas e fios emaranhados da rede, comuns em áreas urbanas, que prejudicam o funcionamento e o visual do sistema.",
+    "Em tubo RITZGLAS® de 25 mm com 0,30 m, tem pinos de aço transversais para enlaçar os fios. Vai na ponta da vara de manobra pelo cabeçote universal.",
+    "Acessórios de corte: cabeçote alfanje (FLV09311-1), com lâmina afiada, e cabeçote universal com lâmina em U (FLV30173-1), com o gume por dentro."
+   ]
+  },
+  {
+   "slug": "bastao-universal",
+   "id": "b-bastao-universal",
+   "nome": null,
+   "descricao": [
+    "Tem cabeçote universal dentado que recebe, com parafuso borboleta, qualquer ferramenta universal da linha, em ângulos de até 90° em relação ao bastão.",
+    "O adaptador universal RM4455-84 permite qualquer outro ângulo. Com pingadeira de borracha, serve para manobras de emergência sob chuva."
+   ]
+  },
+  {
+   "slug": "bastao-volt-amperimetro",
+   "id": "b-bastao-volt-amperimetro",
+   "nome": null,
+   "descricao": [
+    "Sustenta um volt-amperímetro alicate na ponta e o aciona por uma alavanca no punho, com o isolamento do tubo e do tirante RITZGLAS®.",
+    "O cabeçote ajustável serve a vários modelos de alicate, desde que o gatilho fique no lado esquerdo, e o revestimento plástico protege o instrumento. Há versões inteiriças e dois modelos dobráveis."
+   ]
+  },
+  {
+   "slug": "bau-para-moto-plantao",
+   "id": "b-bau-para-moto-plantao",
+   "nome": null,
+   "descricao": [
+    "Baú para levar ferramentas e materiais na moto de plantão de manutenção de rede.",
+    "Plástico de alta resistência, com anéis de expansão para ajustar o volume e revestimento interno que reduz impacto e ruído. Tem compartimento para vara telescópica, tampa com chave e vedação contra água e poeira, e cinta de fixação."
+   ]
+  },
+  {
+   "slug": "cabecotes-manobra",
+   "id": "b-cabecotes-para-manobra",
+   "nome": null,
+   "descricao": [
+    "Cabeçotes de encaixe universal para varas de manobra.",
+    "Para grampos de aterramento: em alumínio, travam com parafuso olhal. Com sistema anti-queda: manobram chave e instalam ou retiram cartuchos porta-fusível sem risco de queda, com trava automática. Para chave fusível: modelos padronizados."
+   ]
+  },
+  {
+   "slug": "cabide-cavalete-bastoes",
+   "id": "b-cabide-e-cavalete-para-bastoes",
+   "nome": null,
+   "descricao": [
+    "Apoio para os bastões em uso e para deixá-los preparados no local de trabalho, longe do solo e da contaminação.",
+    "O cabide se ajusta a cruzetas de 95 a 114 mm de largura. O cavalete, usado em par, é uma alternativa ou complemento à lona, com doze hastes e mastro central revestidos de plástico contra abrasão."
+   ]
+  },
+  {
+   "slug": "cortador-de-ramais",
+   "id": "b-cortador-de-ramais",
+   "nome": null,
+   "descricao": [
+    "Corta ramais de energia do solo, acoplado à vara de manobra, para desligar consumidores, cortar ligações clandestinas e atuar em condutor rompido.",
+    "As lâminas cortam cabos de alumínio, cobre e multiplexado. O modelo por alavanca tem capa isolante nas lâminas, tubo RITZGLAS® de 1 kV, haste isolante, cabeçote de alumínio de encaixe universal e corda com puxador."
+   ]
+  },
+  {
+   "slug": "ferramenta-universal",
+   "id": "b-ferramenta-universal",
+   "nome": null,
+   "descricao": [
+    "Série de ferramentas com cabeçote universal dentado, que acoplam no bastão universal para trabalhar à distância mesmo em ângulos difíceis, no lugar da operação manual.",
+    "Inclui posicionador de contrapino, garfo ajustador de concha, tenaz multi-angular, aplicador de preformado, tenaz para isolador, garra de amarração, lixa para condutor, cabeçote multiuso, extrator de contrapino, desconector por impulso e locador de pino, entre outras."
+   ]
+  },
+  {
+   "slug": "tesourao",
+   "id": "b-tesourao",
+   "nome": null,
+   "descricao": [
+    "Cortadores com tubo isolante RITZGLAS® e lâminas de aço especial forjado e temperado, para cortar cabos com segurança.",
+    "Cabo articulado: baixo esforço, ao contato, cabos CAA, CA e cobre até 1/0. Cabo simples: alumínio 556 MCM ACSR de até 23,5 mm, também ao contato. Há ainda o modelo com acionamento por alavanca."
+   ]
+  },
+  {
+   "slug": "vara-manobra-seccionavel",
+   "id": "b-vara-de-manobra-seccionavel",
+   "nome": null,
+   "descricao": [
+    "Vara que dá isolamento e distância de segurança em manobras na rede aérea, com ferramentas de encaixe universal.",
+    "Usos: chave faca e fusível, cartucho porta-fusível, detector de tensão, linha de vida, aterramento temporário, grampos de linha viva, poda, limpeza de rede e troca de lâmpadas. Em tubos RITZGLAS®, com emenda rígida roscada e ponta com cabeçote universal de bronze."
+   ]
+  },
+  {
+   "slug": "vara-manobra-telescopica",
+   "id": "b-vara-de-manobra-telescopica",
+   "nome": null,
+   "descricao": [
+    "Vara telescópica VTT, de seção triangular, para operar direto do solo em linha energizada, sem escada ou plataforma.",
+    "Corpo de fibra de vidro com resina epóxi e ponta em RITZGLAS®, conforme a ASTM F 1826. Alcance de 1,80 m a 12,04 m, módulos removíveis em campo e compatível com os cabeçotes de manobra.",
+    "Linhas: Leve, 3HD (reforçada), Prime e Moto."
+   ]
+  },
+  {
+   "slug": "ours",
+   "id": "b-dispositivo-para-instalacao-de-conector-perfurante-a-distancia",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "ours",
+   "id": "b-decapador-de-condutor",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "ours",
+   "id": "b-alicates",
+   "nome": null,
+   "descricao": null
+  },
+  {
+   "slug": "ours",
+   "id": "b-aferidor-de-pressao-hidraulica",
+   "nome": null,
+   "descricao": null
+  }
+ ],
+ "fotos_manuais": {
+  "b-bastao-de-manobra": [
+   "r088-1.webp",
+   "r089-1.webp",
+   "r089-4.webp",
+   "r089-5.webp"
+  ],
+  "b-bastao-tira-pipa": [
+   "r121-3.webp",
+   "r121-4.webp"
+  ],
+  "b-cabecotes-para-manobra": [
+   "r095-2.webp",
+   "r096-3.webp",
+   "r096-1.webp",
+   "r096-4.webp",
+   "r096-5.webp",
+   "r097-2.webp",
+   "r097-1.webp",
+   "r097-3.webp",
+   "r097-4.webp"
+  ],
+  "b-bau-para-moto-plantao": [
+   "r095-1.webp"
+  ],
+  "b-cabide-e-cavalete-para-bastoes": [
+   "r105-3.webp",
+   "r105-4.webp"
+  ],
+  "b-cortador-de-ramais": [
+   "r118-1.webp",
+   "r118-2.webp"
+  ]
+ },
+ "descartar_paginas": [
+  0,
+  -1
+ ],
+ "descartar": [
+  "r087-1.webp",
+  "r087-2.webp",
+  "r087-3.webp",
+  "r087-4.webp",
+  "r089-2.webp",
+  "r089-3.webp",
+  "r105-1.webp",
+  "r105-2.webp",
+  "r118-3.webp",
+  "r121-1.webp",
+  "r121-2.webp"
+ ],
+ "substituir_em_guias": {}
+}
