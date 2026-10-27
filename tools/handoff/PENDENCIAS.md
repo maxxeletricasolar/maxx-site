@@ -2,6 +2,7 @@
 
 Atualizado em 10/10/2026. Contexto do produto: `PRODUCT.md` (raiz). Diagnóstico completo, com notas e ordem sugerida: `tools/handoff/analise-impeccable-maxx.md`.
 Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` publica sozinha).
+Lista marcável do que falta, com responsável: `tools/handoff/CHECKLIST.md` (atualizar a cada item concluído).
 
 ## Feito
 - PR #13: página de produto (324) com seletor por tensão ou referência, "Adicionar à lista" que adiciona, tabela com seleção múltipla e barra fixa; casca única nas páginas geradas (`assets/lista.js`, `tools/shell-paginas.js`).
@@ -38,6 +39,7 @@ Regras de trabalho: `CLAUDE.md`. Branch + PR, nunca direto na `main` (a `main` p
 - Feito: títulos acima de 65 caracteres encurtados (6 páginas; `importar.py` agora usa `titulo()`); "Bloco Terminal" da linha A e da linha L (produtos diferentes) com títulos distintos.
 - Falta, depende do usuário: HTTPS forçado no painel da Hostinger; GA4 e Pixel; links e nota do Google; fotos grandes da Ritz; caixas `comercial@`/`sac@` e envio de teste do formulário; remover `teste.` do formulário (`ORIGENS_OK`) e a pasta `teste/` da Hostinger.
 - Falta, técnico: `assets/catalogo-data.js` (609 KB) e os 3 CSS com hash (~120 KB cada) pesam no LCP; CSP definitiva; IP real do formulário (`REMOTE_ADDR`) e Turnstile; `LocalBusiness` com coordenadas.
+- Feito em 21/10/2026: fontes hospedadas no site (`assets/fonts/`, `assets/fonts.css`; sem Google Fonts, CSP sem os hosts do Google), contorno de foco visível nos campos, política de privacidade corrigida (Hostinger registra IP, GitHub só guarda o código) e registro de imagens em `tools/handoff/imagens-licencas.md`. Produção confirmada: Hostinger, HTTPS e HSTS ativos, `www` redireciona. Fontes novas: baixar de novo o CSS do Google e atualizar `assets/fonts.css` (arquivos woff2 só de latin e latin-ext).
 - Lighthouse local da home (mobile, sem compressão): desempenho 56, acessibilidade 100, boas práticas 100, SEO 100. Em produção o LCP medido é ~0,6 s.
 
 ## Pendente: layout e design (não feito de propósito)

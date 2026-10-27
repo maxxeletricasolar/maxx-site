@@ -84,7 +84,7 @@ form{display:grid;gap:16px}
 input,textarea,select{width:100%;font:400 1rem/1.4 var(--f-body);color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;min-height:48px;transition:border-color .15s}
 textarea{min-height:120px;resize:vertical}
 input::placeholder,textarea::placeholder{color:#6d7b8b}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold)}
+input:focus,textarea:focus,select:focus{border-color:var(--gold)}
 .field.invalid input,.field.invalid textarea{border-color:var(--err)}
 .hint{font-size:0.8125rem;color:var(--muted)}
 .err{font-size:0.8125rem;color:var(--err);display:none}
@@ -217,7 +217,7 @@ footer{background:#0a0f15;border-top:1px solid var(--line);padding-block:48px 11
 .js-open-now{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;color:var(--muted)}
 .js-open-now:empty{display:none}
 .js-open-now::before{content:"";width:8px;height:8px;border-radius:50%;background:#c2a15a}
-.js-open-now.is-open{color:#3fb27f}.js-open-now.is-open::before{background:#3fb27f;box-shadow:0 0 0 3px rgba(63,178,127,.2)}
+.js-open-now.is-open{color:var(--ok)}.js-open-now.is-open::before{background:#3fb27f;box-shadow:0 0 0 3px rgba(63,178,127,.2)}
 .hrs{display:block;margin-top:4px}
 /* barras de rolagem discretas nas janelas (sem quebrar o canto arredondado) */
 dialog.sheet,dialog.drawer .drawer-body,.sx-res,.cat-side .cat-nav{scrollbar-gutter:stable}
@@ -332,7 +332,7 @@ nav.main a.active{color:var(--text)}
 .val p{margin:0;color:var(--muted);font-size:0.9375rem}
 
 /* lightbox */
-.gallery figure{cursor:zoom-in}
+.gallery figure{cursor:zoom-in}.gallery figure img:focus-visible{outline-offset:-5px}
 dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:90vh}
 dialog.lb::backdrop{background:rgba(5,8,12,.88);backdrop-filter:blur(4px)}
 dialog.lb img{max-height:82vh;width:auto;margin:auto;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
@@ -999,7 +999,7 @@ select option{background:var(--surface);color:var(--text)}
 .multi>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 40px 12px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%239aa8b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;font:400 1rem/1.4 var(--f-body);color:#6d7b8b;cursor:pointer;transition:border-color .15s}
 .multi>summary::-webkit-details-marker{display:none}
 .multi>summary::after{display:none!important}
-.multi[open]>summary,.multi>summary:focus-visible{border-color:var(--gold);outline:none}
+.multi[open]>summary,.multi>summary:focus-visible{border-color:var(--gold)}
 .multi-sum{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .multi-sum.on{color:var(--text)}
 .multi-list{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;max-height:280px;overflow:auto;padding:6px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);box-shadow:0 18px 40px -16px rgba(0,0,0,.85);display:grid;gap:2px;overscroll-behavior:contain}
@@ -1675,7 +1675,7 @@ dialog.drawer .lista-vazia{color:var(--muted);line-height:1.5}
 @media (max-width:760px){
 a[href^="tel:"],footer a:not(.btn),.hl-cat,.pm-note a,.pbody h3 a{position:relative}
 a[href^="tel:"]::after,.hl-cat::after,.pm-note a::after,.pbody h3 a::after{content:"";position:absolute;inset:-14px -6px}
-footer a:not(.btn)::after{content:"";position:absolute;inset:-4px -4px}
+footer a:not(.btn)::after{content:"";position:absolute;inset:-4px -4px}.legal-links a::after{content:none}.legal-links .link-btn::after{content:none}.legal-links .link-btn{margin:0}
 .cat-count:empty{display:none}
 }
 /*pm:fim*/
@@ -1743,7 +1743,7 @@ h1,h2{text-wrap:balance}
 }
 @keyframes heroZoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 @keyframes btnShine{0%{transform:translateX(-140%)}55%,100%{transform:translateX(380%)}}
-@media (max-width:640px){.hero-full{min-height:0;padding-block:32px 96px}.hero-full .hero-lista{padding:10px}}
+@media (max-width:640px){.hero-full{min-height:0;padding-block:68px 96px}.hero-full .hero-lista{padding:10px}}
 /*menu2*/
 .cat-nav .cat-grp{display:block;margin:0 0 6px}
 .cat-nav .cat-grp>h2{display:block}
@@ -1761,3 +1761,12 @@ h1,h2{text-wrap:balance}
 .pcard h3 a::after{content:"";position:absolute;inset:0;z-index:1}
 .pcard .pl-add,.pcard button{position:relative;z-index:2}
 /*menu2:fim*/
+/*fontes:ini*/
+/* Fontes hospedadas no próprio site (sem Google Fonts): o IP do visitante não vai para terceiros. Variáveis; latin e latin-ext. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-latin-ext-b6db4a.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-latin-6ab57b.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500 600;font-display:swap;src:url(fonts/jetbrains-mono-latin-ext-c8b23d.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500 600;font-display:swap;src:url(fonts/jetbrains-mono-latin-0a7197.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-ext-5d8873.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-d4d84d.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/*fontes:fim*/

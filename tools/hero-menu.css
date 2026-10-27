@@ -27,7 +27,7 @@
 }
 @keyframes heroZoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 @keyframes btnShine{0%{transform:translateX(-140%)}55%,100%{transform:translateX(380%)}}
-@media (max-width:640px){.hero-full{min-height:0;padding-block:32px 96px}.hero-full .hero-lista{padding:10px}}
+@media (max-width:640px){.hero-full{min-height:0;padding-block:68px 96px}.hero-full .hero-lista{padding:10px}}
 /*menu2*/
 .cat-nav .cat-grp{display:block;margin:0 0 6px}
 .cat-nav .cat-grp>h2{display:block}

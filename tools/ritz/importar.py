@@ -173,7 +173,7 @@ for a in aposentar:
 
 # ---------- listagem de produtos.html ----------
 ph = ler('produtos.html')
-bloco = re.search(r'<section class="cat-sec" id="' + re.escape(SLUG_G) + r'".*?</section>', ph, re.S).group(0)
+bloco = re.search(r'<section class="cat-sec(?: sel)?" id="' + re.escape(SLUG_G) + r'".*?</section>', ph, re.S).group(0)
 cards_velhos = {m.group(1): m.group(0) for m in re.finditer(r'<article class="pcard" id="p-([^"]+)".*?</article>', bloco, re.S)}
 def cartao(p):
     if p['id'] in extras_ids: return cards_velhos[p['id']]
